@@ -199,8 +199,8 @@ hardware_interface::CallbackReturn PantheraHardwareInterface::on_configure(
     // R_finger_joint (8th joint, index 7) is a mimic joint that follows L_finger_joint
     if (info_.joints.size() > 7)
     {
-      hw_positions_[7] = hw_positions_[6];  // Mimic L_finger_joint position
-      hw_velocities_[7] = hw_velocities_[6];  // Mimic L_finger_joint velocity
+      hw_positions_[7] = -hw_positions_[6];  // Mimic L_finger_joint position (negated, opposite direction)
+      hw_velocities_[7] = -hw_velocities_[6];  // Mimic L_finger_joint velocity (negated)
       hw_efforts_[7] = 0.0;  // Passive joint, no actuator
       hw_commands_positions_[7] = hw_positions_[7];
     }
@@ -298,7 +298,7 @@ hardware_interface::CallbackReturn PantheraHardwareInterface::on_activate(
     // R_finger_joint (8th joint, index 7) is a mimic joint that follows L_finger_joint
     if (info_.joints.size() > 7)
     {
-      hw_commands_positions_[7] = hw_commands_positions_[6];  // Mimic L_finger_joint position
+      hw_commands_positions_[7] = -hw_commands_positions_[6];  // Mimic L_finger_joint position (negated)
     }
 
     RCLCPP_INFO(rclcpp::get_logger("PantheraHardwareInterface"),
@@ -361,9 +361,9 @@ hardware_interface::return_type PantheraHardwareInterface::read(
     // R_finger_joint (8th joint, index 7) is a mimic joint that follows L_finger_joint
     if (info_.joints.size() > 7)
     {
-      hw_positions_[7] = hw_positions_[6];  // Mimic L_finger_joint position
-      hw_velocities_[7] = hw_velocities_[6];  // Mimic L_finger_joint velocity
-      hw_efforts_[7] = 0.0;  // Passive joint, no actuator
+      hw_positions_[7] = -hw_positions_[6];  // Mimic L_finger_joint position (negated, opposite direction)
+      hw_velocities_[7] = -hw_velocities_[6];  // Mimic L_finger_joint velocity (negated)
+      hw_efforts_[7] = 0.0;
     }
   }
   catch (const std::exception & e)
