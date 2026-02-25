@@ -50,9 +50,9 @@ def generate_launch_description():
             PathJoinSubstitution([FindExecutable(name="xacro")]),
             " ",
             PathJoinSubstitution([
-                FindPackageShare("panthera_ht_description_with_finger"),
+                FindPackageShare("panthera_ht_ros_description"),
                 "urdf",
-                "Panthera-HT_description_with_finger.urdf.xacro"
+                "panthera_ht_ros_description_hardware.urdf.xacro"
             ]),
             " ",
             "name:=Panthera-HT",
@@ -156,7 +156,7 @@ def generate_launch_description():
 
     # RViz
     rviz_config_file = PathJoinSubstitution([
-        FindPackageShare("with_gripper_config"),
+        FindPackageShare("panthera_ht_config"),
         "config",
         "moveit.rviz"
     ])
