@@ -256,7 +256,7 @@ make
 
 ### 示例代码说明
 
-#### 3.1 纯笛卡尔空间阻抗控制（`pure_cartesian_impedance_control.cpp`）
+#### 3.1 笛卡尔空间阻抗控制（`pure_cartesian_impedance_control.cpp`）
 
 **功能**：实现笛卡尔空间的阻抗控制。
 
