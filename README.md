@@ -269,24 +269,10 @@ ls /dev/ttyACM*
 ./pure_cartesian_impedance_control
 ```
 
----
-
-#### 3.2 笛卡尔空间阻抗控制（带初始位置回归）（`3_cartesian_impedance_control.cpp`）
-
-**功能**：实现笛卡尔空间阻抗控制，每个轴都有回到初始位置的趋势。
-
-**特点**：机械臂前往预设位置并固定，施加扰动后体现阻抗特性，侧向扰动后机械臂会回到原位。
-
-**运行**：
-
-```bash
-ls /dev/ttyACM*
-./3_cartesian_impedance_control
-```
 
 ---
 
-#### 3.3 笛卡尔空间 AB 点往返阻抗控制（`cartesian_impedance_ab_motion.cpp`）
+#### 3.2 笛卡尔空间 AB 点往返阻抗控制（`cartesian_impedance_ab_motion.cpp`）
 
 **功能**：机械臂在 A、B 两点间来回运动，实现过程中的阻抗控制。
 
@@ -301,7 +287,7 @@ ls /dev/ttyACM*
 
 ---
 
-#### 3.4 关节空间阻抗控制（`2_joint_impedance_control.cpp`）
+#### 3.3 关节空间阻抗控制（`2_joint_impedance_control.cpp`）
 
 **功能**：实现关节空间的阻抗控制。
 
