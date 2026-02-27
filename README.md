@@ -193,9 +193,8 @@ srcsrc/
 │   ├── 1_PD_control.cpp                     # PD 控制
 │   ├── 1_PosVel_control.cpp                 # 位置速度控制
 │   ├── 2_joint_impedance_control.cpp        # 关节阻抗控制
-│   ├── 3_cartesian_impedance_control.cpp    # 笛卡尔阻抗控制
 │   ├── cartesian_impedance_ab_motion.cpp    # 笛卡尔阻抗 AB 运动
-│   └── pure_cartesian_impedance_control.cpp # 纯笛卡尔阻抗控制
+│   └── pure_cartesian_impedance_control.cpp # 笛卡尔阻抗控制
 │
 ├── src/
 │   ├── crc/                    # CRC 校验相关源码
