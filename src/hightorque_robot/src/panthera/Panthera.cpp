@@ -110,8 +110,8 @@ bool Panthera::checkJointLimits(const std::vector<double>& pos)
         return true; // 如果没有配置限位，直接通过
     }
 
-    if (pos.size() != joint_limits_lower_.size()) {
-        std::cerr << "错误: 位置数组大小与关节数不符" << std::endl;
+    if (pos.size() > joint_limits_lower_.size()) {
+        std::cerr << "错误: 位置数组大小超出关节限位配置数" << std::endl;
         return false;
     }
 

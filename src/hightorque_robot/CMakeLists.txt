@@ -18,6 +18,7 @@ add_subdirectory(third_part/serial_cmake)
 
 # find_package(lcm REQUIRED)
 find_package(yaml-cpp REQUIRED)
+find_package(ament_index_cpp REQUIRED)
 
 find_library(SERIALPORT_LIBRARY serialport)
 if(NOT SERIALPORT_LIBRARY)
@@ -104,8 +105,10 @@ install(DIRECTORY include/ DESTINATION include
     FILES_MATCHING PATTERN "*.hpp" PATTERN "*.h")
 install(DIRECTORY msg/motor_msg/ DESTINATION include/motor_msg 
     FILES_MATCHING PATTERN "*.hpp" PATTERN "*.h")
-install(DIRECTORY robot_param/ DESTINATION share/hightorque_robot/robot_param 
+install(DIRECTORY robot_param/ DESTINATION share/hightorque_robot/robot_param
     FILES_MATCHING PATTERN "*.yaml")
+install(DIRECTORY Panthera-HT_description/urdf/ DESTINATION share/hightorque_robot/urdf
+    FILES_MATCHING PATTERN "*.urdf")
 
 install(EXPORT hightorque_robotTargets
     FILE hightorque_robotTargets.cmake
@@ -136,16 +139,16 @@ target_link_libraries(motor_set_zero hightorque_robot)
 
 # Panthera examples
 add_executable(0_robot_get_state examples/0_robot_get_state.cpp)
-target_link_libraries(0_robot_get_state hightorque_robot)
+target_link_libraries(0_robot_get_state hightorque_robot ament_index_cpp::ament_index_cpp)
 
 add_executable(0_robot_set_zero examples/0_robot_set_zero.cpp)
-target_link_libraries(0_robot_set_zero hightorque_robot)
+target_link_libraries(0_robot_set_zero hightorque_robot ament_index_cpp::ament_index_cpp)
 
 add_executable(1_PD_control examples/1_PD_control.cpp)
-target_link_libraries(1_PD_control hightorque_robot)
+target_link_libraries(1_PD_control hightorque_robot ament_index_cpp::ament_index_cpp)
 
 add_executable(1_PosVel_control examples/1_PosVel_control.cpp)
-target_link_libraries(1_PosVel_control hightorque_robot)
+target_link_libraries(1_PosVel_control hightorque_robot ament_index_cpp::ament_index_cpp)
 
 # Find Pinocchio for dynamics computation (optional)
 find_package(pinocchio QUIET)
@@ -153,23 +156,49 @@ find_package(pinocchio QUIET)
 if(pinocchio_FOUND)
   message(STATUS "Found pinocchio, building 2_joint_impedance_control example")
   add_executable(2_joint_impedance_control examples/2_joint_impedance_control.cpp)
-  target_link_libraries(2_joint_impedance_control hightorque_robot pinocchio::pinocchio)
+  target_link_libraries(2_joint_impedance_control hightorque_robot pinocchio::pinocchio ament_index_cpp::ament_index_cpp)
 
   message(STATUS "Building 3_cartesian_impedance_control example")
   add_executable(3_cartesian_impedance_control examples/3_cartesian_impedance_control.cpp)
-  target_link_libraries(3_cartesian_impedance_control hightorque_robot pinocchio::pinocchio)
+  target_link_libraries(3_cartesian_impedance_control hightorque_robot pinocchio::pinocchio ament_index_cpp::ament_index_cpp)
 
   message(STATUS "Building pure_cartesian_impedance_control example")
   add_executable(pure_cartesian_impedance_control examples/pure_cartesian_impedance_control.cpp)
-  target_link_libraries(pure_cartesian_impedance_control hightorque_robot pinocchio::pinocchio)
+  target_link_libraries(pure_cartesian_impedance_control hightorque_robot pinocchio::pinocchio ament_index_cpp::ament_index_cpp)
 
   message(STATUS "Building cartesian_impedance_ab_motion example")
   add_executable(cartesian_impedance_ab_motion examples/cartesian_impedance_ab_motion.cpp)
-  target_link_libraries(cartesian_impedance_ab_motion hightorque_robot pinocchio::pinocchio)
+  target_link_libraries(cartesian_impedance_ab_motion hightorque_robot pinocchio::pinocchio ament_index_cpp::ament_index_cpp)
 else()
   message(STATUS "pinocchio not found, skipping impedance control examples")
 endif()
 
+
+# Install example executables so ros2 run can find them
+install(TARGETS
+    canboard_update
+    motor_feedack
+    motor_move_zero
+    motor_run
+    motor_msg_subscriber
+    parse_demo
+    motor_set_zero
+    0_robot_get_state
+    0_robot_set_zero
+    1_PD_control
+    1_PosVel_control
+    RUNTIME DESTINATION lib/${PROJECT_NAME}
+)
+
+if(pinocchio_FOUND)
+  install(TARGETS
+      2_joint_impedance_control
+      3_cartesian_impedance_control
+      pure_cartesian_impedance_control
+      cartesian_impedance_ab_motion
+      RUNTIME DESTINATION lib/${PROJECT_NAME}
+  )
+endif()
 
 # Ament package setup for ROS2
 ament_package()

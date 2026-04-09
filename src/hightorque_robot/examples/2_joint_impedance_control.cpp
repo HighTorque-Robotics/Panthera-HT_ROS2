@@ -14,6 +14,7 @@
  */
 
 #include "panthera/Panthera.hpp"
+#include <ament_index_cpp/get_package_share_directory.hpp>
 #include <iostream>
 #include <iomanip>
 #include <chrono>
@@ -95,7 +96,7 @@ int main(int argc, char** argv)
         signal(SIGINT, signal_handler);
 
         // 创建机械臂对象
-        std::string config_path = "../robot_param/Follower.yaml";
+        std::string config_path = ament_index_cpp::get_package_share_directory("hightorque_robot") + "/robot_param/Follower.yaml";
         if (argc > 1) {
             config_path = argv[1];
         }
@@ -103,7 +104,7 @@ int main(int argc, char** argv)
         panthera::Panthera robot(config_path);
 
         // 加载 URDF 模型用于重力补偿计算
-        std::string urdf_path = "../urdf/Panthera-HT_description_with_finger.urdf.xacro";
+        std::string urdf_path = ament_index_cpp::get_package_share_directory("hightorque_robot") + "/urdf/Panthera-HT_description_follower.urdf";
         if (argc > 2) {
             urdf_path = argv[2];
         }

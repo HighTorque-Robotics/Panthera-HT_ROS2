@@ -1,12 +1,12 @@
 robot:
   name: "Panthera-HT"
-  param_file: "/home/tk/aaa_ws/src/panthera_cpp/robot_param/motor_param/6dof_Panthera_params_follower.yaml"
+  param_file: "motor_param/6dof_Panthera_params_follower.yaml"
   joint_limits:
     lower: [-2.4, -0.01, -0.01, -1.6, -1.7, -2.5]
     upper: [2.4, 3.2, 4.0, 1.6, 1.7, 2.5]
 
 urdf:
-  file_path: "/home/tk/aaa_ws/src/panthera_ht_ros_description/urdf/panthera_ht_ros_description.xacro"
+  file_path: "../Panthera-HT_description/urdf/Panthera-HT_description_follower.urdf"
   base_link: "base_link"
   end_effector_link: "gripper_center"
 

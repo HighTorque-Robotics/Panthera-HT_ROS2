@@ -35,7 +35,7 @@ int main(int argc, char** argv)
         signal(SIGINT, signal_handler);
 
         // 创建机械臂对象
-        std::string config_path = "/home/tk/aaa_ws/src/panthera_cpp/robot_param/Follower_absolute.yaml";
+        std::string config_path = "../robot_param/Follower_absolute.yaml";
         if (argc > 1)
         {
             config_path = argv[1];
