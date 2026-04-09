@@ -11,6 +11,7 @@ Panthera_HT_ROS2/src/
   ├── panthera_gazebo/               # Gazebo 仿真包
   ├── panthera_bringup/              # 系统启动包
   ├── panthera_commander/            # MoveIt 指令示例包
+  ├── panthera_arm_control/          # 直接 SDK 驱动控制节点（话题/服务/IK）
   └── panthera_interfaces/           # 自定义消息接口包
 ```
 
@@ -136,7 +137,127 @@ source install/setup.bash
 ros2 launch panthera_gazebo gazebo_moveit.launch.py
 ```
 
-### 四、MoveIt 指令示例（panthera_commander）
+### 四、直接 SDK 驱动控制（panthera_arm_control）
+
+不依赖 MoveIt / ros2_control，通过 ROS2 话题和服务直接驱动机械臂。内置 KDL 逆运动学，支持关节空间和笛卡尔空间控制。
+
+**启动节点：**
+
+```bash
+source install/setup.bash
+ros2 launch panthera_arm_control arm_control.launch.py
+```
+
+#### 状态查询
+
+```bash
+# 查看当前关节角度（弧度）
+ros2 topic echo /joint_states_single --once
+
+# 查看机械臂状态（使能、故障、夹爪等）
+ros2 topic echo /arm_status --once
+
+# 查看末端执行器位姿（xyz + rpy，20Hz）
+ros2 topic echo /end_pose_euler --once
+```
+
+#### 关节空间控制
+
+```bash
+# 通过话题发送关节角度（6个值，弧度）
+ros2 topic pub --once /arm_joint_cmd example_interfaces/msg/Float64MultiArray \
+  "{data: [0.0, 0.8, 0.8, 0.3, 0.0, 0.0]}"
+
+# 通过服务发送关节角度（支持速度缩放 0.0~1.0）
+ros2 service call /move_to_joint panthera_interfaces/srv/MoveToJoint \
+  "{joint_angles: [0.0, 0.8, 0.8, 0.3, 0.0, 0.0], velocity_scaling: 0.5}"
+
+# 回零位
+ros2 service call /go_zero_srv panthera_interfaces/srv/GoZero "{use_mit_mode: false}"
+```
+
+#### 笛卡尔空间控制（末端 xyz + rpy）
+
+```bash
+# 通过服务移动到笛卡尔位姿（内置 KDL 逆运动学求解）
+ros2 service call /move_to_pose panthera_interfaces/srv/MoveToPose \
+  "{x: 0.3, y: 0.0, z: 0.2, roll: 0.0, pitch: 1.57, yaw: 0.0, velocity_scaling: 0.5}"
+
+# 笛卡尔直线路径（cartesian_path: true，1cm步长线性插值）
+ros2 service call /move_to_pose panthera_interfaces/srv/MoveToPose \
+  "{x: 0.3, y: 0.0, z: 0.2, roll: 0.0, pitch: 1.57, yaw: 0.0, cartesian_path: true, velocity_scaling: 0.3}"
+
+# 通过话题发送位姿命令（mode1: 0=关节空间规划, 1=笛卡尔直线路径）
+ros2 topic pub --once /pos_cmd panthera_interfaces/msg/PosCmd \
+  "{x: 0.3, y: 0.0, z: 0.2, roll: 0.0, pitch: 1.57, yaw: 0.0, gripper: 1.0, mode1: 0}"
+```
+
+#### 夹爪控制
+
+```bash
+# 话题控制（true=打开, false=关闭）
+ros2 topic pub --once /gripper_cmd example_interfaces/msg/Bool "{data: true}"
+ros2 topic pub --once /gripper_cmd example_interfaces/msg/Bool "{data: false}"
+
+# 服务控制（open / close / half_open）
+ros2 service call /gripper_control panthera_interfaces/srv/GripperControl "{action: 'open'}"
+ros2 service call /gripper_control panthera_interfaces/srv/GripperControl "{action: 'close'}"
+
+# 精细控制（角度 + 力矩）
+ros2 service call /gripper_srv panthera_interfaces/srv/GripperSrv \
+  "{gripper_angle: 0.5, gripper_effort: 1.0, gripper_code: 0, set_zero: false}"
+```
+
+#### 使能 / 急停 / 复位
+
+```bash
+# 使能/失能（话题）
+ros2 topic pub --once /enable_flag example_interfaces/msg/Bool "{data: true}"
+ros2 topic pub --once /enable_flag example_interfaces/msg/Bool "{data: false}"
+
+# 使能/失能（服务）
+ros2 service call /enable_srv panthera_interfaces/srv/Enable "{enable_request: true}"
+ros2 service call /enable_srv panthera_interfaces/srv/Enable "{enable_request: false}"
+
+# 急停
+ros2 service call /stop_srv std_srvs/srv/Trigger "{}"
+
+# 复位（清除错误并重新使能）
+ros2 service call /reset_srv std_srvs/srv/Trigger "{}"
+```
+
+#### 关节限位
+
+| 关节   | 最小值 (rad) | 最大值 (rad) |
+|--------|-------------|-------------|
+| joint1 | -2.4        | 2.4         |
+| joint2 | 0.0         | 3.2         |
+| joint3 | 0.0         | 4.0         |
+| joint4 | -1.6        | 1.6         |
+| joint5 | -1.7        | 1.7         |
+| joint6 | -2.5        | 2.5         |
+
+#### 接口总览
+
+| 类型 | 名称 | 消息/服务类型 | 说明 |
+|------|------|--------------|------|
+| 发布 | `/joint_states_single` | sensor_msgs/JointState | 关节状态（位置/速度/力矩） |
+| 发布 | `/arm_status` | panthera_interfaces/ArmStatus | 机械臂状态 |
+| 发布 | `/end_pose_euler` | panthera_interfaces/EndPoseEuler | 末端位姿 xyz+rpy |
+| 订阅 | `/arm_joint_cmd` | example_interfaces/Float64MultiArray | 关节角度指令 |
+| 订阅 | `/pos_cmd` | panthera_interfaces/PosCmd | 笛卡尔位姿+夹爪指令 |
+| 订阅 | `/gripper_cmd` | example_interfaces/Bool | 夹爪开关 |
+| 订阅 | `/enable_flag` | example_interfaces/Bool | 使能开关 |
+| 服务 | `/move_to_joint` | panthera_interfaces/MoveToJoint | 关节空间运动 |
+| 服务 | `/move_to_pose` | panthera_interfaces/MoveToPose | 笛卡尔空间运动 |
+| 服务 | `/gripper_control` | panthera_interfaces/GripperControl | 夹爪控制 |
+| 服务 | `/gripper_srv` | panthera_interfaces/GripperSrv | 夹爪精细控制 |
+| 服务 | `/enable_srv` | panthera_interfaces/Enable | 使能控制 |
+| 服务 | `/go_zero_srv` | panthera_interfaces/GoZero | 回零位 |
+| 服务 | `/stop_srv` | std_srvs/Trigger | 急停 |
+| 服务 | `/reset_srv` | std_srvs/Trigger | 复位 |
+
+### 五、MoveIt 指令示例（panthera_commander）
 
 需先启动 `hardware_moveit_rviz.launch.py`，然后在另一个终端运行：
 
@@ -156,7 +277,7 @@ ros2 run panthera_commander test_gripper
 ros2 run panthera_commander sin_trajectory_control
 ```
 
-### 五、底层 SDK 示例（hightorque_robot）
+### 六、底层 SDK 示例（hightorque_robot）
 
 直接通过底层 SDK 控制机械臂，不经过 ROS2 Control / MoveIt，适合调试和底层开发。
 
@@ -223,7 +344,7 @@ ros2 run hightorque_robot 0_robot_get_state /path/to/your/config.yaml
 ```
 不传参数时默认使用 `Follower.yaml`。
 
-### 六、底层电机级示例
+### 七、底层电机级示例
 
 用于单电机调试、固件更新等底层操作：
 
@@ -251,7 +372,8 @@ ros2 run hightorque_robot parse_demo           # 参数解析示例
 | `panthera_gazebo` | Gazebo Classic / Ignition 仿真配置 |
 | `panthera_bringup` | 系统级启动文件 |
 | `panthera_commander` | MoveIt C++ 运动指令示例（画圆、正弦轨迹等） |
-| `panthera_interfaces` | 自定义 ROS2 消息类型（ArmPose.msg） |
+| `panthera_arm_control` | 直接 SDK 驱动节点，提供话题/服务控制，内置 KDL 逆运动学 |
+| `panthera_interfaces` | 自定义 ROS2 消息和服务（ArmStatus, EndPoseEuler, PosCmd, MoveToPose 等） |
 
 ---
 
