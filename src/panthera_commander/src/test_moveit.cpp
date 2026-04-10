@@ -1,5 +1,5 @@
 #include "rclcpp/rclcpp.hpp"
-#include "moveit/move_group_interface/move_group_interface.h"
+#include "moveit/move_group_interface/move_group_interface.hpp"
 
 
 int main(int argc, char ** argv)

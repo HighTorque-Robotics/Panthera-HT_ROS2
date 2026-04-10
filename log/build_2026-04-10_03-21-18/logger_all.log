@@ -1,0 +1,318 @@
+[0.045s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--packages-select', 'hightorque_robot', 'panthera_hardware', 'panthera_arm_control']
+[0.045s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=28, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=['hightorque_robot', 'panthera_hardware', 'panthera_arm_control'], packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7ef81d714e00>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7ef81d714bf0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7ef81d714bf0>>)
+[0.063s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.063s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.063s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.063s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.063s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.063s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.063s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy'
+[0.063s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.063s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.063s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.063s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.063s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.063s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.063s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.063s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.063s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.077s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.077s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.077s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.077s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.077s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.077s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.078s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.078s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.078s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.078s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.078s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.078s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.078s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.078s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.078s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.078s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.078s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.078s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.078s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.078s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.078s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.078s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.078s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.078s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.078s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.078s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.078s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.078s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(src/hightorque_robot) by extensions ['ignore', 'ignore_ament_install']
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(src/hightorque_robot) by extension 'ignore'
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(src/hightorque_robot) by extension 'ignore_ament_install'
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(src/hightorque_robot) by extensions ['colcon_pkg']
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(src/hightorque_robot) by extension 'colcon_pkg'
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(src/hightorque_robot) by extensions ['colcon_meta']
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(src/hightorque_robot) by extension 'colcon_meta'
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(src/hightorque_robot) by extensions ['ros']
+[0.079s] Level 1:colcon.colcon_core.package_identification:_identify(src/hightorque_robot) by extension 'ros'
+[0.081s] DEBUG:colcon.colcon_core.package_identification:Package 'src/hightorque_robot' with type 'ros.ament_cmake' and name 'hightorque_robot'
+[0.081s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_arm_control) by extensions ['ignore', 'ignore_ament_install']
+[0.081s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_arm_control) by extension 'ignore'
+[0.081s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_arm_control) by extension 'ignore_ament_install'
+[0.081s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_arm_control) by extensions ['colcon_pkg']
+[0.081s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_arm_control) by extension 'colcon_pkg'
+[0.081s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_arm_control) by extensions ['colcon_meta']
+[0.081s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_arm_control) by extension 'colcon_meta'
+[0.081s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_arm_control) by extensions ['ros']
+[0.081s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_arm_control) by extension 'ros'
+[0.082s] DEBUG:colcon.colcon_core.package_identification:Package 'src/panthera_arm_control' with type 'ros.ament_cmake' and name 'panthera_arm_control'
+[0.082s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_bringup) by extensions ['ignore', 'ignore_ament_install']
+[0.082s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_bringup) by extension 'ignore'
+[0.082s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_bringup) by extension 'ignore_ament_install'
+[0.082s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_bringup) by extensions ['colcon_pkg']
+[0.082s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_bringup) by extension 'colcon_pkg'
+[0.082s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_bringup) by extensions ['colcon_meta']
+[0.082s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_bringup) by extension 'colcon_meta'
+[0.082s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_bringup) by extensions ['ros']
+[0.082s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_bringup) by extension 'ros'
+[0.083s] DEBUG:colcon.colcon_core.package_identification:Package 'src/panthera_bringup' with type 'ros.ament_cmake' and name 'panthera_bringup'
+[0.083s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_commander) by extensions ['ignore', 'ignore_ament_install']
+[0.083s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_commander) by extension 'ignore'
+[0.083s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_commander) by extension 'ignore_ament_install'
+[0.083s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_commander) by extensions ['colcon_pkg']
+[0.083s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_commander) by extension 'colcon_pkg'
+[0.083s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_commander) by extensions ['colcon_meta']
+[0.083s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_commander) by extension 'colcon_meta'
+[0.084s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_commander) by extensions ['ros']
+[0.084s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_commander) by extension 'ros'
+[0.084s] DEBUG:colcon.colcon_core.package_identification:Package 'src/panthera_commander' with type 'ros.ament_cmake' and name 'panthera_commander'
+[0.084s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_gazebo) by extensions ['ignore', 'ignore_ament_install']
+[0.084s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_gazebo) by extension 'ignore'
+[0.084s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_gazebo) by extension 'ignore_ament_install'
+[0.084s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_gazebo) by extensions ['colcon_pkg']
+[0.084s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_gazebo) by extension 'colcon_pkg'
+[0.084s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_gazebo) by extensions ['colcon_meta']
+[0.084s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_gazebo) by extension 'colcon_meta'
+[0.084s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_gazebo) by extensions ['ros']
+[0.084s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_gazebo) by extension 'ros'
+[0.085s] DEBUG:colcon.colcon_core.package_identification:Package 'src/panthera_gazebo' with type 'ros.ament_cmake' and name 'panthera_gazebo'
+[0.085s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_hardware) by extensions ['ignore', 'ignore_ament_install']
+[0.085s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_hardware) by extension 'ignore'
+[0.085s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_hardware) by extension 'ignore_ament_install'
+[0.085s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_hardware) by extensions ['colcon_pkg']
+[0.085s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_hardware) by extension 'colcon_pkg'
+[0.085s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_hardware) by extensions ['colcon_meta']
+[0.085s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_hardware) by extension 'colcon_meta'
+[0.085s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_hardware) by extensions ['ros']
+[0.085s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_hardware) by extension 'ros'
+[0.086s] DEBUG:colcon.colcon_core.package_identification:Package 'src/panthera_hardware' with type 'ros.ament_cmake' and name 'panthera_hardware'
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_ht_description_with_finger) by extensions ['ignore', 'ignore_ament_install']
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_ht_description_with_finger) by extension 'ignore'
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_ht_description_with_finger) by extension 'ignore_ament_install'
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_ht_description_with_finger) by extensions ['colcon_pkg']
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_ht_description_with_finger) by extension 'colcon_pkg'
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_ht_description_with_finger) by extensions ['colcon_meta']
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_ht_description_with_finger) by extension 'colcon_meta'
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_ht_description_with_finger) by extensions ['ros']
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_ht_description_with_finger) by extension 'ros'
+[0.086s] DEBUG:colcon.colcon_core.package_identification:Package 'src/panthera_ht_description_with_finger' with type 'ros.ament_cmake' and name 'panthera_ht_description_with_finger'
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_interfaces) by extension 'ignore'
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_interfaces) by extension 'ignore_ament_install'
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_interfaces) by extensions ['colcon_pkg']
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_interfaces) by extension 'colcon_pkg'
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_interfaces) by extensions ['colcon_meta']
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_interfaces) by extension 'colcon_meta'
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_interfaces) by extensions ['ros']
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(src/panthera_interfaces) by extension 'ros'
+[0.087s] DEBUG:colcon.colcon_core.package_identification:Package 'src/panthera_interfaces' with type 'ros.ament_cmake' and name 'panthera_interfaces'
+[0.087s] Level 1:colcon.colcon_core.package_identification:_identify(src/with_gripper_config) by extensions ['ignore', 'ignore_ament_install']
+[0.087s] Level 1:colcon.colcon_core.package_identification:_identify(src/with_gripper_config) by extension 'ignore'
+[0.087s] Level 1:colcon.colcon_core.package_identification:_identify(src/with_gripper_config) by extension 'ignore_ament_install'
+[0.087s] Level 1:colcon.colcon_core.package_identification:_identify(src/with_gripper_config) by extensions ['colcon_pkg']
+[0.087s] Level 1:colcon.colcon_core.package_identification:_identify(src/with_gripper_config) by extension 'colcon_pkg'
+[0.087s] Level 1:colcon.colcon_core.package_identification:_identify(src/with_gripper_config) by extensions ['colcon_meta']
+[0.087s] Level 1:colcon.colcon_core.package_identification:_identify(src/with_gripper_config) by extension 'colcon_meta'
+[0.087s] Level 1:colcon.colcon_core.package_identification:_identify(src/with_gripper_config) by extensions ['ros']
+[0.087s] Level 1:colcon.colcon_core.package_identification:_identify(src/with_gripper_config) by extension 'ros'
+[0.088s] DEBUG:colcon.colcon_core.package_identification:Package 'src/with_gripper_config' with type 'ros.ament_cmake' and name 'with_gripper_config'
+[0.088s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.088s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.088s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.088s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.088s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.097s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'panthera_bringup' in 'src/panthera_bringup'
+[0.097s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'panthera_ht_description_with_finger' in 'src/panthera_ht_description_with_finger'
+[0.097s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'panthera_interfaces' in 'src/panthera_interfaces'
+[0.097s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'with_gripper_config' in 'src/with_gripper_config'
+[0.097s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'panthera_commander' in 'src/panthera_commander'
+[0.097s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'panthera_gazebo' in 'src/panthera_gazebo'
+[0.097s] Level 5:colcon.colcon_core.verb:set package 'hightorque_robot' build argument 'cmake_args' from command line to 'None'
+[0.097s] Level 5:colcon.colcon_core.verb:set package 'hightorque_robot' build argument 'cmake_target' from command line to 'None'
+[0.097s] Level 5:colcon.colcon_core.verb:set package 'hightorque_robot' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.097s] Level 5:colcon.colcon_core.verb:set package 'hightorque_robot' build argument 'cmake_clean_cache' from command line to 'False'
+[0.097s] Level 5:colcon.colcon_core.verb:set package 'hightorque_robot' build argument 'cmake_clean_first' from command line to 'False'
+[0.097s] Level 5:colcon.colcon_core.verb:set package 'hightorque_robot' build argument 'cmake_force_configure' from command line to 'False'
+[0.097s] Level 5:colcon.colcon_core.verb:set package 'hightorque_robot' build argument 'ament_cmake_args' from command line to 'None'
+[0.097s] Level 5:colcon.colcon_core.verb:set package 'hightorque_robot' build argument 'catkin_cmake_args' from command line to 'None'
+[0.097s] Level 5:colcon.colcon_core.verb:set package 'hightorque_robot' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.097s] DEBUG:colcon.colcon_core.verb:Building package 'hightorque_robot' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/hightorque_robot', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot', 'merge_install': False, 'path': '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/hightorque_robot', 'symlink_install': False, 'test_result_base': None}
+[0.098s] Level 5:colcon.colcon_core.verb:set package 'panthera_arm_control' build argument 'cmake_args' from command line to 'None'
+[0.098s] Level 5:colcon.colcon_core.verb:set package 'panthera_arm_control' build argument 'cmake_target' from command line to 'None'
+[0.098s] Level 5:colcon.colcon_core.verb:set package 'panthera_arm_control' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.098s] Level 5:colcon.colcon_core.verb:set package 'panthera_arm_control' build argument 'cmake_clean_cache' from command line to 'False'
+[0.098s] Level 5:colcon.colcon_core.verb:set package 'panthera_arm_control' build argument 'cmake_clean_first' from command line to 'False'
+[0.098s] Level 5:colcon.colcon_core.verb:set package 'panthera_arm_control' build argument 'cmake_force_configure' from command line to 'False'
+[0.098s] Level 5:colcon.colcon_core.verb:set package 'panthera_arm_control' build argument 'ament_cmake_args' from command line to 'None'
+[0.098s] Level 5:colcon.colcon_core.verb:set package 'panthera_arm_control' build argument 'catkin_cmake_args' from command line to 'None'
+[0.098s] Level 5:colcon.colcon_core.verb:set package 'panthera_arm_control' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.098s] DEBUG:colcon.colcon_core.verb:Building package 'panthera_arm_control' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_arm_control', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_arm_control', 'merge_install': False, 'path': '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_arm_control', 'symlink_install': False, 'test_result_base': None}
+[0.098s] Level 5:colcon.colcon_core.verb:set package 'panthera_hardware' build argument 'cmake_args' from command line to 'None'
+[0.098s] Level 5:colcon.colcon_core.verb:set package 'panthera_hardware' build argument 'cmake_target' from command line to 'None'
+[0.098s] Level 5:colcon.colcon_core.verb:set package 'panthera_hardware' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.098s] Level 5:colcon.colcon_core.verb:set package 'panthera_hardware' build argument 'cmake_clean_cache' from command line to 'False'
+[0.098s] Level 5:colcon.colcon_core.verb:set package 'panthera_hardware' build argument 'cmake_clean_first' from command line to 'False'
+[0.098s] Level 5:colcon.colcon_core.verb:set package 'panthera_hardware' build argument 'cmake_force_configure' from command line to 'False'
+[0.098s] Level 5:colcon.colcon_core.verb:set package 'panthera_hardware' build argument 'ament_cmake_args' from command line to 'None'
+[0.098s] Level 5:colcon.colcon_core.verb:set package 'panthera_hardware' build argument 'catkin_cmake_args' from command line to 'None'
+[0.098s] Level 5:colcon.colcon_core.verb:set package 'panthera_hardware' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.098s] DEBUG:colcon.colcon_core.verb:Building package 'panthera_hardware' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_hardware', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_hardware', 'merge_install': False, 'path': '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_hardware', 'symlink_install': False, 'test_result_base': None}
+[0.098s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.098s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.098s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/hightorque_robot' with build type 'ament_cmake'
+[0.099s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/hightorque_robot'
+[0.100s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.100s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.111s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/hightorque_robot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/hightorque_robot -- -j28 -l28
+[0.270s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/hightorque_robot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/hightorque_robot -- -j28 -l28
+[0.277s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/hightorque_robot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/hightorque_robot
+[0.300s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(hightorque_robot)
+[0.300s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/hightorque_robot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/hightorque_robot
+[0.302s] Level 1:colcon.colcon_core.environment:checking '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot' for CMake module files
+[0.302s] Level 1:colcon.colcon_core.environment:checking '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot' for CMake config files
+[0.302s] Level 1:colcon.colcon_core.shell:create_environment_hook('hightorque_robot', 'cmake_prefix_path')
+[0.302s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/share/hightorque_robot/hook/cmake_prefix_path.dsv'
+[0.303s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/share/hightorque_robot/hook/cmake_prefix_path.sh'
+[0.303s] Level 1:colcon.colcon_core.environment:checking '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/lib'
+[0.303s] Level 1:colcon.colcon_core.shell:create_environment_hook('hightorque_robot', 'ld_library_path_lib')
+[0.303s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/share/hightorque_robot/hook/ld_library_path_lib.dsv'
+[0.304s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/share/hightorque_robot/hook/ld_library_path_lib.sh'
+[0.304s] Level 1:colcon.colcon_core.environment:checking '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/bin'
+[0.304s] Level 1:colcon.colcon_core.shell:create_environment_hook('hightorque_robot', 'path')
+[0.304s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/share/hightorque_robot/hook/path.dsv'
+[0.304s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/share/hightorque_robot/hook/path.sh'
+[0.304s] Level 1:colcon.colcon_core.environment:checking '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/lib/pkgconfig/hightorque_robot.pc'
+[0.305s] Level 1:colcon.colcon_core.environment:checking '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/lib/python3.12/site-packages'
+[0.305s] Level 1:colcon.colcon_core.environment:checking '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/bin'
+[0.306s] Level 1:colcon.colcon_core.shell:create_environment_hook('hightorque_robot', 'pythonscriptspath')
+[0.306s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/share/hightorque_robot/hook/pythonscriptspath.dsv'
+[0.306s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/share/hightorque_robot/hook/pythonscriptspath.sh'
+[0.306s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/share/hightorque_robot/package.dsv'
+[0.306s] INFO:colcon.colcon_core.shell:Creating package script '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/share/hightorque_robot/package.sh'
+[0.307s] INFO:colcon.colcon_core.shell:Creating package script '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/share/hightorque_robot/package.bash'
+[0.307s] INFO:colcon.colcon_core.shell:Creating package script '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/share/hightorque_robot/package.zsh'
+[0.307s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/share/colcon-core/packages/hightorque_robot)
+[0.307s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(hightorque_robot)
+[0.308s] Level 1:colcon.colcon_core.environment:checking '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot' for CMake module files
+[0.308s] Level 1:colcon.colcon_core.environment:checking '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot' for CMake config files
+[0.308s] Level 1:colcon.colcon_core.shell:create_environment_hook('hightorque_robot', 'cmake_prefix_path')
+[0.308s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/share/hightorque_robot/hook/cmake_prefix_path.dsv'
+[0.308s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/share/hightorque_robot/hook/cmake_prefix_path.sh'
+[0.308s] Level 1:colcon.colcon_core.environment:checking '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/lib'
+[0.308s] Level 1:colcon.colcon_core.shell:create_environment_hook('hightorque_robot', 'ld_library_path_lib')
+[0.308s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/share/hightorque_robot/hook/ld_library_path_lib.dsv'
+[0.309s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/share/hightorque_robot/hook/ld_library_path_lib.sh'
+[0.309s] Level 1:colcon.colcon_core.environment:checking '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/bin'
+[0.309s] Level 1:colcon.colcon_core.shell:create_environment_hook('hightorque_robot', 'path')
+[0.309s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/share/hightorque_robot/hook/path.dsv'
+[0.309s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/share/hightorque_robot/hook/path.sh'
+[0.309s] Level 1:colcon.colcon_core.environment:checking '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/lib/pkgconfig/hightorque_robot.pc'
+[0.309s] Level 1:colcon.colcon_core.environment:checking '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/lib/python3.12/site-packages'
+[0.309s] Level 1:colcon.colcon_core.environment:checking '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/bin'
+[0.309s] Level 1:colcon.colcon_core.shell:create_environment_hook('hightorque_robot', 'pythonscriptspath')
+[0.309s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/share/hightorque_robot/hook/pythonscriptspath.dsv'
+[0.310s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/share/hightorque_robot/hook/pythonscriptspath.sh'
+[0.310s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/share/hightorque_robot/package.dsv'
+[0.310s] INFO:colcon.colcon_core.shell:Creating package script '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/share/hightorque_robot/package.sh'
+[0.310s] INFO:colcon.colcon_core.shell:Creating package script '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/share/hightorque_robot/package.bash'
+[0.310s] INFO:colcon.colcon_core.shell:Creating package script '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/share/hightorque_robot/package.zsh'
+[0.310s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/share/colcon-core/packages/hightorque_robot)
+[0.311s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_arm_control' with build type 'ament_cmake'
+[0.311s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_arm_control'
+[0.311s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.312s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_hardware' with build type 'ament_cmake'
+[0.312s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_hardware'
+[0.312s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.316s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_hardware': AMENT_PREFIX_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/lib:${LD_LIBRARY_PATH} PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/bin:${PATH} /usr/bin/cmake /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_hardware -DCMAKE_INSTALL_PREFIX=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_hardware
+[0.317s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_arm_control': AMENT_PREFIX_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_ht_description_with_finger:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_ht_description_with_finger:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/lib:${LD_LIBRARY_PATH} PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/bin:${PATH} PYTHONPATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_arm_control -DCMAKE_INSTALL_PREFIX=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_arm_control
+[1.238s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_arm_control' returned '0': AMENT_PREFIX_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_ht_description_with_finger:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_ht_description_with_finger:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/lib:${LD_LIBRARY_PATH} PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/bin:${PATH} PYTHONPATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_arm_control -DCMAKE_INSTALL_PREFIX=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_arm_control
+[1.239s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_arm_control': AMENT_PREFIX_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_ht_description_with_finger:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_ht_description_with_finger:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/lib:${LD_LIBRARY_PATH} PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/bin:${PATH} PYTHONPATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_arm_control -- -j28 -l28
+[1.305s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_hardware' returned '0': AMENT_PREFIX_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/lib:${LD_LIBRARY_PATH} PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/bin:${PATH} /usr/bin/cmake /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_hardware -DCMAKE_INSTALL_PREFIX=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_hardware
+[1.305s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_hardware': AMENT_PREFIX_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/lib:${LD_LIBRARY_PATH} PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/bin:${PATH} /usr/bin/cmake --build /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_hardware -- -j28 -l28
+[4.180s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_hardware' returned '0': AMENT_PREFIX_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/lib:${LD_LIBRARY_PATH} PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/bin:${PATH} /usr/bin/cmake --build /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_hardware -- -j28 -l28
+[4.181s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_hardware': AMENT_PREFIX_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/lib:${LD_LIBRARY_PATH} PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/bin:${PATH} /usr/bin/cmake --install /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_hardware
+[4.188s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(panthera_hardware)
+[4.188s] Level 1:colcon.colcon_core.environment:checking '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_hardware' for CMake module files
+[4.188s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_hardware' returned '0': AMENT_PREFIX_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/lib:${LD_LIBRARY_PATH} PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/bin:${PATH} /usr/bin/cmake --install /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_hardware
+[4.189s] Level 1:colcon.colcon_core.environment:checking '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_hardware' for CMake config files
+[4.189s] Level 1:colcon.colcon_core.shell:create_environment_hook('panthera_hardware', 'cmake_prefix_path')
+[4.189s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_hardware/share/panthera_hardware/hook/cmake_prefix_path.dsv'
+[4.189s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_hardware/share/panthera_hardware/hook/cmake_prefix_path.sh'
+[4.189s] Level 1:colcon.colcon_core.environment:checking '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_hardware/lib'
+[4.189s] Level 1:colcon.colcon_core.shell:create_environment_hook('panthera_hardware', 'ld_library_path_lib')
+[4.189s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_hardware/share/panthera_hardware/hook/ld_library_path_lib.dsv'
+[4.189s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_hardware/share/panthera_hardware/hook/ld_library_path_lib.sh'
+[4.190s] Level 1:colcon.colcon_core.environment:checking '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_hardware/bin'
+[4.190s] Level 1:colcon.colcon_core.environment:checking '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_hardware/lib/pkgconfig/panthera_hardware.pc'
+[4.190s] Level 1:colcon.colcon_core.environment:checking '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_hardware/lib/python3.12/site-packages'
+[4.190s] Level 1:colcon.colcon_core.environment:checking '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_hardware/bin'
+[4.190s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_hardware/share/panthera_hardware/package.dsv'
+[4.190s] INFO:colcon.colcon_core.shell:Creating package script '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_hardware/share/panthera_hardware/package.sh'
+[4.190s] INFO:colcon.colcon_core.shell:Creating package script '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_hardware/share/panthera_hardware/package.bash'
+[4.190s] INFO:colcon.colcon_core.shell:Creating package script '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_hardware/share/panthera_hardware/package.zsh'
+[4.190s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_hardware/share/colcon-core/packages/panthera_hardware)
+[4.191s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(panthera_hardware)
+[4.191s] Level 1:colcon.colcon_core.environment:checking '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_hardware' for CMake module files
+[4.191s] Level 1:colcon.colcon_core.environment:checking '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_hardware' for CMake config files
+[4.191s] Level 1:colcon.colcon_core.shell:create_environment_hook('panthera_hardware', 'cmake_prefix_path')
+[4.191s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_hardware/share/panthera_hardware/hook/cmake_prefix_path.dsv'
+[4.191s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_hardware/share/panthera_hardware/hook/cmake_prefix_path.sh'
+[4.191s] Level 1:colcon.colcon_core.environment:checking '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_hardware/lib'
+[4.191s] Level 1:colcon.colcon_core.shell:create_environment_hook('panthera_hardware', 'ld_library_path_lib')
+[4.191s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_hardware/share/panthera_hardware/hook/ld_library_path_lib.dsv'
+[4.192s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_hardware/share/panthera_hardware/hook/ld_library_path_lib.sh'
+[4.192s] Level 1:colcon.colcon_core.environment:checking '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_hardware/bin'
+[4.192s] Level 1:colcon.colcon_core.environment:checking '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_hardware/lib/pkgconfig/panthera_hardware.pc'
+[4.192s] Level 1:colcon.colcon_core.environment:checking '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_hardware/lib/python3.12/site-packages'
+[4.192s] Level 1:colcon.colcon_core.environment:checking '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_hardware/bin'
+[4.192s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_hardware/share/panthera_hardware/package.dsv'
+[4.192s] INFO:colcon.colcon_core.shell:Creating package script '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_hardware/share/panthera_hardware/package.sh'
+[4.192s] INFO:colcon.colcon_core.shell:Creating package script '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_hardware/share/panthera_hardware/package.bash'
+[4.193s] INFO:colcon.colcon_core.shell:Creating package script '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_hardware/share/panthera_hardware/package.zsh'
+[4.193s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_hardware/share/colcon-core/packages/panthera_hardware)
+[5.634s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(panthera_arm_control)
+[5.634s] Level 1:colcon.colcon_core.environment:checking '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_arm_control' for CMake module files
+[5.634s] Level 1:colcon.colcon_core.environment:checking '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_arm_control' for CMake config files
+[5.634s] Level 1:colcon.colcon_core.environment:checking '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_arm_control/bin'
+[5.634s] Level 1:colcon.colcon_core.environment:checking '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_arm_control/lib/pkgconfig/panthera_arm_control.pc'
+[5.634s] Level 1:colcon.colcon_core.environment:checking '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_arm_control/lib/python3.12/site-packages'
+[5.635s] Level 1:colcon.colcon_core.environment:checking '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_arm_control/bin'
+[5.635s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_arm_control/share/panthera_arm_control/package.dsv'
+[5.635s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_arm_control' returned '2': AMENT_PREFIX_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_ht_description_with_finger:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_ht_description_with_finger:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/lib:${LD_LIBRARY_PATH} PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot/bin:${PATH} PYTHONPATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_arm_control -- -j28 -l28
+[5.635s] INFO:colcon.colcon_core.shell:Creating package script '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_arm_control/share/panthera_arm_control/package.sh'
+[5.635s] INFO:colcon.colcon_core.shell:Creating package script '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_arm_control/share/panthera_arm_control/package.bash'
+[5.635s] INFO:colcon.colcon_core.shell:Creating package script '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_arm_control/share/panthera_arm_control/package.zsh'
+[5.635s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_arm_control/share/colcon-core/packages/panthera_arm_control)
+[5.646s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[5.646s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[5.646s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '2'
+[5.646s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[5.649s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[5.649s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[5.649s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[5.656s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[5.656s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/local_setup.sh'
+[5.657s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/_local_setup_util_sh.py'
+[5.657s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/setup.sh'
+[5.658s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/local_setup.bash'
+[5.658s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/setup.bash'
+[5.659s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/local_setup.zsh'
+[5.659s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/setup.zsh'

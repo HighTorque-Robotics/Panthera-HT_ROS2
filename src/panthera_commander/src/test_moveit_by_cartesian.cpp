@@ -1,5 +1,5 @@
 #include <rclcpp/rclcpp.hpp>
-#include <moveit/move_group_interface/move_group_interface.h>
+#include <moveit/move_group_interface/move_group_interface.hpp>
 #include <rclcpp/executors.hpp>
 
 int main(int argc, char** argv)
@@ -66,11 +66,9 @@ int main(int argc, char** argv)
 
   moveit_msgs::msg::RobotTrajectory trajectory;
   const double eef_step = 0.01;  // 1cm resolution
-  const double jump_threshold = 0.0;  // Disable jump threshold
-  const bool avoid_collisions = true;
 
   RCLCPP_INFO(node->get_logger(), "Computing Cartesian path...");
-  double fraction = arm.computeCartesianPath(waypoints, eef_step, jump_threshold, trajectory, avoid_collisions);
+  double fraction = arm.computeCartesianPath(waypoints, eef_step, trajectory);
 
   RCLCPP_INFO(node->get_logger(), "Cartesian path fraction: %.3f", fraction);
 

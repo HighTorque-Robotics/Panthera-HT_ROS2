@@ -1,0 +1,19 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from panthera_interfaces/srv/GoZero.srv
+// generated code does not contain a copyright notice
+
+
+module panthera_interfaces {
+  module srv {
+    @verbatim (language="comment", text=
+      "Move arm to home (zero) position")
+    struct GoZero_Request {
+      boolean use_mit_mode;
+    };
+    struct GoZero_Response {
+      int64 code;
+
+      boolean status;
+    };
+  };
+};

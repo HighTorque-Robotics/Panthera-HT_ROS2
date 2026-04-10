@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/opt/ros/jazzy/lib/rosidl_generator_type_description/rosidl_generator_type_description", line 21, in <module>
+    from rosidl_generator_type_description import generate_type_hash
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_generator_type_description/__init__.py", line 24, in <module>
+    from rosidl_parser.parser import parse_idl_file
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_parser/parser.py", line 20, in <module>
+    from lark import Lark
+ModuleNotFoundError: No module named 'lark'
+gmake[2]: *** [CMakeFiles/panthera_interfaces__rosidl_generator_type_description.dir/build.make:93：rosidl_generator_type_description/panthera_interfaces/msg/ArmPose.json] 错误 1
+gmake[1]: *** [CMakeFiles/Makefile2:215：CMakeFiles/panthera_interfaces__rosidl_generator_type_description.dir/all] 错误 2
+gmake[1]: *** 正在等待未完成的任务....
+gmake: *** [Makefile:146：all] 错误 2

@@ -1,0 +1,72 @@
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found Python3: /home/tk/anaconda3/bin/python3 (found version "3.13.5") found components: Interpreter 
+-- Found rclcpp: 28.1.13 (/opt/ros/jazzy/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+-- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+-- Found rmw_cyclonedds_cpp: 2.2.3 (/opt/ros/jazzy/share/rmw_cyclonedds_cpp/cmake)
+-- Using RMW implementation 'rmw_cyclonedds_cpp' as default
+-- Found moveit_ros_planning_interface: 2.12.3 (/opt/ros/jazzy/share/moveit_ros_planning_interface/cmake)
+-- Found Boost: /home/tk/anaconda3/lib/cmake/Boost-1.82.0/BoostConfig.cmake (found version "1.82.0") found components: date_time filesystem program_options system thread 
+-- Found Boost: /home/tk/anaconda3/lib/cmake/Boost-1.82.0/BoostConfig.cmake (found version "1.82.0") found components: chrono date_time filesystem iostreams program_options regex serialization system thread 
+-- Found parameter_traits: 0.5.0 (/opt/ros/jazzy/share/parameter_traits/cmake)
+-- Found rclcpp_lifecycle: 28.1.13 (/opt/ros/jazzy/share/rclcpp_lifecycle/cmake)
+-- Found Boost: /home/tk/anaconda3/lib/cmake/Boost-1.82.0/BoostConfig.cmake (found version "1.82.0") found components: filesystem 
+-- Found Eigen3: TRUE (found version "3.4.0") 
+-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+-- Found TinyXML2 via Config file: /usr/lib/x86_64-linux-gnu/cmake/tinyxml2
+-- Found Boost: /home/tk/anaconda3/lib/cmake/Boost-1.82.0/BoostConfig.cmake (found version "1.82.0") found components: system filesystem date_time program_options thread chrono 
+-- Found Boost: /home/tk/anaconda3/lib/cmake/Boost-1.82.0/BoostConfig.cmake (found version "1.82.0") found components: thread system filesystem regex date_time program_options 
+-- Found Boost: /home/tk/anaconda3/lib/cmake/Boost-1.82.0/BoostConfig.cmake (found version "1.82.0") found components: system filesystem date_time program_options thread 
+-- Found example_interfaces: 0.12.0 (/opt/ros/jazzy/share/example_interfaces/cmake)
+-- Found panthera_interfaces: 0.0.0 (/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/cmake)
+-- Found ament_lint_auto: 0.17.3 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+-- Added test 'cppcheck' to perform static code analysis on C / C++ code
+-- Configured cppcheck include dirs: 
+-- Configured cppcheck exclude dirs and/or files: 
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'uncrustify' to check C / C++ code style
+-- Configured uncrustify additional arguments: 
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done (1.6s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_commander
+[ 11%] Building CXX object CMakeFiles/draw_horizontal_vertical_circles.dir/src/draw_horizontal_vertical_circles.cpp.o
+[ 11%] Building CXX object CMakeFiles/sin_trajectory_control.dir/src/sin_trajectory_control.cpp.o
+[ 11%] Building CXX object CMakeFiles/test_gripper.dir/src/test_gripper.cpp.o
+[ 15%] Building CXX object CMakeFiles/draw_circle.dir/src/draw_circle.cpp.o
+[ 19%] Building CXX object CMakeFiles/sin_trajectory_moveit.dir/src/sin_trajectory_moveit.cpp.o
+[ 23%] Building CXX object CMakeFiles/test_moveit_by_cartesian.dir/src/test_moveit_by_cartesian.cpp.o
+[ 26%] Building CXX object CMakeFiles/test_moveit_by_jointspace.dir/src/test_moveit_by_jointspace.cpp.o
+[ 30%] Building CXX object CMakeFiles/test_gripper_detailed.dir/src/test_gripper_detailed.cpp.o
+[ 34%] Building CXX object CMakeFiles/commander_template.dir/src/commander_template.cpp.o
+[ 38%] Building CXX object CMakeFiles/draw_three_circles.dir/src/draw_three_circles.cpp.o
+[ 42%] Building CXX object CMakeFiles/test_cartesian_from_pose1.dir/src/test_cartesian_from_pose1.cpp.o
+[ 46%] Building CXX object CMakeFiles/test_moveit.dir/src/test_moveit.cpp.o
+[ 50%] Building CXX object CMakeFiles/test_moveit_by_siyuanshu.dir/src/test_moveit_by_siyuanshu.cpp.o
+[ 53%] Linking CXX executable test_moveit_by_jointspace
+[ 57%] Linking CXX executable test_gripper
+[ 61%] Linking CXX executable draw_horizontal_vertical_circles
+[ 65%] Linking CXX executable draw_circle
+[ 69%] Linking CXX executable test_cartesian_from_pose1
+[ 73%] Linking CXX executable draw_three_circles
+[ 76%] Linking CXX executable sin_trajectory_moveit
+[ 80%] Linking CXX executable test_moveit_by_cartesian
+[ 84%] Linking CXX executable test_gripper_detailed
+[ 88%] Linking CXX executable test_moveit
+[ 92%] Linking CXX executable test_moveit_by_siyuanshu
+[ 96%] Linking CXX executable commander_template

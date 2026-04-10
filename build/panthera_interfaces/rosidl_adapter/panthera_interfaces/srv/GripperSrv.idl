@@ -1,0 +1,35 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from panthera_interfaces/srv/GripperSrv.srv
+// generated code does not contain a copyright notice
+
+
+module panthera_interfaces {
+  module srv {
+    @verbatim (language="comment", text=
+      "Detailed gripper control")
+    struct GripperSrv_Request {
+      @verbatim (language="comment", text=
+        "Target gripper position (meters, 0.0~0.04)")
+      double gripper_angle;
+
+      @verbatim (language="comment", text=
+        "Max effort/torque")
+      double gripper_effort;
+
+      @verbatim (language="comment", text=
+        "0=position mode, 1=effort mode")
+      uint8 gripper_code;
+
+      @verbatim (language="comment", text=
+        "If true, reset gripper zero position")
+      boolean set_zero;
+    };
+    struct GripperSrv_Response {
+      @verbatim (language="comment", text=
+        "0=success, non-zero=error code")
+      int64 code;
+
+      boolean status;
+    };
+  };
+};

@@ -1,0 +1,42 @@
+[0.005s] Invoking command in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_interfaces -DCMAKE_INSTALL_PREFIX=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces
+[0.015s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.187s] -- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+[0.189s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.206s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.220s] -- Found rosidl_adapter: 4.6.6 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+[0.220s] -- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)
+[0.626s] -- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+[1.041s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.544s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.546s] -- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)
+[1.698s] -- Found PythonExtra: /home/tk/anaconda3/bin/python3  
+[2.006s] -- Found Python3: /home/tk/anaconda3/bin/python3 (found version "3.13.5") found components: Interpreter Development NumPy Development.Module Development.Embed 
+[2.034s] -- Configuring done (2.0s)
+[2.059s] -- Generating done (0.0s)
+[2.065s] -- Build files have been written to: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_interfaces
+[2.071s] Invoked command in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_interfaces -DCMAKE_INSTALL_PREFIX=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces
+[2.071s] Invoking command in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_interfaces -- -j28 -l28
+[2.129s] [  1%] Generating type hashes for ROS interfaces
+[2.138s] [  1%] Built target ament_cmake_python_copy_panthera_interfaces
+[2.162s] Traceback (most recent call last):
+[2.162s]   File "/opt/ros/jazzy/lib/rosidl_generator_type_description/rosidl_generator_type_description", line 21, in <module>
+[2.162s]     from rosidl_generator_type_description import generate_type_hash
+[2.162s]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_generator_type_description/__init__.py", line 24, in <module>
+[2.162s]     from rosidl_parser.parser import parse_idl_file
+[2.162s]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_parser/parser.py", line 20, in <module>
+[2.162s]     from lark import Lark
+[2.162s] ModuleNotFoundError: No module named 'lark'
+[2.166s] gmake[2]: *** [CMakeFiles/panthera_interfaces__rosidl_generator_type_description.dir/build.make:93：rosidl_generator_type_description/panthera_interfaces/msg/ArmPose.json] 错误 1
+[2.166s] gmake[1]: *** [CMakeFiles/Makefile2:215：CMakeFiles/panthera_interfaces__rosidl_generator_type_description.dir/all] 错误 2
+[2.166s] gmake[1]: *** 正在等待未完成的任务....
+[2.267s] running egg_info
+[2.267s] creating panthera_interfaces.egg-info
+[2.279s] writing panthera_interfaces.egg-info/PKG-INFO
+[2.279s] writing dependency_links to panthera_interfaces.egg-info/dependency_links.txt
+[2.279s] writing top-level names to panthera_interfaces.egg-info/top_level.txt
+[2.279s] writing manifest file 'panthera_interfaces.egg-info/SOURCES.txt'
+[2.314s] reading manifest file 'panthera_interfaces.egg-info/SOURCES.txt'
+[2.314s] writing manifest file 'panthera_interfaces.egg-info/SOURCES.txt'
+[2.332s] [  1%] Built target ament_cmake_python_build_panthera_interfaces_egg
+[2.333s] gmake: *** [Makefile:146：all] 错误 2
+[2.334s] Invoked command in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_interfaces' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_interfaces -- -j28 -l28

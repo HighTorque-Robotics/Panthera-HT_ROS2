@@ -1,6 +1,6 @@
 #include <rclcpp/rclcpp.hpp>
-#include <moveit/move_group_interface/move_group_interface.h>
-#include <moveit/robot_state/robot_state.h>
+#include <moveit/move_group_interface/move_group_interface.hpp>
+#include <moveit/robot_state/robot_state.hpp>
 #include <rclcpp/executors.hpp>
 
 int main(int argc, char** argv)
@@ -119,15 +119,13 @@ int main(int argc, char** argv)
   // Step 4: Compute Cartesian path
   moveit_msgs::msg::RobotTrajectory trajectory;
   const double eef_step = 0.01;  // 10mm resolution
-  const double jump_threshold = 0.0;  // Disable jump threshold
-  const bool avoid_collisions = true;
 
   RCLCPP_INFO(node->get_logger(), "Step 3: Computing Cartesian path...");
 
   // Use robot's actual current state as start state
   arm.setStartStateToCurrentState();
 
-  double fraction = arm.computeCartesianPath(waypoints, eef_step, jump_threshold, trajectory, avoid_collisions);
+  double fraction = arm.computeCartesianPath(waypoints, eef_step, trajectory);
 
   RCLCPP_INFO(node->get_logger(), "Cartesian path fraction: %.3f", fraction);
 
@@ -150,7 +148,7 @@ int main(int argc, char** argv)
 
     // Wrap trajectory in a Plan object
     moveit::planning_interface::MoveGroupInterface::Plan cartesian_plan;
-    cartesian_plan.trajectory_ = trajectory;
+    cartesian_plan.trajectory = trajectory;
 
     auto result = arm.execute(cartesian_plan);
     if (result == moveit::core::MoveItErrorCode::SUCCESS)

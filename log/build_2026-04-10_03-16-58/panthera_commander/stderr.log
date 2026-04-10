@@ -1,0 +1,61 @@
+[01m[K/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/sin_trajectory_control.cpp:8:10:[m[K [01;31m[Kfatal error: [m[Kpanthera/Panthera.hpp: 没有那个文件或目录
+    8 | #include [01;31m[K"panthera/Panthera.hpp"[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/sin_trajectory_control.dir/build.make:76：CMakeFiles/sin_trajectory_control.dir/src/sin_trajectory_control.cpp.o] 错误 1
+gmake[1]: *** [CMakeFiles/Makefile2:447：CMakeFiles/sin_trajectory_control.dir/all] 错误 2
+gmake[1]: *** 正在等待未完成的任务....
+In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171[m[K,
+                 from [01m[K/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/test_moveit_by_siyuanshu.cpp:1[m[K:
+[01m[K/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/test_moveit_by_siyuanshu.cpp:[m[K In function ‘[01m[Kint[01;32m[K main[m[K(int, char**)[m[K’:
+[01m[K/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/test_moveit_by_siyuanshu.cpp:108:42:[m[K [01;35m[Kwarning: [m[Kzero-length gnu_printf format string [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat-zero-length-Wformat-zero-length]8;;[m[K]
+  108 |         RCLCPP_ERROR(node->get_logger(), [01;35m[K""[m[K);
+      |                                          [01;35m[K^~[m[K
+In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171[m[K,
+                 from [01m[K/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_horizontal_vertical_circles.cpp:1[m[K:
+[01m[K/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_horizontal_vertical_circles.cpp:[m[K In function ‘[01m[Kint[01;32m[K main[m[K(int, char**)[m[K’:
+[01m[K/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_horizontal_vertical_circles.cpp:97:37:[m[K [01;35m[Kwarning: [m[Kzero-length gnu_printf format string [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat-zero-length-Wformat-zero-length]8;;[m[K]
+   97 |     RCLCPP_INFO(node->get_logger(), [01;35m[K""[m[K);
+      |                                     [01;35m[K^~[m[K
+[01m[K/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_horizontal_vertical_circles.cpp:101:37:[m[K [01;35m[Kwarning: [m[Kzero-length gnu_printf format string [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat-zero-length-Wformat-zero-length]8;;[m[K]
+  101 |     RCLCPP_INFO(node->get_logger(), [01;35m[K""[m[K);
+      |                                     [01;35m[K^~[m[K
+[01m[K/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_horizontal_vertical_circles.cpp:173:37:[m[K [01;35m[Kwarning: [m[Kzero-length gnu_printf format string [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat-zero-length-Wformat-zero-length]8;;[m[K]
+  173 |     RCLCPP_INFO(node->get_logger(), [01;35m[K""[m[K);
+      |                                     [01;35m[K^~[m[K
+[01m[K/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_horizontal_vertical_circles.cpp:240:37:[m[K [01;35m[Kwarning: [m[Kzero-length gnu_printf format string [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat-zero-length-Wformat-zero-length]8;;[m[K]
+  240 |     RCLCPP_INFO(node->get_logger(), [01;35m[K""[m[K);
+      |                                     [01;35m[K^~[m[K
+In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171[m[K,
+                 from [01m[K/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_circle.cpp:1[m[K:
+[01m[K/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_circle.cpp:[m[K In function ‘[01m[Kint[01;32m[K main[m[K(int, char**)[m[K’:
+[01m[K/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_circle.cpp:97:37:[m[K [01;35m[Kwarning: [m[Kzero-length gnu_printf format string [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat-zero-length-Wformat-zero-length]8;;[m[K]
+   97 |     RCLCPP_INFO(node->get_logger(), [01;35m[K""[m[K);
+      |                                     [01;35m[K^~[m[K
+In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171[m[K,
+                 from [01m[K/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_three_circles.cpp:1[m[K:
+[01m[K/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_three_circles.cpp:[m[K In function ‘[01m[Kint[01;32m[K main[m[K(int, char**)[m[K’:
+[01m[K/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_three_circles.cpp:97:37:[m[K [01;35m[Kwarning: [m[Kzero-length gnu_printf format string [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat-zero-length-Wformat-zero-length]8;;[m[K]
+   97 |     RCLCPP_INFO(node->get_logger(), [01;35m[K""[m[K);
+      |                                     [01;35m[K^~[m[K
+[01m[K/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_three_circles.cpp:101:37:[m[K [01;35m[Kwarning: [m[Kzero-length gnu_printf format string [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat-zero-length-Wformat-zero-length]8;;[m[K]
+  101 |     RCLCPP_INFO(node->get_logger(), [01;35m[K""[m[K);
+      |                                     [01;35m[K^~[m[K
+[01m[K/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_three_circles.cpp:156:37:[m[K [01;35m[Kwarning: [m[Kzero-length gnu_printf format string [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat-zero-length-Wformat-zero-length]8;;[m[K]
+  156 |     RCLCPP_INFO(node->get_logger(), [01;35m[K""[m[K);
+      |                                     [01;35m[K^~[m[K
+[01m[K/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_three_circles.cpp:210:37:[m[K [01;35m[Kwarning: [m[Kzero-length gnu_printf format string [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat-zero-length-Wformat-zero-length]8;;[m[K]
+  210 |     RCLCPP_INFO(node->get_logger(), [01;35m[K""[m[K);
+      |                                     [01;35m[K^~[m[K
+[01m[K/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_three_circles.cpp:261:37:[m[K [01;35m[Kwarning: [m[Kzero-length gnu_printf format string [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat-zero-length-Wformat-zero-length]8;;[m[K]
+  261 |     RCLCPP_INFO(node->get_logger(), [01;35m[K""[m[K);
+      |                                     [01;35m[K^~[m[K
+gmake: *** [Makefile:146：all] 错误 2

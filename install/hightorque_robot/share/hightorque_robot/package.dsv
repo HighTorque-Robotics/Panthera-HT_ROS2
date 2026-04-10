@@ -1,0 +1,12 @@
+source;share/hightorque_robot/hook/cmake_prefix_path.dsv
+source;share/hightorque_robot/hook/cmake_prefix_path.sh
+source;share/hightorque_robot/hook/ld_library_path_lib.dsv
+source;share/hightorque_robot/hook/ld_library_path_lib.sh
+source;share/hightorque_robot/hook/path.dsv
+source;share/hightorque_robot/hook/path.sh
+source;share/hightorque_robot/hook/pythonscriptspath.dsv
+source;share/hightorque_robot/hook/pythonscriptspath.sh
+source;share/hightorque_robot/local_setup.bash
+source;share/hightorque_robot/local_setup.dsv
+source;share/hightorque_robot/local_setup.sh
+source;share/hightorque_robot/local_setup.zsh

@@ -1,0 +1,50 @@
+-- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/with_gripper_config
+-- Install configuration: ""
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/ament_index/resource_index/package_run_dependencies/with_gripper_config
+-- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/ament_index/resource_index/parent_prefix_path/with_gripper_config
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/environment/ament_prefix_path.sh
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/environment/path.sh
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/environment/path.dsv
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/local_setup.bash
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/local_setup.sh
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/local_setup.zsh
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/local_setup.dsv
+-- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/package.dsv
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/ament_index/resource_index/packages/with_gripper_config
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/cmake/with_gripper_configConfig.cmake
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/cmake/with_gripper_configConfig-version.cmake
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/package.xml
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/launch
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/launch/spawn_controllers.launch.py
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/launch/warehouse_db.launch.py
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/launch/demo.launch.py
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/launch/move_group.launch.py
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/launch/setup_assistant.launch.py
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/launch/hardware_moveit_rviz.launch.py
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/launch/rsp.launch.py
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/launch/hardware.launch.py
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/launch/moveit_rviz.launch.py
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/launch/hardware_moveit.launch.py
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/launch/static_virtual_joint_tfs.launch.py
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/config
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/config/Panthera-HT_description_hardware.urdf.xacro
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/config/joint_limits.yaml
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/config/kinematics.yaml
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/config/moveit.rviz
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/config/ros2_controllers_hardware.yaml
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/config/pilz_cartesian_limits.yaml
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/config/Panthera-HT_description_hardware.ros2_control.xacro
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/config/ros2_controllers.yaml
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/config/Panthera-HT_description.srdf
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/config/Panthera-HT_description.urdf.xacro
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/config/Panthera-HT_description.ros2_control.xacro
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/config/moveit_controllers.yaml
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/config/initial_positions.yaml
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/robot_param
+-- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/robot_param/motor_param
+-- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/robot_param/Follower_absolute.yaml
+-- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config/share/with_gripper_config/.setup_assistant

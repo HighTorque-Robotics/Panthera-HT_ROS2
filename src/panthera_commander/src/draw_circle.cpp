@@ -1,6 +1,6 @@
 #include <rclcpp/rclcpp.hpp>
-#include <moveit/move_group_interface/move_group_interface.h>
-#include <moveit/robot_state/robot_state.h>
+#include <moveit/move_group_interface/move_group_interface.hpp>
+#include <moveit/robot_state/robot_state.hpp>
 #include <rclcpp/executors.hpp>
 #include <cmath>
 
@@ -94,7 +94,7 @@ int main(int argc, char** argv)
   while (rclcpp::ok())
   {
     circle_count++;
-    RCLCPP_INFO(node->get_logger(), " ");
+    RCLCPP_INFO(node->get_logger(), "");
     RCLCPP_INFO(node->get_logger(), "========== Drawing Circle #%d ==========", circle_count);
 
     // Generate circle waypoints in XY plane (parallel to ground)
@@ -118,11 +118,9 @@ int main(int argc, char** argv)
     // Compute Cartesian path
     moveit_msgs::msg::RobotTrajectory trajectory;
     const double eef_step = 0.01;  // 1cm resolution
-    const double jump_threshold = 0.0;  // Disable jump threshold
-    const bool avoid_collisions = true;
 
     arm.setStartStateToCurrentState();
-    double fraction = arm.computeCartesianPath(waypoints, eef_step, jump_threshold, trajectory, avoid_collisions);
+    double fraction = arm.computeCartesianPath(waypoints, eef_step, trajectory);
 
     RCLCPP_INFO(node->get_logger(), "Cartesian path fraction: %.3f", fraction);
 
@@ -144,7 +142,7 @@ int main(int argc, char** argv)
 
       // Execute trajectory
       moveit::planning_interface::MoveGroupInterface::Plan circle_plan;
-      circle_plan.trajectory_ = trajectory;
+      circle_plan.trajectory = trajectory;
 
       auto result = arm.execute(circle_plan);
       if (result == moveit::core::MoveItErrorCode::SUCCESS)

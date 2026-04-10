@@ -8,10 +8,11 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
+find_package(ament_index_cpp REQUIRED)
 find_package(moveit_ros_planning_interface REQUIRED)
 find_package(example_interfaces REQUIRED)
 find_package(panthera_interfaces REQUIRED)
-# find_package(hightorque_robot REQUIRED)  # Package not found, commented out
+find_package(hightorque_robot REQUIRED)
 
 add_executable(test_moveit src/test_moveit.cpp)
 ament_target_dependencies(test_moveit rclcpp moveit_ros_planning_interface example_interfaces)
@@ -46,10 +47,9 @@ ament_target_dependencies(draw_horizontal_vertical_circles rclcpp moveit_ros_pla
 add_executable(draw_three_circles src/draw_three_circles.cpp)
 ament_target_dependencies(draw_three_circles rclcpp moveit_ros_planning_interface example_interfaces)
 
-# add_executable(sin_trajectory_control src/sin_trajectory_control.cpp)
-# target_link_libraries(sin_trajectory_control hightorque_robot::hightorque_robot)
-# ament_target_dependencies(sin_trajectory_control rclcpp)
-# Commented out: depends on missing hightorque_robot package
+add_executable(sin_trajectory_control src/sin_trajectory_control.cpp)
+ament_target_dependencies(sin_trajectory_control rclcpp ament_index_cpp)
+target_link_libraries(sin_trajectory_control hightorque_robot::hightorque_robot)
 
 add_executable(sin_trajectory_moveit src/sin_trajectory_moveit.cpp)
 ament_target_dependencies(sin_trajectory_moveit rclcpp moveit_ros_planning_interface)
@@ -66,7 +66,7 @@ install(TARGETS
   draw_circle
   draw_horizontal_vertical_circles
   draw_three_circles
-  # sin_trajectory_control  # Commented out: depends on missing hightorque_robot package
+  sin_trajectory_control
   sin_trajectory_moveit
   DESTINATION lib/${PROJECT_NAME})
 

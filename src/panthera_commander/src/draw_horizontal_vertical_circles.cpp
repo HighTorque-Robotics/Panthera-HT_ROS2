@@ -1,6 +1,6 @@
 #include <rclcpp/rclcpp.hpp>
-#include <moveit/move_group_interface/move_group_interface.h>
-#include <moveit/robot_state/robot_state.h>
+#include <moveit/move_group_interface/move_group_interface.hpp>
+#include <moveit/robot_state/robot_state.hpp>
 #include <rclcpp/executors.hpp>
 #include <cmath>
 
@@ -122,11 +122,9 @@ int main(int argc, char** argv)
     // Compute Cartesian path for horizontal circle
     moveit_msgs::msg::RobotTrajectory horizontal_trajectory;
     const double eef_step = 0.01;  // 1cm resolution
-    const double jump_threshold = 0.0;  // Disable jump threshold
-    const bool avoid_collisions = true;
 
     arm.setStartStateToCurrentState();
-    double horizontal_fraction = arm.computeCartesianPath(horizontal_waypoints, eef_step, jump_threshold, horizontal_trajectory, avoid_collisions);
+    double horizontal_fraction = arm.computeCartesianPath(horizontal_waypoints, eef_step, horizontal_trajectory);
 
     RCLCPP_INFO(node->get_logger(), "Horizontal circle Cartesian path fraction: %.3f", horizontal_fraction);
 
@@ -148,7 +146,7 @@ int main(int argc, char** argv)
 
       // Execute horizontal circle trajectory
       moveit::planning_interface::MoveGroupInterface::Plan horizontal_plan;
-      horizontal_plan.trajectory_ = horizontal_trajectory;
+      horizontal_plan.trajectory = horizontal_trajectory;
 
       auto horizontal_result = arm.execute(horizontal_plan);
       if (horizontal_result == moveit::core::MoveItErrorCode::SUCCESS)
@@ -197,7 +195,7 @@ int main(int argc, char** argv)
     moveit_msgs::msg::RobotTrajectory vertical_trajectory;
 
     arm.setStartStateToCurrentState();
-    double vertical_fraction = arm.computeCartesianPath(vertical_waypoints, eef_step, jump_threshold, vertical_trajectory, avoid_collisions);
+    double vertical_fraction = arm.computeCartesianPath(vertical_waypoints, eef_step, vertical_trajectory);
 
     RCLCPP_INFO(node->get_logger(), "Vertical circle Cartesian path fraction: %.3f", vertical_fraction);
 
@@ -219,7 +217,7 @@ int main(int argc, char** argv)
 
       // Execute vertical circle trajectory
       moveit::planning_interface::MoveGroupInterface::Plan vertical_plan;
-      vertical_plan.trajectory_ = vertical_trajectory;
+      vertical_plan.trajectory = vertical_trajectory;
 
       auto vertical_result = arm.execute(vertical_plan);
       if (vertical_result == moveit::core::MoveItErrorCode::SUCCESS)

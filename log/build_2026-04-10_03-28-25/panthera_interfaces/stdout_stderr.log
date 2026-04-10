@@ -1,0 +1,21 @@
+[  1%] Generating type hashes for ROS interfaces
+[  1%] Built target ament_cmake_python_copy_panthera_interfaces
+Traceback (most recent call last):
+  File "/opt/ros/jazzy/lib/rosidl_generator_type_description/rosidl_generator_type_description", line 21, in <module>
+    from rosidl_generator_type_description import generate_type_hash
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_generator_type_description/__init__.py", line 24, in <module>
+    from rosidl_parser.parser import parse_idl_file
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_parser/parser.py", line 20, in <module>
+    from lark import Lark
+ModuleNotFoundError: No module named 'lark'
+gmake[2]: *** [CMakeFiles/panthera_interfaces__rosidl_generator_type_description.dir/build.make:93：rosidl_generator_type_description/panthera_interfaces/msg/ArmPose.json] 错误 1
+gmake[1]: *** [CMakeFiles/Makefile2:215：CMakeFiles/panthera_interfaces__rosidl_generator_type_description.dir/all] 错误 2
+gmake[1]: *** 正在等待未完成的任务....
+running egg_info
+writing panthera_interfaces.egg-info/PKG-INFO
+writing dependency_links to panthera_interfaces.egg-info/dependency_links.txt
+writing top-level names to panthera_interfaces.egg-info/top_level.txt
+reading manifest file 'panthera_interfaces.egg-info/SOURCES.txt'
+writing manifest file 'panthera_interfaces.egg-info/SOURCES.txt'
+[  1%] Built target ament_cmake_python_build_panthera_interfaces_egg
+gmake: *** [Makefile:146：all] 错误 2

@@ -1,0 +1,4 @@
+source;share/hightorque_robot/local_setup.bash
+source;share/hightorque_robot/local_setup.dsv
+source;share/hightorque_robot/local_setup.sh
+source;share/hightorque_robot/local_setup.zsh

@@ -1,0 +1,550 @@
+[0.006s] Invoking command in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_interfaces -DCMAKE_INSTALL_PREFIX=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces
+[0.040s] -- The C compiler identification is GNU 13.3.0
+[0.072s] -- The CXX compiler identification is GNU 13.3.0
+[0.082s] -- Detecting C compiler ABI info
+[0.142s] -- Detecting C compiler ABI info - done
+[0.147s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.147s] -- Detecting C compile features
+[0.147s] -- Detecting C compile features - done
+[0.156s] -- Detecting CXX compiler ABI info
+[0.228s] -- Detecting CXX compiler ABI info - done
+[0.232s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.232s] -- Detecting CXX compile features
+[0.232s] -- Detecting CXX compile features - done
+[0.234s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.319s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.379s] -- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+[0.382s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.413s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.439s] -- Found rosidl_adapter: 4.6.6 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+[0.441s] -- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)
+[0.834s] -- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+[1.109s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.456s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.458s] -- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)
+[1.553s] -- Found PythonExtra: /usr/bin/python3  
+[1.787s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed 
+[1.814s] -- Configuring done (1.8s)
+[1.839s] -- Generating done (0.0s)
+[1.845s] -- Build files have been written to: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_interfaces
+[1.850s] Invoked command in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_interfaces -DCMAKE_INSTALL_PREFIX=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces
+[1.851s] Invoking command in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_interfaces -- -j28 -l28
+[1.885s] [  1%] [34m[1mGenerating type hashes for ROS interfaces[0m
+[1.891s] [  1%] Built target ament_cmake_python_copy_panthera_interfaces
+[1.987s] running egg_info
+[1.988s] creating panthera_interfaces.egg-info
+[1.995s] writing panthera_interfaces.egg-info/PKG-INFO
+[1.995s] writing dependency_links to panthera_interfaces.egg-info/dependency_links.txt
+[1.995s] writing top-level names to panthera_interfaces.egg-info/top_level.txt
+[1.995s] writing manifest file 'panthera_interfaces.egg-info/SOURCES.txt'
+[2.017s] reading manifest file 'panthera_interfaces.egg-info/SOURCES.txt'
+[2.017s] writing manifest file 'panthera_interfaces.egg-info/SOURCES.txt'
+[2.033s] [  1%] Built target ament_cmake_python_build_panthera_interfaces_egg
+[2.147s] [  1%] Built target panthera_interfaces__rosidl_generator_type_description
+[2.155s] [  2%] [34m[1mGenerating C code for ROS interfaces[0m
+[2.162s] [  2%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[2.783s] [  2%] Built target panthera_interfaces__cpp
+[2.861s] [  6%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_c.dir/rosidl_generator_c/panthera_interfaces/msg/detail/arm_pose__type_support.c.o[0m
+[2.861s] [  6%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_c.dir/rosidl_generator_c/panthera_interfaces/msg/detail/arm_pose__functions.c.o[0m
+[2.861s] [  6%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_c.dir/rosidl_generator_c/panthera_interfaces/msg/detail/end_pose_euler__functions.c.o[0m
+[2.862s] [  6%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_c.dir/rosidl_generator_c/panthera_interfaces/msg/detail/arm_status__description.c.o[0m
+[2.862s] [  6%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_c.dir/rosidl_generator_c/panthera_interfaces/msg/detail/arm_status__functions.c.o[0m
+[2.862s] [  9%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_c.dir/rosidl_generator_c/panthera_interfaces/msg/detail/arm_status__type_support.c.o[0m
+[2.862s] [  6%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_c.dir/rosidl_generator_c/panthera_interfaces/msg/detail/pos_cmd__description.c.o[0m
+[2.863s] [ 10%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_c.dir/rosidl_generator_c/panthera_interfaces/msg/detail/end_pose_euler__type_support.c.o[0m
+[2.863s] [ 10%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_c.dir/rosidl_generator_c/panthera_interfaces/msg/detail/pos_cmd__functions.c.o[0m
+[2.863s] [ 10%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_c.dir/rosidl_generator_c/panthera_interfaces/msg/detail/end_pose_euler__description.c.o[0m
+[2.863s] [ 11%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_c.dir/rosidl_generator_c/panthera_interfaces/msg/detail/arm_pose__description.c.o[0m
+[2.864s] [ 11%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_c.dir/rosidl_generator_c/panthera_interfaces/srv/detail/move_to_joint__description.c.o[0m
+[2.865s] [ 12%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_c.dir/rosidl_generator_c/panthera_interfaces/srv/detail/move_to_joint__functions.c.o[0m
+[2.866s] [ 13%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_c.dir/rosidl_generator_c/panthera_interfaces/srv/detail/move_to_pose__description.c.o[0m
+[2.866s] [ 14%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_c.dir/rosidl_generator_c/panthera_interfaces/srv/detail/move_to_joint__type_support.c.o[0m
+[2.866s] [ 15%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_c.dir/rosidl_generator_c/panthera_interfaces/msg/detail/pos_cmd__type_support.c.o[0m
+[2.866s] [ 16%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_c.dir/rosidl_generator_c/panthera_interfaces/srv/detail/move_to_pose__functions.c.o[0m
+[2.890s] [ 16%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_c.dir/rosidl_generator_c/panthera_interfaces/srv/detail/move_to_pose__type_support.c.o[0m
+[2.891s] [ 17%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_c.dir/rosidl_generator_c/panthera_interfaces/srv/detail/gripper_control__description.c.o[0m
+[2.893s] [ 18%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_c.dir/rosidl_generator_c/panthera_interfaces/srv/detail/enable__description.c.o[0m
+[2.896s] [ 19%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_c.dir/rosidl_generator_c/panthera_interfaces/srv/detail/gripper_control__functions.c.o[0m
+[2.899s] [ 20%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_c.dir/rosidl_generator_c/panthera_interfaces/srv/detail/gripper_control__type_support.c.o[0m
+[2.899s] [ 20%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_c.dir/rosidl_generator_c/panthera_interfaces/srv/detail/enable__functions.c.o[0m
+[2.899s] [ 21%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_c.dir/rosidl_generator_c/panthera_interfaces/srv/detail/go_zero__description.c.o[0m
+[2.902s] [ 22%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_c.dir/rosidl_generator_c/panthera_interfaces/srv/detail/enable__type_support.c.o[0m
+[2.904s] [ 23%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_c.dir/rosidl_generator_c/panthera_interfaces/srv/detail/go_zero__functions.c.o[0m
+[2.906s] [ 24%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_c.dir/rosidl_generator_c/panthera_interfaces/srv/detail/gripper_srv__description.c.o[0m
+[2.907s] [ 25%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_c.dir/rosidl_generator_c/panthera_interfaces/srv/detail/go_zero__type_support.c.o[0m
+[2.907s] [ 26%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_c.dir/rosidl_generator_c/panthera_interfaces/srv/detail/gripper_srv__functions.c.o[0m
+[2.911s] [ 26%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_c.dir/rosidl_generator_c/panthera_interfaces/srv/detail/gripper_srv__type_support.c.o[0m
+[2.971s] [ 27%] [32m[1mLinking C shared library libpanthera_interfaces__rosidl_generator_c.so[0m
+[2.999s] [ 27%] Built target panthera_interfaces__rosidl_generator_c
+[3.006s] [ 28%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[3.006s] [ 28%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[3.007s] [ 29%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[3.007s] [ 29%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[3.007s] [ 31%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[3.007s] [ 31%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[3.342s] [ 33%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/panthera_interfaces/msg/pos_cmd__type_support.cpp.o[0m
+[3.342s] [ 33%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/panthera_interfaces/srv/move_to_pose__type_support.cpp.o[0m
+[3.342s] [ 33%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/panthera_interfaces/srv/gripper_srv__type_support.cpp.o[0m
+[3.343s] [ 34%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/panthera_interfaces/msg/end_pose_euler__type_support.cpp.o[0m
+[3.343s] [ 35%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/panthera_interfaces/srv/enable__type_support.cpp.o[0m
+[3.343s] [ 36%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/panthera_interfaces/msg/arm_pose__type_support.cpp.o[0m
+[3.343s] [ 37%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/panthera_interfaces/srv/gripper_control__type_support.cpp.o[0m
+[3.343s] [ 37%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/panthera_interfaces/srv/move_to_joint__type_support.cpp.o[0m
+[3.343s] [ 38%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/panthera_interfaces/srv/go_zero__type_support.cpp.o[0m
+[3.344s] [ 39%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/panthera_interfaces/msg/arm_status__type_support.cpp.o[0m
+[3.375s] [ 40%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/panthera_interfaces/srv/gripper_srv__type_support.cpp.o[0m
+[3.375s] [ 42%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/panthera_interfaces/msg/arm_status__type_support.cpp.o[0m
+[3.375s] [ 42%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/panthera_interfaces/msg/pos_cmd__type_support.cpp.o[0m
+[3.375s] [ 42%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/panthera_interfaces/msg/arm_pose__type_support.cpp.o[0m
+[3.375s] [ 43%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/panthera_interfaces/srv/go_zero__type_support.cpp.o[0m
+[3.376s] [ 43%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/panthera_interfaces/srv/gripper_control__type_support.cpp.o[0m
+[3.376s] [ 44%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/panthera_interfaces/srv/move_to_joint__type_support.cpp.o[0m
+[3.376s] [ 45%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/panthera_interfaces/msg/end_pose_euler__type_support.cpp.o[0m
+[3.376s] [ 47%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/panthera_interfaces/srv/move_to_pose__type_support.cpp.o[0m
+[3.376s] [ 47%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/panthera_interfaces/srv/enable__type_support.cpp.o[0m
+[3.379s] [ 48%] [32m[1mLinking CXX shared library libpanthera_interfaces__rosidl_typesupport_c.so[0m
+[3.404s] [ 48%] Built target panthera_interfaces__rosidl_typesupport_c
+[3.457s] [ 51%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/panthera_interfaces/msg/detail/arm_status__type_support.cpp.o[0m
+[3.457s] [ 51%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/panthera_interfaces/srv/detail/move_to_joint__type_support.cpp.o[0m
+[3.457s] [ 51%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/panthera_interfaces/msg/detail/pos_cmd__type_support.cpp.o[0m
+[3.458s] [ 51%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/panthera_interfaces/srv/detail/move_to_pose__type_support.cpp.o[0m
+[3.458s] [ 52%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/panthera_interfaces/msg/detail/end_pose_euler__type_support.cpp.o[0m
+[3.458s] [ 53%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/panthera_interfaces/srv/detail/gripper_srv__type_support.cpp.o[0m
+[3.460s] [ 54%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/panthera_interfaces/msg/detail/arm_pose__type_support.cpp.o[0m
+[3.460s] [ 55%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/panthera_interfaces/srv/detail/gripper_control__type_support.cpp.o[0m
+[3.460s] [ 55%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/panthera_interfaces/srv/detail/enable__type_support.cpp.o[0m
+[3.462s] [ 56%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/panthera_interfaces/srv/detail/go_zero__type_support.cpp.o[0m
+[3.626s] [ 57%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/panthera_interfaces/msg/detail/arm_status__type_support.c.o[0m
+[3.629s] [ 57%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/panthera_interfaces/msg/detail/pos_cmd__type_support.c.o[0m
+[3.629s] [ 58%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/panthera_interfaces/msg/detail/end_pose_euler__type_support.c.o[0m
+[3.631s] [ 59%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/panthera_interfaces/msg/detail/arm_pose__type_support.c.o[0m
+[3.634s] [ 60%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/panthera_interfaces/srv/detail/gripper_control__type_support.c.o[0m
+[3.636s] [ 61%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/panthera_interfaces/srv/detail/move_to_joint__type_support.c.o[0m
+[3.638s] [ 62%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/panthera_interfaces/srv/detail/enable__type_support.c.o[0m
+[3.638s] [ 63%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/panthera_interfaces/srv/detail/move_to_pose__type_support.c.o[0m
+[3.673s] [ 64%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/panthera_interfaces/srv/detail/gripper_srv__type_support.c.o[0m
+[3.673s] [ 64%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/panthera_interfaces/srv/detail/go_zero__type_support.c.o[0m
+[3.726s] [ 65%] [32m[1mLinking C shared library libpanthera_interfaces__rosidl_typesupport_introspection_c.so[0m
+[3.731s] [ 66%] [32m[1mLinking CXX shared library libpanthera_interfaces__rosidl_typesupport_cpp.so[0m
+[3.751s] [ 71%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/panthera_interfaces/srv/detail/dds_fastrtps/move_to_pose__type_support.cpp.o[0m
+[3.751s] [ 71%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/panthera_interfaces/srv/detail/dds_fastrtps/gripper_srv__type_support.cpp.o[0m
+[3.751s] [ 71%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/panthera_interfaces/srv/detail/dds_fastrtps/go_zero__type_support.cpp.o[0m
+[3.751s] [ 72%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/panthera_interfaces/msg/detail/dds_fastrtps/arm_status__type_support.cpp.o[0m
+[3.751s] [ 72%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/panthera_interfaces/msg/detail/dds_fastrtps/arm_pose__type_support.cpp.o[0m
+[3.751s] [ 72%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/panthera_interfaces/srv/detail/dds_fastrtps/enable__type_support.cpp.o[0m
+[3.751s] [ 75%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/panthera_interfaces/msg/detail/dds_fastrtps/pos_cmd__type_support.cpp.o[0m
+[3.751s] [ 75%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/panthera_interfaces/srv/detail/dds_fastrtps/gripper_control__type_support.cpp.o[0m
+[3.751s] [ 75%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/panthera_interfaces/msg/detail/dds_fastrtps/end_pose_euler__type_support.cpp.o[0m
+[3.751s] [ 75%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/panthera_interfaces/srv/detail/dds_fastrtps/move_to_joint__type_support.cpp.o[0m
+[3.761s] [ 75%] Built target panthera_interfaces__rosidl_typesupport_introspection_c
+[3.762s] [ 77%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/panthera_interfaces/msg/detail/end_pose_euler__type_support_c.cpp.o[0m
+[3.762s] [ 77%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/panthera_interfaces/msg/detail/arm_status__type_support_c.cpp.o[0m
+[3.762s] [ 77%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/panthera_interfaces/msg/detail/arm_pose__type_support_c.cpp.o[0m
+[3.772s] [ 78%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/panthera_interfaces/srv/detail/go_zero__type_support_c.cpp.o[0m
+[3.772s] [ 79%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/panthera_interfaces/msg/detail/pos_cmd__type_support_c.cpp.o[0m
+[3.773s] [ 78%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/panthera_interfaces/srv/detail/gripper_control__type_support_c.cpp.o[0m
+[3.774s] [ 80%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/panthera_interfaces/srv/detail/move_to_joint__type_support_c.cpp.o[0m
+[3.775s] [ 81%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/panthera_interfaces/srv/detail/move_to_pose__type_support_c.cpp.o[0m
+[3.775s] [ 82%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/panthera_interfaces/srv/detail/gripper_srv__type_support_c.cpp.o[0m
+[3.776s] [ 83%] [32mBuilding CXX object CMakeFiles/panthera_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/panthera_interfaces/srv/detail/enable__type_support_c.cpp.o[0m
+[3.845s] [ 83%] Built target panthera_interfaces__rosidl_typesupport_cpp
+[3.927s] [ 84%] [32m[1mLinking CXX shared library libpanthera_interfaces__rosidl_typesupport_introspection_cpp.so[0m
+[4.032s] [ 84%] Built target panthera_interfaces__rosidl_typesupport_introspection_cpp
+[4.307s] [ 85%] [32m[1mLinking CXX shared library libpanthera_interfaces__rosidl_typesupport_fastrtps_c.so[0m
+[4.335s] [ 85%] [32m[1mLinking CXX shared library libpanthera_interfaces__rosidl_typesupport_fastrtps_cpp.so[0m
+[4.361s] [ 85%] Built target panthera_interfaces__rosidl_typesupport_fastrtps_c
+[4.384s] [ 85%] Built target panthera_interfaces__rosidl_typesupport_fastrtps_cpp
+[4.400s] [ 85%] Built target panthera_interfaces
+[4.415s] [ 86%] [34m[1mGenerating Python code for ROS interfaces[0m
+[5.265s] [ 86%] Built target panthera_interfaces__py
+[5.280s] [ 87%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_py.dir/rosidl_generator_py/panthera_interfaces/srv/_move_to_pose_s.c.o[0m
+[5.280s] [ 87%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_py.dir/rosidl_generator_py/panthera_interfaces/msg/_end_pose_euler_s.c.o[0m
+[5.280s] [ 88%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_py.dir/rosidl_generator_py/panthera_interfaces/srv/_go_zero_s.c.o[0m
+[5.280s] [ 89%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_py.dir/rosidl_generator_py/panthera_interfaces/srv/_gripper_control_s.c.o[0m
+[5.280s] [ 90%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_py.dir/rosidl_generator_py/panthera_interfaces/srv/_gripper_srv_s.c.o[0m
+[5.281s] [ 91%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_py.dir/rosidl_generator_py/panthera_interfaces/msg/_pos_cmd_s.c.o[0m
+[5.281s] [ 92%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_py.dir/rosidl_generator_py/panthera_interfaces/msg/_arm_status_s.c.o[0m
+[5.282s] [ 93%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_py.dir/rosidl_generator_py/panthera_interfaces/msg/_arm_pose_s.c.o[0m
+[5.283s] [ 94%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_py.dir/rosidl_generator_py/panthera_interfaces/srv/_move_to_joint_s.c.o[0m
+[5.284s] [ 94%] [32mBuilding C object CMakeFiles/panthera_interfaces__rosidl_generator_py.dir/rosidl_generator_py/panthera_interfaces/srv/_enable_s.c.o[0m
+[5.402s] [ 95%] [32m[1mLinking C shared library libpanthera_interfaces__rosidl_generator_py.so[0m
+[5.428s] [ 95%] Built target panthera_interfaces__rosidl_generator_py
+[5.444s] [ 96%] [32mBuilding C object CMakeFiles/panthera_interfaces_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/panthera_interfaces/_panthera_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[5.444s] [ 97%] [32mBuilding C object CMakeFiles/panthera_interfaces_s__rosidl_typesupport_introspection_c.dir/rosidl_generator_py/panthera_interfaces/_panthera_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[5.447s] [ 97%] [32mBuilding C object CMakeFiles/panthera_interfaces_s__rosidl_typesupport_c.dir/rosidl_generator_py/panthera_interfaces/_panthera_interfaces_s.ep.rosidl_typesupport_c.c.o[0m
+[5.544s] [ 98%] [32m[1mLinking C shared module rosidl_generator_py/panthera_interfaces/panthera_interfaces_s__rosidl_typesupport_introspection_c.so[0m
+[5.571s] [ 99%] [32m[1mLinking C shared module rosidl_generator_py/panthera_interfaces/panthera_interfaces_s__rosidl_typesupport_fastrtps_c.so[0m
+[5.571s] [ 99%] Built target panthera_interfaces_s__rosidl_typesupport_introspection_c
+[5.586s] [100%] [32m[1mLinking C shared module rosidl_generator_py/panthera_interfaces/panthera_interfaces_s__rosidl_typesupport_c.so[0m
+[5.595s] [100%] Built target panthera_interfaces_s__rosidl_typesupport_fastrtps_c
+[5.610s] [100%] Built target panthera_interfaces_s__rosidl_typesupport_c
+[5.622s] Invoked command in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_interfaces -- -j28 -l28
+[5.623s] Invoking command in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_interfaces
+[5.630s] -- Install configuration: ""
+[5.630s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/ament_index/resource_index/rosidl_interfaces/panthera_interfaces
+[5.630s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/msg/ArmPose.json
+[5.630s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/msg/ArmStatus.json
+[5.630s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/msg/EndPoseEuler.json
+[5.630s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/msg/PosCmd.json
+[5.631s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/srv/MoveToJoint.json
+[5.631s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/srv/MoveToPose.json
+[5.631s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/srv/GripperControl.json
+[5.631s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/srv/Enable.json
+[5.631s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/srv/GoZero.json
+[5.631s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/srv/GripperSrv.json
+[5.631s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces
+[5.631s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg
+[5.631s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail
+[5.631s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/end_pose_euler__type_support.c
+[5.631s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/end_pose_euler__type_support.h
+[5.631s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/pos_cmd__functions.c
+[5.632s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/arm_pose__type_support.c
+[5.632s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/arm_pose__struct.h
+[5.632s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/arm_status__type_support.h
+[5.632s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/pos_cmd__type_support.h
+[5.632s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/pos_cmd__description.c
+[5.632s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/arm_status__struct.h
+[5.632s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/arm_pose__functions.c
+[5.632s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/arm_status__type_support.c
+[5.632s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/end_pose_euler__functions.h
+[5.632s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/arm_pose__functions.h
+[5.632s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/arm_status__functions.c
+[5.632s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/end_pose_euler__functions.c
+[5.633s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/arm_pose__type_support.h
+[5.633s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/arm_status__description.c
+[5.633s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/pos_cmd__functions.h
+[5.633s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/arm_pose__description.c
+[5.633s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/end_pose_euler__description.c
+[5.633s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/end_pose_euler__struct.h
+[5.633s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/arm_status__functions.h
+[5.633s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/pos_cmd__type_support.c
+[5.633s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/pos_cmd__struct.h
+[5.633s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/arm_pose.h
+[5.633s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/pos_cmd.h
+[5.633s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/rosidl_generator_c__visibility_control.h
+[5.634s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/end_pose_euler.h
+[5.634s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/arm_status.h
+[5.634s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv
+[5.634s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail
+[5.634s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/gripper_srv__description.c
+[5.634s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/move_to_joint__functions.h
+[5.634s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/go_zero__description.c
+[5.634s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/move_to_pose__description.c
+[5.634s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/move_to_pose__type_support.c
+[5.634s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/go_zero__functions.h
+[5.634s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/move_to_joint__struct.h
+[5.634s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/move_to_joint__description.c
+[5.635s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/enable__type_support.c
+[5.635s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/enable__functions.h
+[5.635s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/move_to_joint__type_support.c
+[5.635s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/move_to_pose__functions.c
+[5.635s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/gripper_srv__struct.h
+[5.635s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/enable__struct.h
+[5.635s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/enable__functions.c
+[5.635s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/enable__description.c
+[5.635s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/gripper_control__struct.h
+[5.635s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/move_to_joint__type_support.h
+[5.635s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/gripper_srv__type_support.c
+[5.636s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/go_zero__type_support.h
+[5.636s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/gripper_control__functions.c
+[5.636s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/gripper_srv__type_support.h
+[5.636s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/move_to_pose__type_support.h
+[5.636s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/gripper_control__description.c
+[5.636s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/move_to_joint__functions.c
+[5.636s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/gripper_control__type_support.c
+[5.636s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/go_zero__struct.h
+[5.636s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/gripper_srv__functions.c
+[5.636s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/gripper_control__type_support.h
+[5.636s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/gripper_srv__functions.h
+[5.636s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/gripper_control__functions.h
+[5.637s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/go_zero__functions.c
+[5.637s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/move_to_pose__struct.h
+[5.637s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/move_to_pose__functions.h
+[5.637s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/enable__type_support.h
+[5.637s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/go_zero__type_support.c
+[5.637s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/gripper_control.h
+[5.637s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/gripper_srv.h
+[5.637s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/move_to_joint.h
+[5.637s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/enable.h
+[5.637s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/go_zero.h
+[5.637s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/move_to_pose.h
+[5.637s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/environment/library_path.sh
+[5.638s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/environment/library_path.dsv
+[5.638s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/libpanthera_interfaces__rosidl_generator_c.so
+[5.638s] -- Set non-toolchain portion of runtime path of "/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/libpanthera_interfaces__rosidl_generator_c.so" to ""
+[5.638s] -- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces
+[5.638s] -- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg
+[5.638s] -- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail
+[5.638s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/arm_pose__rosidl_typesupport_fastrtps_c.h
+[5.638s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/arm_status__rosidl_typesupport_fastrtps_c.h
+[5.638s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/pos_cmd__rosidl_typesupport_fastrtps_c.h
+[5.638s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/end_pose_euler__rosidl_typesupport_fastrtps_c.h
+[5.638s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[5.638s] -- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv
+[5.638s] -- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail
+[5.638s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/gripper_srv__rosidl_typesupport_fastrtps_c.h
+[5.639s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/enable__rosidl_typesupport_fastrtps_c.h
+[5.639s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/go_zero__rosidl_typesupport_fastrtps_c.h
+[5.639s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/gripper_control__rosidl_typesupport_fastrtps_c.h
+[5.639s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/move_to_pose__rosidl_typesupport_fastrtps_c.h
+[5.639s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/move_to_joint__rosidl_typesupport_fastrtps_c.h
+[5.639s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/libpanthera_interfaces__rosidl_typesupport_fastrtps_c.so
+[5.639s] -- Set non-toolchain portion of runtime path of "/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/libpanthera_interfaces__rosidl_typesupport_fastrtps_c.so" to ""
+[5.639s] -- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces
+[5.639s] -- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg
+[5.639s] -- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail
+[5.639s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/end_pose_euler__type_support.c
+[5.639s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/arm_pose__type_support.c
+[5.639s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/arm_pose__rosidl_typesupport_introspection_c.h
+[5.640s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/end_pose_euler__rosidl_typesupport_introspection_c.h
+[5.640s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/arm_status__type_support.c
+[5.640s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/arm_status__rosidl_typesupport_introspection_c.h
+[5.640s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/pos_cmd__rosidl_typesupport_introspection_c.h
+[5.640s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/pos_cmd__type_support.c
+[5.640s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[5.640s] -- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv
+[5.640s] -- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail
+[5.640s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/enable__rosidl_typesupport_introspection_c.h
+[5.640s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/move_to_pose__type_support.c
+[5.640s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/gripper_srv__rosidl_typesupport_introspection_c.h
+[5.640s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/gripper_control__rosidl_typesupport_introspection_c.h
+[5.640s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/move_to_joint__rosidl_typesupport_introspection_c.h
+[5.640s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/enable__type_support.c
+[5.641s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/move_to_joint__type_support.c
+[5.641s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/move_to_pose__rosidl_typesupport_introspection_c.h
+[5.641s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/go_zero__rosidl_typesupport_introspection_c.h
+[5.641s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/gripper_srv__type_support.c
+[5.641s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/gripper_control__type_support.c
+[5.641s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/go_zero__type_support.c
+[5.641s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/libpanthera_interfaces__rosidl_typesupport_introspection_c.so
+[5.641s] -- Set non-toolchain portion of runtime path of "/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/libpanthera_interfaces__rosidl_typesupport_introspection_c.so" to ""
+[5.641s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/libpanthera_interfaces__rosidl_typesupport_c.so
+[5.641s] -- Set non-toolchain portion of runtime path of "/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/libpanthera_interfaces__rosidl_typesupport_c.so" to ""
+[5.641s] -- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces
+[5.642s] -- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg
+[5.642s] -- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail
+[5.642s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/arm_status__traits.hpp
+[5.642s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/pos_cmd__traits.hpp
+[5.642s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/arm_status__type_support.hpp
+[5.642s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/pos_cmd__builder.hpp
+[5.642s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/end_pose_euler__struct.hpp
+[5.642s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/arm_pose__builder.hpp
+[5.642s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/arm_status__struct.hpp
+[5.642s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/end_pose_euler__type_support.hpp
+[5.642s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/arm_pose__type_support.hpp
+[5.642s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/pos_cmd__type_support.hpp
+[5.642s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/end_pose_euler__builder.hpp
+[5.642s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/arm_status__builder.hpp
+[5.642s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/end_pose_euler__traits.hpp
+[5.642s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/arm_pose__traits.hpp
+[5.643s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/pos_cmd__struct.hpp
+[5.643s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/arm_pose__struct.hpp
+[5.643s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp
+[5.643s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/end_pose_euler.hpp
+[5.643s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/arm_status.hpp
+[5.643s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/arm_pose.hpp
+[5.643s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/pos_cmd.hpp
+[5.643s] -- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv
+[5.643s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/gripper_control.hpp
+[5.643s] -- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail
+[5.643s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/gripper_srv__struct.hpp
+[5.643s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/go_zero__type_support.hpp
+[5.643s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/move_to_pose__type_support.hpp
+[5.643s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/enable__struct.hpp
+[5.643s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/move_to_joint__builder.hpp
+[5.643s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/gripper_srv__type_support.hpp
+[5.643s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/move_to_pose__struct.hpp
+[5.644s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/enable__traits.hpp
+[5.644s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/move_to_joint__type_support.hpp
+[5.644s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/gripper_control__traits.hpp
+[5.644s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/gripper_control__builder.hpp
+[5.644s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/move_to_pose__builder.hpp
+[5.644s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/go_zero__struct.hpp
+[5.644s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/enable__type_support.hpp
+[5.644s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/enable__builder.hpp
+[5.644s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/go_zero__builder.hpp
+[5.644s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/move_to_joint__struct.hpp
+[5.644s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/gripper_control__struct.hpp
+[5.644s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/move_to_joint__traits.hpp
+[5.644s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/move_to_pose__traits.hpp
+[5.644s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/gripper_srv__traits.hpp
+[5.644s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/gripper_srv__builder.hpp
+[5.644s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/gripper_control__type_support.hpp
+[5.644s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/go_zero__traits.hpp
+[5.644s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/move_to_joint.hpp
+[5.644s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/enable.hpp
+[5.644s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/go_zero.hpp
+[5.644s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/move_to_pose.hpp
+[5.644s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/gripper_srv.hpp
+[5.644s] -- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces
+[5.644s] -- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg
+[5.644s] -- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail
+[5.644s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/end_pose_euler__rosidl_typesupport_fastrtps_cpp.hpp
+[5.644s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/dds_fastrtps
+[5.644s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/pos_cmd__rosidl_typesupport_fastrtps_cpp.hpp
+[5.644s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/arm_pose__rosidl_typesupport_fastrtps_cpp.hpp
+[5.644s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/arm_status__rosidl_typesupport_fastrtps_cpp.hpp
+[5.644s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[5.644s] -- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv
+[5.644s] -- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail
+[5.644s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/move_to_joint__rosidl_typesupport_fastrtps_cpp.hpp
+[5.644s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/move_to_pose__rosidl_typesupport_fastrtps_cpp.hpp
+[5.644s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/gripper_srv__rosidl_typesupport_fastrtps_cpp.hpp
+[5.644s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/gripper_control__rosidl_typesupport_fastrtps_cpp.hpp
+[5.644s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/enable__rosidl_typesupport_fastrtps_cpp.hpp
+[5.644s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/dds_fastrtps
+[5.645s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/go_zero__rosidl_typesupport_fastrtps_cpp.hpp
+[5.645s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/libpanthera_interfaces__rosidl_typesupport_fastrtps_cpp.so
+[5.645s] -- Set non-toolchain portion of runtime path of "/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/libpanthera_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""
+[5.645s] -- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces
+[5.645s] -- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg
+[5.645s] -- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail
+[5.645s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/pos_cmd__type_support.cpp
+[5.645s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/arm_status__type_support.cpp
+[5.645s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/end_pose_euler__type_support.cpp
+[5.645s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/arm_pose__type_support.cpp
+[5.645s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/pos_cmd__rosidl_typesupport_introspection_cpp.hpp
+[5.645s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/arm_status__rosidl_typesupport_introspection_cpp.hpp
+[5.645s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/arm_pose__rosidl_typesupport_introspection_cpp.hpp
+[5.645s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/msg/detail/end_pose_euler__rosidl_typesupport_introspection_cpp.hpp
+[5.645s] -- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv
+[5.645s] -- Up-to-date: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail
+[5.645s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/go_zero__type_support.cpp
+[5.645s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/enable__type_support.cpp
+[5.645s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/move_to_pose__type_support.cpp
+[5.645s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/gripper_control__type_support.cpp
+[5.645s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/gripper_control__rosidl_typesupport_introspection_cpp.hpp
+[5.645s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/move_to_joint__rosidl_typesupport_introspection_cpp.hpp
+[5.645s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/move_to_joint__type_support.cpp
+[5.645s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/enable__rosidl_typesupport_introspection_cpp.hpp
+[5.645s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/move_to_pose__rosidl_typesupport_introspection_cpp.hpp
+[5.645s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/gripper_srv__rosidl_typesupport_introspection_cpp.hpp
+[5.645s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/gripper_srv__type_support.cpp
+[5.645s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/include/panthera_interfaces/panthera_interfaces/srv/detail/go_zero__rosidl_typesupport_introspection_cpp.hpp
+[5.645s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/libpanthera_interfaces__rosidl_typesupport_introspection_cpp.so
+[5.645s] -- Set non-toolchain portion of runtime path of "/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/libpanthera_interfaces__rosidl_typesupport_introspection_cpp.so" to ""
+[5.645s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/libpanthera_interfaces__rosidl_typesupport_cpp.so
+[5.645s] -- Set non-toolchain portion of runtime path of "/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/libpanthera_interfaces__rosidl_typesupport_cpp.so" to ""
+[5.645s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/environment/pythonpath.sh
+[5.645s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/environment/pythonpath.dsv
+[5.645s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces-0.0.0-py3.12.egg-info
+[5.645s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces-0.0.0-py3.12.egg-info/PKG-INFO
+[5.646s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces-0.0.0-py3.12.egg-info/SOURCES.txt
+[5.646s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces-0.0.0-py3.12.egg-info/top_level.txt
+[5.646s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces-0.0.0-py3.12.egg-info/dependency_links.txt
+[5.646s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces
+[5.646s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/panthera_interfaces_s__rosidl_typesupport_c.so
+[5.646s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/_panthera_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+[5.646s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/__init__.py
+[5.646s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/msg
+[5.646s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/msg/_end_pose_euler_s.c
+[5.646s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/msg/_arm_status_s.c
+[5.646s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/msg/_arm_pose_s.c
+[5.646s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/msg/_arm_status.py
+[5.646s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/msg/_arm_pose.py
+[5.646s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/msg/_end_pose_euler.py
+[5.646s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/msg/__init__.py
+[5.646s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/msg/_pos_cmd_s.c
+[5.646s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/msg/_pos_cmd.py
+[5.646s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/panthera_interfaces_s__rosidl_typesupport_fastrtps_c.so
+[5.646s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/srv
+[5.646s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/srv/_gripper_control.py
+[5.646s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/srv/_move_to_joint.py
+[5.646s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/srv/_gripper_srv.py
+[5.646s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/srv/_gripper_srv_s.c
+[5.646s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/srv/_enable.py
+[5.646s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/srv/_gripper_control_s.c
+[5.646s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/srv/__init__.py
+[5.646s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/srv/_go_zero.py
+[5.646s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/srv/_enable_s.c
+[5.646s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/srv/_move_to_pose.py
+[5.646s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/srv/_move_to_joint_s.c
+[5.646s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/srv/_go_zero_s.c
+[5.646s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/srv/_move_to_pose_s.c
+[5.646s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/_panthera_interfaces_s.ep.rosidl_typesupport_introspection_c.c
+[5.646s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/_panthera_interfaces_s.ep.rosidl_typesupport_c.c
+[5.646s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/panthera_interfaces_s__rosidl_typesupport_introspection_c.so
+[5.689s] Listing '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces'...
+[5.690s] Compiling '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/__init__.py'...
+[5.690s] Listing '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/msg'...
+[5.690s] Compiling '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/msg/__init__.py'...
+[5.690s] Compiling '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/msg/_arm_pose.py'...
+[5.690s] Compiling '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/msg/_arm_status.py'...
+[5.690s] Compiling '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/msg/_end_pose_euler.py'...
+[5.690s] Compiling '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/msg/_pos_cmd.py'...
+[5.690s] Listing '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/srv'...
+[5.690s] Compiling '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/srv/__init__.py'...
+[5.690s] Compiling '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/srv/_enable.py'...
+[5.690s] Compiling '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/srv/_go_zero.py'...
+[5.690s] Compiling '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/srv/_gripper_control.py'...
+[5.690s] Compiling '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/srv/_gripper_srv.py'...
+[5.690s] Compiling '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/srv/_move_to_joint.py'...
+[5.690s] Compiling '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/srv/_move_to_pose.py'...
+[5.693s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/panthera_interfaces_s__rosidl_typesupport_fastrtps_c.so
+[5.694s] -- Set non-toolchain portion of runtime path of "/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/panthera_interfaces_s__rosidl_typesupport_fastrtps_c.so" to ""
+[5.694s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/panthera_interfaces_s__rosidl_typesupport_introspection_c.so
+[5.694s] -- Set non-toolchain portion of runtime path of "/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/panthera_interfaces_s__rosidl_typesupport_introspection_c.so" to ""
+[5.694s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/panthera_interfaces_s__rosidl_typesupport_c.so
+[5.695s] -- Set non-toolchain portion of runtime path of "/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages/panthera_interfaces/panthera_interfaces_s__rosidl_typesupport_c.so" to ""
+[5.695s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/libpanthera_interfaces__rosidl_generator_py.so
+[5.695s] -- Set non-toolchain portion of runtime path of "/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/libpanthera_interfaces__rosidl_generator_py.so" to ""
+[5.695s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/msg/ArmPose.idl
+[5.695s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/msg/ArmStatus.idl
+[5.695s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/msg/EndPoseEuler.idl
+[5.695s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/msg/PosCmd.idl
+[5.695s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/srv/MoveToJoint.idl
+[5.695s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/srv/MoveToPose.idl
+[5.695s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/srv/GripperControl.idl
+[5.696s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/srv/Enable.idl
+[5.696s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/srv/GoZero.idl
+[5.696s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/srv/GripperSrv.idl
+[5.696s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/msg/ArmPose.msg
+[5.696s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/msg/ArmStatus.msg
+[5.696s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/msg/EndPoseEuler.msg
+[5.696s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/msg/PosCmd.msg
+[5.696s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/srv/MoveToJoint.srv
+[5.696s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/srv/MoveToPose.srv
+[5.696s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/srv/GripperControl.srv
+[5.697s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/srv/Enable.srv
+[5.697s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/srv/GoZero.srv
+[5.697s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/srv/GripperSrv.srv
+[5.697s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/ament_index/resource_index/package_run_dependencies/panthera_interfaces
+[5.697s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/ament_index/resource_index/parent_prefix_path/panthera_interfaces
+[5.697s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/environment/ament_prefix_path.sh
+[5.697s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/environment/ament_prefix_path.dsv
+[5.697s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/environment/path.sh
+[5.697s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/environment/path.dsv
+[5.698s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/local_setup.bash
+[5.698s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/local_setup.sh
+[5.698s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/local_setup.zsh
+[5.698s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/local_setup.dsv
+[5.698s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/package.dsv
+[5.698s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/ament_index/resource_index/packages/panthera_interfaces
+[5.698s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/cmake/export_panthera_interfaces__rosidl_generator_cExport.cmake
+[5.698s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/cmake/export_panthera_interfaces__rosidl_generator_cExport-noconfig.cmake
+[5.698s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/cmake/export_panthera_interfaces__rosidl_typesupport_fastrtps_cExport.cmake
+[5.699s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/cmake/export_panthera_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[5.699s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/cmake/panthera_interfaces__rosidl_typesupport_introspection_cExport.cmake
+[5.699s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/cmake/panthera_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[5.699s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/cmake/panthera_interfaces__rosidl_typesupport_cExport.cmake
+[5.699s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/cmake/panthera_interfaces__rosidl_typesupport_cExport-noconfig.cmake
+[5.699s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/cmake/export_panthera_interfaces__rosidl_generator_cppExport.cmake
+[5.699s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/cmake/export_panthera_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
+[5.700s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/cmake/export_panthera_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[5.700s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/cmake/panthera_interfaces__rosidl_typesupport_introspection_cppExport.cmake
+[5.700s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/cmake/panthera_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[5.700s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/cmake/panthera_interfaces__rosidl_typesupport_cppExport.cmake
+[5.700s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/cmake/panthera_interfaces__rosidl_typesupport_cppExport-noconfig.cmake
+[5.700s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/cmake/export_panthera_interfaces__rosidl_generator_pyExport.cmake
+[5.700s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/cmake/export_panthera_interfaces__rosidl_generator_pyExport-noconfig.cmake
+[5.700s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/cmake/rosidl_cmake-extras.cmake
+[5.700s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+[5.700s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+[5.700s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+[5.700s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/cmake/ament_cmake_export_targets-extras.cmake
+[5.700s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[5.700s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[5.701s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/cmake/panthera_interfacesConfig.cmake
+[5.701s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/cmake/panthera_interfacesConfig-version.cmake
+[5.701s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/package.xml
+[5.702s] Invoked command in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_interfaces

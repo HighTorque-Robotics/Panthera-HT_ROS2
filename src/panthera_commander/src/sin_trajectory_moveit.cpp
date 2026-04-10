@@ -7,8 +7,8 @@
  */
 
 #include <rclcpp/rclcpp.hpp>
-#include <moveit/move_group_interface/move_group_interface.h>
-#include <moveit/robot_state/robot_state.h>
+#include <moveit/move_group_interface/move_group_interface.hpp>
+#include <moveit/robot_state/robot_state.hpp>
 #include <rclcpp/executors.hpp>
 #include <cmath>
 #include <chrono>
@@ -191,11 +191,9 @@ int main(int argc, char** argv)
         // 计算笛卡尔路径
         moveit_msgs::msg::RobotTrajectory trajectory;
         const double eef_step = 0.005;  // 5mm分辨率
-        const double jump_threshold = 0.0;  // Disable jump threshold
-        const bool avoid_collisions = true;
 
         arm.setStartStateToCurrentState();
-        double fraction = arm.computeCartesianPath(waypoints, eef_step, jump_threshold, trajectory, avoid_collisions);
+        double fraction = arm.computeCartesianPath(waypoints, eef_step, trajectory);
 
         RCLCPP_INFO(node->get_logger(), "笛卡尔路径规划完成度: %.3f", fraction);
 
@@ -217,7 +215,7 @@ int main(int argc, char** argv)
 
             // 执行轨迹
             moveit::planning_interface::MoveGroupInterface::Plan sin_plan;
-            sin_plan.trajectory_ = trajectory;
+            sin_plan.trajectory = trajectory;
 
             auto result = arm.execute(sin_plan);
             if (result == moveit::core::MoveItErrorCode::SUCCESS)

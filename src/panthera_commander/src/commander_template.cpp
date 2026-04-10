@@ -1,5 +1,5 @@
 #include "rclcpp/rclcpp.hpp"
-#include "moveit/move_group_interface/move_group_interface.h"
+#include "moveit/move_group_interface/move_group_interface.hpp"
 #include "example_interfaces/msg/bool.hpp"
 #include "example_interfaces/msg/float64_multi_array.hpp"
 #include "panthera_interfaces/msg/arm_pose.hpp"
@@ -81,9 +81,7 @@ public:
 
             moveit_msgs::msg::RobotTrajectory trajectory;
             const double eef_step = 0.01;
-            const double jump_threshold = 0.0;
-            const bool avoid_collisions = true;
-            double fraction = arm_->computeCartesianPath(waypoints, eef_step, jump_threshold, trajectory, avoid_collisions);
+            double fraction = arm_->computeCartesianPath(waypoints, eef_step, trajectory);
             RCLCPP_INFO(node_->get_logger(), "Cartesian path fraction: %f", fraction);
             if (fraction == 1.0)
             {

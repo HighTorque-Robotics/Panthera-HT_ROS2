@@ -1,6 +1,6 @@
 #include <rclcpp/rclcpp.hpp>
-#include <moveit/move_group_interface/move_group_interface.h>
-#include <moveit/robot_state/robot_state.h>
+#include <moveit/move_group_interface/move_group_interface.hpp>
+#include <moveit/robot_state/robot_state.hpp>
 #include <rclcpp/executors.hpp>
 #include <cmath>
 
@@ -94,11 +94,11 @@ int main(int argc, char** argv)
   while (rclcpp::ok())
   {
     cycle_count++;
-    RCLCPP_INFO(node->get_logger(), " ");
+    RCLCPP_INFO(node->get_logger(), "");
     RCLCPP_INFO(node->get_logger(), "========== Cycle #%d ==========", cycle_count);
 
     // ===== CIRCLE 1: XY plane (Z constant) =====
-    RCLCPP_INFO(node->get_logger(), " ");
+    RCLCPP_INFO(node->get_logger(), "");
     RCLCPP_INFO(node->get_logger(), "--- Circle 1: XY plane (Z constant) ---");
 
     std::vector<geometry_msgs::msg::Pose> xy_waypoints;
@@ -114,10 +114,8 @@ int main(int argc, char** argv)
 
     moveit_msgs::msg::RobotTrajectory xy_trajectory;
     const double eef_step = 0.01;
-    const double jump_threshold = 0.0;
-    const bool avoid_collisions = true;
     arm.setStartStateToCurrentState();
-    double xy_fraction = arm.computeCartesianPath(xy_waypoints, eef_step, jump_threshold, xy_trajectory, avoid_collisions);
+    double xy_fraction = arm.computeCartesianPath(xy_waypoints, eef_step, xy_trajectory);
 
     RCLCPP_INFO(node->get_logger(), "XY circle path fraction: %.3f", xy_fraction);
 
@@ -133,7 +131,7 @@ int main(int argc, char** argv)
       }
 
       moveit::planning_interface::MoveGroupInterface::Plan xy_plan;
-      xy_plan.trajectory_ = xy_trajectory;
+      xy_plan.trajectory = xy_trajectory;
       auto xy_result = arm.execute(xy_plan);
 
       if (xy_result == moveit::core::MoveItErrorCode::SUCCESS)
@@ -155,7 +153,7 @@ int main(int argc, char** argv)
     rclcpp::sleep_for(std::chrono::seconds(1));
 
     // ===== CIRCLE 2: XZ plane (Y constant) =====
-    RCLCPP_INFO(node->get_logger(), " ");
+    RCLCPP_INFO(node->get_logger(), "");
     RCLCPP_INFO(node->get_logger(), "--- Circle 2: XZ plane (Y constant) ---");
 
     std::vector<geometry_msgs::msg::Pose> xz_waypoints;
@@ -171,7 +169,7 @@ int main(int argc, char** argv)
 
     moveit_msgs::msg::RobotTrajectory xz_trajectory;
     arm.setStartStateToCurrentState();
-    double xz_fraction = arm.computeCartesianPath(xz_waypoints, eef_step, jump_threshold, xz_trajectory, avoid_collisions);
+    double xz_fraction = arm.computeCartesianPath(xz_waypoints, eef_step, xz_trajectory);
 
     RCLCPP_INFO(node->get_logger(), "XZ circle path fraction: %.3f", xz_fraction);
 
@@ -187,7 +185,7 @@ int main(int argc, char** argv)
       }
 
       moveit::planning_interface::MoveGroupInterface::Plan xz_plan;
-      xz_plan.trajectory_ = xz_trajectory;
+      xz_plan.trajectory = xz_trajectory;
       auto xz_result = arm.execute(xz_plan);
 
       if (xz_result == moveit::core::MoveItErrorCode::SUCCESS)
@@ -209,7 +207,7 @@ int main(int argc, char** argv)
     rclcpp::sleep_for(std::chrono::seconds(1));
 
     // ===== CIRCLE 3: YZ plane (X constant) =====
-    RCLCPP_INFO(node->get_logger(), " ");
+    RCLCPP_INFO(node->get_logger(), "");
     RCLCPP_INFO(node->get_logger(), "--- Circle 3: YZ plane (X constant) ---");
 
     std::vector<geometry_msgs::msg::Pose> yz_waypoints;
@@ -225,7 +223,7 @@ int main(int argc, char** argv)
 
     moveit_msgs::msg::RobotTrajectory yz_trajectory;
     arm.setStartStateToCurrentState();
-    double yz_fraction = arm.computeCartesianPath(yz_waypoints, eef_step, jump_threshold, yz_trajectory, avoid_collisions);
+    double yz_fraction = arm.computeCartesianPath(yz_waypoints, eef_step, yz_trajectory);
 
     RCLCPP_INFO(node->get_logger(), "YZ circle path fraction: %.3f", yz_fraction);
 
@@ -241,7 +239,7 @@ int main(int argc, char** argv)
       }
 
       moveit::planning_interface::MoveGroupInterface::Plan yz_plan;
-      yz_plan.trajectory_ = yz_trajectory;
+      yz_plan.trajectory = yz_trajectory;
       auto yz_result = arm.execute(yz_plan);
 
       if (yz_result == moveit::core::MoveItErrorCode::SUCCESS)
@@ -260,7 +258,7 @@ int main(int argc, char** argv)
       break;
     }
 
-    RCLCPP_INFO(node->get_logger(), " ");
+    RCLCPP_INFO(node->get_logger(), "");
     RCLCPP_INFO(node->get_logger(), "Cycle #%d completed! (XY + XZ + YZ circles)", cycle_count);
 
     rclcpp::sleep_for(std::chrono::milliseconds(500));

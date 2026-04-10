@@ -1,0 +1,6 @@
+source;share/panthera_gazebo/hook/cmake_prefix_path.dsv
+source;share/panthera_gazebo/hook/cmake_prefix_path.sh
+source;share/panthera_gazebo/local_setup.bash
+source;share/panthera_gazebo/local_setup.dsv
+source;share/panthera_gazebo/local_setup.sh
+source;share/panthera_gazebo/local_setup.zsh

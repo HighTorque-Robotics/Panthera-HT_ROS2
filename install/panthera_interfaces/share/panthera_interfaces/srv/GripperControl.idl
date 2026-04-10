@@ -1,0 +1,22 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from panthera_interfaces/srv/GripperControl.srv
+// generated code does not contain a copyright notice
+
+
+module panthera_interfaces {
+  module srv {
+    @verbatim (language="comment", text=
+      "Request: gripper action" "\n"
+      "action: \"open\", \"close\", \"half_open\"")
+    struct GripperControl_Request {
+      string action;
+    };
+    @verbatim (language="comment", text=
+      "Response")
+    struct GripperControl_Response {
+      boolean success;
+
+      string message;
+    };
+  };
+};

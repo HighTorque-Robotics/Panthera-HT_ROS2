@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "panthera_interfaces__py",
+		"source" : "/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_interfaces/panthera_interfaces__py"
+	}
+}

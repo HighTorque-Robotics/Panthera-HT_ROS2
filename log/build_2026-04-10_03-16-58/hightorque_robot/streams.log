@@ -1,0 +1,231 @@
+[0.007s] Invoking command in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/hightorque_robot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/hightorque_robot -DCMAKE_INSTALL_PREFIX=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot
+[0.040s] -- The C compiler identification is GNU 13.3.0
+[0.072s] -- The CXX compiler identification is GNU 13.3.0
+[0.083s] -- Detecting C compiler ABI info
+[0.141s] -- Detecting C compiler ABI info - done
+[0.146s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.146s] -- Detecting C compile features
+[0.146s] -- Detecting C compile features - done
+[0.154s] -- Detecting CXX compiler ABI info
+[0.229s] -- Detecting CXX compiler ABI info - done
+[0.233s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.233s] -- Detecting CXX compile features
+[0.234s] -- Detecting CXX compile features - done
+[0.235s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.314s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.372s] -- Setting build type to 'Release' as none was specified.
+[0.375s] -- Found PkgConfig: /usr/bin/pkg-config (found version "1.8.1") 
+[0.376s] -- Checking for module 'glib-2.0'
+[0.386s] --   Found glib-2.0, version 2.80.0
+[0.410s] -- Performing Test CMAKE_C_COMPILER_SUPPORTS__std_gnu99
+[0.456s] -- Performing Test CMAKE_C_COMPILER_SUPPORTS__std_gnu99 - Success
+[0.456s] -- Performing Test CMAKE_C_COMPILER_SUPPORTS__Wall
+[0.503s] -- Performing Test CMAKE_C_COMPILER_SUPPORTS__Wall - Success
+[0.504s] -- Performing Test CMAKE_C_COMPILER_SUPPORTS__Wshadow
+[0.559s] -- Performing Test CMAKE_C_COMPILER_SUPPORTS__Wshadow - Success
+[0.559s] -- Performing Test CMAKE_C_COMPILER_SUPPORTS__Wuninitialized
+[0.608s] -- Performing Test CMAKE_C_COMPILER_SUPPORTS__Wuninitialized - Success
+[0.608s] -- Performing Test CMAKE_C_COMPILER_SUPPORTS__Wunused_variable
+[0.656s] -- Performing Test CMAKE_C_COMPILER_SUPPORTS__Wunused_variable - Success
+[0.656s] -- Performing Test CMAKE_C_COMPILER_SUPPORTS__Werror_return_type
+[0.707s] -- Performing Test CMAKE_C_COMPILER_SUPPORTS__Werror_return_type - Success
+[0.707s] -- Performing Test CMAKE_C_COMPILER_SUPPORTS__Wno_unused_parameter
+[0.756s] -- Performing Test CMAKE_C_COMPILER_SUPPORTS__Wno_unused_parameter - Success
+[0.757s] -- Performing Test CMAKE_C_COMPILER_SUPPORTS__Wno_format_zero_length
+[0.805s] -- Performing Test CMAKE_C_COMPILER_SUPPORTS__Wno_format_zero_length - Success
+[0.806s] -- Performing Test CMAKE_C_COMPILER_SUPPORTS__Wno_stringop_truncation
+[0.852s] -- Performing Test CMAKE_C_COMPILER_SUPPORTS__Wno_stringop_truncation - Success
+[0.853s] -- Performing Test CMAKE_CXX_COMPILER_SUPPORTS__Wall
+[0.907s] -- Performing Test CMAKE_CXX_COMPILER_SUPPORTS__Wall - Success
+[0.908s] -- Performing Test CMAKE_CXX_COMPILER_SUPPORTS__Wshadow
+[0.963s] -- Performing Test CMAKE_CXX_COMPILER_SUPPORTS__Wshadow - Success
+[0.964s] -- Performing Test CMAKE_CXX_COMPILER_SUPPORTS__Wuninitialized
+[1.020s] -- Performing Test CMAKE_CXX_COMPILER_SUPPORTS__Wuninitialized - Success
+[1.021s] -- Performing Test CMAKE_CXX_COMPILER_SUPPORTS__Wunused_variable
+[1.074s] -- Performing Test CMAKE_CXX_COMPILER_SUPPORTS__Wunused_variable - Success
+[1.074s] -- Performing Test CMAKE_CXX_COMPILER_SUPPORTS__Werror_return_type
+[1.129s] -- Performing Test CMAKE_CXX_COMPILER_SUPPORTS__Werror_return_type - Success
+[1.130s] -- Performing Test CMAKE_CXX_COMPILER_SUPPORTS__Wno_unused_parameter
+[1.182s] -- Performing Test CMAKE_CXX_COMPILER_SUPPORTS__Wno_unused_parameter - Success
+[1.182s] -- Performing Test CMAKE_CXX_COMPILER_SUPPORTS__Wno_format_zero_length
+[1.234s] -- Performing Test CMAKE_CXX_COMPILER_SUPPORTS__Wno_format_zero_length - Success
+[1.234s] -- Performing Test CMAKE_CXX_COMPILER_SUPPORTS__Wno_stringop_truncation
+[1.299s] -- Performing Test CMAKE_CXX_COMPILER_SUPPORTS__Wno_stringop_truncation - Success
+[1.299s] -- Building LCM 1.5.1 (ABI v1)
+[1.300s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.351s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.352s] -- Found Threads: TRUE  
+[1.353s] -- Performing Test COMPILER_HAS_HIDDEN_VISIBILITY
+[1.407s] -- Performing Test COMPILER_HAS_HIDDEN_VISIBILITY - Success
+[1.407s] -- Performing Test COMPILER_HAS_HIDDEN_INLINE_VISIBILITY
+[1.466s] -- Performing Test COMPILER_HAS_HIDDEN_INLINE_VISIBILITY - Success
+[1.466s] -- Performing Test COMPILER_HAS_DEPRECATED_ATTR
+[1.527s] -- Performing Test COMPILER_HAS_DEPRECATED_ATTR - Success
+[1.530s] -- Doxygen was not found; documentation generation will be incomplete
+[1.533s] -- CPack: Packages will be placed under /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/hightorque_robot/packages
+[1.553s] -- Found ament_index_cpp: 1.8.1 (/opt/ros/jazzy/share/ament_index_cpp/cmake)
+[1.556s] -- Found libserialport library: /usr/lib/x86_64-linux-gnu/libserialport.so
+[1.558s] -- pinocchio_default FOUND. pinocchio_default at /opt/ros/jazzy/lib/x86_64-linux-gnu/libpinocchio_default.so
+[1.558s] -- pinocchio_parsers FOUND. pinocchio_parsers at /opt/ros/jazzy/lib/x86_64-linux-gnu/libpinocchio_parsers.so
+[1.560s] -- boost_filesystem FOUND. boost_filesystem at /lib/x86_64-linux-gnu/libboost_filesystem.so
+[1.605s] -- eigenpy FOUND. eigenpy at /opt/ros/jazzy/lib/x86_64-linux-gnu/libeigenpy.so
+[1.618s] -- Checking for NumPy
+[1.723s] --   NUMPY_INCLUDE_DIRS=/usr/lib/python3/dist-packages/numpy/core/include
+[1.775s] --   NUMPY_VERSION=1.26.4
+[1.957s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development.Module NumPy 
+[1.957s] -- PythonLibraryDirs: 
+[1.957s] -- PythonLibVersionString: 3.12.3
+[1.972s] -- Python site lib: lib/python3.12/site-packages
+[1.972s] -- Python include dirs: /usr/include/python3.12
+[1.994s] -- Checking for NumPy
+[2.046s] --   NUMPY_INCLUDE_DIRS=/usr/lib/python3/dist-packages/numpy/core/include
+[2.100s] --   NUMPY_VERSION=1.26.4
+[2.100s] -- NumPy include dir: /usr/lib/python3/dist-packages/numpy/core/include
+[2.105s] -- Found Boost: /usr/include (found version "1.83.0") found components: python312 
+[2.276s] -- Default C++ standard: 201703
+[2.277s] -- Minimal C++ standard upgraded to 11
+[2.277s] -- C++ standard sufficient: Minimal required 11, currently defined: 17
+[2.277s] -- CMAKE_CXX_STANDARD was not set: automatically set to currently defined standard 17
+[2.282s] -- hpp-fcl FOUND. hpp-fcl at /opt/ros/jazzy/lib/x86_64-linux-gnu/libhpp-fcl.so
+[2.291s] -- Minimal C++ standard upgraded to 14
+[2.291s] -- C++ standard sufficient: Minimal required 14, currently defined: 17
+[2.291s] -- C++ standard sufficient: Minimal required 14, currently defined: 17
+[2.291s] -- Found pinocchio, building 2_joint_impedance_control example
+[2.291s] -- Building 3_cartesian_impedance_control example
+[2.291s] -- Building pure_cartesian_impedance_control example
+[2.291s] -- Building cartesian_impedance_ab_motion example
+[2.336s] -- Configuring done (2.3s)
+[2.360s] -- Generating done (0.0s)
+[2.367s] -- Build files have been written to: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/hightorque_robot
+[2.374s] Invoked command in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/hightorque_robot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/hightorque_robot -DCMAKE_INSTALL_PREFIX=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/hightorque_robot
+[2.374s] Invoking command in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/hightorque_robot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/hightorque_robot -- -j28 -l28
+[2.411s] [  3%] [32mBuilding CXX object third_part/serial_cmake/CMakeFiles/serial_cmake.dir/src/serial.cc.o[0m
+[2.411s] [  5%] [32mBuilding C object third_part/lcm/lcm/CMakeFiles/lcm-static.dir/lcm_file.c.o[0m
+[2.411s] [  3%] [32mBuilding C object third_part/lcm/lcm/CMakeFiles/lcm-static.dir/lcm_memq.c.o[0m
+[2.411s] [  5%] [34m[1mGenerating lcmUtilities.cmake[0m
+[2.411s] [  5%] [32mBuilding C object third_part/lcm/lcm/CMakeFiles/lcm-static.dir/ringbuffer.c.o[0m
+[2.411s] [  7%] [32mBuilding C object third_part/lcm/lcm/CMakeFiles/lcm.dir/eventlog.c.o[0m
+[2.411s] [  7%] [32mBuilding CXX object third_part/serial_cmake/CMakeFiles/serial_cmake.dir/src/impl/list_ports/list_ports_linux.cc.o[0m
+[2.411s] [  8%] [32mBuilding C object third_part/lcm/lcm/CMakeFiles/lcm-static.dir/lcmtypes/channel_port_map_update_t.c.o[0m
+[2.411s] [ 10%] [32mBuilding C object third_part/lcm/lcm/CMakeFiles/lcm.dir/lcm.c.o[0m
+[2.411s] [ 10%] [32mBuilding C object third_part/lcm/lcm/CMakeFiles/lcm-static.dir/lcm.c.o[0m
+[2.411s] [ 11%] [32mBuilding C object third_part/lcm/lcm/CMakeFiles/lcm-static.dir/lcm_mpudpm.c.o[0m
+[2.411s] [ 12%] [32mBuilding C object third_part/lcm/lcm/CMakeFiles/lcm.dir/lcm_file.c.o[0m
+[2.411s] [ 13%] [32mBuilding CXX object third_part/serial_cmake/CMakeFiles/serial_cmake.dir/src/impl/unix.cc.o[0m
+[2.411s] [ 14%] [32mBuilding C object third_part/lcm/lcm/CMakeFiles/lcm-static.dir/lcm_tcpq.c.o[0m
+[2.412s] [ 15%] [32mBuilding C object third_part/lcm/lcm/CMakeFiles/lcm.dir/lcm_udpm.c.o[0m
+[2.412s] [ 17%] [32mBuilding C object third_part/lcm/lcm/CMakeFiles/lcm-static.dir/udpm_util.c.o[0m
+[2.412s] [ 17%] [32mBuilding C object third_part/lcm/lcmgen/CMakeFiles/lcm-gen.dir/emit_go.c.o[0m
+[2.412s] [ 18%] [32mBuilding C object third_part/lcm/lcm/CMakeFiles/lcm.dir/ringbuffer.c.o[0m
+[2.412s] [ 21%] [32mBuilding C object third_part/lcm/lcm/CMakeFiles/lcm-static.dir/lcmtypes/channel_to_port_t.c.o[0m
+[2.412s] [ 21%] [32mBuilding C object third_part/lcm/lcm/CMakeFiles/lcm.dir/lcm_memq.c.o[0m
+[2.412s] [ 21%] [32mBuilding C object third_part/lcm/lcm/CMakeFiles/lcm.dir/lcm_mpudpm.c.o[0m
+[2.412s] [ 22%] [32mBuilding C object third_part/lcm/lcmgen/CMakeFiles/lcm-gen.dir/emit_c.c.o[0m
+[2.412s] [ 23%] [32mBuilding C object third_part/lcm/lcmgen/CMakeFiles/lcm-gen.dir/emit_csharp.c.o[0m
+[2.413s] [ 24%] [32mBuilding C object third_part/lcm/lcm/CMakeFiles/lcm-static.dir/eventlog.c.o[0m
+[2.414s] [ 25%] [32mBuilding C object third_part/lcm/lcmgen/CMakeFiles/lcm-gen.dir/emit_cpp.c.o[0m
+[2.414s] [ 26%] [32mBuilding C object third_part/lcm/lcm/CMakeFiles/lcm-static.dir/lcm_udpm.c.o[0m
+[2.418s] [ 27%] [32mBuilding C object third_part/lcm/lcm/CMakeFiles/lcm.dir/udpm_util.c.o[0m
+[2.419s] [ 28%] [32mBuilding C object third_part/lcm/lcm/CMakeFiles/lcm.dir/lcm_tcpq.c.o[0m
+[2.439s] [ 28%] Built target lcm_use_file
+[2.449s] [ 29%] [32mBuilding C object third_part/lcm/lcm/CMakeFiles/lcm.dir/lcmtypes/channel_port_map_update_t.c.o[0m
+[2.459s] [ 31%] [32mBuilding C object third_part/lcm/lcm/CMakeFiles/lcm.dir/lcmtypes/channel_to_port_t.c.o[0m
+[2.459s] [ 31%] [32mBuilding C object third_part/lcm/lcmgen/CMakeFiles/lcm-gen.dir/emit_java.c.o[0m
+[2.511s] [ 32%] [32mBuilding C object third_part/lcm/lcmgen/CMakeFiles/lcm-gen.dir/emit_lua.c.o[0m
+[2.514s] [ 33%] [32mBuilding C object third_part/lcm/lcmgen/CMakeFiles/lcm-gen.dir/emit_python.c.o[0m
+[2.527s] [ 34%] [32mBuilding C object third_part/lcm/lcmgen/CMakeFiles/lcm-gen.dir/getopt.c.o[0m
+[2.534s] [ 35%] [32mBuilding C object third_part/lcm/lcmgen/CMakeFiles/lcm-gen.dir/main.c.o[0m
+[2.542s] [ 36%] [32mBuilding C object third_part/lcm/lcmgen/CMakeFiles/lcm-gen.dir/lcmgen.c.o[0m
+[2.548s] [ 37%] [32mBuilding C object third_part/lcm/lcmgen/CMakeFiles/lcm-gen.dir/tokenize.c.o[0m
+[2.761s] [ 38%] [32m[1mLinking C static library liblcm.a[0m
+[2.793s] [ 38%] Built target lcm-static
+[2.810s] [ 39%] [32mBuilding C object third_part/lcm/liblcm-test/CMakeFiles/lcm-tester.dir/lcm-tester.c.o[0m
+[2.810s] [ 40%] [32mBuilding C object third_part/lcm/lcm-logger/CMakeFiles/lcm-logplayer.dir/lcm_logplayer.c.o[0m
+[2.811s] [ 41%] [32mBuilding C object third_part/lcm/liblcm-test/CMakeFiles/lcm-example.dir/lcm-example.c.o[0m
+[2.811s] [ 42%] [32mBuilding C object third_part/lcm/liblcm-test/CMakeFiles/lcm-source.dir/lcm-source.c.o[0m
+[2.811s] [ 43%] [32mBuilding C object third_part/lcm/liblcm-test/CMakeFiles/lcm-sink.dir/lcm-sink.c.o[0m
+[2.813s] [ 44%] [32mBuilding C object third_part/lcm/liblcm-test/CMakeFiles/lcm-buftest-receiver.dir/buftest-receiver.c.o[0m
+[2.813s] [ 45%] [32mBuilding C object third_part/lcm/lcm-logger/CMakeFiles/lcm-logger.dir/glib_util.c.o[0m
+[2.813s] [ 46%] [32mBuilding C object third_part/lcm/liblcm-test/CMakeFiles/lcm-buftest-sender.dir/buftest-sender.c.o[0m
+[2.815s] [ 47%] [32mBuilding C object third_part/lcm/lcm-logger/CMakeFiles/lcm-logger.dir/lcm_logger.c.o[0m
+[2.815s] [ 48%] [32mBuilding C object third_part/lcm/liblcm-test/CMakeFiles/lcm-logfilter.dir/lcm-logfilter.c.o[0m
+[2.850s] [ 49%] [32m[1mLinking C executable lcm-sink[0m
+[2.870s] [ 50%] [32m[1mLinking C executable lcm-logplayer[0m
+[2.870s] [ 51%] [32m[1mLinking C executable lcm-example[0m
+[2.878s] [ 52%] [32m[1mLinking C executable lcm-buftest-sender[0m
+[2.880s] [ 53%] [32m[1mLinking C executable lcm-source[0m
+[2.903s] [ 54%] [32m[1mLinking C executable lcm-buftest-receiver[0m
+[2.908s] [ 55%] [32m[1mLinking C shared library liblcm.so[0m
+[2.917s] [ 55%] Built target lcm-sink
+[2.931s] [ 57%] [32m[1mLinking C executable lcm-tester[0m
+[2.931s] [ 57%] [32m[1mLinking C executable lcm-logfilter[0m
+[2.938s] [ 57%] Built target lcm-buftest-sender
+[2.938s] [ 57%] Built target lcm-logplayer
+[2.945s] [ 57%] Built target lcm-example
+[2.948s] [ 57%] Built target lcm-source
+[2.950s] [ 57%] Built target lcm-buftest-receiver
+[2.959s] [ 57%] Built target lcm
+[2.960s] [ 57%] Built target lcm-logfilter
+[2.965s] [ 57%] Built target lcm-tester
+[2.985s] [ 58%] [32m[1mLinking C executable lcm-logger[0m
+[3.012s] [ 58%] Built target lcm-logger
+[3.027s] [ 59%] [32m[1mLinking C executable lcm-gen[0m
+[3.057s] [ 59%] Built target lcm-gen
+[3.155s] [ 60%] [32m[1mLinking CXX shared library libserial_cmake.so[0m
+[3.196s] [ 60%] Built target serial_cmake
+[3.209s] [ 61%] [32mBuilding CXX object CMakeFiles/hightorque_robot.dir/src/hardware/canboard.cpp.o[0m
+[3.209s] [ 62%] [32mBuilding CXX object CMakeFiles/hightorque_robot.dir/src/hardware/robot.cpp.o[0m
+[3.209s] [ 63%] [32mBuilding CXX object CMakeFiles/hightorque_robot.dir/src/serial_driver.cpp.o[0m
+[3.210s] [ 64%] [32mBuilding CXX object CMakeFiles/hightorque_robot.dir/src/parse_robot_params.cpp.o[0m
+[3.210s] [ 65%] [32mBuilding CXX object CMakeFiles/hightorque_robot.dir/src/hardware/motor.cpp.o[0m
+[3.210s] [ 66%] [32mBuilding CXX object CMakeFiles/hightorque_robot.dir/src/hardware/canport.cpp.o[0m
+[3.211s] [ 67%] [32mBuilding CXX object CMakeFiles/hightorque_robot.dir/src/crc/crc16.cpp.o[0m
+[3.211s] [ 68%] [32mBuilding CXX object CMakeFiles/hightorque_robot.dir/src/crc/crc8.cpp.o[0m
+[3.211s] [ 69%] [32mBuilding CXX object CMakeFiles/hightorque_robot.dir/src/panthera/Panthera.cpp.o[0m
+[5.201s] [ 70%] [32m[1mLinking CXX shared library libhightorque_robot.so[0m
+[5.256s] [ 70%] Built target hightorque_robot
+[5.268s] [ 71%] [32mBuilding CXX object CMakeFiles/motor_move_zero.dir/example/motor_move_zero.cpp.o[0m
+[5.268s] [ 72%] [32mBuilding CXX object CMakeFiles/motor_run.dir/example/motor_run.cpp.o[0m
+[5.269s] [ 73%] [32mBuilding CXX object CMakeFiles/parse_demo.dir/example/parse_demo.cpp.o[0m
+[5.270s] [ 74%] [32mBuilding CXX object CMakeFiles/canboard_update.dir/example/canboard_update.cpp.o[0m
+[5.270s] [ 75%] [32mBuilding CXX object CMakeFiles/motor_feedack.dir/example/motor_feedack.cpp.o[0m
+[5.270s] [ 76%] [32mBuilding CXX object CMakeFiles/pure_cartesian_impedance_control.dir/examples/pure_cartesian_impedance_control.cpp.o[0m
+[5.270s] [ 77%] [32mBuilding CXX object CMakeFiles/motor_msg_subscriber.dir/example/motor_msg_subscriber.cpp.o[0m
+[5.272s] [ 78%] [32mBuilding CXX object CMakeFiles/3_cartesian_impedance_control.dir/examples/3_cartesian_impedance_control.cpp.o[0m
+[5.272s] [ 79%] [32mBuilding CXX object CMakeFiles/0_robot_set_zero.dir/examples/0_robot_set_zero.cpp.o[0m
+[5.272s] [ 80%] [32mBuilding CXX object CMakeFiles/1_PosVel_control.dir/examples/1_PosVel_control.cpp.o[0m
+[5.273s] [ 81%] [32mBuilding CXX object CMakeFiles/2_joint_impedance_control.dir/examples/2_joint_impedance_control.cpp.o[0m
+[5.273s] [ 82%] [32mBuilding CXX object CMakeFiles/1_PD_control.dir/examples/1_PD_control.cpp.o[0m
+[5.273s] [ 83%] [32mBuilding CXX object CMakeFiles/cartesian_impedance_ab_motion.dir/examples/cartesian_impedance_ab_motion.cpp.o[0m
+[5.274s] [ 84%] [32mBuilding CXX object CMakeFiles/motor_set_zero.dir/example/motor_set_zero.cpp.o[0m
+[5.275s] [ 85%] [32mBuilding CXX object CMakeFiles/0_robot_get_state.dir/examples/0_robot_get_state.cpp.o[0m
+[5.590s] [ 86%] [32m[1mLinking CXX executable motor_msg_subscriber[0m
+[5.664s] [ 86%] Built target motor_msg_subscriber
+[5.992s] [ 87%] [32m[1mLinking CXX executable 1_PosVel_control[0m
+[6.000s] [ 89%] [32m[1mLinking CXX executable 0_robot_get_state[0m
+[6.000s] [ 89%] [32m[1mLinking CXX executable 0_robot_set_zero[0m
+[6.044s] [ 90%] [32m[1mLinking CXX executable 1_PD_control[0m
+[6.044s] [ 90%] Built target 1_PosVel_control
+[6.052s] [ 90%] Built target 0_robot_get_state
+[6.077s] [ 90%] Built target 0_robot_set_zero
+[6.094s] [ 91%] [32m[1mLinking CXX executable parse_demo[0m
+[6.094s] [ 91%] Built target 1_PD_control
+[6.139s] [ 92%] [32m[1mLinking CXX executable canboard_update[0m
+[6.144s] [ 92%] Built target parse_demo
+[6.188s] [ 92%] Built target canboard_update
+[6.212s] [ 93%] [32m[1mLinking CXX executable motor_move_zero[0m
+[6.261s] [ 94%] [32m[1mLinking CXX executable motor_set_zero[0m
+[6.263s] [ 94%] Built target motor_move_zero
+[6.272s] [ 95%] [32m[1mLinking CXX executable motor_feedack[0m
+[6.314s] [ 95%] Built target motor_set_zero
+[6.321s] [ 95%] Built target motor_feedack
+[6.342s] [ 96%] [32m[1mLinking CXX executable motor_run[0m
+[6.386s] [ 96%] Built target motor_run
+[13.189s] [ 97%] [32m[1mLinking CXX executable 2_joint_impedance_control[0m
+[13.251s] [ 97%] Built target 2_joint_impedance_control
+[18.485s] [ 98%] [32m[1mLinking CXX executable 3_cartesian_impedance_control[0m
+[18.497s] [ 99%] [32m[1mLinking CXX executable cartesian_impedance_ab_motion[0m
+[18.543s] [ 99%] Built target 3_cartesian_impedance_control
+[18.551s] [ 99%] Built target cartesian_impedance_ab_motion
+[18.662s] [100%] [32m[1mLinking CXX executable pure_cartesian_impedance_control[0m
+[18.733s] [100%] Built target pure_cartesian_impedance_control

@@ -1,0 +1,499 @@
+[0.000000] (-) TimerEvent: {}
+[0.000060] (-) JobUnselected: {'identifier': 'hightorque_robot'}
+[0.000091] (-) JobUnselected: {'identifier': 'panthera_arm_control'}
+[0.000109] (-) JobUnselected: {'identifier': 'panthera_bringup'}
+[0.000121] (-) JobUnselected: {'identifier': 'panthera_gazebo'}
+[0.000132] (-) JobUnselected: {'identifier': 'panthera_hardware'}
+[0.000143] (-) JobUnselected: {'identifier': 'panthera_ht_description_with_finger'}
+[0.000153] (-) JobUnselected: {'identifier': 'panthera_interfaces'}
+[0.000163] (-) JobUnselected: {'identifier': 'with_gripper_config'}
+[0.000175] (panthera_commander) JobQueued: {'identifier': 'panthera_commander', 'dependencies': OrderedDict({'panthera_ht_description_with_finger': '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_ht_description_with_finger', 'panthera_interfaces': '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces', 'with_gripper_config': '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config'})}
+[0.000197] (panthera_commander) JobStarted: {'identifier': 'panthera_commander'}
+[0.007726] (panthera_commander) JobProgress: {'identifier': 'panthera_commander', 'progress': 'cmake'}
+[0.008110] (panthera_commander) Command: {'cmd': ['/usr/bin/cmake', '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander', '-DCMAKE_INSTALL_PREFIX=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_commander'], 'cwd': '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_commander', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'CONDA_PROMPT_MODIFIER': '(base)', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'tk', 'CLAUDE_CODE_ENTRYPOINT': 'cli', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'GIT_EDITOR': 'true', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'CONDA_BACKUP_QT_XCB_GL_INTEGRATION': '', 'HOME': '/home/tk', 'CONDA_SHLVL': '1', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '2233', 'SYSTEMD_EXEC_PID': '2727', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator23558193cd9818af7fe4d2c2f5bd9d00f', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '41011', 'GNOME_KEYRING_CONTROL': '/run/user/1000/keyring', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'tk', 'JOURNAL_STREAM': '9:25828', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'tk', 'ANTHROPIC_BASE_URL': 'http://www.claudecodeserver.top/api', 'TERM': 'xterm-256color', 'OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE': 'delta', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'WINDOWPATH': '2', 'PATH': '/home/tk/anaconda3/bin:/home/tk/anaconda3/condabin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/tk-MS-7D99:@/tmp/.ICE-unix/2577,unix/tk-MS-7D99:/tmp/.ICE-unix/2577', 'INVOCATION_ID': 'd9dcbf72395b4ebaa02e98e83bbc0a72', 'COREPACK_ENABLE_AUTO_PIN': '0', 'XDG_MENU_PREFIX': 'gnome-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':1', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'NoDefaultCurrentDirectoryInExePath': '1', 'LANG': 'zh_CN.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'RMW_IMPLEMENTATION': 'rmw_cyclonedds_cpp', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'QT_XCB_GL_INTEGRATION': 'none', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'GSETTINGS_SCHEMA_DIR': '/home/tk/anaconda3/share/glib-2.0/schemas', 'AMENT_PREFIX_PATH': '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_ht_description_with_finger:/opt/ros/jazzy', 'CONDA_PYTHON_EXE': '/home/tk/anaconda3/bin/python', 'SHELL': '/bin/bash', 'TERMINATOR_UUID': 'urn:uuid:dd28e141-5d7b-443c-ab71-d7db99f401af', 'ANTHROPIC_AUTH_TOKEN': 'sk_2968f36590d96ff51d7181f633f29f4f2c5b00db5fc3d673763c4d78d34969a6', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'CONDA_DEFAULT_ENV': 'base', 'CLAUDECODE': '1', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_commander', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'CONDA_EXE': '/home/tk/anaconda3/bin/conda', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'CLAUDE_CODE_EXECPATH': '/usr/bin/node', 'QTWEBENGINE_DICTIONARIES_PATH': '/usr/share/hunspell-bdic/', 'PYTHONPATH': '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.13/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'CONDA_PREFIX': '/home/tk/anaconda3', 'GSETTINGS_SCHEMA_DIR_CONDA_BACKUP': '', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_ht_description_with_finger:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.078761] (panthera_commander) StdoutLine: {'line': b'-- The C compiler identification is GNU 13.3.0\n'}
+[0.099684] (-) TimerEvent: {}
+[0.136295] (panthera_commander) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.3.0\n'}
+[0.145572] (panthera_commander) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.199843] (-) TimerEvent: {}
+[0.296873] (panthera_commander) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.300000] (-) TimerEvent: {}
+[0.308660] (panthera_commander) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.308933] (panthera_commander) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.309342] (panthera_commander) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.322979] (panthera_commander) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.400147] (-) TimerEvent: {}
+[0.500265] (-) TimerEvent: {}
+[0.505013] (panthera_commander) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.510244] (panthera_commander) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.510275] (panthera_commander) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.510570] (panthera_commander) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.512621] (panthera_commander) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[0.600415] (-) TimerEvent: {}
+[0.610412] (panthera_commander) StdoutLine: {'line': b'-- Found Python3: /home/tk/anaconda3/bin/python3 (found version "3.13.5") found components: Interpreter \n'}
+[0.676894] (panthera_commander) StdoutLine: {'line': b'-- Found rclcpp: 28.1.13 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[0.700607] (-) TimerEvent: {}
+[0.702682] (panthera_commander) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[0.710996] (panthera_commander) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[0.720500] (panthera_commander) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.731015] (panthera_commander) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.775131] (panthera_commander) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[0.777109] (panthera_commander) StdoutLine: {'line': b'-- Found rmw_cyclonedds_cpp: 2.2.3 (/opt/ros/jazzy/share/rmw_cyclonedds_cpp/cmake)\n'}
+[0.794359] (panthera_commander) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_cyclonedds_cpp' as default\n"}
+[0.800766] (-) TimerEvent: {}
+[0.831420] (panthera_commander) StdoutLine: {'line': b'-- Found moveit_ros_planning_interface: 2.12.3 (/opt/ros/jazzy/share/moveit_ros_planning_interface/cmake)\n'}
+[0.900903] (-) TimerEvent: {}
+[0.921556] (panthera_commander) StdoutLine: {'line': b'-- Found Boost: /home/tk/anaconda3/lib/cmake/Boost-1.82.0/BoostConfig.cmake (found version "1.82.0") found components: date_time filesystem program_options system thread \n'}
+[1.001088] (-) TimerEvent: {}
+[1.085381] (panthera_commander) StdoutLine: {'line': b'-- Found Boost: /home/tk/anaconda3/lib/cmake/Boost-1.82.0/BoostConfig.cmake (found version "1.82.0") found components: chrono date_time filesystem iostreams program_options regex serialization system thread \n'}
+[1.101215] (-) TimerEvent: {}
+[1.125766] (panthera_commander) StdoutLine: {'line': b'-- Found parameter_traits: 0.5.0 (/opt/ros/jazzy/share/parameter_traits/cmake)\n'}
+[1.134064] (panthera_commander) StdoutLine: {'line': b'-- Found rclcpp_lifecycle: 28.1.13 (/opt/ros/jazzy/share/rclcpp_lifecycle/cmake)\n'}
+[1.154734] (panthera_commander) StdoutLine: {'line': b'-- Found Boost: /home/tk/anaconda3/lib/cmake/Boost-1.82.0/BoostConfig.cmake (found version "1.82.0") found components: filesystem \n'}
+[1.192257] (panthera_commander) StdoutLine: {'line': b'-- Found Eigen3: TRUE (found version "3.4.0") \n'}
+[1.192320] (panthera_commander) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[1.201377] (-) TimerEvent: {}
+[1.205333] (panthera_commander) StdoutLine: {'line': b'-- Found TinyXML2 via Config file: /usr/lib/x86_64-linux-gnu/cmake/tinyxml2\n'}
+[1.288841] (panthera_commander) StdoutLine: {'line': b'-- Found Boost: /home/tk/anaconda3/lib/cmake/Boost-1.82.0/BoostConfig.cmake (found version "1.82.0") found components: system filesystem date_time program_options thread chrono \n'}
+[1.301539] (-) TimerEvent: {}
+[1.317198] (panthera_commander) StdoutLine: {'line': b'-- Found Boost: /home/tk/anaconda3/lib/cmake/Boost-1.82.0/BoostConfig.cmake (found version "1.82.0") found components: thread system filesystem regex date_time program_options \n'}
+[1.401690] (-) TimerEvent: {}
+[1.451490] (panthera_commander) StdoutLine: {'line': b'-- Found Boost: /home/tk/anaconda3/lib/cmake/Boost-1.82.0/BoostConfig.cmake (found version "1.82.0") found components: system filesystem date_time program_options thread \n'}
+[1.473712] (panthera_commander) StdoutLine: {'line': b'-- Found example_interfaces: 0.12.0 (/opt/ros/jazzy/share/example_interfaces/cmake)\n'}
+[1.484712] (panthera_commander) StdoutLine: {'line': b'-- Found panthera_interfaces: 0.0.0 (/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/cmake)\n'}
+[1.501728] (-) TimerEvent: {}
+[1.513563] (panthera_commander) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.17.3 (/opt/ros/jazzy/share/ament_lint_auto/cmake)\n'}
+[1.572526] (panthera_commander) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[1.572781] (panthera_commander) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[1.572812] (panthera_commander) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[1.573297] (panthera_commander) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[1.573948] (panthera_commander) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[1.573973] (panthera_commander) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[1.574336] (panthera_commander) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[1.575103] (panthera_commander) StdoutLine: {'line': b'-- Configuring done (1.6s)\n'}
+[1.596974] (panthera_commander) StderrLine: {'line': b'CMake Warning at CMakeLists.txt:17 (add_executable):\n'}
+[1.597029] (panthera_commander) StderrLine: {'line': b'  Cannot generate a safe runtime search path for target test_moveit because\n'}
+[1.597060] (panthera_commander) StderrLine: {'line': b'  files in some directories may conflict with libraries in implicit\n'}
+[1.597086] (panthera_commander) StderrLine: {'line': b'  directories:\n'}
+[1.597108] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.597131] (panthera_commander) StderrLine: {'line': b'    runtime library [libcrypto.so.3] in /usr/lib/x86_64-linux-gnu may be hidden by files in:\n'}
+[1.597156] (panthera_commander) StderrLine: {'line': b'      /home/tk/anaconda3/lib\n'}
+[1.597178] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.597200] (panthera_commander) StderrLine: {'line': b'  Some of these libraries may not be found correctly.\n'}
+[1.597223] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.597247] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.601423] (panthera_commander) StderrLine: {'line': b'CMake Warning at CMakeLists.txt:20 (add_executable):\n'}
+[1.601495] (panthera_commander) StderrLine: {'line': b'  Cannot generate a safe runtime search path for target\n'}
+[1.601524] (panthera_commander) StderrLine: {'line': b'  test_moveit_by_cartesian because files in some directories may conflict\n'}
+[1.601553] (panthera_commander) StderrLine: {'line': b'  with libraries in implicit directories:\n'}
+[1.601576] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.601600] (panthera_commander) StderrLine: {'line': b'    runtime library [libcrypto.so.3] in /usr/lib/x86_64-linux-gnu may be hidden by files in:\n'}
+[1.601624] (panthera_commander) StderrLine: {'line': b'      /home/tk/anaconda3/lib\n'}
+[1.601647] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.601671] (panthera_commander) StderrLine: {'line': b'  Some of these libraries may not be found correctly.\n'}
+[1.601695] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.601723] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.601748] (-) TimerEvent: {}
+[1.605948] (panthera_commander) StderrLine: {'line': b'CMake Warning at CMakeLists.txt:23 (add_executable):\n'}
+[1.606010] (panthera_commander) StderrLine: {'line': b'  Cannot generate a safe runtime search path for target\n'}
+[1.606038] (panthera_commander) StderrLine: {'line': b'  test_moveit_by_jointspace because files in some directories may conflict\n'}
+[1.606066] (panthera_commander) StderrLine: {'line': b'  with libraries in implicit directories:\n'}
+[1.606093] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.606117] (panthera_commander) StderrLine: {'line': b'    runtime library [libcrypto.so.3] in /usr/lib/x86_64-linux-gnu may be hidden by files in:\n'}
+[1.606140] (panthera_commander) StderrLine: {'line': b'      /home/tk/anaconda3/lib\n'}
+[1.606162] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.606184] (panthera_commander) StderrLine: {'line': b'  Some of these libraries may not be found correctly.\n'}
+[1.606206] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.606228] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.610456] (panthera_commander) StderrLine: {'line': b'CMake Warning at CMakeLists.txt:26 (add_executable):\n'}
+[1.610482] (panthera_commander) StderrLine: {'line': b'  Cannot generate a safe runtime search path for target\n'}
+[1.610506] (panthera_commander) StderrLine: {'line': b'  test_moveit_by_siyuanshu because files in some directories may conflict\n'}
+[1.610528] (panthera_commander) StderrLine: {'line': b'  with libraries in implicit directories:\n'}
+[1.610551] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.610573] (panthera_commander) StderrLine: {'line': b'    runtime library [libcrypto.so.3] in /usr/lib/x86_64-linux-gnu may be hidden by files in:\n'}
+[1.610597] (panthera_commander) StderrLine: {'line': b'      /home/tk/anaconda3/lib\n'}
+[1.610619] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.610642] (panthera_commander) StderrLine: {'line': b'  Some of these libraries may not be found correctly.\n'}
+[1.610663] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.610683] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.614995] (panthera_commander) StderrLine: {'line': b'CMake Warning at CMakeLists.txt:29 (add_executable):\n'}
+[1.615033] (panthera_commander) StderrLine: {'line': b'  Cannot generate a safe runtime search path for target test_gripper because\n'}
+[1.615057] (panthera_commander) StderrLine: {'line': b'  files in some directories may conflict with libraries in implicit\n'}
+[1.615080] (panthera_commander) StderrLine: {'line': b'  directories:\n'}
+[1.615104] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.615126] (panthera_commander) StderrLine: {'line': b'    runtime library [libcrypto.so.3] in /usr/lib/x86_64-linux-gnu may be hidden by files in:\n'}
+[1.615148] (panthera_commander) StderrLine: {'line': b'      /home/tk/anaconda3/lib\n'}
+[1.615174] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.615198] (panthera_commander) StderrLine: {'line': b'  Some of these libraries may not be found correctly.\n'}
+[1.615220] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.615241] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.619541] (panthera_commander) StderrLine: {'line': b'CMake Warning at CMakeLists.txt:32 (add_executable):\n'}
+[1.619588] (panthera_commander) StderrLine: {'line': b'  Cannot generate a safe runtime search path for target test_gripper_detailed\n'}
+[1.619611] (panthera_commander) StderrLine: {'line': b'  because files in some directories may conflict with libraries in implicit\n'}
+[1.619634] (panthera_commander) StderrLine: {'line': b'  directories:\n'}
+[1.619657] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.619679] (panthera_commander) StderrLine: {'line': b'    runtime library [libcrypto.so.3] in /usr/lib/x86_64-linux-gnu may be hidden by files in:\n'}
+[1.619701] (panthera_commander) StderrLine: {'line': b'      /home/tk/anaconda3/lib\n'}
+[1.619722] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.619744] (panthera_commander) StderrLine: {'line': b'  Some of these libraries may not be found correctly.\n'}
+[1.619766] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.619788] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.624052] (panthera_commander) StderrLine: {'line': b'CMake Warning at CMakeLists.txt:35 (add_executable):\n'}
+[1.624078] (panthera_commander) StderrLine: {'line': b'  Cannot generate a safe runtime search path for target\n'}
+[1.624101] (panthera_commander) StderrLine: {'line': b'  test_cartesian_from_pose1 because files in some directories may conflict\n'}
+[1.624125] (panthera_commander) StderrLine: {'line': b'  with libraries in implicit directories:\n'}
+[1.624147] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.624171] (panthera_commander) StderrLine: {'line': b'    runtime library [libcrypto.so.3] in /usr/lib/x86_64-linux-gnu may be hidden by files in:\n'}
+[1.624193] (panthera_commander) StderrLine: {'line': b'      /home/tk/anaconda3/lib\n'}
+[1.624215] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.624237] (panthera_commander) StderrLine: {'line': b'  Some of these libraries may not be found correctly.\n'}
+[1.624258] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.624280] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.628886] (panthera_commander) StderrLine: {'line': b'CMake Warning at CMakeLists.txt:38 (add_executable):\n'}
+[1.628917] (panthera_commander) StderrLine: {'line': b'  Cannot generate a safe runtime search path for target commander_template\n'}
+[1.628941] (panthera_commander) StderrLine: {'line': b'  because files in some directories may conflict with libraries in implicit\n'}
+[1.628963] (panthera_commander) StderrLine: {'line': b'  directories:\n'}
+[1.628985] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.629008] (panthera_commander) StderrLine: {'line': b'    runtime library [libcrypto.so.3] in /usr/lib/x86_64-linux-gnu may be hidden by files in:\n'}
+[1.629030] (panthera_commander) StderrLine: {'line': b'      /home/tk/anaconda3/lib\n'}
+[1.629052] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.629073] (panthera_commander) StderrLine: {'line': b'  Some of these libraries may not be found correctly.\n'}
+[1.629095] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.629118] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.633344] (panthera_commander) StderrLine: {'line': b'CMake Warning at CMakeLists.txt:41 (add_executable):\n'}
+[1.633393] (panthera_commander) StderrLine: {'line': b'  Cannot generate a safe runtime search path for target draw_circle because\n'}
+[1.633421] (panthera_commander) StderrLine: {'line': b'  files in some directories may conflict with libraries in implicit\n'}
+[1.633444] (panthera_commander) StderrLine: {'line': b'  directories:\n'}
+[1.633468] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.633490] (panthera_commander) StderrLine: {'line': b'    runtime library [libcrypto.so.3] in /usr/lib/x86_64-linux-gnu may be hidden by files in:\n'}
+[1.633513] (panthera_commander) StderrLine: {'line': b'      /home/tk/anaconda3/lib\n'}
+[1.633535] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.633556] (panthera_commander) StderrLine: {'line': b'  Some of these libraries may not be found correctly.\n'}
+[1.633578] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.633600] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.637799] (panthera_commander) StderrLine: {'line': b'CMake Warning at CMakeLists.txt:44 (add_executable):\n'}
+[1.637832] (panthera_commander) StderrLine: {'line': b'  Cannot generate a safe runtime search path for target\n'}
+[1.637855] (panthera_commander) StderrLine: {'line': b'  draw_horizontal_vertical_circles because files in some directories may\n'}
+[1.637878] (panthera_commander) StderrLine: {'line': b'  conflict with libraries in implicit directories:\n'}
+[1.637900] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.637922] (panthera_commander) StderrLine: {'line': b'    runtime library [libcrypto.so.3] in /usr/lib/x86_64-linux-gnu may be hidden by files in:\n'}
+[1.637946] (panthera_commander) StderrLine: {'line': b'      /home/tk/anaconda3/lib\n'}
+[1.637968] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.637989] (panthera_commander) StderrLine: {'line': b'  Some of these libraries may not be found correctly.\n'}
+[1.638010] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.638032] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.642301] (panthera_commander) StderrLine: {'line': b'CMake Warning at CMakeLists.txt:47 (add_executable):\n'}
+[1.642335] (panthera_commander) StderrLine: {'line': b'  Cannot generate a safe runtime search path for target draw_three_circles\n'}
+[1.642361] (panthera_commander) StderrLine: {'line': b'  because files in some directories may conflict with libraries in implicit\n'}
+[1.642384] (panthera_commander) StderrLine: {'line': b'  directories:\n'}
+[1.642409] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.642432] (panthera_commander) StderrLine: {'line': b'    runtime library [libcrypto.so.3] in /usr/lib/x86_64-linux-gnu may be hidden by files in:\n'}
+[1.642454] (panthera_commander) StderrLine: {'line': b'      /home/tk/anaconda3/lib\n'}
+[1.642476] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.642499] (panthera_commander) StderrLine: {'line': b'  Some of these libraries may not be found correctly.\n'}
+[1.642521] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.642542] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.647951] (panthera_commander) StderrLine: {'line': b'CMake Warning at CMakeLists.txt:54 (add_executable):\n'}
+[1.648022] (panthera_commander) StderrLine: {'line': b'  Cannot generate a safe runtime search path for target sin_trajectory_moveit\n'}
+[1.648051] (panthera_commander) StderrLine: {'line': b'  because files in some directories may conflict with libraries in implicit\n'}
+[1.648081] (panthera_commander) StderrLine: {'line': b'  directories:\n'}
+[1.648104] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.648128] (panthera_commander) StderrLine: {'line': b'    runtime library [libcrypto.so.3] in /usr/lib/x86_64-linux-gnu may be hidden by files in:\n'}
+[1.648151] (panthera_commander) StderrLine: {'line': b'      /home/tk/anaconda3/lib\n'}
+[1.648175] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.648198] (panthera_commander) StderrLine: {'line': b'  Some of these libraries may not be found correctly.\n'}
+[1.648222] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.648244] (panthera_commander) StderrLine: {'line': b'\n'}
+[1.649160] (panthera_commander) StdoutLine: {'line': b'-- Generating done (0.1s)\n'}
+[1.670108] (panthera_commander) StdoutLine: {'line': b'-- Build files have been written to: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_commander\n'}
+[1.679844] (panthera_commander) CommandEnded: {'returncode': 0}
+[1.680134] (panthera_commander) JobProgress: {'identifier': 'panthera_commander', 'progress': 'build'}
+[1.680476] (panthera_commander) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_commander', '--', '-j28', '-l28'], 'cwd': '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_commander', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'CONDA_PROMPT_MODIFIER': '(base)', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'tk', 'CLAUDE_CODE_ENTRYPOINT': 'cli', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'GIT_EDITOR': 'true', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'CONDA_BACKUP_QT_XCB_GL_INTEGRATION': '', 'HOME': '/home/tk', 'CONDA_SHLVL': '1', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '2233', 'SYSTEMD_EXEC_PID': '2727', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator23558193cd9818af7fe4d2c2f5bd9d00f', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '41011', 'GNOME_KEYRING_CONTROL': '/run/user/1000/keyring', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'tk', 'JOURNAL_STREAM': '9:25828', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'tk', 'ANTHROPIC_BASE_URL': 'http://www.claudecodeserver.top/api', 'TERM': 'xterm-256color', 'OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE': 'delta', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'WINDOWPATH': '2', 'PATH': '/home/tk/anaconda3/bin:/home/tk/anaconda3/condabin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/tk-MS-7D99:@/tmp/.ICE-unix/2577,unix/tk-MS-7D99:/tmp/.ICE-unix/2577', 'INVOCATION_ID': 'd9dcbf72395b4ebaa02e98e83bbc0a72', 'COREPACK_ENABLE_AUTO_PIN': '0', 'XDG_MENU_PREFIX': 'gnome-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':1', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'NoDefaultCurrentDirectoryInExePath': '1', 'LANG': 'zh_CN.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'RMW_IMPLEMENTATION': 'rmw_cyclonedds_cpp', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'QT_XCB_GL_INTEGRATION': 'none', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'GSETTINGS_SCHEMA_DIR': '/home/tk/anaconda3/share/glib-2.0/schemas', 'AMENT_PREFIX_PATH': '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_ht_description_with_finger:/opt/ros/jazzy', 'CONDA_PYTHON_EXE': '/home/tk/anaconda3/bin/python', 'SHELL': '/bin/bash', 'TERMINATOR_UUID': 'urn:uuid:dd28e141-5d7b-443c-ab71-d7db99f401af', 'ANTHROPIC_AUTH_TOKEN': 'sk_2968f36590d96ff51d7181f633f29f4f2c5b00db5fc3d673763c4d78d34969a6', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'CONDA_DEFAULT_ENV': 'base', 'CLAUDECODE': '1', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_commander', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'CONDA_EXE': '/home/tk/anaconda3/bin/conda', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'CLAUDE_CODE_EXECPATH': '/usr/bin/node', 'QTWEBENGINE_DICTIONARIES_PATH': '/usr/share/hunspell-bdic/', 'PYTHONPATH': '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.13/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'CONDA_PREFIX': '/home/tk/anaconda3', 'GSETTINGS_SCHEMA_DIR_CONDA_BACKUP': '', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_ht_description_with_finger:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[1.701842] (-) TimerEvent: {}
+[1.722814] (panthera_commander) StdoutLine: {'line': b'[ 11%] Building CXX object CMakeFiles/draw_horizontal_vertical_circles.dir/src/draw_horizontal_vertical_circles.cpp.o\n'}
+[1.722969] (panthera_commander) StdoutLine: {'line': b'[ 11%] Building CXX object CMakeFiles/sin_trajectory_control.dir/src/sin_trajectory_control.cpp.o\n'}
+[1.723017] (panthera_commander) StdoutLine: {'line': b'[ 11%] Building CXX object CMakeFiles/test_gripper.dir/src/test_gripper.cpp.o\n'}
+[1.723059] (panthera_commander) StdoutLine: {'line': b'[ 15%] Building CXX object CMakeFiles/draw_circle.dir/src/draw_circle.cpp.o\n'}
+[1.723098] (panthera_commander) StdoutLine: {'line': b'[ 19%] Building CXX object CMakeFiles/sin_trajectory_moveit.dir/src/sin_trajectory_moveit.cpp.o\n'}
+[1.723815] (panthera_commander) StdoutLine: {'line': b'[ 23%] Building CXX object CMakeFiles/test_moveit_by_cartesian.dir/src/test_moveit_by_cartesian.cpp.o\n'}
+[1.724307] (panthera_commander) StdoutLine: {'line': b'[ 26%] Building CXX object CMakeFiles/test_moveit_by_jointspace.dir/src/test_moveit_by_jointspace.cpp.o\n'}
+[1.724348] (panthera_commander) StdoutLine: {'line': b'[ 30%] Building CXX object CMakeFiles/test_gripper_detailed.dir/src/test_gripper_detailed.cpp.o\n'}
+[1.724916] (panthera_commander) StdoutLine: {'line': b'[ 34%] Building CXX object CMakeFiles/commander_template.dir/src/commander_template.cpp.o\n'}
+[1.725024] (panthera_commander) StdoutLine: {'line': b'[ 38%] Building CXX object CMakeFiles/draw_three_circles.dir/src/draw_three_circles.cpp.o\n'}
+[1.725808] (panthera_commander) StdoutLine: {'line': b'[ 42%] Building CXX object CMakeFiles/test_cartesian_from_pose1.dir/src/test_cartesian_from_pose1.cpp.o\n'}
+[1.727358] (panthera_commander) StdoutLine: {'line': b'[ 46%] Building CXX object CMakeFiles/test_moveit.dir/src/test_moveit.cpp.o\n'}
+[1.727481] (panthera_commander) StdoutLine: {'line': b'[ 50%] Building CXX object CMakeFiles/test_moveit_by_siyuanshu.dir/src/test_moveit_by_siyuanshu.cpp.o\n'}
+[1.728641] (panthera_commander) StderrLine: {'line': b'/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/sin_trajectory_control.cpp:8:10: fatal error: panthera/Panthera.hpp: \xe6\xb2\xa1\xe6\x9c\x89\xe9\x82\xa3\xe4\xb8\xaa\xe6\x96\x87\xe4\xbb\xb6\xe6\x88\x96\xe7\x9b\xae\xe5\xbd\x95\n'}
+[1.728751] (panthera_commander) StderrLine: {'line': b'    8 | #include "panthera/Panthera.hpp"\n'}
+[1.728819] (panthera_commander) StderrLine: {'line': b'      |          ^~~~~~~~~~~~~~~~~~~~~~~\n'}
+[1.728880] (panthera_commander) StderrLine: {'line': b'compilation terminated.\n'}
+[1.729247] (panthera_commander) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/sin_trajectory_control.dir/build.make:76\xef\xbc\x9aCMakeFiles/sin_trajectory_control.dir/src/sin_trajectory_control.cpp.o] \xe9\x94\x99\xe8\xaf\xaf 1\n'}
+[1.729463] (panthera_commander) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:447\xef\xbc\x9aCMakeFiles/sin_trajectory_control.dir/all] \xe9\x94\x99\xe8\xaf\xaf 2\n'}
+[1.729533] (panthera_commander) StderrLine: {'line': b'gmake[1]: *** \xe6\xad\xa3\xe5\x9c\xa8\xe7\xad\x89\xe5\xbe\x85\xe6\x9c\xaa\xe5\xae\x8c\xe6\x88\x90\xe7\x9a\x84\xe4\xbb\xbb\xe5\x8a\xa1....\n'}
+[1.802001] (-) TimerEvent: {}
+[1.902262] (-) TimerEvent: {}
+[2.002478] (-) TimerEvent: {}
+[2.102730] (-) TimerEvent: {}
+[2.202909] (-) TimerEvent: {}
+[2.303091] (-) TimerEvent: {}
+[2.403336] (-) TimerEvent: {}
+[2.503587] (-) TimerEvent: {}
+[2.603839] (-) TimerEvent: {}
+[2.704138] (-) TimerEvent: {}
+[2.804357] (-) TimerEvent: {}
+[2.904624] (-) TimerEvent: {}
+[3.004899] (-) TimerEvent: {}
+[3.105127] (-) TimerEvent: {}
+[3.205431] (-) TimerEvent: {}
+[3.305726] (-) TimerEvent: {}
+[3.405964] (-) TimerEvent: {}
+[3.506224] (-) TimerEvent: {}
+[3.606441] (-) TimerEvent: {}
+[3.706636] (-) TimerEvent: {}
+[3.806893] (-) TimerEvent: {}
+[3.907161] (-) TimerEvent: {}
+[4.007454] (-) TimerEvent: {}
+[4.107779] (-) TimerEvent: {}
+[4.208095] (-) TimerEvent: {}
+[4.308348] (-) TimerEvent: {}
+[4.408599] (-) TimerEvent: {}
+[4.490692] (panthera_commander) StderrLine: {'line': b'In file included from /opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:24,\n'}
+[4.490933] (panthera_commander) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27,\n'}
+[4.490997] (panthera_commander) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171,\n'}
+[4.491052] (panthera_commander) StderrLine: {'line': b'                 from /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_horizontal_vertical_circles.cpp:1:\n'}
+[4.491231] (panthera_commander) StderrLine: {'line': b'/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_horizontal_vertical_circles.cpp: In function \xe2\x80\x98int main(int, char**)\xe2\x80\x99:\n'}
+[4.491292] (panthera_commander) StderrLine: {'line': b'/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_horizontal_vertical_circles.cpp:97:37: warning: zero-length gnu_printf format string [-Wformat-zero-length]\n'}
+[4.491349] (panthera_commander) StderrLine: {'line': b'   97 |     RCLCPP_INFO(node->get_logger(), "");\n'}
+[4.491416] (panthera_commander) StderrLine: {'line': b'      |                                     ^~\n'}
+[4.491476] (panthera_commander) StderrLine: {'line': b'/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_horizontal_vertical_circles.cpp:101:37: warning: zero-length gnu_printf format string [-Wformat-zero-length]\n'}
+[4.491528] (panthera_commander) StderrLine: {'line': b'  101 |     RCLCPP_INFO(node->get_logger(), "");\n'}
+[4.491583] (panthera_commander) StderrLine: {'line': b'      |                                     ^~\n'}
+[4.491634] (panthera_commander) StderrLine: {'line': b'In file included from /opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:24,\n'}
+[4.491685] (panthera_commander) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27,\n'}
+[4.491736] (panthera_commander) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171,\n'}
+[4.491787] (panthera_commander) StderrLine: {'line': b'                 from /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_three_circles.cpp:1:\n'}
+[4.491838] (panthera_commander) StderrLine: {'line': b'/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_three_circles.cpp: In function \xe2\x80\x98int main(int, char**)\xe2\x80\x99:\n'}
+[4.491892] (panthera_commander) StderrLine: {'line': b'/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_three_circles.cpp:97:37: warning: zero-length gnu_printf format string [-Wformat-zero-length]\n'}
+[4.491942] (panthera_commander) StderrLine: {'line': b'   97 |     RCLCPP_INFO(node->get_logger(), "");\n'}
+[4.491993] (panthera_commander) StderrLine: {'line': b'      |                                     ^~\n'}
+[4.492044] (panthera_commander) StderrLine: {'line': b'/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_three_circles.cpp:101:37: warning: zero-length gnu_printf format string [-Wformat-zero-length]\n'}
+[4.492115] (panthera_commander) StderrLine: {'line': b'  101 |     RCLCPP_INFO(node->get_logger(), "");\n'}
+[4.492166] (panthera_commander) StderrLine: {'line': b'      |                                     ^~\n'}
+[4.492841] (panthera_commander) StderrLine: {'line': b'/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_horizontal_vertical_circles.cpp:173:37: warning: zero-length gnu_printf format string [-Wformat-zero-length]\n'}
+[4.492931] (panthera_commander) StderrLine: {'line': b'  173 |     RCLCPP_INFO(node->get_logger(), "");\n'}
+[4.492990] (panthera_commander) StderrLine: {'line': b'      |                                     ^~\n'}
+[4.493044] (panthera_commander) StderrLine: {'line': b'/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_three_circles.cpp:156:37: warning: zero-length gnu_printf format string [-Wformat-zero-length]\n'}
+[4.493096] (panthera_commander) StderrLine: {'line': b'  156 |     RCLCPP_INFO(node->get_logger(), "");\n'}
+[4.493148] (panthera_commander) StderrLine: {'line': b'      |                                     ^~\n'}
+[4.493832] (panthera_commander) StderrLine: {'line': b'/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_three_circles.cpp:210:37: warning: zero-length gnu_printf format string [-Wformat-zero-length]\n'}
+[4.493935] (panthera_commander) StderrLine: {'line': b'  210 |     RCLCPP_INFO(node->get_logger(), "");\n'}
+[4.493998] (panthera_commander) StderrLine: {'line': b'      |                                     ^~\n'}
+[4.494147] (panthera_commander) StderrLine: {'line': b'/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_horizontal_vertical_circles.cpp:240:37: warning: zero-length gnu_printf format string [-Wformat-zero-length]\n'}
+[4.494227] (panthera_commander) StderrLine: {'line': b'  240 |     RCLCPP_INFO(node->get_logger(), "");\n'}
+[4.494286] (panthera_commander) StderrLine: {'line': b'      |                                     ^~\n'}
+[4.494656] (panthera_commander) StderrLine: {'line': b'/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_three_circles.cpp:261:37: warning: zero-length gnu_printf format string [-Wformat-zero-length]\n'}
+[4.494744] (panthera_commander) StderrLine: {'line': b'  261 |     RCLCPP_INFO(node->get_logger(), "");\n'}
+[4.494803] (panthera_commander) StderrLine: {'line': b'      |                                     ^~\n'}
+[4.502988] (panthera_commander) StderrLine: {'line': b'In file included from /opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:24,\n'}
+[4.503163] (panthera_commander) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27,\n'}
+[4.503222] (panthera_commander) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171,\n'}
+[4.503276] (panthera_commander) StderrLine: {'line': b'                 from /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_circle.cpp:1:\n'}
+[4.503329] (panthera_commander) StderrLine: {'line': b'/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_circle.cpp: In function \xe2\x80\x98int main(int, char**)\xe2\x80\x99:\n'}
+[4.503382] (panthera_commander) StderrLine: {'line': b'/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_circle.cpp:97:37: warning: zero-length gnu_printf format string [-Wformat-zero-length]\n'}
+[4.503444] (panthera_commander) StderrLine: {'line': b'   97 |     RCLCPP_INFO(node->get_logger(), "");\n'}
+[4.503497] (panthera_commander) StderrLine: {'line': b'      |                                     ^~\n'}
+[4.508734] (-) TimerEvent: {}
+[4.608968] (-) TimerEvent: {}
+[4.709234] (-) TimerEvent: {}
+[4.809524] (-) TimerEvent: {}
+[4.909814] (-) TimerEvent: {}
+[5.010078] (-) TimerEvent: {}
+[5.110330] (-) TimerEvent: {}
+[5.210580] (-) TimerEvent: {}
+[5.310824] (-) TimerEvent: {}
+[5.411076] (-) TimerEvent: {}
+[5.511364] (-) TimerEvent: {}
+[5.611672] (-) TimerEvent: {}
+[5.711978] (-) TimerEvent: {}
+[5.812265] (-) TimerEvent: {}
+[5.912455] (-) TimerEvent: {}
+[5.914427] (panthera_commander) StdoutLine: {'line': b'[ 53%] Linking CXX executable test_moveit_by_jointspace\n'}
+[5.984832] (panthera_commander) StdoutLine: {'line': b'[ 57%] Linking CXX executable test_gripper\n'}
+[6.012632] (-) TimerEvent: {}
+[6.073897] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_global_init@CURL_OPENSSL_4'\n"}
+[6.074131] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_perform@CURL_OPENSSL_4'\n"}
+[6.074716] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_setopt@CURL_OPENSSL_4'\n"}
+[6.074980] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_init@CURL_OPENSSL_4'\n"}
+[6.076481] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_cleanup@CURL_OPENSSL_4'\n"}
+[6.077473] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_global_cleanup@CURL_OPENSSL_4'\n"}
+[6.081871] (panthera_commander) StderrLine: {'line': b'collect2: error: ld returned 1 exit status\n'}
+[6.083467] (panthera_commander) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/test_moveit_by_jointspace.dir/build.make:375\xef\xbc\x9atest_moveit_by_jointspace] \xe9\x94\x99\xe8\xaf\xaf 1\n'}
+[6.083718] (panthera_commander) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:213\xef\xbc\x9aCMakeFiles/test_moveit_by_jointspace.dir/all] \xe9\x94\x99\xe8\xaf\xaf 2\n'}
+[6.112798] (-) TimerEvent: {}
+[6.174973] (panthera_commander) StdoutLine: {'line': b'[ 61%] Linking CXX executable draw_horizontal_vertical_circles\n'}
+[6.178360] (panthera_commander) StdoutLine: {'line': b'[ 65%] Linking CXX executable draw_circle\n'}
+[6.178549] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_global_init@CURL_OPENSSL_4'\n"}
+[6.178718] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_perform@CURL_OPENSSL_4'\n"}
+[6.179118] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_setopt@CURL_OPENSSL_4'\n"}
+[6.179526] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_init@CURL_OPENSSL_4'\n"}
+[6.181626] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_cleanup@CURL_OPENSSL_4'\n"}
+[6.183036] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_global_cleanup@CURL_OPENSSL_4'\n"}
+[6.183261] (panthera_commander) StdoutLine: {'line': b'[ 69%] Linking CXX executable test_cartesian_from_pose1\n'}
+[6.188920] (panthera_commander) StderrLine: {'line': b'collect2: error: ld returned 1 exit status\n'}
+[6.190394] (panthera_commander) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/test_gripper.dir/build.make:375\xef\xbc\x9atest_gripper] \xe9\x94\x99\xe8\xaf\xaf 1\n'}
+[6.190589] (panthera_commander) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:265\xef\xbc\x9aCMakeFiles/test_gripper.dir/all] \xe9\x94\x99\xe8\xaf\xaf 2\n'}
+[6.191863] (panthera_commander) StdoutLine: {'line': b'[ 73%] Linking CXX executable draw_three_circles\n'}
+[6.212918] (-) TimerEvent: {}
+[6.217218] (panthera_commander) StdoutLine: {'line': b'[ 76%] Linking CXX executable sin_trajectory_moveit\n'}
+[6.313110] (-) TimerEvent: {}
+[6.369580] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_global_init@CURL_OPENSSL_4'\n"}
+[6.370022] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_perform@CURL_OPENSSL_4'\n"}
+[6.370410] (panthera_commander) StderrLine: {'line': b'In file included from /opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:24,\n'}
+[6.370495] (panthera_commander) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27,\n'}
+[6.370553] (panthera_commander) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171,\n'}
+[6.370606] (panthera_commander) StderrLine: {'line': b'                 from /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/test_moveit_by_siyuanshu.cpp:1:\n'}
+[6.370659] (panthera_commander) StderrLine: {'line': b'/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/test_moveit_by_siyuanshu.cpp: In function \xe2\x80\x98int main(int, char**)\xe2\x80\x99:\n'}
+[6.370720] (panthera_commander) StderrLine: {'line': b'/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/test_moveit_by_siyuanshu.cpp:108:42: warning: zero-length gnu_printf format string [-Wformat-zero-length]\n'}
+[6.370773] (panthera_commander) StderrLine: {'line': b'  108 |         RCLCPP_ERROR(node->get_logger(), "");\n'}
+[6.370826] (panthera_commander) StderrLine: {'line': b'      |                                          ^~\n'}
+[6.371021] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_setopt@CURL_OPENSSL_4'\n"}
+[6.371099] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_init@CURL_OPENSSL_4'\n"}
+[6.374142] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_cleanup@CURL_OPENSSL_4'\n"}
+[6.376168] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_global_cleanup@CURL_OPENSSL_4'\n"}
+[6.383758] (panthera_commander) StderrLine: {'line': b'collect2: error: ld returned 1 exit status\n'}
+[6.386003] (panthera_commander) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/draw_horizontal_vertical_circles.dir/build.make:375\xef\xbc\x9adraw_horizontal_vertical_circles] \xe9\x94\x99\xe8\xaf\xaf 1\n'}
+[6.386238] (panthera_commander) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:395\xef\xbc\x9aCMakeFiles/draw_horizontal_vertical_circles.dir/all] \xe9\x94\x99\xe8\xaf\xaf 2\n'}
+[6.395341] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_global_init@CURL_OPENSSL_4'\n"}
+[6.395634] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_perform@CURL_OPENSSL_4'\n"}
+[6.396575] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_setopt@CURL_OPENSSL_4'\n"}
+[6.396925] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_init@CURL_OPENSSL_4'\n"}
+[6.399170] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_cleanup@CURL_OPENSSL_4'\n"}
+[6.400651] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_global_cleanup@CURL_OPENSSL_4'\n"}
+[6.406128] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_global_init@CURL_OPENSSL_4'\n"}
+[6.406490] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_perform@CURL_OPENSSL_4'\n"}
+[6.407613] (panthera_commander) StderrLine: {'line': b'collect2: error: ld returned 1 exit status\n'}
+[6.407887] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_setopt@CURL_OPENSSL_4'\n"}
+[6.408100] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_init@CURL_OPENSSL_4'\n"}
+[6.409712] (panthera_commander) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/test_cartesian_from_pose1.dir/build.make:375\xef\xbc\x9atest_cartesian_from_pose1] \xe9\x94\x99\xe8\xaf\xaf 1\n'}
+[6.409906] (panthera_commander) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:317\xef\xbc\x9aCMakeFiles/test_cartesian_from_pose1.dir/all] \xe9\x94\x99\xe8\xaf\xaf 2\n'}
+[6.410541] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_global_init@CURL_OPENSSL_4'\n"}
+[6.410844] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_cleanup@CURL_OPENSSL_4'\n"}
+[6.410924] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_perform@CURL_OPENSSL_4'\n"}
+[6.412047] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_setopt@CURL_OPENSSL_4'\n"}
+[6.412423] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_init@CURL_OPENSSL_4'\n"}
+[6.412682] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_global_cleanup@CURL_OPENSSL_4'\n"}
+[6.413160] (-) TimerEvent: {}
+[6.415099] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_cleanup@CURL_OPENSSL_4'\n"}
+[6.416766] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_global_init@CURL_OPENSSL_4'\n"}
+[6.416836] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_global_cleanup@CURL_OPENSSL_4'\n"}
+[6.417054] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_perform@CURL_OPENSSL_4'\n"}
+[6.417966] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_setopt@CURL_OPENSSL_4'\n"}
+[6.418234] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_init@CURL_OPENSSL_4'\n"}
+[6.419752] (panthera_commander) StderrLine: {'line': b'collect2: error: ld returned 1 exit status\n'}
+[6.419821] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_cleanup@CURL_OPENSSL_4'\n"}
+[6.420749] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_global_cleanup@CURL_OPENSSL_4'\n"}
+[6.421113] (panthera_commander) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/draw_three_circles.dir/build.make:375\xef\xbc\x9adraw_three_circles] \xe9\x94\x99\xe8\xaf\xaf 1\n'}
+[6.421248] (panthera_commander) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:421\xef\xbc\x9aCMakeFiles/draw_three_circles.dir/all] \xe9\x94\x99\xe8\xaf\xaf 2\n'}
+[6.422460] (panthera_commander) StderrLine: {'line': b'collect2: error: ld returned 1 exit status\n'}
+[6.423673] (panthera_commander) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/draw_circle.dir/build.make:375\xef\xbc\x9adraw_circle] \xe9\x94\x99\xe8\xaf\xaf 1\n'}
+[6.423736] (panthera_commander) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:369\xef\xbc\x9aCMakeFiles/draw_circle.dir/all] \xe9\x94\x99\xe8\xaf\xaf 2\n'}
+[6.425129] (panthera_commander) StderrLine: {'line': b'collect2: error: ld returned 1 exit status\n'}
+[6.426065] (panthera_commander) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/sin_trajectory_moveit.dir/build.make:367\xef\xbc\x9asin_trajectory_moveit] \xe9\x94\x99\xe8\xaf\xaf 1\n'}
+[6.426182] (panthera_commander) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:473\xef\xbc\x9aCMakeFiles/sin_trajectory_moveit.dir/all] \xe9\x94\x99\xe8\xaf\xaf 2\n'}
+[6.513339] (-) TimerEvent: {}
+[6.613641] (-) TimerEvent: {}
+[6.713913] (-) TimerEvent: {}
+[6.814195] (-) TimerEvent: {}
+[6.914541] (-) TimerEvent: {}
+[7.014833] (-) TimerEvent: {}
+[7.115083] (-) TimerEvent: {}
+[7.215422] (-) TimerEvent: {}
+[7.315715] (-) TimerEvent: {}
+[7.379674] (panthera_commander) StdoutLine: {'line': b'[ 80%] Linking CXX executable test_moveit_by_cartesian\n'}
+[7.412346] (panthera_commander) StdoutLine: {'line': b'[ 84%] Linking CXX executable test_gripper_detailed\n'}
+[7.415850] (-) TimerEvent: {}
+[7.516113] (-) TimerEvent: {}
+[7.525420] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_global_init@CURL_OPENSSL_4'\n"}
+[7.525610] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_perform@CURL_OPENSSL_4'\n"}
+[7.526188] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_setopt@CURL_OPENSSL_4'\n"}
+[7.526388] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_init@CURL_OPENSSL_4'\n"}
+[7.528013] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_cleanup@CURL_OPENSSL_4'\n"}
+[7.529378] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_global_cleanup@CURL_OPENSSL_4'\n"}
+[7.535621] (panthera_commander) StderrLine: {'line': b'collect2: error: ld returned 1 exit status\n'}
+[7.537144] (panthera_commander) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/test_moveit_by_cartesian.dir/build.make:375\xef\xbc\x9atest_moveit_by_cartesian] \xe9\x94\x99\xe8\xaf\xaf 1\n'}
+[7.537418] (panthera_commander) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:187\xef\xbc\x9aCMakeFiles/test_moveit_by_cartesian.dir/all] \xe9\x94\x99\xe8\xaf\xaf 2\n'}
+[7.559833] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_global_init@CURL_OPENSSL_4'\n"}
+[7.560047] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_perform@CURL_OPENSSL_4'\n"}
+[7.560618] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_setopt@CURL_OPENSSL_4'\n"}
+[7.560879] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_init@CURL_OPENSSL_4'\n"}
+[7.562281] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_cleanup@CURL_OPENSSL_4'\n"}
+[7.563108] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_global_cleanup@CURL_OPENSSL_4'\n"}
+[7.567266] (panthera_commander) StderrLine: {'line': b'collect2: error: ld returned 1 exit status\n'}
+[7.568649] (panthera_commander) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/test_gripper_detailed.dir/build.make:375\xef\xbc\x9atest_gripper_detailed] \xe9\x94\x99\xe8\xaf\xaf 1\n'}
+[7.568858] (panthera_commander) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:291\xef\xbc\x9aCMakeFiles/test_gripper_detailed.dir/all] \xe9\x94\x99\xe8\xaf\xaf 2\n'}
+[7.611766] (panthera_commander) StdoutLine: {'line': b'[ 88%] Linking CXX executable test_moveit\n'}
+[7.616221] (-) TimerEvent: {}
+[7.617738] (panthera_commander) StdoutLine: {'line': b'[ 92%] Linking CXX executable test_moveit_by_siyuanshu\n'}
+[7.716465] (-) TimerEvent: {}
+[7.743653] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_global_init@CURL_OPENSSL_4'\n"}
+[7.743907] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_perform@CURL_OPENSSL_4'\n"}
+[7.744324] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_setopt@CURL_OPENSSL_4'\n"}
+[7.744644] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_init@CURL_OPENSSL_4'\n"}
+[7.745890] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_cleanup@CURL_OPENSSL_4'\n"}
+[7.746807] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_global_cleanup@CURL_OPENSSL_4'\n"}
+[7.750326] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_global_init@CURL_OPENSSL_4'\n"}
+[7.750539] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_perform@CURL_OPENSSL_4'\n"}
+[7.751134] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_setopt@CURL_OPENSSL_4'\n"}
+[7.751335] (panthera_commander) StderrLine: {'line': b'collect2: error: ld returned 1 exit status\n'}
+[7.751431] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_init@CURL_OPENSSL_4'\n"}
+[7.752562] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_cleanup@CURL_OPENSSL_4'\n"}
+[7.752939] (panthera_commander) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/test_moveit.dir/build.make:375\xef\xbc\x9atest_moveit] \xe9\x94\x99\xe8\xaf\xaf 1\n'}
+[7.753102] (panthera_commander) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:161\xef\xbc\x9aCMakeFiles/test_moveit.dir/all] \xe9\x94\x99\xe8\xaf\xaf 2\n'}
+[7.753343] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_global_cleanup@CURL_OPENSSL_4'\n"}
+[7.757232] (panthera_commander) StderrLine: {'line': b'collect2: error: ld returned 1 exit status\n'}
+[7.758201] (panthera_commander) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/test_moveit_by_siyuanshu.dir/build.make:375\xef\xbc\x9atest_moveit_by_siyuanshu] \xe9\x94\x99\xe8\xaf\xaf 1\n'}
+[7.758356] (panthera_commander) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:239\xef\xbc\x9aCMakeFiles/test_moveit_by_siyuanshu.dir/all] \xe9\x94\x99\xe8\xaf\xaf 2\n'}
+[7.816668] (-) TimerEvent: {}
+[7.916940] (-) TimerEvent: {}
+[8.017209] (-) TimerEvent: {}
+[8.117468] (-) TimerEvent: {}
+[8.217723] (-) TimerEvent: {}
+[8.317937] (-) TimerEvent: {}
+[8.418201] (-) TimerEvent: {}
+[8.518461] (-) TimerEvent: {}
+[8.618721] (-) TimerEvent: {}
+[8.718992] (-) TimerEvent: {}
+[8.819248] (-) TimerEvent: {}
+[8.919514] (-) TimerEvent: {}
+[9.019785] (-) TimerEvent: {}
+[9.120036] (-) TimerEvent: {}
+[9.220291] (-) TimerEvent: {}
+[9.320554] (-) TimerEvent: {}
+[9.420813] (-) TimerEvent: {}
+[9.520964] (-) TimerEvent: {}
+[9.621217] (-) TimerEvent: {}
+[9.721470] (-) TimerEvent: {}
+[9.821719] (-) TimerEvent: {}
+[9.921983] (-) TimerEvent: {}
+[10.022248] (-) TimerEvent: {}
+[10.122458] (-) TimerEvent: {}
+[10.222688] (-) TimerEvent: {}
+[10.322920] (-) TimerEvent: {}
+[10.349980] (panthera_commander) StdoutLine: {'line': b'[ 96%] Linking CXX executable commander_template\n'}
+[10.423078] (-) TimerEvent: {}
+[10.523288] (-) TimerEvent: {}
+[10.623573] (-) TimerEvent: {}
+[10.716798] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_global_init@CURL_OPENSSL_4'\n"}
+[10.716983] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_perform@CURL_OPENSSL_4'\n"}
+[10.718592] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_setopt@CURL_OPENSSL_4'\n"}
+[10.718905] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_init@CURL_OPENSSL_4'\n"}
+[10.722355] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_easy_cleanup@CURL_OPENSSL_4'\n"}
+[10.723647] (-) TimerEvent: {}
+[10.724972] (panthera_commander) StderrLine: {'line': b"/usr/bin/ld: /opt/ros/jazzy/lib/libresource_retriever.so: undefined reference to `curl_global_cleanup@CURL_OPENSSL_4'\n"}
+[10.739118] (panthera_commander) StderrLine: {'line': b'collect2: error: ld returned 1 exit status\n'}
+[10.740844] (panthera_commander) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/commander_template.dir/build.make:383\xef\xbc\x9acommander_template] \xe9\x94\x99\xe8\xaf\xaf 1\n'}
+[10.741176] (panthera_commander) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:343\xef\xbc\x9aCMakeFiles/commander_template.dir/all] \xe9\x94\x99\xe8\xaf\xaf 2\n'}
+[10.741391] (panthera_commander) StderrLine: {'line': b'gmake: *** [Makefile:146\xef\xbc\x9aall] \xe9\x94\x99\xe8\xaf\xaf 2\n'}
+[10.742909] (panthera_commander) CommandEnded: {'returncode': 2}
+[10.746600] (panthera_commander) JobEnded: {'identifier': 'panthera_commander', 'rc': 2}
+[10.756869] (-) EventReactorShutdown: {}

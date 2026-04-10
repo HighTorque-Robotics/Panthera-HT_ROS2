@@ -1,0 +1,46 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from panthera_interfaces/srv/MoveToPose.srv
+// generated code does not contain a copyright notice
+
+
+module panthera_interfaces {
+  module srv {
+    @verbatim (language="comment", text=
+      "Request: end-effector target pose")
+    struct MoveToPose_Request {
+      double x;
+
+      double y;
+
+      double z;
+
+      double roll;
+
+      double pitch;
+
+      double yaw;
+
+      @verbatim (language="comment", text=
+        "Use Cartesian path planning (linear motion)")
+      @default (value=FALSE)
+      boolean cartesian_path;
+
+      @verbatim (language="comment", text=
+        "Max velocity scaling factor (0.0~1.0)")
+      @default (value=1.0)
+      double velocity_scaling;
+
+      @verbatim (language="comment", text=
+        "Max acceleration scaling factor (0.0~1.0)")
+      @default (value=1.0)
+      double acceleration_scaling;
+    };
+    @verbatim (language="comment", text=
+      "Response")
+    struct MoveToPose_Response {
+      boolean success;
+
+      string message;
+    };
+  };
+};

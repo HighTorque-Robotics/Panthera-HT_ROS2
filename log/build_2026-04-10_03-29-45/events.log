@@ -1,0 +1,156 @@
+[0.000000] (-) TimerEvent: {}
+[0.000240] (-) JobUnselected: {'identifier': 'hightorque_robot'}
+[0.000289] (-) JobUnselected: {'identifier': 'panthera_arm_control'}
+[0.000314] (-) JobUnselected: {'identifier': 'panthera_bringup'}
+[0.000327] (-) JobUnselected: {'identifier': 'panthera_gazebo'}
+[0.000337] (-) JobUnselected: {'identifier': 'panthera_hardware'}
+[0.000348] (-) JobUnselected: {'identifier': 'panthera_ht_description_with_finger'}
+[0.000358] (-) JobUnselected: {'identifier': 'panthera_interfaces'}
+[0.000368] (-) JobUnselected: {'identifier': 'with_gripper_config'}
+[0.000380] (panthera_commander) JobQueued: {'identifier': 'panthera_commander', 'dependencies': OrderedDict({'panthera_ht_description_with_finger': '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_ht_description_with_finger', 'panthera_interfaces': '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces', 'with_gripper_config': '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config'})}
+[0.000429] (panthera_commander) JobStarted: {'identifier': 'panthera_commander'}
+[0.007937] (panthera_commander) JobProgress: {'identifier': 'panthera_commander', 'progress': 'cmake'}
+[0.008460] (panthera_commander) JobProgress: {'identifier': 'panthera_commander', 'progress': 'build'}
+[0.008922] (panthera_commander) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_commander', '--', '-j28', '-l28'], 'cwd': '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_commander', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'CONDA_PROMPT_MODIFIER': '(base)', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'tk', 'CLAUDE_CODE_ENTRYPOINT': 'cli', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'GIT_EDITOR': 'true', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'CONDA_BACKUP_QT_XCB_GL_INTEGRATION': '', 'HOME': '/home/tk', 'CONDA_SHLVL': '1', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '2233', 'SYSTEMD_EXEC_PID': '2727', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator23558193cd9818af7fe4d2c2f5bd9d00f', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '41011', 'GNOME_KEYRING_CONTROL': '/run/user/1000/keyring', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'tk', 'JOURNAL_STREAM': '9:25828', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'tk', 'ANTHROPIC_BASE_URL': 'http://www.claudecodeserver.top/api', 'TERM': 'xterm-256color', 'OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE': 'delta', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'WINDOWPATH': '2', 'PATH': '/home/tk/anaconda3/bin:/home/tk/anaconda3/condabin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/tk-MS-7D99:@/tmp/.ICE-unix/2577,unix/tk-MS-7D99:/tmp/.ICE-unix/2577', 'INVOCATION_ID': 'd9dcbf72395b4ebaa02e98e83bbc0a72', 'COREPACK_ENABLE_AUTO_PIN': '0', 'XDG_MENU_PREFIX': 'gnome-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':1', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'NoDefaultCurrentDirectoryInExePath': '1', 'LANG': 'zh_CN.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'RMW_IMPLEMENTATION': 'rmw_cyclonedds_cpp', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'QT_XCB_GL_INTEGRATION': 'none', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'GSETTINGS_SCHEMA_DIR': '/home/tk/anaconda3/share/glib-2.0/schemas', 'AMENT_PREFIX_PATH': '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_ht_description_with_finger:/opt/ros/jazzy', 'CONDA_PYTHON_EXE': '/home/tk/anaconda3/bin/python', 'SHELL': '/bin/bash', 'TERMINATOR_UUID': 'urn:uuid:dd28e141-5d7b-443c-ab71-d7db99f401af', 'ANTHROPIC_AUTH_TOKEN': 'sk_2968f36590d96ff51d7181f633f29f4f2c5b00db5fc3d673763c4d78d34969a6', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'CONDA_DEFAULT_ENV': 'base', 'CLAUDECODE': '1', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_commander', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'CONDA_EXE': '/home/tk/anaconda3/bin/conda', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'CLAUDE_CODE_EXECPATH': '/usr/bin/node', 'QTWEBENGINE_DICTIONARIES_PATH': '/usr/share/hunspell-bdic/', 'PYTHONPATH': '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.13/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'CONDA_PREFIX': '/home/tk/anaconda3', 'GSETTINGS_SCHEMA_DIR_CONDA_BACKUP': '', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_ht_description_with_finger:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.030963] (panthera_commander) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[0.100043] (-) TimerEvent: {}
+[0.200282] (-) TimerEvent: {}
+[0.207832] (panthera_commander) StdoutLine: {'line': b'-- Found rclcpp: 28.1.13 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[0.221744] (panthera_commander) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[0.226035] (panthera_commander) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[0.231530] (panthera_commander) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.238082] (panthera_commander) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.268644] (panthera_commander) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[0.269242] (panthera_commander) StdoutLine: {'line': b'-- Found rmw_cyclonedds_cpp: 2.2.3 (/opt/ros/jazzy/share/rmw_cyclonedds_cpp/cmake)\n'}
+[0.280137] (panthera_commander) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_cyclonedds_cpp' as default\n"}
+[0.300469] (-) TimerEvent: {}
+[0.309175] (panthera_commander) StdoutLine: {'line': b'-- Found moveit_ros_planning_interface: 2.12.3 (/opt/ros/jazzy/share/moveit_ros_planning_interface/cmake)\n'}
+[0.314918] (panthera_commander) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: date_time filesystem program_options system thread \n'}
+[0.400666] (-) TimerEvent: {}
+[0.449676] (panthera_commander) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: chrono date_time filesystem iostreams program_options regex serialization system thread \n'}
+[0.465225] (panthera_commander) StdoutLine: {'line': b'-- Found parameter_traits: 0.5.0 (/opt/ros/jazzy/share/parameter_traits/cmake)\n'}
+[0.468208] (panthera_commander) StdoutLine: {'line': b'-- Found rclcpp_lifecycle: 28.1.13 (/opt/ros/jazzy/share/rclcpp_lifecycle/cmake)\n'}
+[0.484409] (panthera_commander) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: filesystem \n'}
+[0.500866] (-) TimerEvent: {}
+[0.507208] (panthera_commander) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[0.512249] (panthera_commander) StdoutLine: {'line': b'-- Found TinyXML2 via Config file: /usr/lib/x86_64-linux-gnu/cmake/tinyxml2\n'}
+[0.573721] (panthera_commander) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: system filesystem date_time program_options thread chrono \n'}
+[0.599088] (panthera_commander) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: thread system filesystem regex date_time program_options \n'}
+[0.601061] (-) TimerEvent: {}
+[0.615870] (panthera_commander) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: system filesystem date_time program_options thread \n'}
+[0.635140] (panthera_commander) StdoutLine: {'line': b'-- Found example_interfaces: 0.12.0 (/opt/ros/jazzy/share/example_interfaces/cmake)\n'}
+[0.645295] (panthera_commander) StdoutLine: {'line': b'-- Found panthera_interfaces: 0.0.0 (/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/cmake)\n'}
+[0.663486] (panthera_commander) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.17.3 (/opt/ros/jazzy/share/ament_lint_auto/cmake)\n'}
+[0.701249] (-) TimerEvent: {}
+[0.712646] (panthera_commander) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[0.712811] (panthera_commander) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[0.712875] (panthera_commander) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[0.713046] (panthera_commander) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[0.713496] (panthera_commander) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[0.713610] (panthera_commander) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[0.713757] (panthera_commander) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[0.714084] (panthera_commander) StdoutLine: {'line': b'-- Configuring done (0.7s)\n'}
+[0.787213] (panthera_commander) StdoutLine: {'line': b'-- Generating done (0.1s)\n'}
+[0.801431] (-) TimerEvent: {}
+[0.807925] (panthera_commander) StdoutLine: {'line': b'-- Build files have been written to: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_commander\n'}
+[0.839410] (panthera_commander) StdoutLine: {'line': b'[  3%] Building CXX object CMakeFiles/sin_trajectory_control.dir/src/sin_trajectory_control.cpp.o\n'}
+[0.844216] (panthera_commander) StderrLine: {'line': b'/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/sin_trajectory_control.cpp:8:10: fatal error: panthera/Panthera.hpp: \xe6\xb2\xa1\xe6\x9c\x89\xe9\x82\xa3\xe4\xb8\xaa\xe6\x96\x87\xe4\xbb\xb6\xe6\x88\x96\xe7\x9b\xae\xe5\xbd\x95\n'}
+[0.844370] (panthera_commander) StderrLine: {'line': b'    8 | #include "panthera/Panthera.hpp"\n'}
+[0.844405] (panthera_commander) StderrLine: {'line': b'      |          ^~~~~~~~~~~~~~~~~~~~~~~\n'}
+[0.844433] (panthera_commander) StderrLine: {'line': b'compilation terminated.\n'}
+[0.844535] (panthera_commander) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/sin_trajectory_control.dir/build.make:76\xef\xbc\x9aCMakeFiles/sin_trajectory_control.dir/src/sin_trajectory_control.cpp.o] \xe9\x94\x99\xe8\xaf\xaf 1\n'}
+[0.844708] (panthera_commander) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:447\xef\xbc\x9aCMakeFiles/sin_trajectory_control.dir/all] \xe9\x94\x99\xe8\xaf\xaf 2\n'}
+[0.844746] (panthera_commander) StderrLine: {'line': b'gmake[1]: *** \xe6\xad\xa3\xe5\x9c\xa8\xe7\xad\x89\xe5\xbe\x85\xe6\x9c\xaa\xe5\xae\x8c\xe6\x88\x90\xe7\x9a\x84\xe4\xbb\xbb\xe5\x8a\xa1....\n'}
+[0.845923] (panthera_commander) StdoutLine: {'line': b'[ 19%] Built target draw_three_circles\n'}
+[0.846005] (panthera_commander) StdoutLine: {'line': b'[ 19%] Built target test_gripper\n'}
+[0.846097] (panthera_commander) StdoutLine: {'line': b'[ 26%] Built target test_gripper_detailed\n'}
+[0.846181] (panthera_commander) StdoutLine: {'line': b'[ 38%] Built target test_moveit\n'}
+[0.846206] (panthera_commander) StdoutLine: {'line': b'[ 42%] Built target test_moveit_by_cartesian\n'}
+[0.847537] (panthera_commander) StdoutLine: {'line': b'[ 50%] Built target sin_trajectory_moveit\n'}
+[0.848963] (panthera_commander) StdoutLine: {'line': b'[ 53%] Building CXX object CMakeFiles/commander_template.dir/src/commander_template.cpp.o\n'}
+[0.849144] (panthera_commander) StdoutLine: {'line': b'[ 61%] Built target draw_horizontal_vertical_circles\n'}
+[0.850002] (panthera_commander) StdoutLine: {'line': b'[ 69%] Built target test_moveit_by_jointspace\n'}
+[0.850718] (panthera_commander) StdoutLine: {'line': b'[ 76%] Built target test_cartesian_from_pose1\n'}
+[0.850892] (panthera_commander) StdoutLine: {'line': b'[ 84%] Built target test_moveit_by_siyuanshu\n'}
+[0.851328] (panthera_commander) StdoutLine: {'line': b'[ 92%] Built target draw_circle\n'}
+[0.901507] (-) TimerEvent: {}
+[1.001622] (-) TimerEvent: {}
+[1.101793] (-) TimerEvent: {}
+[1.201886] (-) TimerEvent: {}
+[1.302036] (-) TimerEvent: {}
+[1.402168] (-) TimerEvent: {}
+[1.502393] (-) TimerEvent: {}
+[1.602525] (-) TimerEvent: {}
+[1.702657] (-) TimerEvent: {}
+[1.802913] (-) TimerEvent: {}
+[1.903050] (-) TimerEvent: {}
+[2.003211] (-) TimerEvent: {}
+[2.103413] (-) TimerEvent: {}
+[2.203600] (-) TimerEvent: {}
+[2.303858] (-) TimerEvent: {}
+[2.404006] (-) TimerEvent: {}
+[2.504296] (-) TimerEvent: {}
+[2.604583] (-) TimerEvent: {}
+[2.704878] (-) TimerEvent: {}
+[2.805162] (-) TimerEvent: {}
+[2.905447] (-) TimerEvent: {}
+[3.005711] (-) TimerEvent: {}
+[3.105981] (-) TimerEvent: {}
+[3.206254] (-) TimerEvent: {}
+[3.306519] (-) TimerEvent: {}
+[3.406708] (-) TimerEvent: {}
+[3.506900] (-) TimerEvent: {}
+[3.607180] (-) TimerEvent: {}
+[3.707445] (-) TimerEvent: {}
+[3.807712] (-) TimerEvent: {}
+[3.907979] (-) TimerEvent: {}
+[4.008239] (-) TimerEvent: {}
+[4.108508] (-) TimerEvent: {}
+[4.208780] (-) TimerEvent: {}
+[4.309056] (-) TimerEvent: {}
+[4.409235] (-) TimerEvent: {}
+[4.509493] (-) TimerEvent: {}
+[4.609718] (-) TimerEvent: {}
+[4.709945] (-) TimerEvent: {}
+[4.810209] (-) TimerEvent: {}
+[4.910476] (-) TimerEvent: {}
+[5.010742] (-) TimerEvent: {}
+[5.111101] (-) TimerEvent: {}
+[5.211370] (-) TimerEvent: {}
+[5.311603] (-) TimerEvent: {}
+[5.411834] (-) TimerEvent: {}
+[5.512017] (-) TimerEvent: {}
+[5.612234] (-) TimerEvent: {}
+[5.712423] (-) TimerEvent: {}
+[5.812642] (-) TimerEvent: {}
+[5.912861] (-) TimerEvent: {}
+[6.013074] (-) TimerEvent: {}
+[6.113279] (-) TimerEvent: {}
+[6.213493] (-) TimerEvent: {}
+[6.313716] (-) TimerEvent: {}
+[6.414026] (-) TimerEvent: {}
+[6.514182] (-) TimerEvent: {}
+[6.614379] (-) TimerEvent: {}
+[6.714554] (-) TimerEvent: {}
+[6.814819] (-) TimerEvent: {}
+[6.915078] (-) TimerEvent: {}
+[7.015331] (-) TimerEvent: {}
+[7.115595] (-) TimerEvent: {}
+[7.215862] (-) TimerEvent: {}
+[7.316053] (-) TimerEvent: {}
+[7.416205] (-) TimerEvent: {}
+[7.516459] (-) TimerEvent: {}
+[7.616716] (-) TimerEvent: {}
+[7.716972] (-) TimerEvent: {}
+[7.817262] (-) TimerEvent: {}
+[7.917561] (-) TimerEvent: {}
+[7.975022] (panthera_commander) StdoutLine: {'line': b'[ 96%] Linking CXX executable commander_template\n'}
+[8.017655] (-) TimerEvent: {}
+[8.117889] (-) TimerEvent: {}
+[8.218150] (-) TimerEvent: {}
+[8.318410] (-) TimerEvent: {}
+[8.369094] (panthera_commander) StdoutLine: {'line': b'[ 96%] Built target commander_template\n'}
+[8.369628] (panthera_commander) StderrLine: {'line': b'gmake: *** [Makefile:146\xef\xbc\x9aall] \xe9\x94\x99\xe8\xaf\xaf 2\n'}
+[8.370682] (panthera_commander) CommandEnded: {'returncode': 2}
+[8.374609] (panthera_commander) JobEnded: {'identifier': 'panthera_commander', 'rc': 2}
+[8.385020] (-) EventReactorShutdown: {}

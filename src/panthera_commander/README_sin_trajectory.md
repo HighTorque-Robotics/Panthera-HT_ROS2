@@ -6,24 +6,24 @@
 
 ## 文件位置
 
-`/home/tk/aaa_ws/src/gripper_robot_commander/src/sin_trajectory_control.cpp`
+`src/sin_trajectory_control.cpp`
 
 ## 编译
 
 ```bash
-cd /home/tk/aaa_ws
-colcon build --packages-select gripper_robot_commander
+cd ~/panthera_ws
+colcon build --packages-select panthera_commander
 source install/setup.bash
 ```
 
 ## 运行
 
 ```bash
-# 使用默认配置文件
-ros2 run gripper_robot_commander sin_trajectory_control
+# 使用默认配置文件（hightorque_robot 包的 Follower.yaml）
+ros2 run panthera_commander sin_trajectory_control
 
 # 或指定自定义配置文件
-ros2 run gripper_robot_commander sin_trajectory_control /path/to/config.yaml
+ros2 run panthera_commander sin_trajectory_control /path/to/config.yaml
 ```
 
 ## 控制参数
@@ -110,7 +110,7 @@ const int control_rate = 500;        // 控制频率 (Hz)
 1. **确保工作空间安全**: 运行前确保机械臂周围有足够的空间
 2. **观察首次运行**: 首次运行时建议降低频率和持续时间
 3. **紧急停止**: 如需立即停止，按 `Ctrl+C`
-4. **配置文件**: 默认使用 `Follower_absolute.yaml`，可自定义
+4. **配置文件**: 默认使用 `hightorque_robot/robot_param/Follower.yaml`，可自定义
 
 ## 故障排除
 
@@ -122,8 +122,8 @@ const int control_rate = 500;        // 控制频率 (Hz)
 # 重新编译 hightorque_robot 包
 colcon build --packages-select hightorque_robot
 
-# 然后重新编译 gripper_robot_commander
-colcon build --packages-select gripper_robot_commander
+# 然后重新编译 panthera_commander
+colcon build --packages-select panthera_commander
 ```
 
 ### 运行时错误
@@ -131,15 +131,18 @@ colcon build --packages-select gripper_robot_commander
 如果遇到库加载错误：
 
 ```bash
-source /home/tk/aaa_ws/install/setup.bash
-ros2 run gripper_robot_commander sin_trajectory_control
+source ~/panthera_ws/install/setup.bash
+ros2 run panthera_commander sin_trajectory_control
 ```
 
-## 与Python版本的对比
+## 依赖
 
-| 特性 | Python版本 | C++版本 |
-|------|-----------|---------|
-| 文件位置 | `/home/tk/下载/...` | `/home/tk/aaa_ws/...` |
-| 性能 | 较低 | 更高 |
-| 控制频率 | 500 Hz | 500 Hz |
-| 功能 | 完全相同 | 完全相同 |
+- `hightorque_robot`: 机械臂 SDK（提供 `panthera::Panthera` 类）
+- `ament_index_cpp`: 用于动态获取包路径
+- ROS2 环境
+
+## 默认配置文件
+
+程序默认使用 `hightorque_robot/robot_param/Follower.yaml`，其中：
+- `param_file`: 相对路径指向 `motor_param/6dof_Panthera_params_follower.yaml`
+- `urdf.file_path`: 相对路径指向 `panthera_ht_description_with_finger` 包的 URDF 文件

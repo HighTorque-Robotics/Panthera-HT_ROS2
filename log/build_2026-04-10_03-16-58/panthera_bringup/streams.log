@@ -1,0 +1,51 @@
+[0.006s] Invoking command in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_bringup -DCMAKE_INSTALL_PREFIX=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_bringup
+[0.041s] -- The C compiler identification is GNU 13.3.0
+[0.079s] -- The CXX compiler identification is GNU 13.3.0
+[0.093s] -- Detecting C compiler ABI info
+[0.150s] -- Detecting C compiler ABI info - done
+[0.156s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.156s] -- Detecting C compile features
+[0.157s] -- Detecting C compile features - done
+[0.165s] -- Detecting CXX compiler ABI info
+[0.235s] -- Detecting CXX compiler ABI info - done
+[0.241s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.241s] -- Detecting CXX compile features
+[0.241s] -- Detecting CXX compile features - done
+[0.243s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.330s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.391s] -- Found ament_lint_auto: 0.17.3 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[0.451s] -- Added test 'copyright' to check source files copyright and LICENSE
+[0.451s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.451s] -- Configured 'flake8' exclude dirs and/or files: 
+[0.451s] -- Added test 'lint_cmake' to check CMake code style
+[0.452s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[0.452s] -- Added test 'xmllint' to check XML markup files
+[0.453s] -- Configuring done (0.4s)
+[0.454s] -- Generating done (0.0s)
+[0.455s] -- Build files have been written to: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_bringup
+[0.458s] Invoked command in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_bringup -DCMAKE_INSTALL_PREFIX=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_bringup
+[0.458s] Invoking command in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_bringup -- -j28 -l28
+[0.486s] Invoked command in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_bringup -- -j28 -l28
+[0.487s] Invoking command in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_bringup
+[0.492s] -- Install configuration: ""
+[0.492s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_bringup/share/panthera_bringup/launch
+[0.493s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_bringup/share/panthera_bringup/launch/robot.launch.xml
+[0.493s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_bringup/share/panthera_bringup/launch/robot.launch.py
+[0.493s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_bringup/share/panthera_bringup/config
+[0.493s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_bringup/share/panthera_bringup/config/ros2_controllers.yaml
+[0.493s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_bringup/share/ament_index/resource_index/package_run_dependencies/panthera_bringup
+[0.493s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_bringup/share/ament_index/resource_index/parent_prefix_path/panthera_bringup
+[0.493s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_bringup/share/panthera_bringup/environment/ament_prefix_path.sh
+[0.493s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_bringup/share/panthera_bringup/environment/ament_prefix_path.dsv
+[0.493s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_bringup/share/panthera_bringup/environment/path.sh
+[0.493s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_bringup/share/panthera_bringup/environment/path.dsv
+[0.494s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_bringup/share/panthera_bringup/local_setup.bash
+[0.494s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_bringup/share/panthera_bringup/local_setup.sh
+[0.494s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_bringup/share/panthera_bringup/local_setup.zsh
+[0.494s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_bringup/share/panthera_bringup/local_setup.dsv
+[0.494s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_bringup/share/panthera_bringup/package.dsv
+[0.494s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_bringup/share/ament_index/resource_index/packages/panthera_bringup
+[0.494s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_bringup/share/panthera_bringup/cmake/panthera_bringupConfig.cmake
+[0.494s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_bringup/share/panthera_bringup/cmake/panthera_bringupConfig-version.cmake
+[0.494s] -- Installing: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_bringup/share/panthera_bringup/package.xml
+[0.495s] Invoked command in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_bringup

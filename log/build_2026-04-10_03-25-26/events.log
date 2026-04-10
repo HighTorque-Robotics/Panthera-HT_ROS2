@@ -1,0 +1,80 @@
+[0.000000] (-) TimerEvent: {}
+[0.000062] (-) JobUnselected: {'identifier': 'hightorque_robot'}
+[0.000086] (-) JobUnselected: {'identifier': 'panthera_arm_control'}
+[0.000100] (-) JobUnselected: {'identifier': 'panthera_bringup'}
+[0.000112] (-) JobUnselected: {'identifier': 'panthera_commander'}
+[0.000124] (-) JobUnselected: {'identifier': 'panthera_gazebo'}
+[0.000134] (-) JobUnselected: {'identifier': 'panthera_hardware'}
+[0.000144] (-) JobUnselected: {'identifier': 'panthera_ht_description_with_finger'}
+[0.000154] (-) JobUnselected: {'identifier': 'with_gripper_config'}
+[0.000166] (panthera_interfaces) JobQueued: {'identifier': 'panthera_interfaces', 'dependencies': OrderedDict()}
+[0.000179] (panthera_interfaces) JobStarted: {'identifier': 'panthera_interfaces'}
+[0.004691] (panthera_interfaces) JobProgress: {'identifier': 'panthera_interfaces', 'progress': 'cmake'}
+[0.005093] (panthera_interfaces) Command: {'cmd': ['/usr/bin/cmake', '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_interfaces', '-DCMAKE_INSTALL_PREFIX=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces'], 'cwd': '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_interfaces', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'CONDA_PROMPT_MODIFIER': '(base)', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'tk', 'CLAUDE_CODE_ENTRYPOINT': 'cli', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'GIT_EDITOR': 'true', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'CONDA_BACKUP_QT_XCB_GL_INTEGRATION': '', 'HOME': '/home/tk', 'CONDA_SHLVL': '1', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '2233', 'SYSTEMD_EXEC_PID': '2727', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator23558193cd9818af7fe4d2c2f5bd9d00f', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '41011', 'GNOME_KEYRING_CONTROL': '/run/user/1000/keyring', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'tk', 'JOURNAL_STREAM': '9:25828', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'tk', 'ANTHROPIC_BASE_URL': 'http://www.claudecodeserver.top/api', 'TERM': 'xterm-256color', 'OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE': 'delta', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'WINDOWPATH': '2', 'PATH': '/home/tk/anaconda3/bin:/home/tk/anaconda3/condabin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/tk-MS-7D99:@/tmp/.ICE-unix/2577,unix/tk-MS-7D99:/tmp/.ICE-unix/2577', 'INVOCATION_ID': 'd9dcbf72395b4ebaa02e98e83bbc0a72', 'COREPACK_ENABLE_AUTO_PIN': '0', 'XDG_MENU_PREFIX': 'gnome-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':1', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'NoDefaultCurrentDirectoryInExePath': '1', 'LANG': 'zh_CN.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'RMW_IMPLEMENTATION': 'rmw_cyclonedds_cpp', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'QT_XCB_GL_INTEGRATION': 'none', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'GSETTINGS_SCHEMA_DIR': '/home/tk/anaconda3/share/glib-2.0/schemas', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'CONDA_PYTHON_EXE': '/home/tk/anaconda3/bin/python', 'SHELL': '/bin/bash', 'TERMINATOR_UUID': 'urn:uuid:dd28e141-5d7b-443c-ab71-d7db99f401af', 'ANTHROPIC_AUTH_TOKEN': 'sk_2968f36590d96ff51d7181f633f29f4f2c5b00db5fc3d673763c4d78d34969a6', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'CONDA_DEFAULT_ENV': 'base', 'CLAUDECODE': '1', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_interfaces', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'CONDA_EXE': '/home/tk/anaconda3/bin/conda', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'CLAUDE_CODE_EXECPATH': '/usr/bin/node', 'QTWEBENGINE_DICTIONARIES_PATH': '/usr/share/hunspell-bdic/', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'CONDA_PREFIX': '/home/tk/anaconda3', 'GSETTINGS_SCHEMA_DIR_CONDA_BACKUP': '', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.047933] (panthera_interfaces) StdoutLine: {'line': b'-- The C compiler identification is GNU 13.3.0\n'}
+[0.099690] (-) TimerEvent: {}
+[0.104064] (panthera_interfaces) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.3.0\n'}
+[0.113978] (panthera_interfaces) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.200004] (-) TimerEvent: {}
+[0.272393] (panthera_interfaces) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.279631] (panthera_interfaces) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.279756] (panthera_interfaces) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.279911] (panthera_interfaces) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.287143] (panthera_interfaces) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.300167] (-) TimerEvent: {}
+[0.400526] (-) TimerEvent: {}
+[0.467127] (panthera_interfaces) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.477603] (panthera_interfaces) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.478249] (panthera_interfaces) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.478794] (panthera_interfaces) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.484365] (panthera_interfaces) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[0.500654] (-) TimerEvent: {}
+[0.600785] (-) TimerEvent: {}
+[0.625025] (panthera_interfaces) StdoutLine: {'line': b'-- Found Python3: /home/tk/anaconda3/bin/python3 (found version "3.13.5") found components: Interpreter \n'}
+[0.690008] (panthera_interfaces) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)\n'}
+[0.693658] (panthera_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.700840] (-) TimerEvent: {}
+[0.724793] (panthera_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.749550] (panthera_interfaces) StdoutLine: {'line': b'-- Found rosidl_adapter: 4.6.6 (/opt/ros/jazzy/share/rosidl_adapter/cmake)\n'}
+[0.751570] (panthera_interfaces) StdoutLine: {'line': b'-- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)\n'}
+[0.800947] (-) TimerEvent: {}
+[0.886889] (panthera_interfaces) StderrLine: {'line': b'CMake Error at /opt/ros/jazzy/share/rosidl_adapter/cmake/rosidl_adapt_interfaces.cmake:57 (message):\n'}
+[0.887020] (panthera_interfaces) StderrLine: {'line': b'  execute_process(/home/tk/anaconda3/bin/python3 -m rosidl_adapter\n'}
+[0.887051] (panthera_interfaces) StderrLine: {'line': b'  --package-name panthera_interfaces --arguments-file\n'}
+[0.887077] (panthera_interfaces) StderrLine: {'line': b'  /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_interfaces/rosidl_adapter__arguments__panthera_interfaces.json\n'}
+[0.887104] (panthera_interfaces) StderrLine: {'line': b'  --output-dir\n'}
+[0.887131] (panthera_interfaces) StderrLine: {'line': b'  /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_interfaces/rosidl_adapter/panthera_interfaces\n'}
+[0.887156] (panthera_interfaces) StderrLine: {'line': b'  --output-file\n'}
+[0.887181] (panthera_interfaces) StderrLine: {'line': b'  /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_interfaces/rosidl_adapter/panthera_interfaces.idls)\n'}
+[0.887205] (panthera_interfaces) StderrLine: {'line': b'  returned error code 1:\n'}
+[0.887228] (panthera_interfaces) StderrLine: {'line': b'\n'}
+[0.887252] (panthera_interfaces) StderrLine: {'line': b'  Traceback (most recent call last):\n'}
+[0.887275] (panthera_interfaces) StderrLine: {'line': b'\n'}
+[0.887301] (panthera_interfaces) StderrLine: {'line': b'    File "<frozen runpy>", line 198, in _run_module_as_main\n'}
+[0.887324] (panthera_interfaces) StderrLine: {'line': b'    File "<frozen runpy>", line 88, in _run_code\n'}
+[0.887346] (panthera_interfaces) StderrLine: {'line': b'    File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_adapter/__main__.py", line 19, in <module>\n'}
+[0.887368] (panthera_interfaces) StderrLine: {'line': b'      sys.exit(main())\n'}
+[0.887389] (panthera_interfaces) StderrLine: {'line': b'               ~~~~^^\n'}
+[0.887410] (panthera_interfaces) StderrLine: {'line': b'    File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_adapter/main.py", line 53, in main\n'}
+[0.887500] (panthera_interfaces) StderrLine: {'line': b'      abs_idl_file = convert_to_idl(\n'}
+[0.887535] (panthera_interfaces) StderrLine: {'line': b'          pathlib.Path(basepath), args.package_name,\n'}
+[0.887561] (panthera_interfaces) StderrLine: {'line': b'          pathlib.Path(relative_path), output_dir)\n'}
+[0.887585] (panthera_interfaces) StderrLine: {'line': b'    File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_adapter/__init__.py", line 18, in convert_to_idl\n'}
+[0.887610] (panthera_interfaces) StderrLine: {'line': b'      from rosidl_adapter.msg import convert_msg_to_idl\n'}
+[0.887632] (panthera_interfaces) StderrLine: {'line': b'    File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_adapter/msg/__init__.py", line 16, in <module>\n'}
+[0.887655] (panthera_interfaces) StderrLine: {'line': b'      from rosidl_adapter.resource import expand_template\n'}
+[0.887677] (panthera_interfaces) StderrLine: {'line': b'    File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_adapter/resource/__init__.py", line 19, in <module>\n'}
+[0.887701] (panthera_interfaces) StderrLine: {'line': b'      import em\n'}
+[0.887724] (panthera_interfaces) StderrLine: {'line': b'\n'}
+[0.887747] (panthera_interfaces) StderrLine: {'line': b"  ModuleNotFoundError: No module named 'em'\n"}
+[0.887769] (panthera_interfaces) StderrLine: {'line': b'\n'}
+[0.887792] (panthera_interfaces) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[0.887813] (panthera_interfaces) StderrLine: {'line': b'  /opt/ros/jazzy/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:132 (rosidl_adapt_interfaces)\n'}
+[0.887835] (panthera_interfaces) StderrLine: {'line': b'  CMakeLists.txt:13 (rosidl_generate_interfaces)\n'}
+[0.887858] (panthera_interfaces) StderrLine: {'line': b'\n'}
+[0.887883] (panthera_interfaces) StderrLine: {'line': b'\n'}
+[0.887905] (panthera_interfaces) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[0.891410] (panthera_interfaces) CommandEnded: {'returncode': 1}
+[0.900985] (-) TimerEvent: {}
+[0.907728] (panthera_interfaces) JobEnded: {'identifier': 'panthera_interfaces', 'rc': 1}
+[0.918479] (-) EventReactorShutdown: {}

@@ -1,5 +1,5 @@
 #include "rclcpp/rclcpp.hpp"
-#include "moveit/move_group_interface/move_group_interface.h"
+#include "moveit/move_group_interface/move_group_interface.hpp"
 
 int main(int argc, char ** argv)
 {
@@ -33,14 +33,14 @@ int main(int argc, char ** argv)
     if (gripper->plan(plan) == moveit::core::MoveItErrorCode::SUCCESS)
     {
         RCLCPP_INFO(node->get_logger(), "Planned trajectory joint names:");
-        for (const auto& name : plan.trajectory_.joint_trajectory.joint_names) {
+        for (const auto& name : plan.trajectory.joint_trajectory.joint_names) {
             RCLCPP_INFO(node->get_logger(), "  - %s", name.c_str());
         }
         RCLCPP_INFO(node->get_logger(), "Last point positions:");
-        auto last_point = plan.trajectory_.joint_trajectory.points.back();
-        for (size_t i = 0; i < plan.trajectory_.joint_trajectory.joint_names.size(); ++i) {
+        auto last_point = plan.trajectory.joint_trajectory.points.back();
+        for (size_t i = 0; i < plan.trajectory.joint_trajectory.joint_names.size(); ++i) {
             RCLCPP_INFO(node->get_logger(), "  %s: %f",
-                plan.trajectory_.joint_trajectory.joint_names[i].c_str(),
+                plan.trajectory.joint_trajectory.joint_names[i].c_str(),
                 last_point.positions[i]);
         }
         gripper->execute(plan);
@@ -55,10 +55,10 @@ int main(int argc, char ** argv)
     if (gripper->plan(plan) == moveit::core::MoveItErrorCode::SUCCESS)
     {
         RCLCPP_INFO(node->get_logger(), "Last point positions:");
-        auto last_point = plan.trajectory_.joint_trajectory.points.back();
-        for (size_t i = 0; i < plan.trajectory_.joint_trajectory.joint_names.size(); ++i) {
+        auto last_point = plan.trajectory.joint_trajectory.points.back();
+        for (size_t i = 0; i < plan.trajectory.joint_trajectory.joint_names.size(); ++i) {
             RCLCPP_INFO(node->get_logger(), "  %s: %f",
-                plan.trajectory_.joint_trajectory.joint_names[i].c_str(),
+                plan.trajectory.joint_trajectory.joint_names[i].c_str(),
                 last_point.positions[i]);
         }
         gripper->execute(plan);
@@ -73,10 +73,10 @@ int main(int argc, char ** argv)
     if (gripper->plan(plan) == moveit::core::MoveItErrorCode::SUCCESS)
     {
         RCLCPP_INFO(node->get_logger(), "Last point positions:");
-        auto last_point = plan.trajectory_.joint_trajectory.points.back();
-        for (size_t i = 0; i < plan.trajectory_.joint_trajectory.joint_names.size(); ++i) {
+        auto last_point = plan.trajectory.joint_trajectory.points.back();
+        for (size_t i = 0; i < plan.trajectory.joint_trajectory.joint_names.size(); ++i) {
             RCLCPP_INFO(node->get_logger(), "  %s: %f",
-                plan.trajectory_.joint_trajectory.joint_names[i].c_str(),
+                plan.trajectory.joint_trajectory.joint_names[i].c_str(),
                 last_point.positions[i]);
         }
         gripper->execute(plan);
