@@ -4,10 +4,10 @@
 
 #include <string.h>
 
-#include "panthera_interfaces/srv/detail/gripper_srv__struct.h"
 #include "rosidl_typesupport_interface/macros.h"
-#include "panthera_interfaces/srv/detail/gripper_srv__functions.h"
+#include "panthera_interfaces/srv/detail/gripper_srv__struct.h"
 #include "panthera_interfaces/srv/detail/gripper_srv__type_support.h"
+#include "panthera_interfaces/srv/detail/gripper_srv__functions.h"
 
 #ifdef __cplusplus
 extern "C"

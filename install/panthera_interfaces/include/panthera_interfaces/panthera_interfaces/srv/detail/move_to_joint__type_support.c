@@ -5,9 +5,9 @@
 #include <string.h>
 
 #include "rosidl_typesupport_interface/macros.h"
-#include "panthera_interfaces/srv/detail/move_to_joint__type_support.h"
 #include "panthera_interfaces/srv/detail/move_to_joint__struct.h"
 #include "panthera_interfaces/srv/detail/move_to_joint__functions.h"
+#include "panthera_interfaces/srv/detail/move_to_joint__type_support.h"
 
 #ifdef __cplusplus
 extern "C"

@@ -13,11 +13,5 @@ if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/launch")
 endif()
 
 install(DIRECTORY config DESTINATION share/${PROJECT_NAME})
-# Create symlink for motor_param so Follower_absolute.yaml's relative path works
-file(CREATE_LINK
-  ${CMAKE_SOURCE_DIR}/../hightorque_robot/robot_param/motor_param
-  ${CMAKE_CURRENT_SOURCE_DIR}/robot_param/motor_param
-  SYMBOLIC)
-
 install(DIRECTORY robot_param DESTINATION share/${PROJECT_NAME})
 install(FILES .setup_assistant DESTINATION share/${PROJECT_NAME})

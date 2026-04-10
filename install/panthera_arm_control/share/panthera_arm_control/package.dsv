@@ -1,6 +1,0 @@
-source;share/panthera_arm_control/hook/cmake_prefix_path.dsv
-source;share/panthera_arm_control/hook/cmake_prefix_path.sh
-source;share/panthera_arm_control/local_setup.bash
-source;share/panthera_arm_control/local_setup.dsv
-source;share/panthera_arm_control/local_setup.sh
-source;share/panthera_arm_control/local_setup.zsh

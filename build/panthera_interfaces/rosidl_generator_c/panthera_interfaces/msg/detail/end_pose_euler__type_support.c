@@ -4,9 +4,9 @@
 
 #include <string.h>
 
-#include "panthera_interfaces/msg/detail/end_pose_euler__functions.h"
 #include "rosidl_typesupport_interface/macros.h"
 #include "panthera_interfaces/msg/detail/end_pose_euler__struct.h"
+#include "panthera_interfaces/msg/detail/end_pose_euler__functions.h"
 #include "panthera_interfaces/msg/detail/end_pose_euler__type_support.h"
 
 #ifdef __cplusplus

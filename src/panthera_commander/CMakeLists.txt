@@ -12,6 +12,16 @@ find_package(ament_index_cpp REQUIRED)
 find_package(moveit_ros_planning_interface REQUIRED)
 find_package(example_interfaces REQUIRED)
 find_package(panthera_interfaces REQUIRED)
+find_package(CURL REQUIRED)
+
+# Override Anaconda's curl with system curl to fix CURL_OPENSSL_4 symbol conflict
+link_libraries(CURL::libcurl)
+
+# Ensure local workspace hightorque_robot is found before any system /usr/local installation
+list(PREPEND CMAKE_PREFIX_PATH
+  ${CMAKE_CURRENT_SOURCE_DIR}/../../../install
+  ${CMAKE_CURRENT_SOURCE_DIR}/../hightorque_robot)
+
 find_package(hightorque_robot REQUIRED)
 
 add_executable(test_moveit src/test_moveit.cpp)
@@ -48,7 +58,7 @@ add_executable(draw_three_circles src/draw_three_circles.cpp)
 ament_target_dependencies(draw_three_circles rclcpp moveit_ros_planning_interface example_interfaces)
 
 add_executable(sin_trajectory_control src/sin_trajectory_control.cpp)
-ament_target_dependencies(sin_trajectory_control rclcpp ament_index_cpp)
+ament_target_dependencies(sin_trajectory_control rclcpp ament_index_cpp hightorque_robot)
 target_link_libraries(sin_trajectory_control hightorque_robot::hightorque_robot)
 
 add_executable(sin_trajectory_moveit src/sin_trajectory_moveit.cpp)

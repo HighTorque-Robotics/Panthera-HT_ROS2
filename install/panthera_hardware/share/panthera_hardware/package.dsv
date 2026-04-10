@@ -1,8 +1,0 @@
-source;share/panthera_hardware/hook/cmake_prefix_path.dsv
-source;share/panthera_hardware/hook/cmake_prefix_path.sh
-source;share/panthera_hardware/hook/ld_library_path_lib.dsv
-source;share/panthera_hardware/hook/ld_library_path_lib.sh
-source;share/panthera_hardware/local_setup.bash
-source;share/panthera_hardware/local_setup.dsv
-source;share/panthera_hardware/local_setup.sh
-source;share/panthera_hardware/local_setup.zsh

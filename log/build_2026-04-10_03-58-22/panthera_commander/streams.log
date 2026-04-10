@@ -1,0 +1,135 @@
+[0.009s] Invoking command in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_commander': AMENT_PREFIX_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_ht_description_with_finger:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_ht_description_with_finger:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander -DCMAKE_INSTALL_PREFIX=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_commander
+[0.016s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.145s] -- Found rclcpp: 28.1.13 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.160s] -- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.164s] -- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.169s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.176s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.206s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.207s] -- Found rmw_cyclonedds_cpp: 2.2.3 (/opt/ros/jazzy/share/rmw_cyclonedds_cpp/cmake)
+[0.218s] -- Using RMW implementation 'rmw_cyclonedds_cpp' as default
+[0.247s] -- Found moveit_ros_planning_interface: 2.12.3 (/opt/ros/jazzy/share/moveit_ros_planning_interface/cmake)
+[0.253s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: date_time filesystem program_options system thread 
+[0.388s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: chrono date_time filesystem iostreams program_options regex serialization system thread 
+[0.404s] -- Found parameter_traits: 0.5.0 (/opt/ros/jazzy/share/parameter_traits/cmake)
+[0.407s] -- Found rclcpp_lifecycle: 28.1.13 (/opt/ros/jazzy/share/rclcpp_lifecycle/cmake)
+[0.424s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: filesystem 
+[0.447s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[0.452s] -- Found TinyXML2 via Config file: /usr/lib/x86_64-linux-gnu/cmake/tinyxml2
+[0.514s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: system filesystem date_time program_options thread chrono 
+[0.539s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: thread system filesystem regex date_time program_options 
+[0.558s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: system filesystem date_time program_options thread 
+[0.578s] -- Found example_interfaces: 0.12.0 (/opt/ros/jazzy/share/example_interfaces/cmake)
+[0.588s] -- Found panthera_interfaces: 0.0.0 (/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/share/panthera_interfaces/cmake)
+[0.638s] -- Found ament_lint_auto: 0.17.3 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[0.699s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.699s] -- Configured cppcheck include dirs: 
+[0.699s] -- Configured cppcheck exclude dirs and/or files: 
+[0.699s] -- Added test 'lint_cmake' to check CMake code style
+[0.700s] -- Added test 'uncrustify' to check C / C++ code style
+[0.700s] -- Configured uncrustify additional arguments: 
+[0.700s] -- Added test 'xmllint' to check XML markup files
+[0.701s] -- Configuring done (0.7s)
+[0.773s] -- Generating done (0.1s)
+[0.793s] -- Build files have been written to: /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_commander
+[0.801s] Invoked command in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_commander' returned '0': AMENT_PREFIX_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_ht_description_with_finger:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_ht_description_with_finger:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander -DCMAKE_INSTALL_PREFIX=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_commander
+[0.801s] Invoking command in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_commander': AMENT_PREFIX_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_ht_description_with_finger:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_ht_description_with_finger:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_commander -- -j28 -l28
+[0.836s] [ 15%] Building CXX object CMakeFiles/draw_horizontal_vertical_circles.dir/src/draw_horizontal_vertical_circles.cpp.o
+[0.837s] [ 15%] Building CXX object CMakeFiles/test_moveit.dir/src/test_moveit.cpp.o
+[0.837s] [ 15%] Building CXX object CMakeFiles/test_moveit_by_jointspace.dir/src/test_moveit_by_jointspace.cpp.o
+[0.837s] [ 15%] Building CXX object CMakeFiles/sin_trajectory_control.dir/src/sin_trajectory_control.cpp.o
+[0.837s] [ 19%] Building CXX object CMakeFiles/commander_template.dir/src/commander_template.cpp.o
+[0.838s] [ 23%] Building CXX object CMakeFiles/test_cartesian_from_pose1.dir/src/test_cartesian_from_pose1.cpp.o
+[0.839s] [ 26%] Building CXX object CMakeFiles/draw_circle.dir/src/draw_circle.cpp.o
+[0.839s] [ 30%] Building CXX object CMakeFiles/draw_three_circles.dir/src/draw_three_circles.cpp.o
+[0.840s] [ 34%] Building CXX object CMakeFiles/test_moveit_by_cartesian.dir/src/test_moveit_by_cartesian.cpp.o
+[0.840s] [ 38%] Building CXX object CMakeFiles/test_moveit_by_siyuanshu.dir/src/test_moveit_by_siyuanshu.cpp.o
+[0.841s] [ 42%] Building CXX object CMakeFiles/test_gripper_detailed.dir/src/test_gripper_detailed.cpp.o
+[0.841s] [ 46%] Building CXX object CMakeFiles/test_gripper.dir/src/test_gripper.cpp.o
+[0.841s] /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/sin_trajectory_control.cpp:8:10: fatal error: panthera/Panthera.hpp: 没有那个文件或目录
+[0.841s]     8 | #include "panthera/Panthera.hpp"
+[0.841s]       |          ^~~~~~~~~~~~~~~~~~~~~~~
+[0.841s] compilation terminated.
+[0.841s] [ 50%] Building CXX object CMakeFiles/sin_trajectory_moveit.dir/src/sin_trajectory_moveit.cpp.o
+[0.841s] gmake[2]: *** [CMakeFiles/sin_trajectory_control.dir/build.make:76：CMakeFiles/sin_trajectory_control.dir/src/sin_trajectory_control.cpp.o] 错误 1
+[0.841s] gmake[1]: *** [CMakeFiles/Makefile2:447：CMakeFiles/sin_trajectory_control.dir/all] 错误 2
+[0.841s] gmake[1]: *** 正在等待未完成的任务....
+[3.419s] In file included from /opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:24,
+[3.419s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27,
+[3.419s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171,
+[3.420s]                  from /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_three_circles.cpp:1:
+[3.420s] /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_three_circles.cpp: In function ‘int main(int, char**)’:
+[3.420s] /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_three_circles.cpp:97:37: warning: zero-length gnu_printf format string [-Wformat-zero-length]
+[3.420s]    97 |     RCLCPP_INFO(node->get_logger(), "");
+[3.420s]       |                                     ^~
+[3.420s] /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_three_circles.cpp:101:37: warning: zero-length gnu_printf format string [-Wformat-zero-length]
+[3.420s]   101 |     RCLCPP_INFO(node->get_logger(), "");
+[3.420s]       |                                     ^~
+[3.421s] /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_three_circles.cpp:156:37: warning: zero-length gnu_printf format string [-Wformat-zero-length]
+[3.421s]   156 |     RCLCPP_INFO(node->get_logger(), "");
+[3.421s]       |                                     ^~
+[3.422s] /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_three_circles.cpp:210:37: warning: zero-length gnu_printf format string [-Wformat-zero-length]
+[3.422s]   210 |     RCLCPP_INFO(node->get_logger(), "");
+[3.422s]       |                                     ^~
+[3.422s] /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_three_circles.cpp:261:37: warning: zero-length gnu_printf format string [-Wformat-zero-length]
+[3.423s]   261 |     RCLCPP_INFO(node->get_logger(), "");
+[3.423s]       |                                     ^~
+[3.551s] In file included from /opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:24,
+[3.551s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27,
+[3.551s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171,
+[3.551s]                  from /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_horizontal_vertical_circles.cpp:1:
+[3.551s] /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_horizontal_vertical_circles.cpp: In function ‘int main(int, char**)’:
+[3.551s] /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_horizontal_vertical_circles.cpp:97:37: warning: zero-length gnu_printf format string [-Wformat-zero-length]
+[3.551s]    97 |     RCLCPP_INFO(node->get_logger(), "");
+[3.552s]       |                                     ^~
+[3.552s] /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_horizontal_vertical_circles.cpp:101:37: warning: zero-length gnu_printf format string [-Wformat-zero-length]
+[3.552s]   101 |     RCLCPP_INFO(node->get_logger(), "");
+[3.552s]       |                                     ^~
+[3.553s] /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_horizontal_vertical_circles.cpp:173:37: warning: zero-length gnu_printf format string [-Wformat-zero-length]
+[3.553s]   173 |     RCLCPP_INFO(node->get_logger(), "");
+[3.553s]       |                                     ^~
+[3.554s] /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_horizontal_vertical_circles.cpp:240:37: warning: zero-length gnu_printf format string [-Wformat-zero-length]
+[3.554s]   240 |     RCLCPP_INFO(node->get_logger(), "");
+[3.554s]       |                                     ^~
+[3.660s] In file included from /opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:24,
+[3.660s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27,
+[3.660s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171,
+[3.660s]                  from /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/test_moveit_by_siyuanshu.cpp:1:
+[3.660s] /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/test_moveit_by_siyuanshu.cpp: In function ‘int main(int, char**)’:
+[3.660s] /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/test_moveit_by_siyuanshu.cpp:108:42: warning: zero-length gnu_printf format string [-Wformat-zero-length]
+[3.660s]   108 |         RCLCPP_ERROR(node->get_logger(), "");
+[3.660s]       |                                          ^~
+[4.827s] [ 53%] Linking CXX executable test_moveit_by_jointspace
+[4.940s] [ 57%] Linking CXX executable test_cartesian_from_pose1
+[4.968s] [ 61%] Linking CXX executable draw_three_circles
+[4.973s] [ 65%] Linking CXX executable test_gripper
+[5.024s] [ 65%] Built target test_moveit_by_jointspace
+[5.029s] [ 69%] Linking CXX executable test_moveit_by_cartesian
+[5.043s] [ 73%] Linking CXX executable test_moveit_by_siyuanshu
+[5.120s] [ 76%] Linking CXX executable draw_horizontal_vertical_circles
+[5.162s] [ 76%] Built target test_cartesian_from_pose1
+[5.183s] [ 76%] Built target test_gripper
+[5.211s] [ 76%] Built target draw_three_circles
+[5.234s] In file included from /opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:24,
+[5.234s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27,
+[5.234s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171,
+[5.234s]                  from /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_circle.cpp:1:
+[5.234s] /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_circle.cpp: In function ‘int main(int, char**)’:
+[5.234s] /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/draw_circle.cpp:97:37: warning: zero-length gnu_printf format string [-Wformat-zero-length]
+[5.234s]    97 |     RCLCPP_INFO(node->get_logger(), "");
+[5.235s]       |                                     ^~
+[5.238s] [ 76%] Built target test_moveit_by_cartesian
+[5.250s] [ 76%] Built target test_moveit_by_siyuanshu
+[5.338s] [ 76%] Built target draw_horizontal_vertical_circles
+[5.402s] [ 80%] Linking CXX executable test_moveit
+[5.560s] [ 80%] Built target test_moveit
+[6.401s] [ 84%] Linking CXX executable test_gripper_detailed
+[6.558s] [ 88%] Linking CXX executable draw_circle
+[6.572s] [ 88%] Built target test_gripper_detailed
+[6.600s] [ 92%] Linking CXX executable sin_trajectory_moveit
+[6.746s] [ 92%] Built target draw_circle
+[6.778s] [ 92%] Built target sin_trajectory_moveit
+[10.175s] [ 96%] Linking CXX executable commander_template
+[10.585s] [ 96%] Built target commander_template
+[10.586s] gmake: *** [Makefile:146：all] 错误 2
+[10.588s] Invoked command in '/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_commander' returned '2': AMENT_PREFIX_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_ht_description_with_finger:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/with_gripper_config:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces:/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_ht_description_with_finger:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/install/panthera_interfaces/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/build/panthera_commander -- -j28 -l28

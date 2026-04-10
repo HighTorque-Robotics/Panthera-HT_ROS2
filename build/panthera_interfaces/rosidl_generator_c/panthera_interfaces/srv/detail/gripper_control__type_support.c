@@ -4,8 +4,8 @@
 
 #include <string.h>
 
-#include "panthera_interfaces/srv/detail/gripper_control__functions.h"
 #include "rosidl_typesupport_interface/macros.h"
+#include "panthera_interfaces/srv/detail/gripper_control__functions.h"
 #include "panthera_interfaces/srv/detail/gripper_control__type_support.h"
 #include "panthera_interfaces/srv/detail/gripper_control__struct.h"
 

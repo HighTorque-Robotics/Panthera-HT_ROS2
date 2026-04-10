@@ -2,6 +2,8 @@ source;share/panthera_interfaces/hook/cmake_prefix_path.dsv
 source;share/panthera_interfaces/hook/cmake_prefix_path.sh
 source;share/panthera_interfaces/hook/ld_library_path_lib.dsv
 source;share/panthera_interfaces/hook/ld_library_path_lib.sh
+source;share/panthera_interfaces/hook/pythonpath.dsv
+source;share/panthera_interfaces/hook/pythonpath.sh
 source;share/panthera_interfaces/local_setup.bash
 source;share/panthera_interfaces/local_setup.dsv
 source;share/panthera_interfaces/local_setup.sh

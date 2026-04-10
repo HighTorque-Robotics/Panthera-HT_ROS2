@@ -1,0 +1,21 @@
+[  3%] Building CXX object CMakeFiles/sin_trajectory_control.dir/src/sin_trajectory_control.cpp.o
+[ 19%] Built target test_moveit_by_cartesian
+[ 19%] Built target test_moveit_by_jointspace
+[ 26%] Built target test_moveit
+[ 34%] Built target draw_three_circles
+[ 50%] Built target test_gripper
+[ 50%] Built target test_cartesian_from_pose1
+[ 57%] Built target draw_circle
+[ 65%] Built target draw_horizontal_vertical_circles
+/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/sin_trajectory_control.cpp:8:10: fatal error: panthera/Panthera.hpp: 没有那个文件或目录
+    8 | #include "panthera/Panthera.hpp"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+gmake[2]: *** [CMakeFiles/sin_trajectory_control.dir/build.make:76：CMakeFiles/sin_trajectory_control.dir/src/sin_trajectory_control.cpp.o] 错误 1
+[ 73%] Built target sin_trajectory_moveit
+gmake[1]: *** [CMakeFiles/Makefile2:447：CMakeFiles/sin_trajectory_control.dir/all] 错误 2
+gmake[1]: *** 正在等待未完成的任务....
+[ 80%] Built target commander_template
+[ 88%] Built target test_gripper_detailed
+[ 96%] Built target test_moveit_by_siyuanshu
+gmake: *** [Makefile:146：all] 错误 2

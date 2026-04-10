@@ -1,0 +1,13 @@
+[31mCMake Error at CMakeLists.txt:21 (find_package):
+  Could not find a package configuration file provided by "hightorque_robot"
+  with any of the following names:
+
+    hightorque_robotConfig.cmake
+    hightorque_robot-config.cmake
+
+  Add the installation prefix of "hightorque_robot" to CMAKE_PREFIX_PATH or
+  set "hightorque_robot_DIR" to a directory containing one of the above
+  files.  If "hightorque_robot" provides a separate development package or
+  SDK, be sure it has been installed.
+
+[0m
