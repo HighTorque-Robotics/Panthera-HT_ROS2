@@ -1,7 +1,0 @@
-# Request: gripper action
-# action: "open", "close", "half_open"
-string action
----
-# Response
-bool success
-string message

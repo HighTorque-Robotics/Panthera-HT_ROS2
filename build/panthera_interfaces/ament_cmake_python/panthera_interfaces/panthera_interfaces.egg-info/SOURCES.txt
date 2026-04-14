@@ -1,6 +1,0 @@
-setup.py
-panthera_interfaces/__init__.py
-panthera_interfaces.egg-info/PKG-INFO
-panthera_interfaces.egg-info/SOURCES.txt
-panthera_interfaces.egg-info/dependency_links.txt
-panthera_interfaces.egg-info/top_level.txt

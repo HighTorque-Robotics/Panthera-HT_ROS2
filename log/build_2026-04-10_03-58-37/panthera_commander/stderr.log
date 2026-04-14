@@ -1,8 +1,0 @@
-/home/tk/robot_manipulator/Panthera-HT_ROS2_Jazzy/src/panthera_commander/src/sin_trajectory_control.cpp:8:10: fatal error: panthera/Panthera.hpp: 没有那个文件或目录
-    8 | #include "panthera/Panthera.hpp"
-      |          ^~~~~~~~~~~~~~~~~~~~~~~
-compilation terminated.
-gmake[2]: *** [CMakeFiles/sin_trajectory_control.dir/build.make:76：CMakeFiles/sin_trajectory_control.dir/src/sin_trajectory_control.cpp.o] 错误 1
-gmake[1]: *** [CMakeFiles/Makefile2:447：CMakeFiles/sin_trajectory_control.dir/all] 错误 2
-gmake[1]: *** 正在等待未完成的任务....
-gmake: *** [Makefile:146：all] 错误 2
