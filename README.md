@@ -390,3 +390,6 @@ A: 执行 `sudo usermod -aG dialout $USER` 后重新登录，或临时用 `sudo 
 
 **Q: 编译报 libserialport not found**
 A: 执行 `sudo apt install libserialport-dev`。
+
+**Q: 编译报错**
+A: 看下是不是路径中有中文字符。
