@@ -74,6 +74,9 @@ def generate_launch_description():
         "use_sim_time": False,  # CRITICAL: Use system time for real hardware
     }
 
+    # RViz also needs the full moveit_config (kinematics.yaml, joint_limits.yaml, etc.)
+    rviz_params = [moveit_config.to_dict(), {"use_sim_time": False}]
+
     move_group_params = [
         moveit_config.to_dict(),
         move_group_configuration,
@@ -104,9 +107,7 @@ def generate_launch_description():
         name="rviz2",
         output="screen",
         arguments=["-d", rviz_config_file],
-        parameters=[
-            {"use_sim_time": False},  # CRITICAL: Use system time for real hardware
-        ],
+        parameters=rviz_params,
         condition=IfCondition(LaunchConfiguration('rviz'))
     )
 

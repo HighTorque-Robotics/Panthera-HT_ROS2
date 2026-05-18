@@ -17,7 +17,7 @@ def generate_launch_description():
         DeclareLaunchArgument(
             "config_file",
             default_value=PathJoinSubstitution([
-                FindPackageShare("panthera_cpp"),
+                FindPackageShare("hightorque_robot"),
                 "robot_param",
                 "Follower.yaml"
             ]),

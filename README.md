@@ -81,20 +81,27 @@ sudo make install
 sudo ldconfig
 ```
 
-### 5. 编译工作空间
+### 5. 安装 ROS2 依赖
 
 ```bash
-cd ~/Panthera_HT_ROS2_Jazzy
-colcon build
+cd ~/Panthera-HT_ROS2
+rosdep install --from-paths src --ignore-src -r -y
+```
+
+### 6. 编译工作空间
+
+```bash
+cd ~/Panthera-HT_ROS2
+colcon build --symlink-install
 source install/setup.bash
 ```
 
 建议将 source 命令加入 `~/.bashrc`：
 ```bash
-echo "source ~/Panthera_HT_ROS2_Jazzy/install/setup.bash" >> ~/.bashrc
+echo "source ~/Panthera-HT_ROS2/install/setup.bash" >> ~/.bashrc
 ```
 
-### 6. 串口权限设置
+### 7. 串口权限设置
 
 连接机械臂后，需要确保串口权限：
 ```bash

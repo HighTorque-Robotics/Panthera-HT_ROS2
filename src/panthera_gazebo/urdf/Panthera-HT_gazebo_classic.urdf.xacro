@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="panthera_ht_ros_description">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="Panthera-HT_description">
     <xacro:arg name="initial_positions_file"
-               default="$(find panthera_ht_config)/config/initial_positions.yaml" />
+               default="$(find with_gripper_config)/config/initial_positions.yaml" />
     <xacro:arg name="ros2_control_params"
                default="$(find panthera_gazebo)/config/ros2_controllers.yaml" />
 
     <!-- 1. Import base URDF -->
-    <xacro:include filename="$(find panthera_ht_ros_description)/urdf/panthera_ht_ros_description.xacro" />
+    <xacro:include filename="$(find panthera_ht_description_with_finger)/urdf/Panthera-HT_description_with_finger.urdf.xacro" />
 
     <!-- 2. Import Gazebo Classic configuration -->
     <xacro:include filename="$(find panthera_gazebo)/urdf/gazebo_classic.xacro" />
