@@ -4,8 +4,6 @@
   <!-- ==================== 属性定义 ==================== -->
   <!-- 材质颜色 -->
   <xacro:property name="robot_color" value="0.752941176470588 0.752941176470588 0.752941176470588 1"/>
-  <!-- 夹爪中心颜色（蓝色） -->
-  <xacro:property name="gripper_center_color" value="0.866666666666667 0.909803921568627 1 1"/>
 
   <!-- ==================== 宏定义 ==================== -->
 
@@ -13,13 +11,6 @@
   <xacro:macro name="default_material">
     <material name="">
       <color rgba="${robot_color}"/>
-    </material>
-  </xacro:macro>
-
-  <!-- 夹爪中心材质宏 -->
-  <xacro:macro name="gripper_center_material">
-    <material name="">
-      <color rgba="${gripper_center_color}"/>
     </material>
   </xacro:macro>
 
@@ -56,26 +47,6 @@
       <child link="${child}"/>
       <axis xyz="${axis_xyz}"/>
       <limit lower="${lower}" upper="${upper}" effort="${effort}" velocity="${velocity}"/>
-    </joint>
-  </xacro:macro>
-
-  <!-- 移动关节宏（用于夹爪） -->
-  <xacro:macro name="prismatic_joint" params="name parent child origin_xyz origin_rpy axis_xyz lower upper effort velocity">
-    <joint name="${name}" type="prismatic">
-      <origin xyz="${origin_xyz}" rpy="${origin_rpy}"/>
-      <parent link="${parent}"/>
-      <child link="${child}"/>
-      <axis xyz="${axis_xyz}"/>
-      <limit lower="${lower}" upper="${upper}" effort="${effort}" velocity="${velocity}"/>
-    </joint>
-  </xacro:macro>
-
-  <!-- 固定关节宏 -->
-  <xacro:macro name="fixed_joint" params="name parent child origin_xyz origin_rpy">
-    <joint name="${name}" type="fixed">
-      <origin xyz="${origin_xyz}" rpy="${origin_rpy}"/>
-      <parent link="${parent}"/>
-      <child link="${child}"/>
     </joint>
   </xacro:macro>
 
@@ -170,10 +141,10 @@
   <!-- Link 5 -->
   <xacro:arm_link
     name="link5"
-    mass="0.23711139"
-    ixx="4.815e-05" ixy="-3e-08" ixz="-1.5e-07"
-    iyy="5.773e-05" iyz="-1e-08" izz="3.359e-05"
-    origin_xyz="0.00303007 8.509e-05 -0.03624079"
+    mass="0.28396923"
+    ixx="0.00012691" ixy="0.0" ixz="-2.4e-07"
+    iyy="0.00013455" iyz="-4.9e-07" izz="0.00010788"
+    origin_xyz="0.00319091 8.677e-05 -0.03641777"
     origin_rpy="0 0 0"
     mesh_file="link5.STL"/>
 
@@ -189,12 +160,12 @@
   <!-- Link 6 -->
   <xacro:arm_link
     name="link6"
-    mass="0.01"
-    ixx="0.00107368" ixy="-1.25e-05" ixz="3e-07"
-    iyy="0.00068998" iyz="2.517e-05" izz="0.00167551"
-    origin_xyz="0.002 0.00 0.00"
+    mass="0.34073453"
+    ixx="0.00025204" ixy="0.0" ixz="4.1e-07"
+    iyy="0.00227113" iyz="0.0" izz="0.00247492"
+    origin_xyz="0.10731798 0.0 9.64e-06"
     origin_rpy="0 0 0"
-    mesh_file="link6.STL"/>
+    mesh_file="link6_ttb.STL"/>
 
   <!-- Joint 6 -->
   <xacro:revolute_joint
@@ -205,79 +176,22 @@
     lower="-2.5" upper="2.5"
     effort="10" velocity="3.7"/>
 
-  <!-- ==================== 夹爪部分 ==================== -->
+  <!-- Bat Center (virtual link for end effector reference) -->
+  <link name="bat_center"/>
 
-  <!-- 左夹爪 -->
-  <xacro:arm_link
-    name="L_finger"
-    mass="0.127457990512492"
-    ixx="2.28803355388279E-05" ixy="-4.20099870625027E-06" ixz="3.42841892600802E-07"
-    iyy="5.15650351948181E-05" iyz="-5.67310171718486E-10" izz="4.64985980845228E-05"
-    origin_xyz="-0.0685513053302154 0.016863783322054 -0.000510235194009112"
-    origin_rpy="0 0 0"
-    mesh_file="L_finger.STL"/>
-
-  <!-- 左夹爪关节 -->
-  <xacro:prismatic_joint
-    name="L_finger_joint"
-    parent="link6" child="L_finger"
-    origin_xyz="0.165 0 0" origin_rpy="0 0 0"
-    axis_xyz="0 1 0"
-    lower="0" upper="0.04"
-    effort="100" velocity="0.5"/>
-
-  <!-- 右夹爪 -->
-  <xacro:arm_link
-    name="R_finger"
-    mass="0.127457990511979"
-    ixx="2.28803355389148E-05" ixy="4.20099870615578E-06" ixz="-3.42841892362391E-07"
-    iyy="5.15650351903219E-05" iyz="-5.67310157866966E-10" izz="4.64985980799091E-05"
-    origin_xyz="-0.0685513053307259 -0.0168637833221451 0.000510464525338844"
-    origin_rpy="0 0 0"
-    mesh_file="R_finger.STL"/>
-
-  <!-- 右夹爪关节（镜像左夹爪） -->
-  <joint name="R_finger_joint" type="prismatic">
-    <origin xyz="0.165 0 0" rpy="0 0 0"/>
+  <joint name="bat_center_joint" type="fixed">
+    <origin xyz="0.18 0 0" rpy="0 0 0"/>
     <parent link="link6"/>
-    <child link="R_finger"/>
-    <axis xyz="0 1 0"/>
-    <limit lower="-0.04" upper="0" effort="100" velocity="0.5"/>
-    <mimic joint="L_finger_joint" multiplier="-1" offset="0"/>
+    <child link="bat_center"/>
   </joint>
 
-  <!-- 夹爪中心 -->
-  <link name="gripper_center">
-    <inertial>
-      <origin xyz="-0.124818615882779 -4.88421114370448E-05 -3.8373269199643E-05" rpy="0 0 0"/>
-      <mass value="0.0960375427712166"/>
-      <inertia 
-        ixx="9.09311609578797E-05" 
-        ixy="2.21893449480774E-09" 
-        ixz="-4.1053650775334E-09" 
-        iyy="1.13385601698219E-05" 
-        iyz="4.83664470143672E-08" 
-        izz="8.46740055322188E-05"/>
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <mesh filename="package://panthera_ht_ros_description/meshes/gripper_center.STL"/>
-      </geometry>
-      <xacro:gripper_center_material/>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <mesh filename="package://panthera_ht_ros_description/meshes/gripper_center.STL"/>
-      </geometry>
-    </collision>
-  </link>
+  <!-- Camera mount link (eye-to-hand: camera fixed in environment) -->
+  <link name="camera_mount_link"/>
 
-  <!-- 夹爪中心固定关节 -->
-  <xacro:fixed_joint
-    name="gripper_center_joint"
-    parent="link6" child="gripper_center"
-    origin_xyz="0.165 0 0" origin_rpy="0 0 0"/>
+  <joint name="camera_mount_joint" type="fixed">
+    <origin xyz="0.4 -0.25 0.35" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="camera_mount_link"/>
+  </joint>
 
 </robot>

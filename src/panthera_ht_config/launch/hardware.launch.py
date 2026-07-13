@@ -100,29 +100,11 @@ def generate_launch_description():
         output='screen'
     )
 
-    # Gripper Controller Spawner (delayed start after arm_controller)
-    gripper_controller_spawner = Node(
-        package='controller_manager',
-        executable='spawner',
-        arguments=['gripper_controller',
-                   '--controller-manager-timeout', '60',
-                   '--controller-manager', '/controller_manager'],
-        output='screen'
-    )
-
     # Delay arm controller start until joint_state_broadcaster is loaded
     delay_arm_controller_spawner = RegisterEventHandler(
         event_handler=OnProcessExit(
             target_action=joint_state_broadcaster_spawner,
             on_exit=[arm_controller_spawner],
-        )
-    )
-
-    # Delay gripper controller start until arm_controller is loaded
-    delay_gripper_controller_spawner = RegisterEventHandler(
-        event_handler=OnProcessExit(
-            target_action=arm_controller_spawner,
-            on_exit=[gripper_controller_spawner],
         )
     )
 
@@ -141,5 +123,4 @@ def generate_launch_description():
         controller_manager,
         joint_state_broadcaster_spawner,
         delay_arm_controller_spawner,
-        delay_gripper_controller_spawner,
     ])

@@ -7,9 +7,6 @@ controller_manager:
     arm_controller:
       type: joint_trajectory_controller/JointTrajectoryController
 
-    gripper_controller:
-      type: joint_trajectory_controller/JointTrajectoryController
-
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
 
@@ -45,37 +42,3 @@ arm_controller:
     constraints:
       stopped_velocity_tolerance: 0.01
       goal_time: 0.0
-
-gripper_controller:
-  ros__parameters:
-    use_sim_time: false  # Use system time
-    joints:
-      - L_finger_joint
-
-    command_interfaces:
-      - position
-      - velocity
-
-    state_interfaces:
-      - position
-      - velocity
-
-    state_publish_rate: 50.0
-    action_monitor_rate: 20.0
-
-    allow_partial_joints_goal: false
-
-    # Gains for position control
-    gains:
-      L_finger_joint:
-        p: 1.0
-        i: 0.0
-        d: 0.0
-        i_clamp: 0.0
-
-    constraints:
-      stopped_velocity_tolerance: 0.01
-      goal_time: 0.0
-      L_finger_joint:
-        trajectory: 0.05
-        goal: 0.02

@@ -3,7 +3,7 @@
       Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
       For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
  <robot name="panthera_ht_ros_description">
-   <mujoco>
+  <mujoco>
     <compiler meshdir="../meshes/" balanceinertia="true" discardvisual="false" />
   </mujoco>
 
@@ -147,9 +147,9 @@
    </joint>
    <link name="link5">
      <inertial>
-       <origin xyz="0.00303007 8.509e-05 -0.03624079" rpy="0 0 0" />
-       <mass value="0.23711139" />
-       <inertia ixx="4.815e-05" ixy="-3e-08" ixz="-1.5e-07" iyy="5.773e-05" iyz="-1e-08" izz="3.359e-05" />
+       <origin xyz="0.00319091 8.677e-05 -0.03641777" rpy="0 0 0" />
+       <mass value="0.28396923" />
+       <inertia ixx="0.00012691" ixy="0.0" ixz="-2.4e-07" iyy="0.00013455" iyz="-4.9e-07" izz="0.00010788" />
      </inertial>
      <visual>
        <origin xyz="0 0 0" rpy="0 0 0" />
@@ -176,14 +176,14 @@
    </joint>
    <link name="link6">
      <inertial>
-       <origin xyz="0.06704625 0.00051731 1.674e-05" rpy="0 0 0" />
-       <mass value="0.01" />
-       <inertia ixx="0.00107368" ixy="-1.25e-05" ixz="3e-07" iyy="0.00068998" iyz="2.517e-05" izz="0.00167551" />
+       <origin xyz="0.10731798 0.0 9.64e-06" rpy="0 0 0" />
+       <mass value="0.34073453" />
+       <inertia ixx="0.00025204" ixy="0.0" ixz="4.1e-07" iyy="0.00227113" iyz="0.0" izz="0.00247492" />
      </inertial>
      <visual>
        <origin xyz="0 0 0" rpy="0 0 0" />
        <geometry>
-         <mesh filename="package://panthera_ht_ros_description/meshes/link6.STL" />
+         <mesh filename="package://panthera_ht_ros_description/meshes/link6_ttb.STL" />
        </geometry>
        <material name="">
          <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
@@ -192,7 +192,7 @@
      <collision>
        <origin xyz="0 0 0" rpy="0 0 0" />
        <geometry>
-         <mesh filename="package://panthera_ht_ros_description/meshes/link6.STL" />
+         <mesh filename="package://panthera_ht_ros_description/meshes/link6_ttb.STL" />
        </geometry>
      </collision>
    </link>
@@ -203,91 +203,16 @@
      <axis xyz="1 0 0" />
      <limit lower="-2.5" upper="2.5" effort="10" velocity="3.7" />
    </joint>
-   <link name="L_finger">
-     <inertial>
-       <origin xyz="-0.0685513053302154 0.016863783322054 -0.000510235194009112" rpy="0 0 0" />
-       <mass value="0.127457990512492" />
-       <inertia ixx="2.28803355388289E-05" ixy="-4.20099870625022E-06" ixz="3.42841892600761E-07" iyy="5.15650351948172E-05" iyz="-5.67310171712257E-10" izz="4.64985980845229E-05" />
-     </inertial>
-     <visual>
-       <origin xyz="0 0 0" rpy="0 0 0" />
-       <geometry>
-         <mesh filename="package://panthera_ht_ros_description/meshes/L_finger.STL" />
-       </geometry>
-       <material name="">
-         <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
-       </material>
-     </visual>
-     <collision>
-       <origin xyz="0 0 0" rpy="0 0 0" />
-       <geometry>
-         <mesh filename="package://panthera_ht_ros_description/meshes/L_finger.STL" />
-       </geometry>
-     </collision>
-   </link>
-   <joint name="L_finger_joint" type="prismatic">
-     <origin xyz="0.164999999999982 0 0" rpy="0 0 0" />
-     <parent link="link6" />
-     <child link="L_finger" />
-     <axis xyz="0 1 0" />
-     <limit lower="0" upper="0.04" effort="0" velocity="0" />
-   </joint>
-   <link name="R_finger">
-     <inertial>
-       <origin xyz="-0.0685513053307259 -0.0168637833221451 0.000510464525338844" rpy="0 0 0" />
-       <mass value="0.127457990511979" />
-       <inertia ixx="2.28803355389148E-05" ixy="4.20099870615578E-06" ixz="-3.42841892362391E-07" iyy="5.15650351903219E-05" iyz="-5.67310157866966E-10" izz="4.64985980799091E-05" />
-     </inertial>
-     <visual>
-       <origin xyz="0 0 0" rpy="0 0 0" />
-       <geometry>
-         <mesh filename="package://panthera_ht_ros_description/meshes/R_finger.STL" />
-       </geometry>
-       <material name="">
-         <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
-       </material>
-     </visual>
-     <collision>
-       <origin xyz="0 0 0" rpy="0 0 0" />
-       <geometry>
-         <mesh filename="package://panthera_ht_ros_description/meshes/R_finger.STL" />
-       </geometry>
-     </collision>
-   </link>
-   <joint name="R_finger_joint" type="prismatic">
-     <origin xyz="0.165 0 0" rpy="0 0 0" />
-     <parent link="link6" />
-     <child link="R_finger" />
-     <axis xyz="0 1 0" />
-     <limit lower="-0.04" upper="0" effort="10" velocity="0.5" />
-     <mimic joint="L_finger_joint" multiplier="-1" offset="0" />
-   </joint>
-   <link name="gripper_center">
-     <inertial>
-       <origin xyz="-0.124818615882779 -4.88421114370448E-05 -3.8373269199643E-05" rpy="0 0 0" />
-       <mass value="0.0960375427712166" />
-       <inertia ixx="9.09311609578797E-05" ixy="2.21893449480774E-09" ixz="-4.1053650775334E-09" iyy="1.13385601698219E-05" iyz="4.83664470143672E-08" izz="8.46740055322188E-05" />
-     </inertial>
-     <visual>
-       <origin xyz="0 0 0" rpy="0 0 0" />
-       <geometry>
-         <mesh filename="package://panthera_ht_ros_description/meshes/gripper_center.STL" />
-       </geometry>
-       <material name="">
-         <color rgba="0.866666666666667 0.909803921568627 1 1" />
-       </material>
-     </visual>
-     <collision>
-       <origin xyz="0 0 0" rpy="0 0 0" />
-       <geometry>
-         <mesh filename="package://panthera_ht_ros_description/meshes/gripper_center.STL" />
-       </geometry>
-     </collision>
-   </link>
-   <joint name="gripper_center_joint" type="fixed">
-     <origin xyz="0.165 0 0" rpy="0 0 0" />
-     <parent link="link6" />
-     <child link="gripper_center" />
-     <axis xyz="0 0 0" />
-   </joint>
+  <link name="bat_center"/>
+  <joint name="bat_center_joint" type="fixed">
+    <origin xyz="0.18 0 0" rpy="0 0 0" />
+    <parent link="link6" />
+    <child link="bat_center" />
+  </joint>
+  <link name="camera_mount_link"/>
+  <joint name="camera_mount_joint" type="fixed">
+    <origin xyz="0.4 -0.25 0.35" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="camera_mount_link" />
+  </joint>
  </robot>

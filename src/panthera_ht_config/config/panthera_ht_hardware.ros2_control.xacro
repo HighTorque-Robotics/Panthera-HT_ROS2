@@ -83,27 +83,6 @@
                 <param name="kd">0.1</param>
             </joint>
 
-            <!-- Left Gripper Finger (controlled by single motor) -->
-            <joint name="L_finger_joint">
-                <command_interface name="position"/>
-                <command_interface name="velocity"/>
-                <state_interface name="position"/>
-                <state_interface name="velocity"/>
-                <state_interface name="effort"/>
-                <param name="max_torque">0.5</param>
-                <param name="max_velocity">0.5</param>
-                <param name="kp">1.0</param>
-                <param name="kd">0.1</param>
-            </joint>
-
-            <!-- Right Gripper Finger (mimics left finger, not directly controlled) -->
-            <!-- Mimic joint: only state interfaces, NO command interface -->
-            <joint name="R_finger_joint">
-                <state_interface name="position"/>
-                <state_interface name="velocity"/>
-                <state_interface name="effort"/>
-            </joint>
-
         </ros2_control>
     </xacro:macro>
 </robot>

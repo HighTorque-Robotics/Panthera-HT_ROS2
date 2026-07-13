@@ -107,8 +107,9 @@ install(DIRECTORY msg/motor_msg/ DESTINATION include/motor_msg
     FILES_MATCHING PATTERN "*.hpp" PATTERN "*.h")
 install(DIRECTORY robot_param/ DESTINATION share/hightorque_robot/robot_param
     FILES_MATCHING PATTERN "*.yaml")
-install(DIRECTORY Panthera-HT_description/urdf/ DESTINATION share/hightorque_robot/urdf
-    FILES_MATCHING PATTERN "*.urdf")
+# Old Panthera-HT_description URDF removed - using panthera_ht_ros_description instead
+# install(DIRECTORY Panthera-HT_description/urdf/ DESTINATION share/hightorque_robot/urdf
+#     FILES_MATCHING PATTERN "*.urdf")
 
 install(EXPORT hightorque_robotTargets
     FILE hightorque_robotTargets.cmake

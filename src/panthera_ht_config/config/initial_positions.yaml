@@ -1,8 +1,6 @@
 # Default initial positions for panthera_ht_ros_description's ros2_control fake system
 
 initial_positions:
-  L_finger_joint: 0
-  R_finger_joint: 0
   joint1: 0
   joint2: 0
   joint3: 0
