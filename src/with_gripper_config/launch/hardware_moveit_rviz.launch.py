@@ -3,9 +3,10 @@ from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
 from launch.conditions import IfCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
+from launch.substitutions import Command, FindExecutable, LaunchConfiguration, PathJoinSubstitution
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
+from launch_ros.parameter_descriptions import ParameterValue
 from moveit_configs_utils import MoveItConfigsBuilder
 
 
@@ -39,6 +40,20 @@ def generate_launch_description():
         description='Start RViz'
     )
 
+    hardware_urdf_file = PathJoinSubstitution([
+        with_gripper_config_path,
+        'config',
+        'Panthera-HT_description_hardware.urdf.xacro'
+    ])
+    robot_description_content = ParameterValue(
+        Command([
+            FindExecutable(name='xacro'), ' ', hardware_urdf_file,
+            ' config_file:=', LaunchConfiguration('config_file'),
+            ' control_mode:=', LaunchConfiguration('control_mode')
+        ]),
+        value_type=str
+    )
+
     # ============================================
     # 1. Hardware Launch (robot_state_publisher, controller_manager, controllers)
     # ============================================
@@ -54,6 +69,17 @@ def generate_launch_description():
             'config_file': LaunchConfiguration('config_file'),
             'control_mode': LaunchConfiguration('control_mode'),
         }.items()
+    )
+
+    # Publish the fixed world -> base_link transform declared by the SRDF.
+    static_virtual_joint_tfs_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([
+            PathJoinSubstitution([
+                with_gripper_config_path,
+                'launch',
+                'static_virtual_joint_tfs.launch.py'
+            ])
+        ])
     )
 
     # ============================================
@@ -74,11 +100,20 @@ def generate_launch_description():
         "use_sim_time": False,  # CRITICAL: Use system time for real hardware
     }
 
+    # Keep every consumer on the same hardware URDF. Otherwise move_group republishes
+    # the default FakeSystem description and can win the controller_manager startup race.
+    hardware_robot_description = {"robot_description": robot_description_content}
+
     # RViz also needs the full moveit_config (kinematics.yaml, joint_limits.yaml, etc.)
-    rviz_params = [moveit_config.to_dict(), {"use_sim_time": False}]
+    rviz_params = [
+        moveit_config.to_dict(),
+        hardware_robot_description,
+        {"use_sim_time": False},
+    ]
 
     move_group_params = [
         moveit_config.to_dict(),
+        hardware_robot_description,
         move_group_configuration,
     ]
 
@@ -116,6 +151,7 @@ def generate_launch_description():
         control_mode_arg,
         rviz_arg,
         hardware_launch,
+        static_virtual_joint_tfs_launch,
         move_group_node,
         rviz_node,
     ])

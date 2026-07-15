@@ -203,6 +203,12 @@
      <axis xyz="1 0 0" />
      <limit lower="-2.5" upper="2.5" effort="10" velocity="3.7" />
    </joint>
+   <link name="gripper_center" />
+   <joint name="gripper_center_joint" type="fixed">
+     <origin xyz="0.1701 0 0" rpy="0 0 0" />
+     <parent link="link6" />
+     <child link="gripper_center" />
+   </joint>
   <link
     name="L_finger">
     <inertial>
@@ -247,10 +253,10 @@
     name="L_finger"
     type="prismatic">
     <origin
-      xyz="0.16555 0 0"
+      xyz="-0.00455 0 0"
       rpy="0 0 0" />
     <parent
-      link="link6" />
+      link="gripper_center" />
     <child
       link="L_finger" />
     <axis
@@ -305,10 +311,10 @@
     name="R_finger"
     type="prismatic">
     <origin
-      xyz="0.16555 0 0"
+      xyz="-0.00455 0 0"
       rpy="0 0 0" />
     <parent
-      link="link6" />
+      link="gripper_center" />
     <child
       link="R_finger" />
     <axis

@@ -68,7 +68,7 @@ public:
             {21.0, 36.0, 36.0, 21.0, 10.0, 10.0});
         this->declare_parameter<std::string>("urdf_file", "");
         this->declare_parameter<std::string>("base_link", "base_link");
-        this->declare_parameter<std::string>("tip_link", "link6");
+        this->declare_parameter<std::string>("tip_link", "gripper_center");
 
         std::string config_file = this->get_parameter("config_file").as_string();
         if (config_file.empty()) {

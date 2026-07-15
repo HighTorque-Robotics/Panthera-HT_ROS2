@@ -218,6 +218,15 @@
     <dynamics damping="0.7" friction="0.0"/>
   </joint>
 
+  <!-- Tool center point at the center of the gripper fingertips. -->
+  <link name="gripper_center" />
+
+  <joint name="gripper_center_joint" type="fixed">
+    <origin xyz="0.1701 0 0" rpy="0 0 0" />
+    <parent link="link6" />
+    <child link="gripper_center" />
+  </joint>
+
   <link name="L_finger">
     <inertial>
       <origin xyz="-0.0691013053303295 0.0168637833220532 -0.000510235194008973" rpy="0 0 0" />
@@ -241,8 +250,8 @@
   </link>
 
   <joint name="L_finger_joint" type="prismatic">
-    <origin xyz="0.16555 0 0" rpy="0 0 0" />
-    <parent link="link6" />
+    <origin xyz="-0.00455 0 0" rpy="0 0 0" />
+    <parent link="gripper_center" />
     <child link="L_finger" />
     <axis xyz="0 1 0" />
     <limit lower="-5.0" upper="5.0" effort="100" velocity="0.5" />
@@ -272,8 +281,8 @@
   </link>
 
   <joint name="R_finger_joint" type="prismatic">
-    <origin xyz="0.16555 0 0" rpy="0 0 0" />
-    <parent link="link6" />
+    <origin xyz="-0.00455 0 0" rpy="0 0 0" />
+    <parent link="gripper_center" />
     <child link="R_finger" />
     <axis xyz="0 -1 0" />
     <limit lower="-5.0" upper="5.0" effort="100" velocity="0.5" />
