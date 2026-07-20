@@ -133,7 +133,9 @@ int main(int argc, char** argv)
         signal(SIGINT, signal_handler);
 
         // 创建机械臂对象
-        std::string config_path = ament_index_cpp::get_package_share_directory("hightorque_robot") + "/robot_param/Follower.yaml";
+        std::string config_path =
+            ament_index_cpp::get_package_share_directory("hightorque_robot") +
+            "/robot_param/Follower.yaml";
         if (argc > 1) {
             config_path = argv[1];
         }
@@ -141,7 +143,9 @@ int main(int argc, char** argv)
         panthera::Panthera robot(config_path);
 
         // 加载 URDF 模型
-        std::string urdf_path = ament_index_cpp::get_package_share_directory("hightorque_robot") + "/urdf/Panthera-HT_description_follower.urdf";
+        std::string urdf_path =
+            ament_index_cpp::get_package_share_directory("panthera_ht_ros_description") +
+            "/urdf/panthera_ht_ros_description.urdf";
         if (argc > 2) {
             urdf_path = argv[2];
         }
@@ -170,15 +174,16 @@ int main(int argc, char** argv)
         // 笛卡尔空间刚度系数（与原程序相同）
         Eigen::Matrix<double, 6, 1> K_cartesian;
         K_cartesian << 100.0, 100.0, 100.0,  // 位置刚度 (N/m)
-                       4.0, 4.0, 4.0;         // 姿态刚度 (Nm/rad)
+                       1.2, 1.2, 0.8;         // 姿态刚度 (Nm/rad)
 
         // 笛卡尔空间阻尼系数（与原程序相同）
         Eigen::Matrix<double, 6, 1> B_cartesian;
         B_cartesian << 5.0, 5.0, 5.0,        // 线速度阻尼 (N·s/m)
-                       0.8, 0.8, 0.8;         // 角速度阻尼 (Nm·s/rad)
+                       0.4, 0.4, 0.3;        // 角速度阻尼 (Nm·s/rad)
 
         // 力矩限幅（6个关节）
-        std::vector<double> tau_limit = {10.0, 20.0, 20.0, 10.0, 5.0, 5.0};
+        std::vector<double> tau_limit = {10.0, 20.0, 20.0, 10.0, 3.0, 2.0};
+        const double max_ori_error = 0.5;
 
         // 零位置、零速度、零增益（纯力矩控制）
         std::vector<double> zero_pos(robot.getMotorCount(), 0.0);
@@ -231,6 +236,11 @@ int main(int argc, char** argv)
         std::cout << "姿态刚度 K_ori (Nm/rad): [" << K_cartesian.tail<3>().transpose() << "]" << std::endl;
         std::cout << "线速度阻尼 B_vel (N·s/m): [" << B_cartesian.head<3>().transpose() << "]" << std::endl;
         std::cout << "角速度阻尼 B_omega (Nm·s/rad): [" << B_cartesian.tail<3>().transpose() << "]" << std::endl;
+        std::cout << "关节力矩限幅 (Nm): [";
+        for (size_t i = 0; i < tau_limit.size(); ++i) {
+            std::cout << tau_limit[i] << (i + 1 < tau_limit.size() ? " " : "");
+        }
+        std::cout << "]" << std::endl;
 
         std::cout << "\n纯笛卡尔空间阻抗控制的特点：" << std::endl;
         std::cout << "1. 对末端施加外力：末端会偏离期望位置，撤去外力后会回到原位" << std::endl;
@@ -286,6 +296,10 @@ int main(int argc, char** argv)
             Eigen::Vector3d pos_error = x_des - x_current;
             Eigen::Vector3d ori_error = computeOrientationError(R_des, R_current);
 
+            if (ori_error.norm() > max_ori_error) {
+                ori_error = ori_error.normalized() * max_ori_error;
+            }
+
             // 组合位置和姿态误差
             Eigen::Matrix<double, 6, 1> x_error;
             x_error << pos_error, ori_error;
@@ -316,7 +330,7 @@ int main(int argc, char** argv)
                 tor_total[i] = tau_impedance(i) + G[i];
             }
 
-            // 8. 力矩限幅
+            // 8. 力矩限幅。5/6号腕部电机限幅更低，减少姿态通道激励。
             tor_total = clipTorque(tor_total, tau_limit);
 
             // 9. 发送控制命令（纯力矩控制模式）

@@ -13,6 +13,7 @@
   <depend>lcm</depend>
   <depend>yaml-cpp</depend>
   <depend>ament_index_cpp</depend>
+  <exec_depend>panthera_ht_ros_description</exec_depend>
 
   <export>
     <build_type>ament_cmake</build_type>
