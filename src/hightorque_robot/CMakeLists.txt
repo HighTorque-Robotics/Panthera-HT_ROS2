@@ -62,6 +62,7 @@ target_link_libraries(hightorque_robot
         lcm
         yaml-cpp
         serial_cmake
+        ament_index_cpp::ament_index_cpp
         ${SERIALPORT_LIBRARY}   # libserialport
     PRIVATE 
         rt 

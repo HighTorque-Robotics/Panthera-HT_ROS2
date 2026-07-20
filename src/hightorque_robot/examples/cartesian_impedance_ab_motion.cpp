@@ -141,7 +141,9 @@ int main(int argc, char** argv)
         panthera::Panthera robot(config_path);
 
         // 加载 URDF 模型
-        std::string urdf_path = ament_index_cpp::get_package_share_directory("hightorque_robot") + "/urdf/Panthera-HT_description_follower.urdf";
+        std::string urdf_path =
+            ament_index_cpp::get_package_share_directory("panthera_ht_ros_description") +
+            "/urdf/panthera_ht_ros_description.urdf";
         if (argc > 2) {
             urdf_path = argv[2];
         }
