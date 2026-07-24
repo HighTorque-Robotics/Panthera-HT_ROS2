@@ -123,21 +123,64 @@ ros2 launch panthera_ht_config hardware_moveit_rviz.launch.py
 
 启动后在 RViz 中拖动交互标记规划轨迹，点击 Plan & Execute 执行。
 
-### 二、纯仿真演示（无需硬件）
+### 二、MIT 重力补偿 + 位置 PD 控制 MoveIt
+
+MIT 模式使用：
+
+```text
+tau = gravity(q) + Kp * (q_target - q) + Kd * (dq_target - dq)
+```
+
+原来的位置速度模式入口保持不变。MIT 模式使用独立的 launch 文件：
+
+```bash
+source install/setup.bash
+ros2 launch panthera_ht_config hardware_moveit_rviz_mit.launch.py
+```
+
+查看 MIT launch 参数：
+
+```bash
+ros2 launch panthera_ht_config hardware_moveit_rviz_mit.launch.py --show-args
+```
+
+默认参数如下，顺序均为 `joint1` 到 `joint6`：
+
+```text
+mit_kp = 12.0,30.0,30.0,6.0,6.0,3.0
+mit_kd = 1.5,2.4,2.4,0.6,0.6,0.3
+```
+
+启动时可以直接修改：
+
+```bash
+ros2 launch panthera_ht_config hardware_moveit_rviz_mit.launch.py \
+  mit_kp:="10.0,25.0,25.0,5.0,5.0,2.5" \
+  mit_kd:="1.5,2.0,2.0,0.6,0.6,0.3"
+```
+
+调参建议：
+
+1. 先固定 `Kd`，逐步增加 `Kp`，直到跟踪刚度满足要求。
+2. 如果出现抖动、过冲或停止时振荡，降低 `Kp` 或增加 `Kd`。
+3. 每次只调整一组参数，先从小幅度变化开始。
+4. `mit_kp` 和 `mit_kd` 必须各包含 6 个数值，使用英文逗号分隔。
+
+### 三、纯仿真演示（无需硬件）
 
 ```bash
 source install/setup.bash
 ros2 launch panthera_ht_config demo.launch.py
 ```
 
-### 三、Gazebo 仿真 + MoveIt
+### 四、Gazebo 仿真 + MoveIt
 
 ```bash
 source install/setup.bash
 ros2 launch panthera_gazebo gazebo_moveit.launch.py
 ```
 
-### 四、直接 SDK 驱动控制（panthera_arm_control）
+### 五、直接 SDK 驱动控制（panthera_arm_control）
 
 不依赖 MoveIt / ros2_control，通过 ROS2 话题和服务直接驱动机械臂。内置 KDL 逆运动学，支持关节空间和笛卡尔空间控制。
 
@@ -257,7 +300,7 @@ ros2 service call /reset_srv std_srvs/srv/Trigger "{}"
 | 服务 | `/stop_srv` | std_srvs/Trigger | 急停 |
 | 服务 | `/reset_srv` | std_srvs/Trigger | 复位 |
 
-### 五、MoveIt 指令示例（panthera_commander）
+### 六、MoveIt 指令示例（panthera_commander）
 
 需先启动 `hardware_moveit_rviz.launch.py`，然后在另一个终端运行：
 
@@ -277,7 +320,7 @@ ros2 run panthera_commander test_gripper
 ros2 run panthera_commander sin_trajectory_control
 ```
 
-### 六、底层 SDK 示例（hightorque_robot）
+### 七、底层 SDK 示例（hightorque_robot）
 
 直接通过底层 SDK 控制机械臂，不经过 ROS2 Control / MoveIt，适合调试和底层开发。
 
@@ -344,7 +387,7 @@ ros2 run hightorque_robot 0_robot_get_state /path/to/your/config.yaml
 ```
 不传参数时默认使用 `Follower.yaml`。
 
-### 七、底层电机级示例
+### 八、底层电机级示例
 
 用于单电机调试、固件更新等底层操作：
 
