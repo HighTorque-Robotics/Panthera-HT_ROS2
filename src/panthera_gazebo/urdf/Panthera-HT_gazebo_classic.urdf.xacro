@@ -6,7 +6,7 @@
                default="$(find panthera_gazebo)/config/ros2_controllers.yaml" />
 
     <!-- 1. Import base URDF -->
-    <xacro:include filename="$(find panthera_ht_ros_description)/urdf/panthera_ht_ros_description.xacro" />
+    <xacro:include filename="$(find panthera_ht_ros_description)/urdf/panthera_ht_ros_description_gripper.xacro" />
 
     <!-- 2. Import Gazebo Classic configuration -->
     <xacro:include filename="$(find panthera_gazebo)/urdf/gazebo_classic.xacro" />

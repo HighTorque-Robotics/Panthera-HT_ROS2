@@ -62,7 +62,7 @@
                 <!-- Mimic joint: also needs command interface in Ignition -->
                 <command_interface name="position"/>
                 <param name="mimic">L_finger_joint</param>
-                <param name="multiplier">1</param>
+                <param name="multiplier">-1.0</param>
                 <state_interface name="position">
                   <param name="initial_value">${initial_positions['R_finger_joint']}</param>
                 </state_interface>

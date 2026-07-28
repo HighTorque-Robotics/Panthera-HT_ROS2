@@ -1,5 +1,6 @@
-import tempfile
+import os
 
+from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, RegisterEventHandler
 from launch.conditions import IfCondition
@@ -10,200 +11,30 @@ from launch_ros.parameter_descriptions import ParameterValue
 from launch_ros.substitutions import FindPackageShare
 from moveit_configs_utils import MoveItConfigsBuilder
 
-
-ARM_JOINTS = ["joint1", "joint2", "joint3", "joint4", "joint5", "joint6"]
-
-
-GRIPPER_SRDF = """<?xml version="1.0" encoding="UTF-8"?>
-<robot name="panthera_ht_ros_description">
-  <group name="arm">
-    <joint name="virtual_joint"/>
-    <joint name="joint1"/>
-    <joint name="joint2"/>
-    <joint name="joint3"/>
-    <joint name="joint4"/>
-    <joint name="joint5"/>
-    <joint name="joint6"/>
-    <joint name="gripper_center_joint"/>
-  </group>
-  <group name="gripper">
-    <joint name="L_finger_joint"/>
-  </group>
-  <group_state name="home" group="arm">
-    <joint name="joint1" value="0"/>
-    <joint name="joint2" value="0"/>
-    <joint name="joint3" value="0"/>
-    <joint name="joint4" value="0"/>
-    <joint name="joint5" value="0"/>
-    <joint name="joint6" value="0"/>
-  </group_state>
-  <group_state name="pose1" group="arm">
-    <joint name="joint1" value="0"/>
-    <joint name="joint2" value="1.6"/>
-    <joint name="joint3" value="1.6"/>
-    <joint name="joint4" value="0"/>
-    <joint name="joint5" value="0"/>
-    <joint name="joint6" value="0"/>
-  </group_state>
-  <group_state name="pose2" group="arm">
-    <joint name="joint1" value="-0.1989"/>
-    <joint name="joint2" value="0.7072"/>
-    <joint name="joint3" value="0.663"/>
-    <joint name="joint4" value="-0.4862"/>
-    <joint name="joint5" value="0.5917"/>
-    <joint name="joint6" value="-0.7597"/>
-  </group_state>
-  <group_state name="close" group="gripper">
-    <joint name="L_finger_joint" value="0"/>
-  </group_state>
-  <group_state name="open" group="gripper">
-    <joint name="L_finger_joint" value="0.04"/>
-  </group_state>
-  <group_state name="half_open" group="gripper">
-    <joint name="L_finger_joint" value="0.02"/>
-  </group_state>
-  <end_effector name="gripper" parent_link="gripper_center" group="gripper" parent_group="arm"/>
-  <virtual_joint name="virtual_joint" type="fixed" parent_frame="world" child_link="base_link"/>
-  <disable_collisions link1="L_finger" link2="R_finger" reason="Never"/>
-  <disable_collisions link1="L_finger" link2="gripper_center" reason="Default"/>
-  <disable_collisions link1="L_finger" link2="link3" reason="Never"/>
-  <disable_collisions link1="L_finger" link2="link4" reason="Never"/>
-  <disable_collisions link1="L_finger" link2="link5" reason="Never"/>
-  <disable_collisions link1="L_finger" link2="link6" reason="Adjacent"/>
-  <disable_collisions link1="R_finger" link2="gripper_center" reason="Default"/>
-  <disable_collisions link1="R_finger" link2="link3" reason="Never"/>
-  <disable_collisions link1="R_finger" link2="link4" reason="Never"/>
-  <disable_collisions link1="R_finger" link2="link5" reason="Never"/>
-  <disable_collisions link1="R_finger" link2="link6" reason="Adjacent"/>
-  <disable_collisions link1="gripper_center" link2="link3" reason="Never"/>
-  <disable_collisions link1="gripper_center" link2="link4" reason="Never"/>
-  <disable_collisions link1="gripper_center" link2="link5" reason="Never"/>
-  <disable_collisions link1="gripper_center" link2="link6" reason="Adjacent"/>
-  <disable_collisions link1="base_link" link2="link1" reason="Adjacent"/>
-  <disable_collisions link1="base_link" link2="link2" reason="Never"/>
-  <disable_collisions link1="link1" link2="link2" reason="Adjacent"/>
-  <disable_collisions link1="link2" link2="link3" reason="Adjacent"/>
-  <disable_collisions link1="link2" link2="link4" reason="Never"/>
-  <disable_collisions link1="link2" link2="link5" reason="Never"/>
-  <disable_collisions link1="link2" link2="link6" reason="Never"/>
-  <disable_collisions link1="link3" link2="link4" reason="Adjacent"/>
-  <disable_collisions link1="link3" link2="link5" reason="Never"/>
-  <disable_collisions link1="link3" link2="link6" reason="Never"/>
-  <disable_collisions link1="link4" link2="link5" reason="Adjacent"/>
-  <disable_collisions link1="link4" link2="link6" reason="Never"/>
-  <disable_collisions link1="link5" link2="link6" reason="Adjacent"/>
-</robot>
-"""
-
-
-ROS2_CONTROLLERS_YAML = """controller_manager:
-  ros__parameters:
-    update_rate: 100
-    use_sim_time: false
-
-    arm_controller:
-      type: joint_trajectory_controller/JointTrajectoryController
-
-    gripper_controller:
-      type: joint_trajectory_controller/JointTrajectoryController
-
-    joint_state_broadcaster:
-      type: joint_state_broadcaster/JointStateBroadcaster
-
-joint_state_broadcaster:
-  ros__parameters:
-    use_sim_time: false
-
-arm_controller:
-  ros__parameters:
-    use_sim_time: false
-    joints:
-      - joint1
-      - joint2
-      - joint3
-      - joint4
-      - joint5
-      - joint6
-
-    command_interfaces:
-      - position
-      - velocity
-
-    state_interfaces:
-      - position
-      - velocity
-
-    state_publish_rate: 50.0
-    action_monitor_rate: 20.0
-    allow_partial_joints_goal: false
-    allow_integration_in_goal_trajectories: true
-
-    constraints:
-      stopped_velocity_tolerance: 0.01
-      goal_time: 0.0
-
-gripper_controller:
-  ros__parameters:
-    use_sim_time: false
-    joints:
-      - L_finger_joint
-
-    command_interfaces:
-      - position
-      - velocity
-
-    state_interfaces:
-      - position
-      - velocity
-
-    state_publish_rate: 50.0
-    action_monitor_rate: 20.0
-    allow_partial_joints_goal: false
-
-    constraints:
-      stopped_velocity_tolerance: 0.01
-      goal_time: 0.0
-"""
-
-
-MOVEIT_CONTROLLERS = {
-    "moveit_controller_manager": "moveit_simple_controller_manager/MoveItSimpleControllerManager",
-    "moveit_simple_controller_manager": {
-        "controller_names": ["arm_controller", "gripper_controller"],
-        "arm_controller": {
-            "action_ns": "follow_joint_trajectory",
-            "type": "FollowJointTrajectory",
-            "joints": ARM_JOINTS,
-        },
-        "gripper_controller": {
-            "action_ns": "follow_joint_trajectory",
-            "type": "FollowJointTrajectory",
-            "joints": ["L_finger_joint"],
-        },
-    },
-}
-
-
-def create_ros2_controllers_file():
-    controllers_file = tempfile.NamedTemporaryFile(
-        mode="w",
-        prefix="panthera_ht_gripper_controllers_",
-        suffix=".yaml",
-        delete=False,
-    )
-    with controllers_file:
-        controllers_file.write(ROS2_CONTROLLERS_YAML)
-    return controllers_file.name
-
-
 def generate_launch_description():
     panthera_config_path = FindPackageShare("panthera_ht_config")
     panthera_description_path = FindPackageShare("panthera_ht_ros_description")
+    panthera_config_share = get_package_share_directory("panthera_ht_config")
 
     config_file = LaunchConfiguration("config_file")
     control_mode = LaunchConfiguration("control_mode")
     rviz = LaunchConfiguration("rviz")
-    controllers_file = create_ros2_controllers_file()
+
+    ros2_controllers_file = os.path.join(
+        panthera_config_share,
+        "config",
+        "ros2_controllers_hardware_gripper.yaml",
+    )
+    moveit_controllers_file = os.path.join(
+        panthera_config_share,
+        "config",
+        "moveit_controllers_hardware_gripper.yaml",
+    )
+    semantic_file = os.path.join(
+        panthera_config_share,
+        "config",
+        "panthera_ht_ros_description_gripper.srdf",
+    )
 
     default_config_file = PathJoinSubstitution([
         panthera_config_path,
@@ -227,12 +58,16 @@ def generate_launch_description():
     )
 
     robot_description = {"robot_description": robot_description_content}
-    robot_description_semantic = {"robot_description_semantic": GRIPPER_SRDF}
 
-    moveit_config = MoveItConfigsBuilder(
-        "panthera_ht_ros_description",
-        package_name="panthera_ht_config",
-    ).to_moveit_configs()
+    moveit_config = (
+        MoveItConfigsBuilder(
+            "panthera_ht_ros_description",
+            package_name="panthera_ht_config",
+        )
+        .robot_description_semantic(file_path=semantic_file)
+        .trajectory_execution(file_path=moveit_controllers_file)
+        .to_moveit_configs()
+    )
 
     move_group_configuration = {
         "publish_robot_description_semantic": True,
@@ -249,8 +84,6 @@ def generate_launch_description():
     moveit_params = [
         moveit_config.to_dict(),
         robot_description,
-        robot_description_semantic,
-        MOVEIT_CONTROLLERS,
         move_group_configuration,
         {"use_sim_time": False},
     ]
@@ -269,7 +102,7 @@ def generate_launch_description():
         package="controller_manager",
         executable="ros2_control_node",
         parameters=[
-            controllers_file,
+            ros2_controllers_file,
             robot_description,
             {"use_sim_time": False},
         ],
