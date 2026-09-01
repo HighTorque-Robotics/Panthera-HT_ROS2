@@ -14,10 +14,7 @@ target_link_libraries(${MOVEIT_LIB_NAME}_core ${OpenCV_LIBS} ${EIGEN3_LIBS})
 target_include_directories(${MOVEIT_LIB_NAME}_core PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>)
-ament_target_dependencies(
-  ${MOVEIT_LIB_NAME}_core
-  ${THIS_PACKAGE_INCLUDE_DEPENDS}
-)
+target_link_ros_packages(${MOVEIT_LIB_NAME}_core ${THIS_PACKAGE_INCLUDE_DEPENDS})
 
 # Plugin library
 add_library(${MOVEIT_LIB_NAME} SHARED ${SOURCE_FILES_PLUGINS})
@@ -26,10 +23,7 @@ target_link_libraries(${MOVEIT_LIB_NAME} ${MOVEIT_LIB_NAME}_core)
 target_include_directories(${MOVEIT_LIB_NAME} PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>)
-ament_target_dependencies(
-  ${MOVEIT_LIB_NAME}
-  pluginlib
-)
+target_link_ros_packages(${MOVEIT_LIB_NAME} pluginlib)
 
 include_directories(
   SYSTEM
@@ -50,7 +44,7 @@ ament_export_include_directories(
   include
 )
 ament_export_libraries(
-  {MOVEIT_LIB_NAME}_core {MOVEIT_LIB_NAME}
+  ${MOVEIT_LIB_NAME}_core ${MOVEIT_LIB_NAME}
 )
 
 if(BUILD_TESTING)

@@ -9,6 +9,7 @@
 #include <memory>
 #include <sstream>
 #include <string>
+#include <thread>
 #include <vector>
 
 #include "hardware_interface/types/hardware_interface_type_values.hpp"
@@ -121,10 +122,10 @@ private:
 };
 
 hardware_interface::CallbackReturn PantheraHardwareInterface::on_init(
-  const hardware_interface::HardwareInfo & info)
+  const hardware_interface::HardwareComponentInterfaceParams & params)
 {
   if (
-    hardware_interface::SystemInterface::on_init(info) !=
+    hardware_interface::SystemInterface::on_init(params) !=
     hardware_interface::CallbackReturn::SUCCESS)
   {
     return hardware_interface::CallbackReturn::ERROR;
@@ -383,58 +384,51 @@ hardware_interface::CallbackReturn PantheraHardwareInterface::on_configure(
   return hardware_interface::CallbackReturn::SUCCESS;
 }
 
-std::vector<hardware_interface::StateInterface>
-PantheraHardwareInterface::export_state_interfaces()
-{
-  std::vector<hardware_interface::StateInterface> state_interfaces;
-  for (size_t i = 0; i < info_.joints.size(); i++)
-  {
-    state_interfaces.emplace_back(hardware_interface::StateInterface(
-      info_.joints[i].name, hardware_interface::HW_IF_POSITION, &hw_positions_[i]));
-    state_interfaces.emplace_back(hardware_interface::StateInterface(
-      info_.joints[i].name, hardware_interface::HW_IF_VELOCITY, &hw_velocities_[i]));
-    state_interfaces.emplace_back(hardware_interface::StateInterface(
-      info_.joints[i].name, hardware_interface::HW_IF_EFFORT, &hw_efforts_[i]));
-  }
-
-  return state_interfaces;
-}
-
-std::vector<hardware_interface::CommandInterface>
-PantheraHardwareInterface::export_command_interfaces()
-{
-  std::vector<hardware_interface::CommandInterface> command_interfaces;
-  for (size_t i = 0; i < info_.joints.size(); i++)
-  {
-    // Skip command interfaces for mimic joints (R_finger_joint)
-    if (info_.joints[i].name == "R_finger_joint")
-    {
-      continue;
-    }
-
-    command_interfaces.emplace_back(hardware_interface::CommandInterface(
-      info_.joints[i].name, hardware_interface::HW_IF_POSITION, &hw_commands_positions_[i]));
-
-    if (use_velocity_commands_)
-    {
-      command_interfaces.emplace_back(hardware_interface::CommandInterface(
-        info_.joints[i].name, hardware_interface::HW_IF_VELOCITY, &hw_commands_velocities_[i]));
-    }
-
-    if (use_effort_commands_)
-    {
-      command_interfaces.emplace_back(hardware_interface::CommandInterface(
-        info_.joints[i].name, hardware_interface::HW_IF_EFFORT, &hw_commands_efforts_[i]));
-    }
-  }
-
-  return command_interfaces;
-}
-
 hardware_interface::CallbackReturn PantheraHardwareInterface::on_activate(
   const rclcpp_lifecycle::State & /*previous_state*/)
 {
   RCLCPP_INFO(rclcpp::get_logger("PantheraHardwareInterface"), "Activating...");
+
+  position_state_interfaces_.resize(info_.joints.size());
+  velocity_state_interfaces_.resize(info_.joints.size());
+  effort_state_interfaces_.resize(info_.joints.size());
+  position_command_interfaces_.resize(info_.joints.size());
+  velocity_command_interfaces_.resize(info_.joints.size());
+  effort_command_interfaces_.resize(info_.joints.size());
+
+  try
+  {
+    for (size_t i = 0; i < info_.joints.size(); ++i)
+    {
+      const auto & joint_name = info_.joints[i].name;
+      position_state_interfaces_[i] = get_state_interface_handle(
+        joint_name + "/" + hardware_interface::HW_IF_POSITION);
+      velocity_state_interfaces_[i] = get_state_interface_handle(
+        joint_name + "/" + hardware_interface::HW_IF_VELOCITY);
+      effort_state_interfaces_[i] = get_state_interface_handle(
+        joint_name + "/" + hardware_interface::HW_IF_EFFORT);
+
+      const auto position_name = joint_name + "/" + hardware_interface::HW_IF_POSITION;
+      const auto velocity_name = joint_name + "/" + hardware_interface::HW_IF_VELOCITY;
+      const auto effort_name = joint_name + "/" + hardware_interface::HW_IF_EFFORT;
+      if (has_command(position_name)) {
+        position_command_interfaces_[i] = get_command_interface_handle(position_name);
+      }
+      if (has_command(velocity_name)) {
+        velocity_command_interfaces_[i] = get_command_interface_handle(velocity_name);
+      }
+      if (has_command(effort_name)) {
+        effort_command_interfaces_[i] = get_command_interface_handle(effort_name);
+      }
+    }
+  }
+  catch (const std::exception & e)
+  {
+    RCLCPP_ERROR(
+      rclcpp::get_logger("PantheraHardwareInterface"),
+      "Failed to cache ros2_control interfaces: %s", e.what());
+    return hardware_interface::CallbackReturn::ERROR;
+  }
 
   // Read current state and set as command
   try
@@ -462,6 +456,31 @@ hardware_interface::CallbackReturn PantheraHardwareInterface::on_activate(
     if (info_.joints.size() > 7)
     {
       hw_commands_positions_[7] = -hw_commands_positions_[6];  // Mimic L_finger_joint position (negated)
+    }
+
+    for (size_t i = 0; i < info_.joints.size(); ++i)
+    {
+      if (!position_state_interfaces_[i]->set_value(hw_positions_[i], true) ||
+          !velocity_state_interfaces_[i]->set_value(hw_velocities_[i], true) ||
+          !effort_state_interfaces_[i]->set_value(hw_efforts_[i], true))
+      {
+        throw std::runtime_error("failed to initialize state interface values");
+      }
+      if (position_command_interfaces_[i] &&
+          !position_command_interfaces_[i]->set_value(hw_commands_positions_[i], true))
+      {
+        throw std::runtime_error("failed to initialize position command interface");
+      }
+      if (velocity_command_interfaces_[i] &&
+          !velocity_command_interfaces_[i]->set_value(hw_commands_velocities_[i], true))
+      {
+        throw std::runtime_error("failed to initialize velocity command interface");
+      }
+      if (effort_command_interfaces_[i] &&
+          !effort_command_interfaces_[i]->set_value(hw_commands_efforts_[i], true))
+      {
+        throw std::runtime_error("failed to initialize effort command interface");
+      }
     }
 
     RCLCPP_INFO(rclcpp::get_logger("PantheraHardwareInterface"),
@@ -528,6 +547,16 @@ hardware_interface::return_type PantheraHardwareInterface::read(
       hw_velocities_[7] = -hw_velocities_[6];  // Mimic L_finger_joint velocity (negated)
       hw_efforts_[7] = 0.0;
     }
+
+    for (size_t i = 0; i < info_.joints.size(); ++i)
+    {
+      if (!position_state_interfaces_[i]->set_value(hw_positions_[i]) ||
+          !velocity_state_interfaces_[i]->set_value(hw_velocities_[i]) ||
+          !effort_state_interfaces_[i]->set_value(hw_efforts_[i]))
+      {
+        return hardware_interface::return_type::ERROR;
+      }
+    }
   }
   catch (const std::exception & e)
   {
@@ -546,6 +575,34 @@ hardware_interface::return_type PantheraHardwareInterface::write(
   // Write commands to hardware
   try
   {
+    for (size_t i = 0; i < info_.joints.size(); ++i)
+    {
+      if (position_command_interfaces_[i])
+      {
+        const auto command = position_command_interfaces_[i]->get_optional<double>();
+        if (!command) {
+          return hardware_interface::return_type::ERROR;
+        }
+        hw_commands_positions_[i] = *command;
+      }
+      if (velocity_command_interfaces_[i])
+      {
+        const auto command = velocity_command_interfaces_[i]->get_optional<double>();
+        if (!command) {
+          return hardware_interface::return_type::ERROR;
+        }
+        hw_commands_velocities_[i] = *command;
+      }
+      if (effort_command_interfaces_[i])
+      {
+        const auto command = effort_command_interfaces_[i]->get_optional<double>();
+        if (!command) {
+          return hardware_interface::return_type::ERROR;
+        }
+        hw_commands_efforts_[i] = *command;
+      }
+    }
+
     // Extract first 6 joints for arm control
     std::vector<double> arm_positions(hw_commands_positions_.begin(),
                                        hw_commands_positions_.begin() + 6);

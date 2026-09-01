@@ -5,8 +5,7 @@
 
         <ros2_control name="${name}" type="system">
             <hardware>
-                <!-- Use Gazebo hardware interface (backward compatible name) -->
-                <plugin>ign_ros2_control/IgnitionSystem</plugin>
+                <plugin>gz_ros2_control/GazeboSimSystem</plugin>
                 <param name="use_sim_time">true</param>
             </hardware>
             <joint name="joint1">
@@ -59,8 +58,7 @@
                 <state_interface name="velocity"/>
             </joint>
             <joint name="R_finger_joint">
-                <!-- Mimic joint: also needs command interface in Ignition -->
-                <command_interface name="position"/>
+                <!-- Mimic joint: Gazebo Sim mirrors the commanded left finger. -->
                 <param name="mimic">L_finger_joint</param>
                 <param name="multiplier">-1.0</param>
                 <state_interface name="position">

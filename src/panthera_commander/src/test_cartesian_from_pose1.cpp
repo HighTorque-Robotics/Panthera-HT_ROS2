@@ -150,7 +150,7 @@ int main(int argc, char** argv)
 
     // Wrap trajectory in a Plan object
     moveit::planning_interface::MoveGroupInterface::Plan cartesian_plan;
-    cartesian_plan.trajectory_ = trajectory;
+    cartesian_plan.trajectory = trajectory;
 
     auto result = arm.execute(cartesian_plan);
     if (result == moveit::core::MoveItErrorCode::SUCCESS)

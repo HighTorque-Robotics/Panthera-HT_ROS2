@@ -33,7 +33,11 @@ def launch_setup(context, *args, **kwargs):
         output="screen",
         parameters=[
             moveit_config.to_dict(),
-            {'use_sim_time': False},  # 真实硬件使用系统时间
+            {
+                'use_sim_time': False,  # 真实硬件使用系统时间
+                'publish_robot_description': True,
+                'publish_robot_description_semantic': True,
+            },
         ],
     )
 

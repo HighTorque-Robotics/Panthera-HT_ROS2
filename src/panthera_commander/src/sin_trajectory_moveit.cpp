@@ -217,7 +217,7 @@ int main(int argc, char** argv)
 
             // 执行轨迹
             moveit::planning_interface::MoveGroupInterface::Plan sin_plan;
-            sin_plan.trajectory_ = trajectory;
+            sin_plan.trajectory = trajectory;
 
             auto result = arm.execute(sin_plan);
             if (result == moveit::core::MoveItErrorCode::SUCCESS)

@@ -10,16 +10,19 @@ find_dependency(yaml-cpp REQUIRED)
 
 # 查找libserialport库
 find_library(SERIALPORT_LIBRARY serialport)
-if(NOT SERIALPORT_LIBRARY)
+find_path(SERIALPORT_INCLUDE_DIR libserialport.h)
+if(NOT SERIALPORT_LIBRARY OR NOT SERIALPORT_INCLUDE_DIR)
     set(hightorque_robot_FOUND FALSE)
     if(NOT hightorque_robot_FIND_QUIETLY)
-        message(FATAL_ERROR "libserialport not found. Please install with: sudo apt-get install libserialport-dev")
+        message(FATAL_ERROR "libserialport headers or library not found. Please install with: sudo apt-get install libserialport-dev")
     endif()
     return()
 endif()
 
 # 包含导出的目标
 include("${CMAKE_CURRENT_LIST_DIR}/hightorque_robotTargets.cmake")
+set_property(TARGET hightorque_robot::hightorque_robot APPEND PROPERTY
+    INTERFACE_INCLUDE_DIRECTORIES "${SERIALPORT_INCLUDE_DIR}")
 
 # 设置配置文件路径变量（供用户使用）
 get_filename_component(HIGHTORQUE_ROBOT_CMAKE_DIR "${CMAKE_CURRENT_LIST_DIR}" DIRECTORY)

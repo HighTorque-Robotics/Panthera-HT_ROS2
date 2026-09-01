@@ -1,5 +1,5 @@
 #include "panthera/Panthera.hpp"
-#include <ament_index_cpp/get_package_share_directory.hpp>
+#include <ament_index_cpp/get_package_share_path.hpp>
 #include <iostream>
 #include <fstream>
 #include <chrono>
@@ -16,7 +16,7 @@ Panthera::Panthera() : hightorque_robot::robot(), motor_count_(0), gripper_id_(0
 {
     // 使用安装空间中的默认配置文件路径，避免从 ros2 run 启动时依赖工作目录。
     std::string default_config =
-        ament_index_cpp::get_package_share_directory("hightorque_robot") +
+        ament_index_cpp::get_package_share_path("hightorque_robot").string() +
         "/robot_param/Follower.yaml";
     initialize(default_config);
 }

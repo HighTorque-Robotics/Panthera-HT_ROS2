@@ -12,6 +12,7 @@
   <!-- ros2_control_node -->
   <node pkg="controller_manager" exec="ros2_control_node" >
     <param from="$(find-pkg-share panthera_bringup)/config/ros2_controllers.yaml" />
+    <remap from="~/robot_description" to="/robot_description" />
   </node>
 
   <!-- joint_state_broadcaster spawner -->

@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.8)
+cmake_minimum_required(VERSION 3.22)
 project(panthera_gazebo)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
@@ -13,6 +13,14 @@ install(DIRECTORY
   worlds
   config
   DESTINATION share/${PROJECT_NAME}
+  PATTERN "*classic*" EXCLUDE
+  PATTERN "__pycache__" EXCLUDE
+)
+
+install(PROGRAMS
+  scripts/robot_description_republisher.py
+  DESTINATION lib/${PROJECT_NAME}
+  RENAME robot_description_republisher
 )
 
 ament_package()

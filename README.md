@@ -1,4 +1,7 @@
-# Panthera-HT 机械臂 ROS2 Humble 工作空间
+# Panthera-HT 机械臂 ROS 2 Lyrical 工作空间
+
+本分支面向 Ubuntu 26.04（Resolute）和 ROS 2 Lyrical。项目 C++ 代码按
+C++20 构建，仿真默认使用 Gazebo Sim Jetty，不再使用 Gazebo Classic。
 
 ## 工作空间结构
 
@@ -19,73 +22,83 @@ Panthera_HT_ROS2/src/
 
 ## 环境要求
 
-- Ubuntu 22.04
-- ROS2 Humble
+- Ubuntu 26.04
+- ROS 2 Lyrical
+- GCC 15 或 Clang 21（项目要求 C++20）
+- Gazebo Sim Jetty（仅仿真需要）
 
 ---
 
 ## 快速部署（新电脑）
 
-### 1. 安装 ROS2 Humble
+### 1. 安装 ROS 2 Lyrical
 
-如果还没装 ROS2，参考官方文档：https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html
+如果还没安装 ROS 2，请参考 Lyrical 官方安装文档：
+https://docs.ros.org/en/lyrical/Installation/Ubuntu-Install-Debs.html
 
 安装完成后确保 source 了 ROS2 环境：
 ```bash
-source /opt/ros/humble/setup.bash
+source /opt/ros/lyrical/setup.bash
 ```
 
 ### 2. 克隆仓库
 
 ```bash
 cd ~
-git clone https://github.com/HighTorque-Robotics/Panthera_HT_ROS2.git
+git clone -b Lyrical https://github.com/HighTorque-Robotics/Panthera_HT_ROS2.git
 cd Panthera_HT_ROS2
 ```
 
 ### 3. 安装系统依赖
 
 ```bash
-# ROS2 相关包
+# ROS 2、MoveIt、ros2_control 和 Gazebo Sim
 sudo apt install -y \
-  ros-humble-moveit \
-  ros-humble-ros2-control \
-  ros-humble-ros2-controllers \
-  ros-humble-controller-manager \
-  ros-humble-robot-state-publisher \
-  ros-humble-rviz2 \
-  ros-humble-xacro \
-  ros-humble-joint-state-broadcaster \
-  ros-humble-joint-trajectory-controller \
-  ros-humble-gazebo-ros-pkgs
-
-# 底层 SDK 依赖
+  ros-lyrical-desktop \
+  ros-lyrical-moveit \
+  ros-lyrical-ros2-control \
+  ros-lyrical-ros2-controllers \
+  ros-lyrical-ros-gz \
+  ros-lyrical-gz-ros2-control \
+  ros-lyrical-pinocchio \
+  ros-lyrical-xacro
+  
+# 底层 SDK 和标定 GUI 依赖
 sudo apt install -y \
   libyaml-cpp-dev \
   libserialport-dev \
-  libeigen3-dev \
-  libboost-all-dev \
-  liburdfdom-dev
+  qt6-base-dev
 ```
 
-### 4. 安装 Pinocchio（阻抗控制示例需要）
+推荐再用 rosdep 检查其余依赖（首次使用 rosdep 时需要先初始化）：
 
 ```bash
-cd /tmp
-git clone --recursive https://github.com/stack-of-tasks/pinocchio.git --depth 1
-cd pinocchio
-mkdir build && cd build
-cmake .. -DCMAKE_BUILD_TYPE=Release -DBUILD_PYTHON_INTERFACE=OFF -DBUILD_TESTING=OFF
-make -j$(nproc)
-sudo make install
-sudo ldconfig
+sudo rosdep init  # 仅首次执行；若已初始化可跳过
+rosdep update
+rosdep install --from-paths src --ignore-src -r -y
 ```
 
-### 5. 编译工作空间
+RealSense 相机只在手眼标定入口使用。如果当前 Lyrical 软件仓库还没有
+`realsense2_camera` 二进制包，可暂时不构建/运行标定链路，或从其 Lyrical
+源码版本单独构建。
+
+不使用标定功能时，可在编译中跳过两个标定包：
+
+```bash
+colcon build --symlink-install \
+  --packages-skip moveit_calibration_gui moveit_calibration_plugins \
+  --cmake-args -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF \
+  -DPython3_EXECUTABLE=/usr/bin/python3
+```
+
+### 4. 编译工作空间
 
 ```bash
 cd ~/Panthera_HT_ROS2
-colcon build
+source /opt/ros/lyrical/setup.bash
+colcon build --symlink-install --cmake-args \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DPython3_EXECUTABLE=/usr/bin/python3
 source install/setup.bash
 ```
 
@@ -94,7 +107,7 @@ source install/setup.bash
 echo "source ~/Panthera_HT_ROS2/install/setup.bash" >> ~/.bashrc
 ```
 
-### 6. 串口权限设置
+### 5. 串口权限设置
 
 连接机械臂后，需要确保串口权限：
 ```bash
@@ -108,6 +121,21 @@ sudo usermod -aG dialout $USER
 ---
 
 ## 使用方式
+
+### Lyrical 运行前的环境加载
+
+当前工作空间使用源码编译的 MoveIt。每次打开新终端，都需要按以下顺序加载
+ROS 2、MoveIt 和本项目环境：
+
+```bash
+cd ~/Panthera-HT/Panthera-HT_ROS2_Lyrical
+source /opt/ros/lyrical/setup.bash
+source ~/ws_moveit/install/setup.bash
+source install/setup.bash
+```
+
+下面的命令均假设当前终端已经完成上述环境加载。当前构建暂时跳过
+RealSense 和手眼标定相关包，不影响机械臂、夹爪、MoveIt 和 Gazebo 仿真。
 
 ### 一、MoveIt 控制真实机械臂
 
@@ -173,12 +201,76 @@ source install/setup.bash
 ros2 launch panthera_ht_config demo.launch.py
 ```
 
-### 四、Gazebo 仿真 + MoveIt
+### 四、Gazebo Sim + MoveIt
+
+这是当前 Lyrical 版本已经验证的完整仿真启动方式，无需连接真实机械臂。
+
+#### 1. 启动完整仿真
+
+打开终端 1：
 
 ```bash
+cd ~/Panthera-HT/Panthera-HT_ROS2_Lyrical
+source /opt/ros/lyrical/setup.bash
+source ~/ws_moveit/install/setup.bash
 source install/setup.bash
+
 ros2 launch panthera_gazebo gazebo_moveit.launch.py
 ```
+
+该命令会启动 Gazebo Sim、机器人模型、`ros2_control`、MoveIt `move_group`
+和 RViz。启动通常需要 15～30 秒。
+
+#### 2. 检查控制器状态
+
+打开终端 2，加载相同环境：
+
+```bash
+cd ~/Panthera-HT/Panthera-HT_ROS2_Lyrical
+source /opt/ros/lyrical/setup.bash
+source ~/ws_moveit/install/setup.bash
+source install/setup.bash
+
+ros2 control list_controllers
+```
+
+确认以下三个控制器都进入 `active` 状态后，再发送运动命令：
+
+```text
+joint_state_broadcaster  active
+arm_controller           active
+gripper_controller       active
+```
+
+#### 3. 测试机械臂和夹爪
+
+在终端 2 中运行机械臂测试：
+
+```bash
+ros2 run panthera_commander test_moveit
+```
+
+机械臂会依次执行 `pose1 -> pose2 -> home`。等待机械臂测试完全结束后，再运行
+夹爪测试：
+
+```bash
+ros2 run panthera_commander test_gripper
+```
+
+夹爪会依次执行 `open -> half_open -> close`。
+
+也可以在 RViz 的 MotionPlanning 面板中拖动末端交互标记，然后点击
+`Plan & Execute` 规划并执行轨迹。
+
+#### 4. 关闭仿真
+
+回到终端 1 按 `Ctrl+C`，等待 Gazebo、MoveIt 和 RViz 全部退出。若启动命令
+仍在终止进程，不要立即重复启动第二套仿真。
+
+该入口使用 Bullet Featherstone 物理引擎。Gazebo 为保证启动速度使用包围盒
+碰撞体，MoveIt 仍使用原始 STL 碰撞模型；夹爪仿真速度限制为 0.02 m/s。
+由于 Lyrical 的 ResourceManager 位置限幅会破坏夹爪位置命令，仿真控制器关闭
+该重复限幅层，关节轨迹控制器、MoveIt 和 URDF 中的限位仍然生效。
 
 ### 五、直接 SDK 驱动控制（panthera_arm_control）
 
@@ -189,6 +281,14 @@ ros2 launch panthera_gazebo gazebo_moveit.launch.py
 ```bash
 source install/setup.bash
 ros2 launch panthera_arm_control arm_control.launch.py
+```
+
+该节点的笛卡尔控制默认以真实夹爪中心 `gripper_center` 作为末端参考坐标系，
+因此 `/move_to_pose` 和 `/end_pose_euler` 表示夹爪中心的位姿，而不是 J6
+法兰位姿。若需要兼容旧程序、临时使用 J6 法兰，可显式指定：
+
+```bash
+ros2 launch panthera_arm_control arm_control.launch.py tip_link:=link6
 ```
 
 #### 状态查询
@@ -412,7 +512,7 @@ ros2 run hightorque_robot parse_demo           # 参数解析示例
 | `panthera_ht_config` | MoveIt 配置包，包含 launch 文件、URDF、控制器配置 |
 | `panthera_ht_ros_description` | 机器人 URDF/mesh 描述文件 |
 | `panthera_hardware` | ROS2 Control 硬件接口插件，桥接 SDK 和 ros2_control |
-| `panthera_gazebo` | Gazebo Classic / Ignition 仿真配置 |
+| `panthera_gazebo` | Gazebo Sim Jetty 仿真配置 |
 | `panthera_bringup` | 系统级启动文件 |
 | `panthera_commander` | MoveIt C++ 运动指令示例（画圆、正弦轨迹等） |
 | `panthera_arm_control` | 直接 SDK 驱动节点，提供话题/服务控制，内置 KDL 逆运动学 |
@@ -423,7 +523,7 @@ ros2 run hightorque_robot parse_demo           # 参数解析示例
 ## 常见问题
 
 **Q: colcon build 报找不到 pinocchio**
-A: 阻抗控制相关的 4 个示例需要 Pinocchio 库。没装 Pinocchio 时这些示例会被跳过，其他功能不受影响。按上面"安装 Pinocchio"步骤安装即可。
+A: 安装 `ros-lyrical-pinocchio`。阻抗控制示例和 ros2_control 真机插件都会使用它。
 
 **Q: ros2 run 报 No executable found**
 A: 确保已经 `source install/setup.bash`，并且 `colcon build` 编译成功。

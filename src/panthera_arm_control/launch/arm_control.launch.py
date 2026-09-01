@@ -12,6 +12,8 @@ def generate_launch_description():
                               description='Status publish rate in Hz'),
         DeclareLaunchArgument('max_velocity', default_value='0.5',
                               description='Max joint velocity in rad/s'),
+        DeclareLaunchArgument('tip_link', default_value='gripper_center',
+                              description='Cartesian IK/FK reference link (physical gripper center)'),
 
         Node(
             package='panthera_arm_control',
@@ -22,6 +24,7 @@ def generate_launch_description():
                 'config_file': LaunchConfiguration('config_file'),
                 'status_publish_rate': LaunchConfiguration('status_publish_rate'),
                 'max_velocity': LaunchConfiguration('max_velocity'),
+                'tip_link': LaunchConfiguration('tip_link'),
                 'max_torque': [21.0, 36.0, 36.0, 21.0, 10.0, 10.0],
             }],
         ),

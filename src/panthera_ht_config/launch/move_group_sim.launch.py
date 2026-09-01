@@ -28,6 +28,11 @@ def launch_setup(context, *args, **kwargs):
             "config",
             "panthera_ht_ros_description_gripper.srdf"
         ))
+        .joint_limits(file_path=os.path.join(
+            panthera_config_path.perform(context),
+            "config",
+            "joint_limits_sim.yaml"
+        ))
         .trajectory_execution(file_path=os.path.join(
             panthera_config_path.perform(context),
             "config",
@@ -43,7 +48,15 @@ def launch_setup(context, *args, **kwargs):
         output="screen",
         parameters=[
             moveit_config.to_dict(),
-            {'use_sim_time': use_sim_time},
+            {
+                'use_sim_time': use_sim_time,
+                # robot_state_publisher owns /robot_description in simulation.
+                # Publishing MoveIt's planning-only URDF (without ros2_control)
+                # on the same topic can reach Lyrical's controller manager first
+                # and permanently fail its Gazebo hardware initialization.
+                'publish_robot_description': False,
+                'publish_robot_description_semantic': True,
+            },
         ],
     )
 

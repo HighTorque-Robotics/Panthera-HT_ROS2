@@ -148,7 +148,7 @@ int main(int argc, char** argv)
 
       // Execute horizontal circle trajectory
       moveit::planning_interface::MoveGroupInterface::Plan horizontal_plan;
-      horizontal_plan.trajectory_ = horizontal_trajectory;
+      horizontal_plan.trajectory = horizontal_trajectory;
 
       auto horizontal_result = arm.execute(horizontal_plan);
       if (horizontal_result == moveit::core::MoveItErrorCode::SUCCESS)
@@ -219,7 +219,7 @@ int main(int argc, char** argv)
 
       // Execute vertical circle trajectory
       moveit::planning_interface::MoveGroupInterface::Plan vertical_plan;
-      vertical_plan.trajectory_ = vertical_trajectory;
+      vertical_plan.trajectory = vertical_trajectory;
 
       auto vertical_result = arm.execute(vertical_plan);
       if (vertical_result == moveit::core::MoveItErrorCode::SUCCESS)

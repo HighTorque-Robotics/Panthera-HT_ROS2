@@ -1,5 +1,9 @@
-cmake_minimum_required(VERSION 3.8)
+cmake_minimum_required(VERSION 3.22)
 project(panthera_commander)
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -11,48 +15,50 @@ find_package(rclcpp REQUIRED)
 find_package(moveit_ros_planning_interface REQUIRED)
 find_package(example_interfaces REQUIRED)
 find_package(panthera_interfaces REQUIRED)
-# find_package(hightorque_robot REQUIRED)  # Package not found, commented out
+find_package(hightorque_robot REQUIRED)
+find_package(ament_index_cpp REQUIRED)
 
 add_executable(test_moveit src/test_moveit.cpp)
-ament_target_dependencies(test_moveit rclcpp moveit_ros_planning_interface example_interfaces)
+target_link_libraries(test_moveit PRIVATE ${rclcpp_TARGETS} ${moveit_ros_planning_interface_TARGETS} ${example_interfaces_TARGETS})
 
 add_executable(test_moveit_by_cartesian src/test_moveit_by_cartesian.cpp)
-ament_target_dependencies(test_moveit_by_cartesian rclcpp moveit_ros_planning_interface example_interfaces)
+target_link_libraries(test_moveit_by_cartesian PRIVATE ${rclcpp_TARGETS} ${moveit_ros_planning_interface_TARGETS} ${example_interfaces_TARGETS})
 
 add_executable(test_moveit_by_jointspace src/test_moveit_by_jointspace.cpp)
-ament_target_dependencies(test_moveit_by_jointspace rclcpp moveit_ros_planning_interface example_interfaces)
+target_link_libraries(test_moveit_by_jointspace PRIVATE ${rclcpp_TARGETS} ${moveit_ros_planning_interface_TARGETS} ${example_interfaces_TARGETS})
 
 add_executable(test_moveit_by_siyuanshu src/test_moveit_by_siyuanshu.cpp)
-ament_target_dependencies(test_moveit_by_siyuanshu rclcpp moveit_ros_planning_interface example_interfaces)
+target_link_libraries(test_moveit_by_siyuanshu PRIVATE ${rclcpp_TARGETS} ${moveit_ros_planning_interface_TARGETS} ${example_interfaces_TARGETS})
 
 add_executable(test_gripper src/test_gripper.cpp)
-ament_target_dependencies(test_gripper rclcpp moveit_ros_planning_interface example_interfaces)
+target_link_libraries(test_gripper PRIVATE ${rclcpp_TARGETS} ${moveit_ros_planning_interface_TARGETS} ${example_interfaces_TARGETS})
 
 add_executable(test_gripper_detailed src/test_gripper_detailed.cpp)
-ament_target_dependencies(test_gripper_detailed rclcpp moveit_ros_planning_interface example_interfaces)
+target_link_libraries(test_gripper_detailed PRIVATE ${rclcpp_TARGETS} ${moveit_ros_planning_interface_TARGETS} ${example_interfaces_TARGETS})
 
 add_executable(test_cartesian_from_pose1 src/test_cartesian_from_pose1.cpp)
-ament_target_dependencies(test_cartesian_from_pose1 rclcpp moveit_ros_planning_interface example_interfaces)
+target_link_libraries(test_cartesian_from_pose1 PRIVATE ${rclcpp_TARGETS} ${moveit_ros_planning_interface_TARGETS} ${example_interfaces_TARGETS})
 
 add_executable(commander_template src/commander_template.cpp)
-ament_target_dependencies(commander_template rclcpp moveit_ros_planning_interface example_interfaces panthera_interfaces)
+target_link_libraries(commander_template PRIVATE ${rclcpp_TARGETS} ${moveit_ros_planning_interface_TARGETS} ${example_interfaces_TARGETS} ${panthera_interfaces_TARGETS})
 
 add_executable(draw_circle src/draw_circle.cpp)
-ament_target_dependencies(draw_circle rclcpp moveit_ros_planning_interface example_interfaces)
+target_link_libraries(draw_circle PRIVATE ${rclcpp_TARGETS} ${moveit_ros_planning_interface_TARGETS} ${example_interfaces_TARGETS})
 
 add_executable(draw_horizontal_vertical_circles src/draw_horizontal_vertical_circles.cpp)
-ament_target_dependencies(draw_horizontal_vertical_circles rclcpp moveit_ros_planning_interface example_interfaces)
+target_link_libraries(draw_horizontal_vertical_circles PRIVATE ${rclcpp_TARGETS} ${moveit_ros_planning_interface_TARGETS} ${example_interfaces_TARGETS})
 
 add_executable(draw_three_circles src/draw_three_circles.cpp)
-ament_target_dependencies(draw_three_circles rclcpp moveit_ros_planning_interface example_interfaces)
+target_link_libraries(draw_three_circles PRIVATE ${rclcpp_TARGETS} ${moveit_ros_planning_interface_TARGETS} ${example_interfaces_TARGETS})
 
-# add_executable(sin_trajectory_control src/sin_trajectory_control.cpp)
-# target_link_libraries(sin_trajectory_control hightorque_robot::hightorque_robot)
-# ament_target_dependencies(sin_trajectory_control rclcpp)
-# Commented out: depends on missing hightorque_robot package
+add_executable(sin_trajectory_control src/sin_trajectory_control.cpp)
+target_link_libraries(sin_trajectory_control PRIVATE
+  hightorque_robot::hightorque_robot
+  ament_index_cpp::ament_index_cpp
+)
 
 add_executable(sin_trajectory_moveit src/sin_trajectory_moveit.cpp)
-ament_target_dependencies(sin_trajectory_moveit rclcpp moveit_ros_planning_interface)
+target_link_libraries(sin_trajectory_moveit PRIVATE ${rclcpp_TARGETS} ${moveit_ros_planning_interface_TARGETS})
 
 install(TARGETS
   test_moveit
@@ -66,7 +72,7 @@ install(TARGETS
   draw_circle
   draw_horizontal_vertical_circles
   draw_three_circles
-  # sin_trajectory_control  # Commented out: depends on missing hightorque_robot package
+  sin_trajectory_control
   sin_trajectory_moveit
   DESTINATION lib/${PROJECT_NAME})
 

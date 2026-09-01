@@ -1,7 +1,7 @@
 import os
+
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, ExecuteProcess, SetEnvironmentVariable, IncludeLaunchDescription, TimerAction, RegisterEventHandler
-from launch.event_handlers import OnProcessExit
+from launch.actions import DeclareLaunchArgument, SetEnvironmentVariable, IncludeLaunchDescription, TimerAction
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import Command, FindExecutable, LaunchConfiguration, PathJoinSubstitution
 from launch_ros.actions import Node
@@ -35,27 +35,19 @@ def generate_launch_description():
     robot_description_content = ParameterValue(
         Command([
             FindExecutable(name='xacro'), ' ', urdf_file,
-            ' ros2_control_params:=', controllers_file
+            ' ros2_control_params:=', controllers_file,
+            ' use_mesh_collisions:=false'
         ]),
         value_type=str
     )
 
-    # Set Gazebo Ignition resource path for meshes
+    # Set Gazebo Sim resource path for meshes
     gz_model_path = SetEnvironmentVariable(
         name='GZ_SIM_RESOURCE_PATH',
         value=[
             panthera_description_path, ':',
             PathJoinSubstitution([panthera_description_path, '..']), ':',
             os.environ.get('GZ_SIM_RESOURCE_PATH', '')
-        ]
-    )
-
-    # Set Gazebo plugin path for gz_ros2_control
-    gz_plugin_path = SetEnvironmentVariable(
-        name='GZ_SIM_SYSTEM_PLUGIN_PATH',
-        value=[
-            '/opt/ros/humble/lib:',
-            os.environ.get('GZ_SIM_SYSTEM_PLUGIN_PATH', '')
         ]
     )
 
@@ -70,7 +62,20 @@ def generate_launch_description():
         }]
     )
 
-    # Start Gazebo Ignition using ros_gz_sim package
+    # Lyrical's embedded controller_manager is created after the model is spawned.
+    # Repeat the transient description while it initializes so it cannot miss the
+    # robot_state_publisher's initial sample.
+    robot_description_republisher = Node(
+        package='panthera_gazebo',
+        executable='robot_description_republisher',
+        output='screen',
+        parameters=[{
+            'robot_description': robot_description_content,
+            'publish_duration': 20.0,
+        }]
+    )
+
+    # Start Gazebo Sim using ros_gz_sim package
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([
             PathJoinSubstitution([
@@ -80,12 +85,26 @@ def generate_launch_description():
             ])
         ]),
         launch_arguments={
-            'gz_args': '-r empty.sdf -v 4',
+            # Bullet Featherstone supports URDF mesh collision geometry and
+            # mimic constraints; DART (Gazebo's default) does not support
+            # either completely for this model.
+            'gz_args': (
+                '-r empty.sdf -v 3 '
+                '--physics-engine gz-physics-bullet-featherstone-plugin'
+            ),
             'on_exit_shutdown': 'true'
         }.items()
     )
 
-    # Spawn robot in Gazebo Ignition with delay
+    # Bridge Gazebo simulation time into ROS for nodes using use_sim_time.
+    clock_bridge = Node(
+        package='ros_gz_bridge',
+        executable='parameter_bridge',
+        arguments=['/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock'],
+        output='screen'
+    )
+
+    # Spawn robot in Gazebo Sim with delay
     spawn_robot = TimerAction(
         period=3.0,
         actions=[
@@ -110,6 +129,7 @@ def generate_launch_description():
                 package='controller_manager',
                 executable='spawner',
                 arguments=['joint_state_broadcaster',
+                           '--param-file', controllers_file,
                            '--controller-manager-timeout', '60',
                            '--controller-manager', '/controller_manager'],
                 output='screen'
@@ -124,6 +144,7 @@ def generate_launch_description():
                 package='controller_manager',
                 executable='spawner',
                 arguments=['arm_controller',
+                           '--param-file', controllers_file,
                            '--controller-manager-timeout', '60',
                            '--controller-manager', '/controller_manager'],
                 output='screen'
@@ -138,6 +159,7 @@ def generate_launch_description():
                 package='controller_manager',
                 executable='spawner',
                 arguments=['gripper_controller',
+                           '--param-file', controllers_file,
                            '--controller-manager-timeout', '60',
                            '--controller-manager', '/controller_manager'],
                 output='screen'
@@ -152,9 +174,10 @@ def generate_launch_description():
             description='Use simulation time'
         ),
         gz_model_path,
-        gz_plugin_path,
         robot_state_publisher,
+        robot_description_republisher,
         gazebo,
+        clock_bridge,
         spawn_robot,
         joint_state_broadcaster_spawner,
         arm_controller_spawner,

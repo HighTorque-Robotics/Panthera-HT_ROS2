@@ -69,11 +69,11 @@ def generate_launch_description():
         executable='ros2_control_node',
         parameters=[
             controllers_file,
-            {'robot_description': robot_description_content},
             {'use_sim_time': False},  # Must be LAST to override
         ],
         output='screen',
         arguments=['--ros-args', '--param', 'use_sim_time:=false'],
+        remappings=[('~/robot_description', '/robot_description')],
     )
 
     # ============================================

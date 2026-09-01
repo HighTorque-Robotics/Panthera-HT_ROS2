@@ -1,5 +1,9 @@
-cmake_minimum_required(VERSION 3.10.2)
+cmake_minimum_required(VERSION 3.22)
 project(moveit_calibration_plugins)
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
 # Common cmake code applied to all moveit packages
 find_package(moveit_common REQUIRED)
@@ -27,6 +31,19 @@ set(THIS_PACKAGE_INCLUDE_DEPENDS
   tf2
   tf2_eigen
 )
+
+function(target_link_ros_packages target)
+  foreach(package_name IN LISTS ARGN)
+    if(DEFINED ${package_name}_TARGETS)
+      target_link_libraries(${target} PUBLIC ${${package_name}_TARGETS})
+    elseif(DEFINED ${package_name}_LIBRARIES)
+      target_link_libraries(${target} PUBLIC ${${package_name}_LIBRARIES})
+    endif()
+    if(DEFINED ${package_name}_INCLUDE_DIRS)
+      target_include_directories(${target} SYSTEM PUBLIC ${${package_name}_INCLUDE_DIRS})
+    endif()
+  endforeach()
+endfunction()
 
 # Add project sub-libraries
 add_subdirectory(handeye_calibration_solver)

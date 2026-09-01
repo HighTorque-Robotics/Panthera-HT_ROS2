@@ -1,5 +1,9 @@
-cmake_minimum_required(VERSION 3.8)
+cmake_minimum_required(VERSION 3.22)
 project(panthera_arm_control)
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -15,33 +19,33 @@ find_package(sensor_msgs REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(std_srvs REQUIRED)
 find_package(kdl_parser REQUIRED)
-find_package(orocos_kdl_vendor REQUIRED)
+find_package(orocos_kdl REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_kdl REQUIRED)
 
 add_executable(arm_control_node src/arm_control_node.cpp)
 add_executable(test_kdl src/test_kdl.cpp)
-ament_target_dependencies(arm_control_node
-  rclcpp
-  ament_index_cpp
-  example_interfaces
-  panthera_interfaces
-  sensor_msgs
-  std_msgs
-  std_srvs
-  kdl_parser
-  orocos_kdl_vendor
-  geometry_msgs
-  tf2
-  tf2_kdl
+target_link_libraries(arm_control_node PRIVATE
+  hightorque_robot::hightorque_robot
+  ${rclcpp_TARGETS}
+  ${ament_index_cpp_TARGETS}
+  ${example_interfaces_TARGETS}
+  ${panthera_interfaces_TARGETS}
+  ${sensor_msgs_TARGETS}
+  ${std_msgs_TARGETS}
+  ${std_srvs_TARGETS}
+  ${kdl_parser_TARGETS}
+  ${orocos_kdl_TARGETS}
+  ${geometry_msgs_TARGETS}
+  ${tf2_TARGETS}
+  ${tf2_kdl_TARGETS}
 )
-target_link_libraries(arm_control_node hightorque_robot::hightorque_robot)
 
-ament_target_dependencies(test_kdl
-  ament_index_cpp
-  kdl_parser
-  orocos_kdl_vendor
+target_link_libraries(test_kdl PRIVATE
+  ${ament_index_cpp_TARGETS}
+  ${kdl_parser_TARGETS}
+  ${orocos_kdl_TARGETS}
 )
 
 install(TARGETS

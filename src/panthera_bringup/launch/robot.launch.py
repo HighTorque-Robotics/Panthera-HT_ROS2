@@ -41,7 +41,8 @@ def generate_launch_description():
         package='controller_manager',
         executable='ros2_control_node',
         output='screen',
-        parameters=[robot_description, controller_config]
+        parameters=[controller_config],
+        remappings=[('~/robot_description', '/robot_description')]
     )
 
     # Joint State Broadcaster Spawner

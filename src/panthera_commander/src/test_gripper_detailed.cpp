@@ -1,5 +1,6 @@
 #include "rclcpp/rclcpp.hpp"
 #include "moveit/move_group_interface/move_group_interface.h"
+#include <thread>
 
 int main(int argc, char ** argv)
 {
@@ -7,7 +8,7 @@ int main(int argc, char ** argv)
     auto node = std::make_shared<rclcpp::Node>("test_gripper_detailed");
     rclcpp::executors::SingleThreadedExecutor executor;
     executor.add_node(node);
-    std::thread([&executor]() { executor.spin(); }).detach();
+    std::thread executor_thread([&executor]() { executor.spin(); });
 
     auto gripper = std::make_shared<moveit::planning_interface::MoveGroupInterface>(node, "gripper");
     gripper->setMaxVelocityScalingFactor(1.0);
@@ -55,27 +56,27 @@ int main(int argc, char ** argv)
     if (planning_result == moveit::core::MoveItErrorCode::SUCCESS)
     {
         RCLCPP_INFO(node->get_logger(), "Plan succeeded!");
-        RCLCPP_INFO(node->get_logger(), "Planned trajectory has %zu points", plan.trajectory_.joint_trajectory.points.size());
+        RCLCPP_INFO(node->get_logger(), "Planned trajectory has %zu points", plan.trajectory.joint_trajectory.points.size());
         RCLCPP_INFO(node->get_logger(), "Trajectory joint names:");
-        for (const auto& name : plan.trajectory_.joint_trajectory.joint_names) {
+        for (const auto& name : plan.trajectory.joint_trajectory.joint_names) {
             RCLCPP_INFO(node->get_logger(), "  - %s", name.c_str());
         }
 
         // Print planned trajectory for first and last point
-        if (!plan.trajectory_.joint_trajectory.points.empty()) {
-            auto first_point = plan.trajectory_.joint_trajectory.points[0];
+        if (!plan.trajectory.joint_trajectory.points.empty()) {
+            auto first_point = plan.trajectory.joint_trajectory.points[0];
             RCLCPP_INFO(node->get_logger(), "First trajectory point:");
-            for (size_t i = 0; i < plan.trajectory_.joint_trajectory.joint_names.size(); ++i) {
+            for (size_t i = 0; i < plan.trajectory.joint_trajectory.joint_names.size(); ++i) {
                 RCLCPP_INFO(node->get_logger(), "  %s: %f",
-                    plan.trajectory_.joint_trajectory.joint_names[i].c_str(),
+                    plan.trajectory.joint_trajectory.joint_names[i].c_str(),
                     first_point.positions[i]);
             }
 
-            auto last_point = plan.trajectory_.joint_trajectory.points.back();
+            auto last_point = plan.trajectory.joint_trajectory.points.back();
             RCLCPP_INFO(node->get_logger(), "Last trajectory point:");
-            for (size_t i = 0; i < plan.trajectory_.joint_trajectory.joint_names.size(); ++i) {
+            for (size_t i = 0; i < plan.trajectory.joint_trajectory.joint_names.size(); ++i) {
                 RCLCPP_INFO(node->get_logger(), "  %s: %f",
-                    plan.trajectory_.joint_trajectory.joint_names[i].c_str(),
+                    plan.trajectory.joint_trajectory.joint_names[i].c_str(),
                     last_point.positions[i]);
             }
         }
@@ -102,6 +103,9 @@ int main(int argc, char ** argv)
         RCLCPP_ERROR(node->get_logger(), "Failed to get joint positions after execution: %s", e.what());
     }
 
+    gripper.reset();
+    executor.cancel();
+    executor_thread.join();
     rclcpp::shutdown();
     return 0;
 }

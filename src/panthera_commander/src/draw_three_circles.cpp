@@ -133,7 +133,7 @@ int main(int argc, char** argv)
       }
 
       moveit::planning_interface::MoveGroupInterface::Plan xy_plan;
-      xy_plan.trajectory_ = xy_trajectory;
+      xy_plan.trajectory = xy_trajectory;
       auto xy_result = arm.execute(xy_plan);
 
       if (xy_result == moveit::core::MoveItErrorCode::SUCCESS)
@@ -187,7 +187,7 @@ int main(int argc, char** argv)
       }
 
       moveit::planning_interface::MoveGroupInterface::Plan xz_plan;
-      xz_plan.trajectory_ = xz_trajectory;
+      xz_plan.trajectory = xz_trajectory;
       auto xz_result = arm.execute(xz_plan);
 
       if (xz_result == moveit::core::MoveItErrorCode::SUCCESS)
@@ -241,7 +241,7 @@ int main(int argc, char** argv)
       }
 
       moveit::planning_interface::MoveGroupInterface::Plan yz_plan;
-      yz_plan.trajectory_ = yz_trajectory;
+      yz_plan.trajectory = yz_trajectory;
       auto yz_result = arm.execute(yz_plan);
 
       if (yz_result == moveit::core::MoveItErrorCode::SUCCESS)

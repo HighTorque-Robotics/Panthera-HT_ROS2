@@ -3,4 +3,4 @@ repositories:
   panda_ign_moveit2:
     type: git
     url: https://github.com/AndrejOrsula/panda_ign_moveit2.git
-    version: humble
+    version: main

@@ -1,5 +1,6 @@
 #include "rclcpp/rclcpp.hpp"
 #include "moveit/move_group_interface/move_group_interface.h"
+#include <thread>
 
 int main(int argc, char ** argv)
 {
@@ -7,7 +8,7 @@ int main(int argc, char ** argv)
     auto node = std::make_shared<rclcpp::Node>("test_gripper");
     rclcpp::executors::SingleThreadedExecutor executor;
     executor.add_node(node);
-    std::thread([&executor]() { executor.spin(); }).detach();
+    std::thread executor_thread([&executor]() { executor.spin(); });
 
     auto gripper = std::make_shared<moveit::planning_interface::MoveGroupInterface>(node, "gripper");
     gripper->setMaxVelocityScalingFactor(1.0);
@@ -25,65 +26,51 @@ int main(int argc, char ** argv)
     rclcpp::sleep_for(std::chrono::seconds(2));
 
     moveit::planning_interface::MoveGroupInterface::Plan plan;
+    bool all_succeeded = true;
 
-    // Test open
-    RCLCPP_INFO(node->get_logger(), "=== Testing gripper open ===");
-    gripper->setStartStateToCurrentState();
-    gripper->setNamedTarget("open");
-    if (gripper->plan(plan) == moveit::core::MoveItErrorCode::SUCCESS)
-    {
-        RCLCPP_INFO(node->get_logger(), "Planned trajectory joint names:");
-        for (const auto& name : plan.trajectory_.joint_trajectory.joint_names) {
-            RCLCPP_INFO(node->get_logger(), "  - %s", name.c_str());
+    auto plan_and_execute = [&](const char * target) {
+        RCLCPP_INFO(node->get_logger(), "=== Testing gripper %s ===", target);
+        gripper->setStartStateToCurrentState();
+        gripper->setNamedTarget(target);
+        if (gripper->plan(plan) != moveit::core::MoveItErrorCode::SUCCESS) {
+            RCLCPP_ERROR(node->get_logger(), "Planning target '%s' failed", target);
+            return false;
         }
+
         RCLCPP_INFO(node->get_logger(), "Last point positions:");
-        auto last_point = plan.trajectory_.joint_trajectory.points.back();
-        for (size_t i = 0; i < plan.trajectory_.joint_trajectory.joint_names.size(); ++i) {
+        const auto & last_point = plan.trajectory.joint_trajectory.points.back();
+        for (size_t i = 0; i < plan.trajectory.joint_trajectory.joint_names.size(); ++i) {
             RCLCPP_INFO(node->get_logger(), "  %s: %f",
-                plan.trajectory_.joint_trajectory.joint_names[i].c_str(),
+                plan.trajectory.joint_trajectory.joint_names[i].c_str(),
                 last_point.positions[i]);
         }
-        gripper->execute(plan);
-        RCLCPP_INFO(node->get_logger(), "Open execution completed");
-    }
+
+        if (gripper->execute(plan) != moveit::core::MoveItErrorCode::SUCCESS) {
+            RCLCPP_ERROR(node->get_logger(), "Executing target '%s' failed", target);
+            return false;
+        }
+        RCLCPP_INFO(node->get_logger(), "Target '%s' completed", target);
+        return true;
+    };
+
+    // Test open
+    all_succeeded = plan_and_execute("open");
     rclcpp::sleep_for(std::chrono::seconds(2));
 
     // Test half_open
-    RCLCPP_INFO(node->get_logger(), "=== Testing gripper half_open ===");
-    gripper->setStartStateToCurrentState();
-    gripper->setNamedTarget("half_open");
-    if (gripper->plan(plan) == moveit::core::MoveItErrorCode::SUCCESS)
-    {
-        RCLCPP_INFO(node->get_logger(), "Last point positions:");
-        auto last_point = plan.trajectory_.joint_trajectory.points.back();
-        for (size_t i = 0; i < plan.trajectory_.joint_trajectory.joint_names.size(); ++i) {
-            RCLCPP_INFO(node->get_logger(), "  %s: %f",
-                plan.trajectory_.joint_trajectory.joint_names[i].c_str(),
-                last_point.positions[i]);
-        }
-        gripper->execute(plan);
-        RCLCPP_INFO(node->get_logger(), "Half_open execution completed");
+    if (all_succeeded) {
+        all_succeeded = plan_and_execute("half_open");
     }
     rclcpp::sleep_for(std::chrono::seconds(2));
 
     // Test close
-    RCLCPP_INFO(node->get_logger(), "=== Testing gripper close ===");
-    gripper->setStartStateToCurrentState();
-    gripper->setNamedTarget("close");
-    if (gripper->plan(plan) == moveit::core::MoveItErrorCode::SUCCESS)
-    {
-        RCLCPP_INFO(node->get_logger(), "Last point positions:");
-        auto last_point = plan.trajectory_.joint_trajectory.points.back();
-        for (size_t i = 0; i < plan.trajectory_.joint_trajectory.joint_names.size(); ++i) {
-            RCLCPP_INFO(node->get_logger(), "  %s: %f",
-                plan.trajectory_.joint_trajectory.joint_names[i].c_str(),
-                last_point.positions[i]);
-        }
-        gripper->execute(plan);
-        RCLCPP_INFO(node->get_logger(), "Close execution completed");
+    if (all_succeeded) {
+        all_succeeded = plan_and_execute("close");
     }
 
-    rclcpp::spin(node);
+    gripper.reset();
+    executor.cancel();
+    executor_thread.join();
     rclcpp::shutdown();
-    return 0;
+    return all_succeeded ? 0 : 1;
 }

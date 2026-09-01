@@ -1,12 +1,16 @@
 #include "rclcpp/rclcpp.hpp"
 #include "moveit/move_group_interface/move_group_interface.h"
-#include "tf2/LinearMath/Quaternion.h"
+#include "tf2/LinearMath/Quaternion.hpp"
 #include "geometry_msgs/msg/pose_stamped.hpp"
+#include <thread>
 
 int main(int argc, char **argv)
 {
     rclcpp::init(argc, argv);
     auto node = std::make_shared<rclcpp::Node>("test_moveit_by_jointspace");
+    rclcpp::executors::SingleThreadedExecutor executor;
+    executor.add_node(node);
+    std::thread executor_thread([&executor]() { executor.spin(); });
 
     auto arm = std::make_shared<moveit::planning_interface::MoveGroupInterface>(node, "arm");
     arm->setMaxVelocityScalingFactor(1.0);
@@ -36,17 +40,20 @@ int main(int argc, char **argv)
     moveit::planning_interface::MoveGroupInterface::Plan plan;
     auto success = arm->plan(plan);
 
-    if (success == moveit::core::MoveItErrorCode::SUCCESS)
+    bool succeeded = success == moveit::core::MoveItErrorCode::SUCCESS;
+    if (succeeded)
     {
         RCLCPP_INFO(node->get_logger(), "Planning succeeded, executing...");
-        arm->execute(plan);
+        succeeded = arm->execute(plan) == moveit::core::MoveItErrorCode::SUCCESS;
     }
     else
     {
         RCLCPP_ERROR(node->get_logger(), "Planning failed, error code: %d", success.val);
     }
 
-    rclcpp::spin(node);
+    arm.reset();
+    executor.cancel();
+    executor_thread.join();
     rclcpp::shutdown();
-    return 0;
+    return succeeded ? 0 : 1;
 }

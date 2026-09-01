@@ -5,12 +5,12 @@
 #include <kdl_parser/kdl_parser.hpp>
 #include <kdl/chainfksolverpos_recursive.hpp>
 #include <kdl/chainiksolverpos_lma.hpp>
-#include <ament_index_cpp/get_package_share_directory.hpp>
+#include <ament_index_cpp/get_package_share_path.hpp>
 
 int main()
 {
-    std::string urdf_file = ament_index_cpp::get_package_share_directory("panthera_ht_ros_description")
-                            + "/urdf/panthera_ht_ros_description.urdf";
+    std::string urdf_file = ament_index_cpp::get_package_share_path("panthera_ht_ros_description").string()
+                            + "/urdf/panthera_ht_ros_description_gripper.urdf";
     std::cout << "URDF: " << urdf_file << std::endl;
 
     KDL::Tree tree;

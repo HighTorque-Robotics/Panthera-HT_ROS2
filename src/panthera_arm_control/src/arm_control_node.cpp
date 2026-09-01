@@ -9,7 +9,7 @@
 
 #include "rclcpp/rclcpp.hpp"
 #include "panthera/Panthera.hpp"
-#include <ament_index_cpp/get_package_share_directory.hpp>
+#include <ament_index_cpp/get_package_share_path.hpp>
 
 #include "sensor_msgs/msg/joint_state.hpp"
 #include "geometry_msgs/msg/pose_stamped.hpp"
@@ -68,11 +68,14 @@ public:
             {21.0, 36.0, 36.0, 21.0, 10.0, 10.0});
         this->declare_parameter<std::string>("urdf_file", "");
         this->declare_parameter<std::string>("base_link", "base_link");
-        this->declare_parameter<std::string>("tip_link", "link6");
+        // Use the physical gripper center as the Cartesian reference frame.
+        // The fixed gripper_center_joint adds no DOF, so the IK still solves
+        // for the same six arm joints while targeting the actual tool frame.
+        this->declare_parameter<std::string>("tip_link", "gripper_center");
 
         std::string config_file = this->get_parameter("config_file").as_string();
         if (config_file.empty()) {
-            config_file = ament_index_cpp::get_package_share_directory("hightorque_robot")
+            config_file = ament_index_cpp::get_package_share_path("hightorque_robot").string()
                           + "/robot_param/Follower.yaml";
         }
 
@@ -178,8 +181,8 @@ private:
     {
         std::string urdf_file = this->get_parameter("urdf_file").as_string();
         if (urdf_file.empty()) {
-            urdf_file = ament_index_cpp::get_package_share_directory("panthera_ht_ros_description")
-                        + "/urdf/panthera_ht_ros_description.urdf";
+            urdf_file = ament_index_cpp::get_package_share_path("panthera_ht_ros_description").string()
+                        + "/urdf/panthera_ht_ros_description_gripper.urdf";
         }
 
         std::string base_link = this->get_parameter("base_link").as_string();

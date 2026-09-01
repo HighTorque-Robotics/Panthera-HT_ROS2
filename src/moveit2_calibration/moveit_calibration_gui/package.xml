@@ -16,7 +16,7 @@
 
   <build_depend>eigen3_cmake_module</build_depend>
   <build_depend>moveit_common</build_depend>
-  <build_depend>qtbase5-dev</build_depend>
+  <build_depend>qt6-base-dev</build_depend>
 
   <depend>cv_bridge</depend>
   <depend>eigen</depend>
@@ -33,9 +33,9 @@
   <depend>rviz_visual_tools</depend>
   <depend>tf2_eigen</depend>
 
-  <exec_depend>libqt5-core</exec_depend>
-  <exec_depend>libqt5-gui</exec_depend>
-  <exec_depend>libqt5-widgets</exec_depend>
+  <exec_depend>libqt6-core</exec_depend>
+  <exec_depend>libqt6-gui</exec_depend>
+  <exec_depend>libqt6-widgets</exec_depend>
 
   <export>
     <build_type>ament_cmake</build_type>

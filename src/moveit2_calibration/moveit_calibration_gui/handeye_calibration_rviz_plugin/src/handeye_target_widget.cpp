@@ -104,7 +104,8 @@ TargetTabWidget::TargetTabWidget(rclcpp::Node::SharedPtr node, HandEyeCalibratio
   group_left_top->setLayout(target_param_layout_);
 
   target_type_ = new QComboBox();
-  connect(target_type_, SIGNAL(activated(const QString&)), this, SLOT(targetTypeComboboxChanged(const QString&)));
+  connect(target_type_, SIGNAL(textActivated(const QString&)), this,
+          SLOT(targetTypeComboboxChanged(const QString&)));
   target_param_layout_->addRow("Target Type", target_type_);
 
   // Target 3D pose recognition area
@@ -116,7 +117,7 @@ TargetTabWidget::TargetTabWidget(rclcpp::Node::SharedPtr node, HandEyeCalibratio
   ros_topics_.insert(std::make_pair("image_topic", new RosTopicComboBox(node_, this)));
   ros_topics_["image_topic"]->addMsgsFilterType("sensor_msgs/msg/Image");
   layout_left_bottom->addRow("Camera Image Topic", ros_topics_["image_topic"]);
-  connect(ros_topics_["image_topic"], SIGNAL(activated(const QString&)), this,
+  connect(ros_topics_["image_topic"], SIGNAL(textActivated(const QString&)), this,
           SLOT(imageTopicComboboxChanged(const QString&)));
 
   // Target image display, create and save area

@@ -147,9 +147,9 @@ ros2 launch panthera_ht_config calibration.launch.py
 
 ## 依赖
 
-- ROS2 Humble（含 MoveIt、rviz2、tf2_ros）
+- ROS 2 Lyrical（含 MoveIt、rviz2、tf2_ros）
 - OpenCV（含 contrib 模块，用于 ArUco/ChArUco）
-- Qt5（RViz 面板）
+- Qt6（RViz 面板）
 - RealSense ROS2 驱动（`realsense2_camera`）
 
 ---

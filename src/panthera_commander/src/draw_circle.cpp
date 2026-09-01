@@ -144,7 +144,7 @@ int main(int argc, char** argv)
 
       // Execute trajectory
       moveit::planning_interface::MoveGroupInterface::Plan circle_plan;
-      circle_plan.trajectory_ = trajectory;
+      circle_plan.trajectory = trajectory;
 
       auto result = arm.execute(circle_plan);
       if (result == moveit::core::MoveItErrorCode::SUCCESS)

@@ -5,10 +5,10 @@
   <xacro:include filename="$(find panthera_ht_ros_description)/urdf/panthera_ht_ros_description.xacro"/>
 
   <!-- Include the hardware ros2_control configuration -->
-  <xacro:include filename="$(find panthera-ht_hardware)/config/panthera_hardware.ros2_control.xacro"/>
+  <xacro:include filename="$(find panthera_hardware)/config/panthera_hardware.ros2_control.xacro"/>
 
   <!-- Parameters -->
-  <xacro:arg name="config_file" default="$(find panthera_robot)/robot_param/Leader.yaml"/>
+  <xacro:arg name="config_file" default="$(find hightorque_robot)/robot_param/Follower_absolute.yaml"/>
   <xacro:arg name="control_mode" default="position_velocity"/>
 
   <!-- Instantiate the hardware ros2_control -->

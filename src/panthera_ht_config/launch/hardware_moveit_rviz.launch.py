@@ -30,6 +30,22 @@ def generate_launch_description():
         "config",
         "moveit_controllers_hardware_gripper.yaml",
     )
+
+    # Lyrical's standalone controller_manager does not automatically forward
+    # its params file to dynamically loaded controller nodes. Without these
+    # node options, JTC starts with an empty `joints` parameter and fails in
+    # on_init(). Pass the same controller configuration to each spawned node.
+    controller_node_options = {
+        "joint_state_broadcaster.node_options_args": [
+            "--ros-args", "--params-file", ros2_controllers_file,
+        ],
+        "arm_controller.node_options_args": [
+            "--ros-args", "--params-file", ros2_controllers_file,
+        ],
+        "gripper_controller.node_options_args": [
+            "--ros-args", "--params-file", ros2_controllers_file,
+        ],
+    }
     semantic_file = os.path.join(
         panthera_config_share,
         "config",
@@ -103,11 +119,12 @@ def generate_launch_description():
         executable="ros2_control_node",
         parameters=[
             ros2_controllers_file,
-            robot_description,
+            controller_node_options,
             {"use_sim_time": False},
         ],
         output="screen",
         arguments=["--ros-args", "--param", "use_sim_time:=false"],
+        remappings=[("~/robot_description", "/robot_description")],
     )
 
     joint_state_broadcaster_spawner = Node(

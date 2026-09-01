@@ -1,5 +1,9 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.22)
 project(hightorque_robot)
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
 # Find ament_cmake for ROS2 integration
 find_package(ament_cmake REQUIRED)
@@ -13,6 +17,9 @@ set(VERSION_MINOR 4)
 set(VERSION_PATCH 7)
 set(PROJECT_VERSION ${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH})
 
+# The SDK vendors LCM.  Only its runtime libraries are needed by this package;
+# disabling the bundled examples avoids building unrelated legacy test code.
+set(LCM_ENABLE_EXAMPLES OFF CACHE BOOL "Build bundled LCM examples" FORCE)
 add_subdirectory(third_part/lcm)
 add_subdirectory(third_part/serial_cmake)
 
@@ -21,8 +28,9 @@ find_package(yaml-cpp REQUIRED)
 find_package(ament_index_cpp REQUIRED)
 
 find_library(SERIALPORT_LIBRARY serialport)
-if(NOT SERIALPORT_LIBRARY)
-  message(FATAL_ERROR "libserialport not found! Please install libserialport-dev.")
+find_path(SERIALPORT_INCLUDE_DIR libserialport.h)
+if(NOT SERIALPORT_LIBRARY OR NOT SERIALPORT_INCLUDE_DIR)
+  message(FATAL_ERROR "libserialport headers or library not found! Please install libserialport-dev.")
 else()
   message(STATUS "Found libserialport library: ${SERIALPORT_LIBRARY}")
 endif()
@@ -50,6 +58,7 @@ target_include_directories(hightorque_robot PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/hardware>
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/panthera>
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/msg>
+  $<BUILD_INTERFACE:${SERIALPORT_INCLUDE_DIR}>
   $<INSTALL_INTERFACE:include>
   $<INSTALL_INTERFACE:include/crc>
   $<INSTALL_INTERFACE:include/hardware>

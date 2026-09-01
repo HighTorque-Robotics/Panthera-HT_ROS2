@@ -26,14 +26,11 @@
   <exec_depend>joint_state_publisher_gui</exec_depend>
   <exec_depend>tf2_ros</exec_depend>
   <exec_depend>xacro</exec_depend>
-  <!-- The next 2 packages are required for the gazebo simulation.
-       We don't include them by default to prevent installing gazebo and all its dependencies. -->
-  <!-- <exec_depend>joint_trajectory_controller</exec_depend> -->
-  <!-- <exec_depend>gazebo_ros_control</exec_depend> -->
   <exec_depend>panthera_ht_ros_description</exec_depend>
+  <exec_depend>panthera_hardware</exec_depend>
+  <exec_depend>hightorque_robot</exec_depend>
   <exec_depend>controller_manager</exec_depend>
   <exec_depend>moveit_configs_utils</exec_depend>
-  <exec_depend>moveit_ros_move_group</exec_depend>
   <exec_depend>moveit_ros_visualization</exec_depend>
   <exec_depend>moveit_ros_warehouse</exec_depend>
   <exec_depend>moveit_setup_assistant</exec_depend>
@@ -41,12 +38,14 @@
   <exec_depend>rviz2</exec_depend>
   <exec_depend>rviz_common</exec_depend>
   <exec_depend>rviz_default_plugins</exec_depend>
-  <exec_depend>tf2_ros</exec_depend>
-  <exec_depend>warehouse_ros_mongo</exec_depend>
-  <exec_depend>moveit_calibration_gui</exec_depend>
-  <exec_depend>moveit_calibration_plugins</exec_depend>
-  <exec_depend>realsense2_camera</exec_depend>
-  <exec_depend>xacro</exec_depend>
+  <!--
+    Optional hand-eye calibration dependencies are intentionally not declared
+    here.  Keeping them as hard dependencies prevents the core robot, MoveIt,
+    and Gazebo packages from being built on systems without a RealSense camera
+    stack.  Install/build moveit_calibration_gui,
+    moveit_calibration_plugins, and realsense2_camera before using
+    calibration.launch.py.
+  -->
 
 
   <export>

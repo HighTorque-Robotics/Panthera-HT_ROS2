@@ -6,7 +6,7 @@
  */
 
 #include "panthera/Panthera.hpp"
-#include <ament_index_cpp/get_package_share_directory.hpp>
+#include <ament_index_cpp/get_package_share_path.hpp>
 #include <iostream>
 #include <iomanip>
 #include <chrono>
@@ -31,7 +31,7 @@ int main(int argc, char** argv)
         signal(SIGINT, signal_handler);
 
         // 创建机械臂对象
-        std::string config_path = ament_index_cpp::get_package_share_directory("hightorque_robot") + "/robot_param/Follower.yaml";
+        std::string config_path = ament_index_cpp::get_package_share_path("hightorque_robot").string() + "/robot_param/Follower.yaml";
         if (argc > 1) {
             config_path = argv[1];
         }

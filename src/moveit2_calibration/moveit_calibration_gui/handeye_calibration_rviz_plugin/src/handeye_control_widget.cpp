@@ -155,7 +155,8 @@ ControlTabWidget::ControlTabWidget(rclcpp::Node::SharedPtr node, HandEyeCalibrat
   setting_layout_top->addRow("AX=XB Solver", calibration_solver_);
 
   group_name_ = new QComboBox();
-  connect(group_name_, SIGNAL(activated(const QString&)), this, SLOT(planningGroupNameChanged(const QString&)));
+  connect(group_name_, SIGNAL(textActivated(const QString&)), this,
+          SLOT(planningGroupNameChanged(const QString&)));
   setting_layout_top->addRow("Planning Group", group_name_);
 
   load_joint_state_btn_ = new QPushButton("Load joint states");

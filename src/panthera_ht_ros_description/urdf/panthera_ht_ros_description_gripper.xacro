@@ -1,6 +1,28 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="panthera_ht_ros_description">
 
+  <!-- Keep the detailed STL collision model for MoveIt, while allowing
+       physics simulators to request inexpensive primitive collisions. -->
+  <xacro:arg name="use_mesh_collisions" default="true"/>
+  <xacro:macro name="panthera_collision" params="mesh_name box_origin box_size">
+    <xacro:if value="$(arg use_mesh_collisions)">
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://panthera_ht_ros_description/meshes/${mesh_name}.STL"/>
+        </geometry>
+      </collision>
+    </xacro:if>
+    <xacro:unless value="$(arg use_mesh_collisions)">
+      <collision>
+        <origin xyz="${box_origin}" rpy="0 0 0"/>
+        <geometry>
+          <box size="${box_size}"/>
+        </geometry>
+      </collision>
+    </xacro:unless>
+  </xacro:macro>
+
   <mujoco>
     <compiler meshdir="../meshes/" balanceinertia="true" discardvisual="false"/>
   </mujoco>
@@ -16,10 +38,8 @@
       <geometry><mesh filename="package://panthera_ht_ros_description/meshes/base_link.STL"/></geometry>
       <material name=""><color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1"/></material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry><mesh filename="package://panthera_ht_ros_description/meshes/base_link.STL"/></geometry>
-    </collision>
+    <xacro:panthera_collision mesh_name="base_link"
+      box_origin="0 0 0.03035" box_size="0.12 0.12 0.0607"/>
   </link>
 
   <link name="link1">
@@ -33,10 +53,8 @@
       <geometry><mesh filename="package://panthera_ht_ros_description/meshes/link1.STL"/></geometry>
       <material name=""><color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1"/></material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry><mesh filename="package://panthera_ht_ros_description/meshes/link1.STL"/></geometry>
-    </collision>
+    <xacro:panthera_collision mesh_name="link1"
+      box_origin="0.005815505 0 0.03825" box_size="0.071631039 0.087 0.0765"/>
   </link>
   <joint name="joint1" type="revolute">
     <origin xyz="0 0 0.0584" rpy="0 0 0"/>
@@ -57,10 +75,9 @@
       <geometry><mesh filename="package://panthera_ht_ros_description/meshes/link2.STL"/></geometry>
       <material name=""><color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1"/></material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry><mesh filename="package://panthera_ht_ros_description/meshes/link2.STL"/></geometry>
-    </collision>
+    <xacro:panthera_collision mesh_name="link2"
+      box_origin="-0.130000004 0.000500001 0.002256604"
+      box_size="0.32200001 0.066500001 0.066513207"/>
   </link>
   <joint name="joint2" type="revolute">
     <origin xyz="0.018199 0 0.053" rpy="0 0 0"/>
@@ -81,10 +98,9 @@
       <geometry><mesh filename="package://panthera_ht_ros_description/meshes/link3.STL"/></geometry>
       <material name=""><color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1"/></material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry><mesh filename="package://panthera_ht_ros_description/meshes/link3.STL"/></geometry>
-    </collision>
+    <xacro:panthera_collision mesh_name="link3"
+      box_origin="0.116249999 0 0.031251292"
+      box_size="0.279500026 0.080499999 0.109497422"/>
   </link>
   <joint name="joint3" type="revolute">
     <origin xyz="-0.26 0 0" rpy="0 0 0"/>
@@ -105,10 +121,9 @@
       <geometry><mesh filename="package://panthera_ht_ros_description/meshes/link4.STL"/></geometry>
       <material name=""><color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1"/></material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry><mesh filename="package://panthera_ht_ros_description/meshes/link4.STL"/></geometry>
-    </collision>
+    <xacro:panthera_collision mesh_name="link4"
+      box_origin="0.036006011 0.000000864 0.029863416"
+      box_size="0.111987978 0.075638272 0.09971145"/>
   </link>
   <joint name="joint4" type="revolute">
     <origin xyz="0.23 0 0.06" rpy="0 0 0"/>
@@ -129,10 +144,8 @@
       <geometry><mesh filename="package://panthera_ht_ros_description/meshes/link5.STL"/></geometry>
       <material name=""><color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1"/></material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry><mesh filename="package://panthera_ht_ros_description/meshes/link5.STL"/></geometry>
-    </collision>
+    <xacro:panthera_collision mesh_name="link5"
+      box_origin="0.001 0 -0.035572179" box_size="0.0519 0.044 0.071144358"/>
   </link>
   <joint name="joint5" type="revolute">
     <origin xyz="0.07 0 0.036319" rpy="0 0 0"/>
@@ -153,10 +166,8 @@
       <geometry><mesh filename="package://panthera_ht_ros_description/meshes/link6.STL"/></geometry>
       <material name=""><color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1"/></material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry><mesh filename="package://panthera_ht_ros_description/meshes/link6.STL"/></geometry>
-    </collision>
+    <xacro:panthera_collision mesh_name="link6"
+      box_origin="0.0055 0 0.003" box_size="0.011 0.03 0.036"/>
   </link>
   <joint name="joint6" type="revolute">
     <origin xyz="0.02345 0 -0.039" rpy="0 0 0"/>
@@ -177,10 +188,8 @@
       <geometry><mesh filename="package://panthera_ht_ros_description/meshes/L_finger.STL"/></geometry>
       <material name=""><color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1"/></material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry><mesh filename="package://panthera_ht_ros_description/meshes/L_finger.STL"/></geometry>
-    </collision>
+    <xacro:panthera_collision mesh_name="L_finger"
+      box_origin="-0.047424598 0.0175 0" box_size="0.105050805 0.035 0.041"/>
   </link>
   <joint name="L_finger_joint" type="prismatic">
     <origin xyz="0.165 0 0" rpy="0 0 0"/>
@@ -201,10 +210,8 @@
       <geometry><mesh filename="package://panthera_ht_ros_description/meshes/R_finger.STL"/></geometry>
       <material name=""><color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1"/></material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry><mesh filename="package://panthera_ht_ros_description/meshes/R_finger.STL"/></geometry>
-    </collision>
+    <xacro:panthera_collision mesh_name="R_finger"
+      box_origin="-0.047424598 -0.0175 0" box_size="0.105050805 0.035 0.041"/>
   </link>
   <joint name="R_finger_joint" type="prismatic">
     <origin xyz="0.165 0 0" rpy="0 0 0"/>
@@ -226,10 +233,8 @@
       <geometry><mesh filename="package://panthera_ht_ros_description/meshes/gripper_center.STL"/></geometry>
       <material name=""><color rgba="0.866666666666667 0.909803921568627 1 1"/></material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry><mesh filename="package://panthera_ht_ros_description/meshes/gripper_center.STL"/></geometry>
-    </collision>
+    <xacro:panthera_collision mesh_name="gripper_center"
+      box_origin="-0.124950003 0 0" box_size="0.072000004 0.158000007 0.037"/>
   </link>
   <joint name="gripper_center_joint" type="fixed">
     <origin xyz="0.165 0 0" rpy="0 0 0"/>

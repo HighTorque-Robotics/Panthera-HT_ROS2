@@ -6,13 +6,13 @@
 
 ## 文件位置
 
-`/home/tk/aaa_ws/src/gripper_robot_commander/src/sin_trajectory_control.cpp`
+`src/panthera_commander/src/sin_trajectory_control.cpp`
 
 ## 编译
 
 ```bash
-cd /home/tk/aaa_ws
-colcon build --packages-select gripper_robot_commander
+cd <工作空间目录>
+colcon build --packages-select panthera_commander
 source install/setup.bash
 ```
 
@@ -20,10 +20,10 @@ source install/setup.bash
 
 ```bash
 # 使用默认配置文件
-ros2 run gripper_robot_commander sin_trajectory_control
+ros2 run panthera_commander sin_trajectory_control
 
 # 或指定自定义配置文件
-ros2 run gripper_robot_commander sin_trajectory_control /path/to/config.yaml
+ros2 run panthera_commander sin_trajectory_control /path/to/config.yaml
 ```
 
 ## 控制参数
@@ -122,8 +122,8 @@ const int control_rate = 500;        // 控制频率 (Hz)
 # 重新编译 hightorque_robot 包
 colcon build --packages-select hightorque_robot
 
-# 然后重新编译 gripper_robot_commander
-colcon build --packages-select gripper_robot_commander
+# 然后重新编译 panthera_commander
+colcon build --packages-select panthera_commander
 ```
 
 ### 运行时错误
@@ -131,15 +131,15 @@ colcon build --packages-select gripper_robot_commander
 如果遇到库加载错误：
 
 ```bash
-source /home/tk/aaa_ws/install/setup.bash
-ros2 run gripper_robot_commander sin_trajectory_control
+source install/setup.bash
+ros2 run panthera_commander sin_trajectory_control
 ```
 
 ## 与Python版本的对比
 
 | 特性 | Python版本 | C++版本 |
 |------|-----------|---------|
-| 文件位置 | `/home/tk/下载/...` | `/home/tk/aaa_ws/...` |
+| 文件位置 | 用户脚本目录 | `src/panthera_commander/src/` |
 | 性能 | 较低 | 更高 |
 | 控制频率 | 500 Hz | 500 Hz |
 | 功能 | 完全相同 | 完全相同 |

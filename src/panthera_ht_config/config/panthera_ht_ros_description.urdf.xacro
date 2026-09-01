@@ -2,6 +2,8 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="panthera_ht_ros_description">
     <xacro:arg name="initial_positions_file" default="initial_positions.yaml" />
     <xacro:arg name="use_mock_hardware" default="true" />
+    <xacro:arg name="config_file" default="$(find hightorque_robot)/robot_param/Follower_absolute.yaml" />
+    <xacro:arg name="control_mode" default="pd_control" />
 
     <!-- Import panthera_ht_ros_description urdf file -->
     <xacro:include filename="$(find panthera_ht_ros_description)/urdf/panthera_ht_ros_description.xacro" />
@@ -13,6 +15,8 @@
     <xacro:panthera_ht_ros_description_ros2_control
         name="FakeSystem"
         initial_positions_file="$(arg initial_positions_file)"
-        use_mock_hardware="$(arg use_mock_hardware)"/>
+        use_mock_hardware="$(arg use_mock_hardware)"
+        config_file="$(arg config_file)"
+        control_mode="$(arg control_mode)"/>
 
 </robot>

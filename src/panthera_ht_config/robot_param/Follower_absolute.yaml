@@ -8,7 +8,7 @@ robot:
 urdf:
   file_path: "../../../../panthera_ht_ros_description/share/panthera_ht_ros_description/urdf/panthera_ht_ros_description.xacro"
   base_link: "base_link"
-  end_effector_link: "joint6"
+  end_effector_link: "gripper_center"
 
 kinematics:
   joint_names:

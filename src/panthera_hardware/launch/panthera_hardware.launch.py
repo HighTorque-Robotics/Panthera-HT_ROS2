@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 
-import os
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, RegisterEventHandler
-from launch.conditions import IfCondition
 from launch.event_handlers import OnProcessExit
 from launch.substitutions import Command, FindExecutable, LaunchConfiguration, PathJoinSubstitution
 from launch_ros.actions import Node
+from launch_ros.parameter_descriptions import ParameterValue
 from launch_ros.substitutions import FindPackageShare
 
 
@@ -17,9 +16,9 @@ def generate_launch_description():
         DeclareLaunchArgument(
             "config_file",
             default_value=PathJoinSubstitution([
-                FindPackageShare("panthera_cpp"),
+                FindPackageShare("hightorque_robot"),
                 "robot_param",
-                "Follower.yaml"
+                "Follower_absolute.yaml"
             ]),
             description="Path to Panthera robot configuration file",
         )
@@ -31,33 +30,29 @@ def generate_launch_description():
             description="Control mode: position_velocity or pd_control",
         )
     )
-    declared_arguments.append(
-        DeclareLaunchArgument(
-            "use_rviz",
-            default_value="true",
-            description="Start RViz",
-        )
-    )
 
     # Initialize Arguments
     config_file = LaunchConfiguration("config_file")
     control_mode = LaunchConfiguration("control_mode")
-    use_rviz = LaunchConfiguration("use_rviz")
 
-    # Get URDF via xacro
-    robot_description_content = Command(
+    # Generate one complete robot description, including ros2_control.
+    robot_description_content = ParameterValue(Command(
         [
             PathJoinSubstitution([FindExecutable(name="xacro")]),
             " ",
             PathJoinSubstitution([
                 FindPackageShare("panthera_ht_ros_description"),
                 "urdf",
-                "panthera_ht_ros_description_hardware.urdf.xacro"
+                "panthera_ht_ros_description_gripper.urdf.xacro"
             ]),
             " ",
-            "name:=Panthera-HT",
+            "config_file:=",
+            config_file,
+            " ",
+            "control_mode:=",
+            control_mode,
         ]
-    )
+    ), value_type=str)
     robot_description = {"robot_description": robot_description_content}
 
     # Get ros2_control URDF
@@ -67,43 +62,12 @@ def generate_launch_description():
         "ros2_controllers.yaml",
     ])
 
-    # Create ros2_control URDF content
-    ros2_control_content = Command(
-        [
-            PathJoinSubstitution([FindExecutable(name="xacro")]),
-            " ",
-            PathJoinSubstitution([
-                FindPackageShare("panthera_hardware"),
-                "config",
-                "panthera_hardware.ros2_control.xacro"
-            ]),
-            " ",
-            "name:=PantheraHardware",
-            " ",
-            "config_file:=",
-            config_file,
-            " ",
-            "control_mode:=",
-            control_mode,
-        ]
-    )
-
-    # Combine robot description with ros2_control
-    combined_robot_description = Command(
-        [
-            "echo '<robot xmlns:xacro=\"http://www.ros.org/wiki/xacro\">",
-            robot_description_content,
-            ros2_control_content,
-            "</robot>'"
-        ]
-    )
-
     # Robot state publisher
     robot_state_publisher_node = Node(
         package="robot_state_publisher",
         executable="robot_state_publisher",
         output="both",
-        parameters=[{"robot_description": combined_robot_description}],
+        parameters=[robot_description],
     )
 
     # Controller manager
@@ -113,7 +77,7 @@ def generate_launch_description():
         parameters=[robot_controllers],
         output="both",
         remappings=[
-            ("/controller_manager/robot_description", "/robot_description"),
+            ("~/robot_description", "/robot_description"),
         ],
     )
 
@@ -154,29 +118,12 @@ def generate_launch_description():
         )
     )
 
-    # RViz
-    rviz_config_file = PathJoinSubstitution([
-        FindPackageShare("panthera_ht_config"),
-        "config",
-        "moveit.rviz"
-    ])
-
-    rviz_node = Node(
-        package="rviz2",
-        executable="rviz2",
-        name="rviz2",
-        output="log",
-        arguments=["-d", rviz_config_file],
-        condition=IfCondition(use_rviz),
-    )
-
     nodes = [
         robot_state_publisher_node,
         controller_manager_node,
         joint_state_broadcaster_spawner,
         delay_arm_controller_spawner,
         delay_gripper_controller_spawner,
-        rviz_node,
     ]
 
     return LaunchDescription(declared_arguments + nodes)

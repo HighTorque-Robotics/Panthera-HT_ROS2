@@ -6,7 +6,7 @@
 #include <vector>
 
 #include "hardware_interface/handle.hpp"
-#include "hardware_interface/hardware_info.hpp"
+#include "hardware_interface/types/hardware_component_interface_params.hpp"
 #include "hardware_interface/system_interface.hpp"
 #include "hardware_interface/types/hardware_interface_return_values.hpp"
 #include "rclcpp/macros.hpp"
@@ -28,14 +28,10 @@ public:
   RCLCPP_SHARED_PTR_DEFINITIONS(PantheraHardwareInterface)
 
   hardware_interface::CallbackReturn on_init(
-    const hardware_interface::HardwareInfo & info) override;
+    const hardware_interface::HardwareComponentInterfaceParams & params) override;
 
   hardware_interface::CallbackReturn on_configure(
     const rclcpp_lifecycle::State & previous_state) override;
-
-  std::vector<hardware_interface::StateInterface> export_state_interfaces() override;
-
-  std::vector<hardware_interface::CommandInterface> export_command_interfaces() override;
 
   hardware_interface::CallbackReturn on_activate(
     const rclcpp_lifecycle::State & previous_state) override;
@@ -66,6 +62,15 @@ private:
   std::vector<double> hw_commands_positions_;
   std::vector<double> hw_commands_velocities_;
   std::vector<double> hw_commands_efforts_;
+
+  // Lyrical ros2_control owns interface storage. These cached handles avoid
+  // name lookups in the real-time read/write loop.
+  std::vector<hardware_interface::StateInterface::SharedPtr> position_state_interfaces_;
+  std::vector<hardware_interface::StateInterface::SharedPtr> velocity_state_interfaces_;
+  std::vector<hardware_interface::StateInterface::SharedPtr> effort_state_interfaces_;
+  std::vector<hardware_interface::CommandInterface::SharedPtr> position_command_interfaces_;
+  std::vector<hardware_interface::CommandInterface::SharedPtr> velocity_command_interfaces_;
+  std::vector<hardware_interface::CommandInterface::SharedPtr> effort_command_interfaces_;
 
   // Control parameters
   std::vector<double> max_torques_;

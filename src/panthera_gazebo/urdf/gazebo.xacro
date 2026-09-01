@@ -113,6 +113,10 @@
       <robot_param>robot_description</robot_param>
       <robot_param_node>robot_state_publisher</robot_param_node>
       <parameters>$(arg ros2_control_params)</parameters>
+      <!-- The upstream default (0.1) leaves roughly 0.1 rad of tracking lag
+           on this model's fastest trajectories. A unit gain tracks each
+           controller update without relaxing trajectory tolerances. -->
+      <position_proportional_gain>1.0</position_proportional_gain>
     </plugin>
   </gazebo>
 

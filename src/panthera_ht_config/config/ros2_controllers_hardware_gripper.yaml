@@ -3,6 +3,13 @@ controller_manager:
     update_rate: 100
     use_sim_time: false
 
+    # The hardware profile allows a small encoder zeroing tolerance
+    # (joint2/joint3 down to -0.01 rad). Lyrical's ResourceManager would
+    # otherwise clamp that valid feedback/hold command to the URDF's nominal
+    # 0 rad lower bound. The Panthera SDK still enforces Follower_absolute.yaml
+    # limits before sending motor commands.
+    enforce_command_limits: false
+
     arm_controller:
       type: joint_trajectory_controller/JointTrajectoryController
 

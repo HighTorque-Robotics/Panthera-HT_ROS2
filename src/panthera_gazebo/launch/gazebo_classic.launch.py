@@ -74,8 +74,7 @@ def generate_launch_description():
             Node(
                 package='gazebo_ros',
                 executable='spawn_entity.py',
-                # ROS Humble rclpy is built for system Python 3.10. Do not
-                # let an active Conda environment select Python 3.13 here.
+                # Keep the ROS environment's system Python ahead of Conda.
                 prefix=['/usr/bin/python3'],
                 arguments=[
                     '-topic', 'robot_description',

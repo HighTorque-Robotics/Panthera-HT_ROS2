@@ -2,6 +2,10 @@
 controller_manager:
   ros__parameters:
     update_rate: 100  # Hz
+    # Lyrical's ResourceManager position limiter treats position commands as
+    # deltas when a joint also has a velocity limit, corrupting the simulated
+    # gripper command. JTC still validates URDF limits and goal tolerances.
+    enforce_command_limits: false
 
     arm_controller:
       type: joint_trajectory_controller/JointTrajectoryController
@@ -24,6 +28,7 @@ joint_state_broadcaster:
       - joint5
       - joint6
       - L_finger_joint
+      - R_finger_joint
     interfaces:
       - position
       - velocity
@@ -43,6 +48,15 @@ arm_controller:
       - position
       - velocity
     allow_nonzero_velocity_at_trajectory_end: true
+    constraints:
+      stopped_velocity_tolerance: 0.01
+      goal_time: 1.0
+      joint1: {trajectory: 0.1, goal: 0.02}
+      joint2: {trajectory: 0.1, goal: 0.02}
+      joint3: {trajectory: 0.1, goal: 0.02}
+      joint4: {trajectory: 0.1, goal: 0.02}
+      joint5: {trajectory: 0.1, goal: 0.02}
+      joint6: {trajectory: 0.1, goal: 0.02}
 
 gripper_controller:
   ros__parameters:
@@ -56,3 +70,7 @@ gripper_controller:
     allow_nonzero_velocity_at_trajectory_end: true
     state_publish_rate: 50.0
     action_monitor_rate: 20.0
+    constraints:
+      stopped_velocity_tolerance: 0.001
+      goal_time: 1.0
+      L_finger_joint: {trajectory: 0.005, goal: 0.002}
