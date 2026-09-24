@@ -6,6 +6,7 @@ find_package(ament_cmake REQUIRED)
 
 # Install directories
 install(DIRECTORY launch rviz worlds DESTINATION share/${PROJECT_NAME})
+install(FILES README.md DESTINATION share/${PROJECT_NAME})
 
 # Setup the project
 ament_package()

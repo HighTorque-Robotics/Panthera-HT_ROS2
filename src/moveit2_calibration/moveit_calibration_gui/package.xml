@@ -4,7 +4,7 @@
   <version>2.0.0</version>
   <description>MoveIt calibration GUI plugins</description>
   <author email="yu.yan@intel.com">Yu Yan</author>
-  <maintainer email="yu.yan@intel.com">Yu Yan</maintainer>
+  <maintainer email="support@example.com"> Panthera-HT Maintainers</maintainer>
   <license>BSD</license>
 
   <url type="website">https://moveit.ros.org</url>

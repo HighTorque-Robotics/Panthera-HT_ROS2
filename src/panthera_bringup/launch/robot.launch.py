@@ -10,10 +10,10 @@ import os
 
 def generate_launch_description():
     # Get package directories
-    moveit_config_pkg = get_package_share_directory('panthera_ht_config')
+    moveit_config_pkg = get_package_share_directory('panthera_moveit_config')
     bringup_pkg = get_package_share_directory('panthera_bringup')
 
-    # URDF file path - use the one from panthera_ht_config that includes ros2_control
+    # URDF file path - use the one from panthera_moveit_config that includes ros2_control
     urdf_file = os.path.join(moveit_config_pkg, 'config', 'panthera_ht_ros_description.urdf.xacro')
     initial_positions_file = os.path.join(moveit_config_pkg, 'config', 'initial_positions.yaml')
 

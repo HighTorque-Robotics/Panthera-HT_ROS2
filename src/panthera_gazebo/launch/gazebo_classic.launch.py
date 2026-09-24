@@ -12,7 +12,7 @@ def generate_launch_description():
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
 
     gripper_gazebo_path = FindPackageShare('panthera_gazebo')
-    panthera_description_path = FindPackageShare('panthera_ht_ros_description')
+    panthera_description_path = FindPackageShare('panthera_ht_description')
 
     controllers_file = PathJoinSubstitution([
         gripper_gazebo_path, 'config', 'ros2_controllers.yaml'

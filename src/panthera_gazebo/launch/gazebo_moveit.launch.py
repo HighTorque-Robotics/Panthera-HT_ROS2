@@ -8,7 +8,7 @@ from launch_ros.substitutions import FindPackageShare
 def generate_launch_description():
     # Get package paths
     gripper_gazebo_path = FindPackageShare('panthera_gazebo')
-    panthera_config_path = FindPackageShare('panthera_ht_config')
+    panthera_config_path = FindPackageShare('panthera_moveit_config')
 
     # Include Gazebo launch
     gazebo_launch = IncludeLaunchDescription(

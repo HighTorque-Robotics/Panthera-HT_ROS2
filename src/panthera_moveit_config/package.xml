@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>panthera_moveit_config</name>
+  <version>0.3.0</version>
+  <description>
+     An automatically generated package with all the configuration and launch files for using the panthera_ht_description package with the MoveIt Motion Planning Framework
+  </description>
+  <maintainer email="support@example.com"> Panthera-HT Maintainers</maintainer>
+
+  <license>BSD</license>
+
+  <url type="website">http://moveit.ros.org/</url>
+  <url type="bugtracker">https://github.com/ros-planning/moveit2/issues</url>
+  <url type="repository">https://github.com/ros-planning/moveit2</url>
+
+  <author email="3575868884@qq.com">wEch1ng</author>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <exec_depend>moveit_ros_move_group</exec_depend>
+  <exec_depend>moveit_kinematics</exec_depend>
+  <exec_depend>moveit_planners</exec_depend>
+  <exec_depend>moveit_simple_controller_manager</exec_depend>
+  <exec_depend>joint_state_publisher</exec_depend>
+  <exec_depend>joint_state_publisher_gui</exec_depend>
+  <exec_depend>tf2_ros</exec_depend>
+  <exec_depend>xacro</exec_depend>
+  <exec_depend>panthera_ht_description</exec_depend>
+  <exec_depend>panthera_hardware</exec_depend>
+  <exec_depend>hightorque_robot</exec_depend>
+  <exec_depend>controller_manager</exec_depend>
+  <exec_depend>moveit_configs_utils</exec_depend>
+  <exec_depend>moveit_ros_visualization</exec_depend>
+  <exec_depend>moveit_ros_warehouse</exec_depend>
+  <exec_depend>moveit_setup_assistant</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+  <exec_depend>rviz_common</exec_depend>
+  <exec_depend>rviz_default_plugins</exec_depend>
+  <!--
+    Optional hand-eye calibration dependencies are intentionally not declared
+    here.  Keeping them as hard dependencies prevents the core robot, MoveIt,
+    and Gazebo packages from being built on systems without a RealSense camera
+    stack.  Install/build moveit_calibration_gui,
+    moveit_calibration_plugins, and realsense2_camera before using
+    panthera_bringup/calibration.launch.py.
+  -->
+
+
+  <export>
+      <build_type>ament_cmake</build_type>
+  </export>
+</package>

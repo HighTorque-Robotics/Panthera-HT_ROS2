@@ -2,9 +2,9 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>panthera_interfaces</name>
-  <version>0.0.0</version>
+  <version>0.1.0</version>
   <description>Custom message interfaces for gripper robot commander</description>
-  <maintainer email="153282466@qq.com">tk</maintainer>
+  <maintainer email="support@example.com"> Panthera-HT Maintainers</maintainer>
   <license>Apache-2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>

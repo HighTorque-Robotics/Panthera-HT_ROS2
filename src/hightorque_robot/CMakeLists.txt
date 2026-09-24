@@ -1,5 +1,9 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.22)
 project(hightorque_robot)
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
 # Find ament_cmake for ROS2 integration
 find_package(ament_cmake REQUIRED)
@@ -13,16 +17,20 @@ set(VERSION_MINOR 4)
 set(VERSION_PATCH 7)
 set(PROJECT_VERSION ${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH})
 
-add_subdirectory(third_part/lcm)
-add_subdirectory(third_part/serial_cmake)
+# The SDK vendors LCM.  Only its runtime libraries are needed by this package;
+# disabling the bundled examples avoids building unrelated legacy test code.
+set(LCM_ENABLE_EXAMPLES OFF CACHE BOOL "Build bundled LCM examples" FORCE)
+add_subdirectory(third_party/lcm)
+add_subdirectory(third_party/serial_cmake)
 
 # find_package(lcm REQUIRED)
 find_package(yaml-cpp REQUIRED)
 find_package(ament_index_cpp REQUIRED)
 
 find_library(SERIALPORT_LIBRARY serialport)
-if(NOT SERIALPORT_LIBRARY)
-  message(FATAL_ERROR "libserialport not found! Please install libserialport-dev.")
+find_path(SERIALPORT_INCLUDE_DIR libserialport.h)
+if(NOT SERIALPORT_LIBRARY OR NOT SERIALPORT_INCLUDE_DIR)
+  message(FATAL_ERROR "libserialport headers or library not found! Please install libserialport-dev.")
 else()
   message(STATUS "Found libserialport library: ${SERIALPORT_LIBRARY}")
 endif()
@@ -49,7 +57,8 @@ target_include_directories(hightorque_robot PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/crc>
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/hardware>
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/panthera>
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/msg>
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/lcm>
+  $<BUILD_INTERFACE:${SERIALPORT_INCLUDE_DIR}>
   $<INSTALL_INTERFACE:include>
   $<INSTALL_INTERFACE:include/crc>
   $<INSTALL_INTERFACE:include/hardware>
@@ -70,32 +79,32 @@ target_link_libraries(hightorque_robot
 )
 
 
-add_executable(canboard_update example/canboard_update.cpp)
+add_executable(canboard_update examples/tools/canboard_update.cpp)
 target_link_libraries(canboard_update hightorque_robot)
 
-add_executable(motor_feedack example/motor_feedack.cpp)
-target_link_libraries(motor_feedack hightorque_robot)
+add_executable(motor_feedback examples/motor_examples/motor_feedback.cpp)
+target_link_libraries(motor_feedback hightorque_robot)
 
-add_executable(motor_move_zero example/motor_move_zero.cpp)
+add_executable(motor_move_zero examples/motor_examples/motor_move_zero.cpp)
 target_link_libraries(motor_move_zero hightorque_robot)
 
-add_executable(motor_run example/motor_run.cpp)
+add_executable(motor_run examples/motor_examples/motor_run.cpp)
 target_link_libraries(motor_run hightorque_robot)
 
-add_executable(motor_msg_subscriber example/motor_msg_subscriber.cpp)
+add_executable(motor_msg_subscriber examples/tools/motor_msg_subscriber.cpp)
 target_link_libraries(motor_msg_subscriber hightorque_robot)
 
-add_executable(parse_demo example/parse_demo.cpp)
+add_executable(parse_demo examples/tools/parse_demo.cpp)
 target_link_libraries(parse_demo hightorque_robot)
 
 set_target_properties(hightorque_robot PROPERTIES
     VERSION ${PROJECT_VERSION}
     SOVERSION ${VERSION_MAJOR}
-    PUBLIC_HEADER "include/hardware/robot.hpp;include/hardware/motor.hpp;include/hardware/canport.hpp;include/hardware/canboard.hpp;include/parse_robot_params.hpp;include/serial_struct.hpp;include/serial_driver.hpp;include/crc/crc8.hpp;include/crc/crc16.hpp;include/panthera/Panthera.hpp;msg/motor_msg/motor_msg.hpp"
+    PUBLIC_HEADER "include/hardware/robot.hpp;include/hardware/motor.hpp;include/hardware/canport.hpp;include/hardware/canboard.hpp;include/parse_robot_params.hpp;include/serial_struct.hpp;include/serial_driver.hpp;include/crc/crc8.hpp;include/crc/crc16.hpp;include/panthera/Panthera.hpp;lcm/motor_msg/motor_msg.hpp"
 )
 
 install(TARGETS hightorque_robot
-    EXPORT hightorque_robotTargets
+    EXPORT export_${PROJECT_NAME}
     LIBRARY DESTINATION lib
     ARCHIVE DESTINATION lib
     RUNTIME DESTINATION bin
@@ -104,39 +113,17 @@ install(TARGETS hightorque_robot
 
 install(DIRECTORY include/ DESTINATION include 
     FILES_MATCHING PATTERN "*.hpp" PATTERN "*.h")
-install(DIRECTORY msg/motor_msg/ DESTINATION include/motor_msg 
+install(DIRECTORY lcm/motor_msg/ DESTINATION include/motor_msg
     FILES_MATCHING PATTERN "*.hpp" PATTERN "*.h")
 install(DIRECTORY robot_param/ DESTINATION share/hightorque_robot/robot_param
     FILES_MATCHING PATTERN "*.yaml")
-# Old Panthera-HT_description URDF removed - using panthera_ht_ros_description instead
+install(FILES LICENSE DESTINATION share/${PROJECT_NAME})
+install(DIRECTORY docs DESTINATION share/${PROJECT_NAME})
+# Old Panthera-HT_description URDF removed - using panthera_ht_description instead
 # install(DIRECTORY Panthera-HT_description/urdf/ DESTINATION share/hightorque_robot/urdf
 #     FILES_MATCHING PATTERN "*.urdf")
 
-install(EXPORT hightorque_robotTargets
-    FILE hightorque_robotTargets.cmake
-    NAMESPACE hightorque_robot::
-    DESTINATION lib/cmake/hightorque_robot
-)
-
-include(CMakePackageConfigHelpers)
-configure_package_config_file(
-    ${CMAKE_CURRENT_SOURCE_DIR}/cmake/hightorque_robotConfig.cmake.in
-    ${CMAKE_CURRENT_BINARY_DIR}/hightorque_robotConfig.cmake
-    INSTALL_DESTINATION lib/cmake/hightorque_robot
-)
-
-write_basic_package_version_file(
-    ${CMAKE_CURRENT_BINARY_DIR}/hightorque_robotConfigVersion.cmake
-    VERSION ${PROJECT_VERSION}
-    COMPATIBILITY AnyNewerVersion
-)
-
-install(FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/hightorque_robotConfig.cmake
-    ${CMAKE_CURRENT_BINARY_DIR}/hightorque_robotConfigVersion.cmake
-    DESTINATION lib/cmake/hightorque_robot
-)
-add_executable(motor_set_zero example/motor_set_zero.cpp)
+add_executable(motor_set_zero examples/motor_examples/motor_set_zero.cpp)
 target_link_libraries(motor_set_zero hightorque_robot)
 
 # Panthera examples
@@ -152,8 +139,8 @@ target_link_libraries(1_PD_control hightorque_robot ament_index_cpp::ament_index
 add_executable(1_PosVel_control examples/1_PosVel_control.cpp)
 target_link_libraries(1_PosVel_control hightorque_robot ament_index_cpp::ament_index_cpp)
 
-# Find Pinocchio for dynamics computation (optional)
-find_package(pinocchio QUIET)
+# Pinocchio is required by the dynamics/impedance examples below.
+find_package(pinocchio REQUIRED)
 
 if(pinocchio_FOUND)
   message(STATUS "Found pinocchio, building 2_joint_impedance_control example")
@@ -164,13 +151,17 @@ if(pinocchio_FOUND)
   add_executable(3_cartesian_impedance_control examples/3_cartesian_impedance_control.cpp)
   target_link_libraries(3_cartesian_impedance_control hightorque_robot pinocchio::pinocchio ament_index_cpp::ament_index_cpp)
 
-  message(STATUS "Building pure_cartesian_impedance_control example")
-  add_executable(pure_cartesian_impedance_control examples/pure_cartesian_impedance_control.cpp)
-  target_link_libraries(pure_cartesian_impedance_control hightorque_robot pinocchio::pinocchio ament_index_cpp::ament_index_cpp)
+  message(STATUS "Building 4_cartesian_position_impedance example")
+  add_executable(4_cartesian_position_impedance examples/4_cartesian_position_impedance.cpp)
+  target_link_libraries(4_cartesian_position_impedance hightorque_robot pinocchio::pinocchio ament_index_cpp::ament_index_cpp)
 
-  message(STATUS "Building cartesian_impedance_ab_motion example")
-  add_executable(cartesian_impedance_ab_motion examples/cartesian_impedance_ab_motion.cpp)
-  target_link_libraries(cartesian_impedance_ab_motion hightorque_robot pinocchio::pinocchio ament_index_cpp::ament_index_cpp)
+  message(STATUS "Building 5_pure_cartesian_impedance_control example")
+  add_executable(5_pure_cartesian_impedance_control examples/5_pure_cartesian_impedance_control.cpp)
+  target_link_libraries(5_pure_cartesian_impedance_control hightorque_robot pinocchio::pinocchio ament_index_cpp::ament_index_cpp)
+
+  message(STATUS "Building 3_cartesian_impedance_ab_motion example")
+  add_executable(3_cartesian_impedance_ab_motion examples/3_cartesian_impedance_ab_motion.cpp)
+  target_link_libraries(3_cartesian_impedance_ab_motion hightorque_robot pinocchio::pinocchio ament_index_cpp::ament_index_cpp)
 else()
   message(STATUS "pinocchio not found, skipping impedance control examples")
 endif()
@@ -179,7 +170,7 @@ endif()
 # Install example executables so ros2 run can find them
 install(TARGETS
     canboard_update
-    motor_feedack
+    motor_feedback
     motor_move_zero
     motor_run
     motor_msg_subscriber
@@ -196,11 +187,14 @@ if(pinocchio_FOUND)
   install(TARGETS
       2_joint_impedance_control
       3_cartesian_impedance_control
-      pure_cartesian_impedance_control
-      cartesian_impedance_ab_motion
+      4_cartesian_position_impedance
+      5_pure_cartesian_impedance_control
+      3_cartesian_impedance_ab_motion
       RUNTIME DESTINATION lib/${PROJECT_NAME}
   )
 endif()
 
 # Ament package setup for ROS2
-ament_package()
+ament_export_targets(export_${PROJECT_NAME} HAS_LIBRARY_TARGET)
+ament_export_dependencies(ament_index_cpp yaml-cpp)
+ament_package(CONFIG_EXTRAS cmake/hightorque_robot_vendor_dependencies.cmake)

@@ -138,12 +138,13 @@ bool HandEyeArucoTarget::createTargetImage(cv::Mat& image) const
   try
   {
     // Create target
-    cv::Ptr<cv::aruco::Dictionary> dictionary = cv::aruco::getPredefinedDictionary(dictionary_id_);
-    cv::Ptr<cv::aruco::GridBoard> board =
-        cv::aruco::GridBoard::create(markers_x_, markers_y_, float(marker_size_), float(separation_), dictionary);
+    cv::Ptr<cv::aruco::Dictionary> dictionary =
+        cv::makePtr<cv::aruco::Dictionary>(cv::aruco::getPredefinedDictionary(dictionary_id_));
+    cv::Ptr<cv::aruco::GridBoard> board = cv::makePtr<cv::aruco::GridBoard>(
+        cv::Size(markers_x_, markers_y_), float(marker_size_), float(separation_), *dictionary);
 
     // Create target image
-    board->draw(image_size, image, separation_, border_bits_);
+    board->generateImage(image_size, image, separation_, border_bits_);
   }
   catch (const cv::Exception& e)
   {
@@ -161,9 +162,10 @@ bool HandEyeArucoTarget::detectTargetPose(cv::Mat& image)
   {
     // Detect aruco board
     aruco_mutex_.lock();
-    cv::Ptr<cv::aruco::Dictionary> dictionary = cv::aruco::getPredefinedDictionary(dictionary_id_);
-    cv::Ptr<cv::aruco::GridBoard> board =
-        cv::aruco::GridBoard::create(markers_x_, markers_y_, marker_size_real_, marker_separation_real_, dictionary);
+    cv::Ptr<cv::aruco::Dictionary> dictionary =
+        cv::makePtr<cv::aruco::Dictionary>(cv::aruco::getPredefinedDictionary(dictionary_id_));
+    cv::Ptr<cv::aruco::GridBoard> board = cv::makePtr<cv::aruco::GridBoard>(
+        cv::Size(markers_x_, markers_y_), marker_size_real_, marker_separation_real_, *dictionary);
     aruco_mutex_.unlock();
     cv::Ptr<cv::aruco::DetectorParameters> params_ptr(new cv::aruco::DetectorParameters());
 #if CV_MAJOR_VERSION == 3 && CV_MINOR_VERSION == 2

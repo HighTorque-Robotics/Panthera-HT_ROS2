@@ -64,7 +64,7 @@ protected:
 
 private:
   // Predefined ARUCO dictionaries in OpenCV for creating CHARUCO marker board
-  const std::map<std::string, cv::aruco::PREDEFINED_DICTIONARY_NAME> ARUCO_DICTIONARY = {
+  const std::map<std::string, cv::aruco::PredefinedDictionaryType> ARUCO_DICTIONARY = {
     { "DICT_4X4_250", cv::aruco::DICT_4X4_250 },
     { "DICT_5X5_250", cv::aruco::DICT_5X5_250 },
     { "DICT_6X6_250", cv::aruco::DICT_6X6_250 },
@@ -79,7 +79,7 @@ private:
   int square_size_pixels_;                               // Checkerboard square size in pixels
   int border_size_bits_;                                 // Marker border width, in bits
   int margin_size_pixels_;                               // Margin of white pixels around entire board
-  cv::aruco::PREDEFINED_DICTIONARY_NAME dictionary_id_;  // Marker dictionary id
+  cv::aruco::PredefinedDictionaryType dictionary_id_;  // Marker dictionary id
 
   // Target real dimensions in meters
   double board_size_meters_;   // Printed board size, longest dimension

@@ -56,7 +56,7 @@ install(
 )
 
 install(
-  DIRECTORY config launch
+  DIRECTORY config
   DESTINATION share/${PROJECT_NAME}
 )
 
@@ -75,6 +75,8 @@ ament_export_dependencies(
   hightorque_robot
   pinocchio
 )
+
+install(FILES README.md DESTINATION share/${PROJECT_NAME})
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

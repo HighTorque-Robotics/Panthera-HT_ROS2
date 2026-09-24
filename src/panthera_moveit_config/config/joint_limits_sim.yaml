@@ -1,0 +1,51 @@
+# Simulation-specific MoveIt limits.
+#
+# Gazebo can report values a few machine epsilons below an exact lower limit
+# (for example, -1e-13 instead of 0). MoveIt Lyrical checks start-state bounds
+# strictly, so give only the simulated planning model a 1e-6 rad margin. The
+# URDF and ros2_control hardware limits remain unchanged.
+
+default_velocity_scaling_factor: 0.5
+default_acceleration_scaling_factor: 0.5
+
+joint_limits:
+  joint1:
+    has_velocity_limits: true
+    max_velocity: 4.2
+    has_acceleration_limits: true
+    max_acceleration: 2.0
+  joint2:
+    min_position: -0.000001
+    max_position: 3.2
+    has_velocity_limits: true
+    max_velocity: 5.0
+    has_acceleration_limits: true
+    max_acceleration: 2.0
+  joint3:
+    min_position: -0.000001
+    max_position: 4.0
+    has_velocity_limits: true
+    max_velocity: 5.0
+    has_acceleration_limits: true
+    max_acceleration: 2.0
+  joint4:
+    has_velocity_limits: true
+    max_velocity: 4.2
+    has_acceleration_limits: true
+    max_acceleration: 2.0
+  joint5:
+    has_velocity_limits: true
+    max_velocity: 3.7
+    has_acceleration_limits: true
+    max_acceleration: 2.0
+  joint6:
+    has_velocity_limits: true
+    max_velocity: 3.7
+    has_acceleration_limits: true
+    max_acceleration: 2.0
+  L_finger_joint:
+    has_velocity_limits: true
+    # The coupled Bullet mimic mechanism tracks reliably at 20 mm/s.
+    max_velocity: 0.02
+    has_acceleration_limits: true
+    max_acceleration: 0.04
