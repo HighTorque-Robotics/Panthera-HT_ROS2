@@ -3,7 +3,7 @@
   <name>moveit_calibration_demos</name>
   <version>1.0.0</version>
   <description>Demos for MoveIt 2 Calibration inside Gazebo simulation</description>
-  <maintainer email="orsula.andrej@gmail.com">Andrej Orsula</maintainer>
+  <maintainer email="support@example.com"> Panthera-HT Maintainers</maintainer>
   <author>Andrej Orsula</author>
   <license>BSD</license>
 

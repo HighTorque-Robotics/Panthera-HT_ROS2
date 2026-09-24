@@ -158,7 +158,7 @@ int main(int argc, char** argv)
 
         // 加载 URDF 模型用于运动学和动力学计算
         std::string urdf_path =
-            ament_index_cpp::get_package_share_path("panthera_ht_ros_description").string() +
+            ament_index_cpp::get_package_share_path("panthera_ht_description").string() +
             "/urdf/panthera_ht_ros_description.urdf";
         if (argc > 2) {
             urdf_path = argv[2];

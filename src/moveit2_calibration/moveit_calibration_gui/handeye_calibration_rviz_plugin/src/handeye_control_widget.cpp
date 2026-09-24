@@ -35,7 +35,7 @@
 /* Author: Yu Yan */
 
 #include <moveit/handeye_calibration_rviz_plugin/handeye_control_widget.h>
-#include <tf2_geometry_msgs/tf2_geometry_msgs.h>
+#include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>
 #include <rclcpp/rclcpp.hpp>
 
 namespace moveit_rviz_plugin
@@ -257,7 +257,7 @@ void ControlTabWidget::loadWidget(const rviz_common::Config& config)
     if (it != groups.end())
     {
       group_name_->setCurrentText(group_name);
-      Q_EMIT group_name_->activated(group_name);
+      planningGroupNameChanged(group_name);
     }
   }
   QString solver_name;
@@ -269,7 +269,6 @@ void ControlTabWidget::loadWidget(const rviz_common::Config& config)
       if (calibration_solver_->itemText(i) == solver_name)
       {
         calibration_solver_->setCurrentText(solver_name);
-        Q_EMIT calibration_solver_->activated(solver_name);
         break;
       }
     }
@@ -723,8 +722,8 @@ void ControlTabWidget::fillPlanningGroupNameComboBox()
 {
   group_name_->clear();
   // Fill in available planning group names
-  planning_scene_monitor_.reset(new planning_scene_monitor::PlanningSceneMonitor(node_, "robot_description", tf_buffer_,
-                                                                                 "planning_scene_monitor"));
+  planning_scene_monitor_.reset(
+      new planning_scene_monitor::PlanningSceneMonitor(node_, "robot_description", "planning_scene_monitor"));
   if (planning_scene_monitor_)
   {
     planning_scene_monitor_->startSceneMonitor(calibration_display_->planning_scene_topic_property_->getStdString());
@@ -976,7 +975,7 @@ void ControlTabWidget::loadJointStateBtnClicked(bool clicked)
 void ControlTabWidget::autoPlanBtnClicked(bool clicked)
 {
   auto_plan_btn_->setEnabled(false);
-  plan_watcher_->setFuture(QtConcurrent::run(this, &ControlTabWidget::computePlan));
+  plan_watcher_->setFuture(QtConcurrent::run([this]() { computePlan(); }));
 }
 
 void ControlTabWidget::computePlan()
@@ -1030,7 +1029,7 @@ void ControlTabWidget::computePlan()
     move_group_->setMaxVelocityScalingFactor(0.5);
     move_group_->setMaxAccelerationScalingFactor(0.5);
     current_plan_.reset(new moveit::planning_interface::MoveGroupInterface::Plan());
-    planning_res_ = (move_group_->plan(*current_plan_) == moveit::planning_interface::MoveItErrorCode::SUCCESS) ?
+    planning_res_ = (move_group_->plan(*current_plan_) == moveit::core::MoveItErrorCode::SUCCESS) ?
                         ControlTabWidget::SUCCESS :
                         ControlTabWidget::FAILURE_PLAN_FAILED;
 
@@ -1049,13 +1048,13 @@ void ControlTabWidget::autoExecuteBtnClicked(bool clicked)
   }
 
   auto_execute_btn_->setEnabled(false);
-  execution_watcher_->setFuture(QtConcurrent::run(this, &ControlTabWidget::computeExecution));
+  execution_watcher_->setFuture(QtConcurrent::run([this]() { computeExecution(); }));
 }
 
 void ControlTabWidget::computeExecution()
 {
   if (move_group_ && current_plan_)
-    planning_res_ = (move_group_->execute(*current_plan_) == moveit::planning_interface::MoveItErrorCode::SUCCESS) ?
+    planning_res_ = (move_group_->execute(*current_plan_) == moveit::core::MoveItErrorCode::SUCCESS) ?
                         ControlTabWidget::SUCCESS :
                         ControlTabWidget::FAILURE_PLAN_FAILED;
 

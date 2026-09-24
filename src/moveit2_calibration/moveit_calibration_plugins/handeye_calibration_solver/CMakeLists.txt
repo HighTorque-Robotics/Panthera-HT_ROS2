@@ -9,7 +9,7 @@ set(SOURCE_FILES_PLUGINS
 # Core library
 add_library(${MOVEIT_LIB_NAME}_core SHARED ${SOURCE_FILES_CORE})
 set_target_properties(${MOVEIT_LIB_NAME}_core PROPERTIES VERSION "${${PROJECT_NAME}_VERSION}")
-target_link_libraries(${MOVEIT_LIB_NAME}_core ${OpenCV_LIBS} ${EIGEN3_LIBS})
+target_link_libraries(${MOVEIT_LIB_NAME}_core PRIVATE ${OpenCV_LIBS} ${EIGEN3_LIBS})
 target_include_directories(${MOVEIT_LIB_NAME}_core PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>)
@@ -18,7 +18,7 @@ target_link_ros_packages(${MOVEIT_LIB_NAME}_core ${THIS_PACKAGE_INCLUDE_DEPENDS}
 # Plugin library
 add_library(${MOVEIT_LIB_NAME} SHARED ${SOURCE_FILES_PLUGINS})
 set_target_properties(${MOVEIT_LIB_NAME} PROPERTIES VERSION "${${PROJECT_NAME}_VERSION}")
-target_link_libraries(${MOVEIT_LIB_NAME} ${MOVEIT_LIB_NAME}_core)
+target_link_libraries(${MOVEIT_LIB_NAME} PRIVATE ${MOVEIT_LIB_NAME}_core)
 target_include_directories(${MOVEIT_LIB_NAME} PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>)
@@ -55,6 +55,6 @@ if(BUILD_TESTING)
   include_directories(${JSON_INC_PATH})
 
   ament_add_gtest(test_handeye_solver test/handeye_solver_test.cpp)
-  target_link_libraries(test_handeye_solver ${MOVEIT_LIB_NAME} jsoncpp_lib)
+  target_link_libraries(test_handeye_solver PRIVATE ${MOVEIT_LIB_NAME} jsoncpp_lib)
   ament_lint_auto_find_test_dependencies()
 endif()

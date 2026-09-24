@@ -8,13 +8,13 @@ C++20 构建，仿真默认使用 Gazebo Sim Jetty，不再使用 Gazebo Classic
 ```
 Panthera_HT_ROS2/src/
   ├── hightorque_robot/              # 底层电机控制 SDK + 机械臂示例
-  ├── panthera_ht_config/            # MoveIt 配置包（核心）
-  ├── panthera_ht_ros_description/   # 机器人 URDF 描述包
+  ├── panthera_moveit_config/            # MoveIt 配置包（核心）
+  ├── panthera_ht_description/   # 机器人 URDF 描述包
   ├── panthera_hardware/             # ROS2 Control 硬件接口包
   ├── panthera_gazebo/               # Gazebo 仿真包
   ├── panthera_bringup/              # 系统启动包
-  ├── panthera_commander/            # MoveIt 指令示例包
-  ├── panthera_arm_control/          # 直接 SDK 驱动控制节点（话题/服务/IK）
+  ├── panthera_moveit_commander/            # MoveIt 指令示例包
+  ├── panthera_sdk_control/          # 直接 SDK 驱动控制节点（话题/服务/IK）
   └── panthera_interfaces/           # 自定义消息接口包
 ```
 
@@ -124,18 +124,44 @@ sudo usermod -aG dialout $USER
 
 ### Lyrical 运行前的环境加载
 
-当前工作空间使用源码编译的 MoveIt。每次打开新终端，都需要按以下顺序加载
-ROS 2、MoveIt 和本项目环境：
+当前工作空间使用 ROS 2 Lyrical 官方 APT 版 MoveIt 2.15.2，MoveIt 核心组件和
+RViz 可视化组件均来自 `/opt/ros/lyrical`。
+每次打开新终端，都需要按以下顺序加载：
 
 ```bash
 cd ~/Panthera-HT/Panthera-HT_ROS2_Lyrical
 source /opt/ros/lyrical/setup.bash
-source ~/ws_moveit/install/setup.bash
 source install/setup.bash
 ```
 
-下面的命令均假设当前终端已经完成上述环境加载。当前构建暂时跳过
-RealSense 和手眼标定相关包，不影响机械臂、夹爪、MoveIt 和 Gazebo 仿真。
+验证 MoveIt 来源：
+
+```bash
+ros2 pkg prefix rviz2                    # /opt/ros/lyrical
+ros2 pkg prefix moveit_ros_move_group    # /opt/ros/lyrical
+ros2 pkg prefix moveit_ros_visualization # /opt/ros/lyrical
+```
+
+下面的命令均假设当前终端已经完成上述环境加载。不要额外 source 其他 MoveIt
+源码工作区，否则可能造成 MoveIt ABI 混用和 RViz 闪退。
+RealSense 相机链路暂时跳过；手眼标定插件已完成 Lyrical/Qt6 兼容编译。
+
+### ros2_control 控制器配置
+
+项目按运行对象保留两份 `ros2_controllers.yaml`，二者不能混用：
+
+| 用途 | 配置文件 | 加载入口 | ros2_control 系统 |
+|------|----------|----------|------------------|
+| 真实机械臂 | `src/panthera_bringup/config/ros2_controllers.yaml` | `panthera_bringup` 的硬件启动文件 | `panthera_hardware/PantheraHardwareInterface`，连接 SDK 和真实电机 |
+| Gazebo 仿真 | `src/panthera_gazebo/config/ros2_controllers.yaml` | `panthera_gazebo` 的 Gazebo 启动文件 | `gz_ros2_control`，连接 Gazebo Sim 和虚拟关节 |
+
+两份配置都声明 `joint_state_broadcaster`、`arm_controller` 和
+`gripper_controller`。实机配置使用位置/速度接口并关闭仿真时间；仿真配置使用
+Gazebo 的位置接口并启用仿真时间。`panthera_hardware` 只提供实机硬件插件和
+URDF 中的 `<ros2_control>` 描述，不再放置控制器 YAML。这里的 YAML 负责
+`controller_manager` 和控制器参数，URDF/Xacro 中的 `<ros2_control>` 负责声明
+底层硬件系统（实机插件或 Gazebo 插件）；`moveit_controllers_*.yaml` 仅是
+MoveIt 到控制器的映射，不替代这两份 ros2_control 配置。
 
 ### 一、MoveIt 控制真实机械臂
 
@@ -145,8 +171,7 @@ RealSense 和手眼标定相关包，不影响机械臂、夹爪、MoveIt 和 Ga
 # 确认串口已连接
 ls /dev/ttyACM*
 
-source install/setup.bash
-ros2 launch panthera_ht_config hardware_moveit_rviz.launch.py
+ros2 launch panthera_bringup hardware_moveit_rviz.launch.py
 ```
 
 启动后在 RViz 中拖动交互标记规划轨迹，点击 Plan & Execute 执行。
@@ -162,14 +187,13 @@ tau = gravity(q) + Kp * (q_target - q) + Kd * (dq_target - dq)
 原来的位置速度模式入口保持不变。MIT 模式使用独立的 launch 文件：
 
 ```bash
-source install/setup.bash
-ros2 launch panthera_ht_config hardware_moveit_rviz_mit.launch.py
+ros2 launch panthera_bringup hardware_moveit_rviz_mit.launch.py
 ```
 
 查看 MIT launch 参数：
 
 ```bash
-ros2 launch panthera_ht_config hardware_moveit_rviz_mit.launch.py --show-args
+ros2 launch panthera_bringup hardware_moveit_rviz_mit.launch.py --show-args
 ```
 
 默认参数如下，顺序均为 `joint1` 到 `joint6`：
@@ -182,7 +206,7 @@ mit_kd = 1.5,2.4,2.4,0.6,0.6,0.3
 启动时可以直接修改：
 
 ```bash
-ros2 launch panthera_ht_config hardware_moveit_rviz_mit.launch.py \
+ros2 launch panthera_bringup hardware_moveit_rviz_mit.launch.py \
   mit_kp:="10.0,25.0,25.0,5.0,5.0,2.5" \
   mit_kd:="1.5,2.0,2.0,0.6,0.6,0.3"
 ```
@@ -198,7 +222,7 @@ ros2 launch panthera_ht_config hardware_moveit_rviz_mit.launch.py \
 
 ```bash
 source install/setup.bash
-ros2 launch panthera_ht_config demo.launch.py
+ros2 launch panthera_moveit_config demo.launch.py
 ```
 
 ### 四、Gazebo Sim + MoveIt
@@ -212,7 +236,6 @@ ros2 launch panthera_ht_config demo.launch.py
 ```bash
 cd ~/Panthera-HT/Panthera-HT_ROS2_Lyrical
 source /opt/ros/lyrical/setup.bash
-source ~/ws_moveit/install/setup.bash
 source install/setup.bash
 
 ros2 launch panthera_gazebo gazebo_moveit.launch.py
@@ -228,7 +251,6 @@ ros2 launch panthera_gazebo gazebo_moveit.launch.py
 ```bash
 cd ~/Panthera-HT/Panthera-HT_ROS2_Lyrical
 source /opt/ros/lyrical/setup.bash
-source ~/ws_moveit/install/setup.bash
 source install/setup.bash
 
 ros2 control list_controllers
@@ -247,14 +269,14 @@ gripper_controller       active
 在终端 2 中运行机械臂测试：
 
 ```bash
-ros2 run panthera_commander test_moveit
+ros2 run panthera_moveit_commander test_moveit
 ```
 
 机械臂会依次执行 `pose1 -> pose2 -> home`。等待机械臂测试完全结束后，再运行
 夹爪测试：
 
 ```bash
-ros2 run panthera_commander test_gripper
+ros2 run panthera_moveit_commander test_gripper
 ```
 
 夹爪会依次执行 `open -> half_open -> close`。
@@ -272,7 +294,7 @@ ros2 run panthera_commander test_gripper
 由于 Lyrical 的 ResourceManager 位置限幅会破坏夹爪位置命令，仿真控制器关闭
 该重复限幅层，关节轨迹控制器、MoveIt 和 URDF 中的限位仍然生效。
 
-### 五、直接 SDK 驱动控制（panthera_arm_control）
+### 五、直接 SDK 驱动控制（panthera_sdk_control）
 
 不依赖 MoveIt / ros2_control，通过 ROS2 话题和服务直接驱动机械臂。内置 KDL 逆运动学，支持关节空间和笛卡尔空间控制。
 
@@ -280,7 +302,7 @@ ros2 run panthera_commander test_gripper
 
 ```bash
 source install/setup.bash
-ros2 launch panthera_arm_control arm_control.launch.py
+ros2 launch panthera_sdk_control arm_control.launch.py
 ```
 
 该节点的笛卡尔控制默认以真实夹爪中心 `gripper_center` 作为末端参考坐标系，
@@ -288,7 +310,7 @@ ros2 launch panthera_arm_control arm_control.launch.py
 法兰位姿。若需要兼容旧程序、临时使用 J6 法兰，可显式指定：
 
 ```bash
-ros2 launch panthera_arm_control arm_control.launch.py tip_link:=link6
+ros2 launch panthera_sdk_control arm_control.launch.py tip_link:=link6
 ```
 
 #### 状态查询
@@ -400,7 +422,7 @@ ros2 service call /reset_srv std_srvs/srv/Trigger "{}"
 | 服务 | `/stop_srv` | std_srvs/Trigger | 急停 |
 | 服务 | `/reset_srv` | std_srvs/Trigger | 复位 |
 
-### 六、MoveIt 指令示例（panthera_commander）
+### 六、MoveIt 指令示例（panthera_moveit_commander）
 
 需先启动 `hardware_moveit_rviz.launch.py`，然后在另一个终端运行：
 
@@ -408,21 +430,29 @@ ros2 service call /reset_srv std_srvs/srv/Trigger "{}"
 source install/setup.bash
 
 # 画圆轨迹
-ros2 run panthera_commander draw_circle
+ros2 run panthera_moveit_commander draw_circle
 
 # 三平面画圆
-ros2 run panthera_commander draw_three_circles
+ros2 run panthera_moveit_commander draw_three_circles
 
 # 夹爪测试
-ros2 run panthera_commander test_gripper
+ros2 run panthera_moveit_commander test_gripper
 
 # 正弦轨迹
-ros2 run panthera_commander sin_trajectory_control
+ros2 run panthera_moveit_commander sin_trajectory_control
 ```
 
 ### 七、底层 SDK 示例（hightorque_robot）
 
 直接通过底层 SDK 控制机械臂，不经过 ROS2 Control / MoveIt，适合调试和底层开发。
+
+源码按用途分组：
+
+```text
+src/hightorque_robot/examples/                  # 整臂控制示例
+src/hightorque_robot/examples/motor_examples/   # 底层电机示例
+src/hightorque_robot/examples/tools/            # CAN、LCM 和参数工具
+```
 
 编译时已随 `colcon build` 一起构建，直接用 `ros2 run` 运行：
 
@@ -471,14 +501,14 @@ ros2 run hightorque_robot 3_cartesian_impedance_control
 # 推动末端 → 偏离后松手会回到原位。
 # 推动机械臂中间连杆 → 关节会移动但末端尽量保持不动（零空间自由运动）。
 # 位置刚度 100 N/m，手感比 3_cartesian 更柔顺。
-ros2 run hightorque_robot pure_cartesian_impedance_control
+ros2 run hightorque_robot 5_pure_cartesian_impedance_control
 
 # 笛卡尔阻抗 A-B 点往返运动（需要 Pinocchio）
 # 控制律：τ = J^T * [K*(x_des - x) - B*(v_ee - v_des)] + G(q)
 # 启动后取当前末端位置为 A 点，手动输入 XYZ 偏移量定义 B 点（建议 0.1~0.2m）。
 # 机械臂末端以 0.15 m/s 在 A-B 之间匀速往返运动。
 # 运动中保持阻抗特性，可用手推动使其偏离，松手后继续向目标点运动。
-ros2 run hightorque_robot cartesian_impedance_ab_motion
+ros2 run hightorque_robot 3_cartesian_impedance_ab_motion
 ```
 
 所有示例支持通过命令行参数指定配置文件：
@@ -494,7 +524,7 @@ ros2 run hightorque_robot 0_robot_get_state /path/to/your/config.yaml
 ```bash
 source install/setup.bash
 
-ros2 run hightorque_robot motor_feedack        # 电机反馈
+ros2 run hightorque_robot motor_feedback       # 电机反馈
 ros2 run hightorque_robot motor_run            # 电机运行
 ros2 run hightorque_robot motor_move_zero      # 电机回零
 ros2 run hightorque_robot motor_set_zero       # 设置电机零位
@@ -509,13 +539,13 @@ ros2 run hightorque_robot parse_demo           # 参数解析示例
 | 包名 | 说明 |
 |------|------|
 | `hightorque_robot` | 底层电机控制 SDK，提供 C++ 库和示例程序 |
-| `panthera_ht_config` | MoveIt 配置包，包含 launch 文件、URDF、控制器配置 |
-| `panthera_ht_ros_description` | 机器人 URDF/mesh 描述文件 |
+| `panthera_moveit_config` | MoveIt 配置包，包含 launch 文件、URDF、控制器配置 |
+| `panthera_ht_description` | 机器人 URDF/mesh 描述文件 |
 | `panthera_hardware` | ROS2 Control 硬件接口插件，桥接 SDK 和 ros2_control |
 | `panthera_gazebo` | Gazebo Sim Jetty 仿真配置 |
 | `panthera_bringup` | 系统级启动文件 |
-| `panthera_commander` | MoveIt C++ 运动指令示例（画圆、正弦轨迹等） |
-| `panthera_arm_control` | 直接 SDK 驱动节点，提供话题/服务控制，内置 KDL 逆运动学 |
+| `panthera_moveit_commander` | MoveIt C++ 运动指令示例（画圆、正弦轨迹等） |
+| `panthera_sdk_control` | 直接 SDK 驱动节点，提供话题/服务控制，内置 KDL 逆运动学 |
 | `panthera_interfaces` | 自定义 ROS2 消息和服务（ArmStatus, EndPoseEuler, PosCmd, MoveToPose 等） |
 
 ---

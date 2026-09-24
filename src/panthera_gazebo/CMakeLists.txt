@@ -23,4 +23,6 @@ install(PROGRAMS
   RENAME robot_description_republisher
 )
 
+install(FILES README.md DESTINATION share/${PROJECT_NAME})
+
 ament_package()
