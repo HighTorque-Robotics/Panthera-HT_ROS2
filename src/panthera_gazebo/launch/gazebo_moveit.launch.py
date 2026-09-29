@@ -16,7 +16,7 @@ def generate_launch_description():
             PathJoinSubstitution([
                 gripper_gazebo_path,
                 'launch',
-                'gazebo_classic.launch.py'
+                'gazebo.launch.py'
             ])
         ])
     )

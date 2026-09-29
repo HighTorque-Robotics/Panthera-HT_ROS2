@@ -136,9 +136,10 @@ source install/setup.bash
 验证 MoveIt 来源：
 
 ```bash
-ros2 pkg prefix rviz2                    # /opt/ros/humble
-ros2 pkg prefix moveit_ros_move_group    # /opt/ros/humble
-ros2 pkg prefix moveit_ros_visualization # /opt/ros/humble
+ros2 pkg prefix rviz2                   
+ros2 pkg prefix moveit_ros_move_group    
+ros2 pkg prefix moveit_ros_visualization
+# 均为/opt/ros/humble
 ```
 
 下面的命令均假设当前终端已经完成上述环境加载。不要额外 source 其他 MoveIt

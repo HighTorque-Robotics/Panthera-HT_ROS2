@@ -4,23 +4,26 @@
   <!-- Keep the detailed STL collision model for MoveIt, while allowing
        physics simulators to request inexpensive primitive collisions. -->
   <xacro:arg name="use_mesh_collisions" default="true"/>
+  <xacro:arg name="use_collisions" default="true"/>
   <xacro:macro name="panthera_collision" params="mesh_name box_origin box_size">
-    <xacro:if value="$(arg use_mesh_collisions)">
-      <collision>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-        <geometry>
-          <mesh filename="package://panthera_ht_description/meshes/${mesh_name}.STL"/>
-        </geometry>
-      </collision>
+    <xacro:if value="$(arg use_collisions)">
+      <xacro:if value="$(arg use_mesh_collisions)">
+        <collision>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <geometry>
+            <mesh filename="package://panthera_ht_description/meshes/${mesh_name}.STL"/>
+          </geometry>
+        </collision>
+      </xacro:if>
+      <xacro:unless value="$(arg use_mesh_collisions)">
+        <collision>
+          <origin xyz="${box_origin}" rpy="0 0 0"/>
+          <geometry>
+            <box size="${box_size}"/>
+          </geometry>
+        </collision>
+      </xacro:unless>
     </xacro:if>
-    <xacro:unless value="$(arg use_mesh_collisions)">
-      <collision>
-        <origin xyz="${box_origin}" rpy="0 0 0"/>
-        <geometry>
-          <box size="${box_size}"/>
-        </geometry>
-      </collision>
-    </xacro:unless>
   </xacro:macro>
 
   <mujoco>

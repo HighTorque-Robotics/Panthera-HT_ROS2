@@ -151,11 +151,11 @@ bool HandEyeCharucoTarget::createTargetImage(cv::Mat& image) const
     // Create target
     cv::Ptr<cv::aruco::Dictionary> dictionary =
         cv::makePtr<cv::aruco::Dictionary>(cv::aruco::getPredefinedDictionary(dictionary_id_));
-    cv::Ptr<cv::aruco::CharucoBoard> board = cv::makePtr<cv::aruco::CharucoBoard>(
-        cv::Size(squares_x_, squares_y_), float(square_size_pixels_), float(marker_size_pixels_), *dictionary);
+    cv::Ptr<cv::aruco::CharucoBoard> board = cv::aruco::CharucoBoard::create(
+        squares_x_, squares_y_, float(square_size_pixels_), float(marker_size_pixels_), dictionary);
 
     // Create target image
-    board->generateImage(image_size, image, margin_size_pixels_, border_size_bits_);
+    board->draw(image_size, image, margin_size_pixels_, border_size_bits_);
   }
   catch (const cv::Exception& e)
   {
@@ -178,8 +178,8 @@ bool HandEyeCharucoTarget::detectTargetPose(cv::Mat& image)
     cv::Ptr<cv::aruco::Dictionary> dictionary =
         cv::makePtr<cv::aruco::Dictionary>(cv::aruco::getPredefinedDictionary(dictionary_id_));
     float square_size_meters = board_size_meters_ / std::max(squares_x_, squares_y_);
-    cv::Ptr<cv::aruco::CharucoBoard> board = cv::makePtr<cv::aruco::CharucoBoard>(
-        cv::Size(squares_x_, squares_y_), square_size_meters, marker_size_meters_, *dictionary);
+    cv::Ptr<cv::aruco::CharucoBoard> board = cv::aruco::CharucoBoard::create(
+        squares_x_, squares_y_, square_size_meters, float(marker_size_meters_), dictionary);
     charuco_mutex_.unlock();
     cv::Ptr<cv::aruco::DetectorParameters> params_ptr(new cv::aruco::DetectorParameters());
 #if CV_MAJOR_VERSION == 3 && CV_MINOR_VERSION == 2

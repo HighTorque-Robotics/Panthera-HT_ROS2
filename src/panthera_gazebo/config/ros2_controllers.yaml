@@ -1,4 +1,11 @@
 # This config file is used by ros2_control for Gazebo simulation
+/**:
+  ros__parameters:
+    # gz_ros2_control declares this on its internal model node rather than
+    # under controller_manager on Humble; the wildcard makes the setting
+    # effective for both node layouts.
+    position_proportional_gain: 1.0
+
 controller_manager:
   ros__parameters:
     update_rate: 100  # Hz

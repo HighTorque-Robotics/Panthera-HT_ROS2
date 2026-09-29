@@ -35,7 +35,14 @@ def generate_launch_description():
     robot_description_content = ParameterValue(
         Command([
             FindExecutable(name='xacro'), ' ', urdf_file,
-            ' ros2_control_params:=', controllers_file
+            ' ros2_control_params:=', controllers_file,
+            # Primitive collision proxies keep the Humble DART backend
+            # numerically stable for this arm while preserving mesh visuals.
+            ' use_mesh_collisions:=false',
+            # Gazebo 6's DART backend otherwise locks the overlapping shoulder
+            # collision bodies at their zero-limit pose. MoveIt still uses the
+            # full collision model because this is only the Gazebo description.
+            ' use_collisions:=false'
         ]),
         value_type=str
     )
@@ -59,6 +66,19 @@ def generate_launch_description():
         ]
     )
 
+    # Ignition Gazebo v6 uses IGN_IP for transport discovery.  On a
+    # single-machine simulation, loopback avoids multicast errors when the
+    # host has no usable multicast route.  Respect an explicitly configured
+    # address for multi-machine simulations.
+    ignition_ip = SetEnvironmentVariable(
+        name='IGN_IP',
+        value=os.environ.get('IGN_IP', '127.0.0.1')
+    )
+    gz_ip = SetEnvironmentVariable(
+        name='GZ_IP',
+        value=os.environ.get('GZ_IP', '127.0.0.1')
+    )
+
     # Robot State Publisher
     robot_state_publisher = Node(
         package='robot_state_publisher',
@@ -80,7 +100,10 @@ def generate_launch_description():
             ])
         ]),
         launch_arguments={
-            'gz_args': '-r empty.sdf -v 4',
+            # Keep Gazebo 6's installed DART backend.  The Bullet plugin is
+            # present on some Humble systems but crashes in gz_ros2_control;
+            # primitive collision proxies above avoid the original joint lock.
+            'gz_args': '-r empty.sdf -v 3',
             'on_exit_shutdown': 'true'
         }.items()
     )
@@ -153,6 +176,8 @@ def generate_launch_description():
         ),
         gz_model_path,
         gz_plugin_path,
+        ignition_ip,
+        gz_ip,
         robot_state_publisher,
         gazebo,
         spawn_robot,

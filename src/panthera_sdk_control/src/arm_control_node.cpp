@@ -9,7 +9,7 @@
 
 #include "rclcpp/rclcpp.hpp"
 #include "panthera/Panthera.hpp"
-#include <ament_index_cpp/get_package_share_path.hpp>
+#include <ament_index_cpp/get_package_share_directory.hpp>
 
 #include "sensor_msgs/msg/joint_state.hpp"
 #include "geometry_msgs/msg/pose_stamped.hpp"
@@ -75,7 +75,7 @@ public:
 
         std::string config_file = this->get_parameter("config_file").as_string();
         if (config_file.empty()) {
-            config_file = ament_index_cpp::get_package_share_path("hightorque_robot").string()
+            config_file = ament_index_cpp::get_package_share_directory("hightorque_robot")
                           + "/robot_param/Follower.yaml";
         }
 
@@ -181,7 +181,7 @@ private:
     {
         std::string urdf_file = this->get_parameter("urdf_file").as_string();
         if (urdf_file.empty()) {
-            urdf_file = ament_index_cpp::get_package_share_path("panthera_ht_description").string()
+            urdf_file = ament_index_cpp::get_package_share_directory("panthera_ht_description")
                         + "/urdf/panthera_ht_ros_description_gripper.urdf";
         }
 

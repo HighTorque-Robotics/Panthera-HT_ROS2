@@ -55,7 +55,7 @@
 #include <tf2_ros/transform_listener.h>
 #include <rviz_visual_tools/tf_visual_tools.hpp>
 #include <rviz_visual_tools/rviz_visual_tools.hpp>
-#include <image_geometry/pinhole_camera_model.hpp>
+#include <image_geometry/pinhole_camera_model.h>
 #include <moveit_visual_tools/moveit_visual_tools.h>
 #include <moveit/handeye_calibration_solver/handeye_solver_base.h>
 #include <moveit/handeye_calibration_rviz_plugin/handeye_calibration_display.h>

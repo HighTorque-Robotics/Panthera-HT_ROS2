@@ -1,9 +1,9 @@
 #include <iostream>
-#include <ament_index_cpp/get_package_share_path.hpp>
+#include <ament_index_cpp/get_package_share_directory.hpp>
 #include "parse_robot_params.hpp"
 int main(int argc, char* argv[]) {
     std::string filePath =
-        ament_index_cpp::get_package_share_path("hightorque_robot").string() +
+        ament_index_cpp::get_package_share_directory("hightorque_robot") +
         "/robot_param/motor_param/6dof_Panthera_params_follower.yaml";
     if (argc > 1) {
         filePath = argv[1];

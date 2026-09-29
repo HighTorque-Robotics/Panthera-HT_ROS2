@@ -113,6 +113,9 @@
       <robot_param>robot_description</robot_param>
       <robot_param_node>robot_state_publisher</robot_param_node>
       <parameters>$(arg ros2_control_params)</parameters>
+      <!-- Match the Lyrical port: the Gazebo Sim position interface uses
+           this gain to overcome gravity on the shoulder joints. -->
+      <position_proportional_gain>1.0</position_proportional_gain>
     </plugin>
   </gazebo>
 

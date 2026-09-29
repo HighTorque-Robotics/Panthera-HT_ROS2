@@ -9,7 +9,7 @@ set(SOURCE_FILES_PLUGINS
 # Core library
 add_library(${MOVEIT_LIB_NAME}_core SHARED ${SOURCE_FILES_CORE})
 set_target_properties(${MOVEIT_LIB_NAME}_core PROPERTIES VERSION "${${PROJECT_NAME}_VERSION}")
-target_link_libraries(${MOVEIT_LIB_NAME}_core PRIVATE ${OpenCV_LIBS} ${EIGEN3_LIBS})
+target_link_libraries(${MOVEIT_LIB_NAME}_core ${OpenCV_LIBS} ${EIGEN3_LIBS})
 target_include_directories(${MOVEIT_LIB_NAME}_core PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>)
@@ -21,7 +21,7 @@ ament_target_dependencies(
 # Plugin library
 add_library(${MOVEIT_LIB_NAME} SHARED ${SOURCE_FILES_PLUGINS})
 set_target_properties(${MOVEIT_LIB_NAME} PROPERTIES VERSION "${${PROJECT_NAME}_VERSION}")
-target_link_libraries(${MOVEIT_LIB_NAME} PRIVATE ${MOVEIT_LIB_NAME}_core)
+target_link_libraries(${MOVEIT_LIB_NAME} ${MOVEIT_LIB_NAME}_core)
 target_include_directories(${MOVEIT_LIB_NAME} PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>)

@@ -2,7 +2,7 @@
 #include "parse_robot_params.hpp"
 #include <unistd.h>
 #include "motor_msg/motor_msg.hpp"
-#include <ament_index_cpp/get_package_share_path.hpp>
+#include <ament_index_cpp/get_package_share_directory.hpp>
 #include <yaml-cpp/yaml.h>
 #include <iostream>
 #include <iomanip>
@@ -14,9 +14,9 @@ namespace hightorque_robot
         // Resolve the bundled single-motor configuration from the installed
         // package instead of relying on the process working directory.
         const auto config_path =
-            ament_index_cpp::get_package_share_path("hightorque_robot") /
-            "robot_param/motor_param/robot_config.yaml";
-        init_robot(config_path.string());
+            ament_index_cpp::get_package_share_directory("hightorque_robot") +
+            "/robot_param/motor_param/robot_config.yaml";
+        init_robot(config_path);
     }
 
     robot::robot(const std::string& config_path)
