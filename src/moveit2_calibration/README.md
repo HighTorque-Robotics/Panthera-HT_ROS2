@@ -12,7 +12,7 @@ moveit2_calibration/
 ## 构建
 
 ```bash
-source /opt/ros/lyrical/setup.bash
+source /opt/ros/humble/setup.bash
 colcon build --packages-select moveit_calibration_plugins moveit_calibration_gui
 source install/setup.bash
 ```
@@ -57,7 +57,7 @@ Tsai1989、Park1994、Horaud1995、Andreff1999、Daniilidis1998
 
 ## 依赖
 
-- ROS 2 Lyrical、MoveIt、RViz、tf2_ros
+- ROS 2 Humble、MoveIt、RViz、tf2_ros
 - OpenCV contrib（ArUco/ChArUco）和 Qt6
 - `realsense2_camera`（仅集成标定启动需要）
 

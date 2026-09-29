@@ -3,7 +3,7 @@
   <arg name="use_sim_time" default="true" />
 
   <!-- Set Gazebo resource path for meshes -->
-  <set_env name="GAZEBO_MODEL_PATH" value="$(find-pkg-share panthera_ht_ros_description):$(find-pkg-share panthera_ht_ros_description)/.." />
+  <set_env name="GAZEBO_MODEL_PATH" value="$(find-pkg-share panthera_ht_description):$(find-pkg-share panthera_ht_description)/.." />
 
   <!-- Set Gazebo plugin path for ros2_control -->
   <set_env name="GAZEBO_PLUGIN_PATH" value="/opt/ros/humble/lib" />

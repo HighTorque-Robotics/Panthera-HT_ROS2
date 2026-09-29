@@ -1,7 +1,7 @@
-# Panthera-HT 机械臂 ROS 2 Lyrical 工作空间
+# Panthera-HT 机械臂 ROS 2 Humble 工作空间
 
-本分支面向 Ubuntu 26.04（Resolute）和 ROS 2 Lyrical。项目 C++ 代码按
-C++20 构建，仿真默认使用 Gazebo Sim Jetty，不再使用 Gazebo Classic。
+本分支面向 Ubuntu 22.04（Jammy）和 ROS 2 Humble。项目 C++ 代码按
+C++20 构建，仿真使用 Gazebo Sim；Gazebo Classic 文件仍保留在对应目录中。
 
 ## 工作空间结构
 
@@ -22,30 +22,30 @@ Panthera_HT_ROS2/src/
 
 ## 环境要求
 
-- Ubuntu 26.04
-- ROS 2 Lyrical
-- GCC 15 或 Clang 21（项目要求 C++20）
-- Gazebo Sim Jetty（仅仿真需要）
+- Ubuntu 22.04
+- ROS 2 Humble
+- GCC 11 或更高版本（项目要求 C++20）
+- Gazebo Sim（仅仿真需要）
 
 ---
 
 ## 快速部署（新电脑）
 
-### 1. 安装 ROS 2 Lyrical
+### 1. 安装 ROS 2 Humble
 
-如果还没安装 ROS 2，请参考 Lyrical 官方安装文档：
-https://docs.ros.org/en/lyrical/Installation/Ubuntu-Install-Debs.html
+如果还没安装 ROS 2，请参考 Humble 官方安装文档：
+https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html
 
 安装完成后确保 source 了 ROS2 环境：
 ```bash
-source /opt/ros/lyrical/setup.bash
+source /opt/ros/humble/setup.bash
 ```
 
 ### 2. 克隆仓库
 
 ```bash
 cd ~
-git clone -b Lyrical https://github.com/HighTorque-Robotics/Panthera_HT_ROS2.git
+git clone https://github.com/HighTorque-Robotics/Panthera_HT_ROS2.git
 cd Panthera_HT_ROS2
 ```
 
@@ -54,14 +54,13 @@ cd Panthera_HT_ROS2
 ```bash
 # ROS 2、MoveIt、ros2_control 和 Gazebo Sim
 sudo apt install -y \
-  ros-lyrical-desktop \
-  ros-lyrical-moveit \
-  ros-lyrical-ros2-control \
-  ros-lyrical-ros2-controllers \
-  ros-lyrical-ros-gz \
-  ros-lyrical-gz-ros2-control \
-  ros-lyrical-pinocchio \
-  ros-lyrical-xacro
+  ros-humble-desktop \
+  ros-humble-moveit \
+  ros-humble-ros2-control \
+  ros-humble-ros2-controllers \
+  ros-humble-gazebo-ros-pkgs \
+  ros-humble-pinocchio \
+  ros-humble-xacro
   
 # 底层 SDK 和标定 GUI 依赖
 sudo apt install -y \
@@ -78,8 +77,8 @@ rosdep update
 rosdep install --from-paths src --ignore-src -r -y
 ```
 
-RealSense 相机只在手眼标定入口使用。如果当前 Lyrical 软件仓库还没有
-`realsense2_camera` 二进制包，可暂时不构建/运行标定链路，或从其 Lyrical
+RealSense 相机只在手眼标定入口使用。如果当前 Humble 软件仓库还没有
+`realsense2_camera` 二进制包，可暂时不构建/运行标定链路，或从其 Humble
 源码版本单独构建。
 
 不使用标定功能时，可在编译中跳过两个标定包：
@@ -95,7 +94,7 @@ colcon build --symlink-install \
 
 ```bash
 cd ~/Panthera_HT_ROS2
-source /opt/ros/lyrical/setup.bash
+source /opt/ros/humble/setup.bash
 colcon build --symlink-install --cmake-args \
   -DCMAKE_BUILD_TYPE=Release \
   -DPython3_EXECUTABLE=/usr/bin/python3
@@ -122,29 +121,29 @@ sudo usermod -aG dialout $USER
 
 ## 使用方式
 
-### Lyrical 运行前的环境加载
+### Humble 运行前的环境加载
 
-当前工作空间使用 ROS 2 Lyrical 官方 APT 版 MoveIt 2.15.2，MoveIt 核心组件和
-RViz 可视化组件均来自 `/opt/ros/lyrical`。
+当前工作空间使用 ROS 2 Humble 官方 APT 版 MoveIt，MoveIt 核心组件和 RViz
+可视化组件均来自 `/opt/ros/humble`。
 每次打开新终端，都需要按以下顺序加载：
 
 ```bash
-cd ~/Panthera-HT/Panthera-HT_ROS2_Lyrical
-source /opt/ros/lyrical/setup.bash
+cd ~/Panthera-HT_ROS2
+source /opt/ros/humble/setup.bash
 source install/setup.bash
 ```
 
 验证 MoveIt 来源：
 
 ```bash
-ros2 pkg prefix rviz2                    # /opt/ros/lyrical
-ros2 pkg prefix moveit_ros_move_group    # /opt/ros/lyrical
-ros2 pkg prefix moveit_ros_visualization # /opt/ros/lyrical
+ros2 pkg prefix rviz2                    # /opt/ros/humble
+ros2 pkg prefix moveit_ros_move_group    # /opt/ros/humble
+ros2 pkg prefix moveit_ros_visualization # /opt/ros/humble
 ```
 
 下面的命令均假设当前终端已经完成上述环境加载。不要额外 source 其他 MoveIt
 源码工作区，否则可能造成 MoveIt ABI 混用和 RViz 闪退。
-RealSense 相机链路暂时跳过；手眼标定插件已完成 Lyrical/Qt6 兼容编译。
+RealSense 相机链路暂时跳过；手眼标定插件已完成 Humble/Qt6 兼容编译。
 
 ### ros2_control 控制器配置
 
@@ -227,15 +226,15 @@ ros2 launch panthera_moveit_config demo.launch.py
 
 ### 四、Gazebo Sim + MoveIt
 
-这是当前 Lyrical 版本已经验证的完整仿真启动方式，无需连接真实机械臂。
+这是当前 Humble 版本已经验证的完整仿真启动方式，无需连接真实机械臂。
 
 #### 1. 启动完整仿真
 
 打开终端 1：
 
 ```bash
-cd ~/Panthera-HT/Panthera-HT_ROS2_Lyrical
-source /opt/ros/lyrical/setup.bash
+cd ~/Panthera-HT_ROS2
+source /opt/ros/humble/setup.bash
 source install/setup.bash
 
 ros2 launch panthera_gazebo gazebo_moveit.launch.py
@@ -249,8 +248,8 @@ ros2 launch panthera_gazebo gazebo_moveit.launch.py
 打开终端 2，加载相同环境：
 
 ```bash
-cd ~/Panthera-HT/Panthera-HT_ROS2_Lyrical
-source /opt/ros/lyrical/setup.bash
+cd ~/Panthera-HT_ROS2
+source /opt/ros/humble/setup.bash
 source install/setup.bash
 
 ros2 control list_controllers
@@ -291,7 +290,7 @@ ros2 run panthera_moveit_commander test_gripper
 
 该入口使用 Bullet Featherstone 物理引擎。Gazebo 为保证启动速度使用包围盒
 碰撞体，MoveIt 仍使用原始 STL 碰撞模型；夹爪仿真速度限制为 0.02 m/s。
-由于 Lyrical 的 ResourceManager 位置限幅会破坏夹爪位置命令，仿真控制器关闭
+由于 Humble 的 ResourceManager 位置限幅会破坏夹爪位置命令，仿真控制器关闭
 该重复限幅层，关节轨迹控制器、MoveIt 和 URDF 中的限位仍然生效。
 
 ### 五、直接 SDK 驱动控制（panthera_sdk_control）
@@ -542,7 +541,7 @@ ros2 run hightorque_robot parse_demo           # 参数解析示例
 | `panthera_moveit_config` | MoveIt 配置包，包含 launch 文件、URDF、控制器配置 |
 | `panthera_ht_description` | 机器人 URDF/mesh 描述文件 |
 | `panthera_hardware` | ROS2 Control 硬件接口插件，桥接 SDK 和 ros2_control |
-| `panthera_gazebo` | Gazebo Sim Jetty 仿真配置 |
+| `panthera_gazebo` | Gazebo Sim 仿真配置 |
 | `panthera_bringup` | 系统级启动文件 |
 | `panthera_moveit_commander` | MoveIt C++ 运动指令示例（画圆、正弦轨迹等） |
 | `panthera_sdk_control` | 直接 SDK 驱动节点，提供话题/服务控制，内置 KDL 逆运动学 |
@@ -553,7 +552,7 @@ ros2 run hightorque_robot parse_demo           # 参数解析示例
 ## 常见问题
 
 **Q: colcon build 报找不到 pinocchio**
-A: 安装 `ros-lyrical-pinocchio`。阻抗控制示例和 ros2_control 真机插件都会使用它。
+A: 安装 `ros-humble-pinocchio`。阻抗控制示例和 ros2_control 真机插件都会使用它。
 
 **Q: ros2 run 报 No executable found**
 A: 确保已经 `source install/setup.bash`，并且 `colcon build` 编译成功。

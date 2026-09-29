@@ -1,6 +1,6 @@
 moveit_setup_assistant_config:
   urdf:
-    package: panthera_ht_ros_description
+    package: panthera_ht_description
     relative_path: urdf/panthera_ht_ros_description.xacro
   srdf:
     relative_path: config/panthera_ht_ros_description.srdf

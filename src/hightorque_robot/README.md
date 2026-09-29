@@ -32,7 +32,7 @@ CMake 声明的可执行目标名。
 
 ## 依赖
 
-- ROS 2 Lyrical
+- ROS 2 Humble
 - CMake >= 3.22
 - C++20 编译器
 - `libserialport-dev`
@@ -52,8 +52,8 @@ sudo apt-get install libserialport-dev libyaml-cpp-dev
 在工作空间中编译本包：
 
 ```bash
-cd ~/Panthera-HT/Panthera-HT_ROS2_Lyrical
-source /opt/ros/lyrical/setup.bash
+cd ~/Panthera-HT_ROS2
+source /opt/ros/humble/setup.bash
 colcon build --packages-select hightorque_robot
 source install/setup.bash
 ```
@@ -130,7 +130,7 @@ target_link_libraries(my_robot_app
 确认环境已加载：
 
 ```bash
-source /opt/ros/lyrical/setup.bash
+source /opt/ros/humble/setup.bash
 source install/setup.bash
 ```
 
