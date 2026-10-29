@@ -8,7 +8,7 @@
 #define my_2pi (6.28318530717f)
 #define my_pi (3.14159265358f)
 
-#define MEM_INDEX_ID(id) ((id) - 1)    
+#define MEM_INDEX_ID(id) ((id) - 1)
 
 
 enum motor_type  // 注释掉的暂无力矩修正系数
@@ -40,7 +40,7 @@ enum motor_type  // 注释掉的暂无力矩修正系数
 
     m5047_36_2,
 
-    mGeneral, 
+    mGeneral,
     mNone,  // 力矩已在电机内部修正
 };
 
@@ -76,7 +76,7 @@ const std::unordered_map<std::string, motor_type> motor_type2 =  // 注释掉的
     {"NONE", motor_type::mNone},        // 无修正，已在电机内部修正
 };
 
-const std::unordered_map<motor_type, float> motor_tqe_adj = 
+const std::unordered_map<motor_type, float> motor_tqe_adj =
 {
     {motor_type::m3536_32,   0.4581f},
     {motor_type::m5046_20,   0.5280f},
@@ -115,8 +115,8 @@ private:
     motor_type type_ = motor_type::null;
     cdc_tr_message_s *p_cdc_tx_message = NULL;
     int id_max = 0;
-    pos_vel_convert_type pos_vel_type = radian_2pi; 
-    bool pos_limit_enable = false; 
+    pos_vel_convert_type pos_vel_type = radian_2pi;
+    bool pos_limit_enable = false;
     float pos_upper = 0.0f;
     float pos_lower = 0.0f;
     bool tor_limit_enable = false;

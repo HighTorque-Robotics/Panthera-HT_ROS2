@@ -4,17 +4,17 @@
 #include <yaml-cpp/yaml.h>
 
 
-struct MotorNameComparator 
+struct MotorNameComparator
 {
     bool operator()(const std::string& a, const std::string& b) const;
-    
+
 private:
     int extractNumber(const std::string& str) const;
 };
 
 
 
-struct MotorParams 
+struct MotorParams
 {
     std::string type;
     int id;
@@ -28,10 +28,10 @@ struct MotorParams
     double tor_lower;
 };
 
-struct CANPortParams 
+struct CANPortParams
 {
     int serial_id;
-    int motor_num;    
+    int motor_num;
     std::map<std::string, MotorParams, MotorNameComparator> motors;
 };
 
@@ -40,7 +40,7 @@ struct CANBoardParams {
     std::map<std::string, CANPortParams, MotorNameComparator> CANports;
 };
 
-struct RobotParams 
+struct RobotParams
 {
     int motor_timeout_ms;
     std::string robot_name;

@@ -6,7 +6,7 @@ robot:
     upper: [2.4, 3.2, 4.0, 1.6, 1.7, 2.5, 1.0]
 
 urdf:
-  file_path: "../Panthera-HT_description/urdf/Panthera-HT_description_follower.urdf"
+  file_path: "../urdf/Panthera-HT_description_follower.urdf"
   base_link: "base_link"
   end_effector_link: "joint6"
 

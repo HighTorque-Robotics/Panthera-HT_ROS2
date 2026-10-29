@@ -13,7 +13,7 @@ int main(int argc, char* argv[]) {
         std::cout << "CAN Board: " << board.first << std::endl;
         for (const auto& port : board.second.CANports) {
             std::cout << "  CAN Port: " << port.first << std::endl;
-            
+
             for (const auto& motor : port.second.motors) {
                 std::cout << "    Motor: " << motor.first << std::endl;
                 std::cout << "      Type: " << motor.second.type << std::endl;

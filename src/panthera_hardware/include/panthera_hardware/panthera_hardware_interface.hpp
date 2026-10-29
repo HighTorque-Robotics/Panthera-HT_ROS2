@@ -20,6 +20,8 @@ class Panthera;
 
 namespace panthera_hardware
 {
+class GravityModel;
+
 class PantheraHardwareInterface : public hardware_interface::SystemInterface
 {
 public:
@@ -50,6 +52,7 @@ public:
 private:
   // Panthera robot instance
   std::unique_ptr<panthera::Panthera> robot_;
+  std::shared_ptr<GravityModel> gravity_model_;
 
   // Configuration
   std::string config_file_;
@@ -71,7 +74,7 @@ private:
   std::vector<double> kd_gains_;
 
   // Control mode
-  std::string control_mode_;  // "position_velocity", "pd_control", or "full_control"
+  std::string control_mode_;  // "position_velocity", "pd_control", "full_control", or "mit_gravity_compensation"
 
   // Gripper conversion: radians to meters
   double gripper_rad_to_m_;  // Conversion factor for gripper position (rad to m)

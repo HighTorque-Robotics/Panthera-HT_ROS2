@@ -2,34 +2,34 @@
 #include "parse_robot_params.hpp"
 
 
-bool MotorNameComparator::operator()(const std::string& a, const std::string& b) const 
+bool MotorNameComparator::operator()(const std::string& a, const std::string& b) const
 {
     int numA = extractNumber(a);
     int numB = extractNumber(b);
     return numA < numB;
 }
 
-int MotorNameComparator::extractNumber(const std::string& str) const 
+int MotorNameComparator::extractNumber(const std::string& str) const
 {
     std::string numberStr;
-    
-    for (char ch : str) 
+
+    for (char ch : str)
     {
-        if (std::isdigit(ch)) 
+        if (std::isdigit(ch))
         {
             numberStr += ch;
-        } 
-        else if (!numberStr.empty()) 
+        }
+        else if (!numberStr.empty())
         {
             break;
         }
     }
-    
-    if (numberStr.empty()) 
+
+    if (numberStr.empty())
     {
         throw std::invalid_argument("No numeric value found in string: " + str);
     }
-    
+
     return std::stoi(numberStr);
 }
 

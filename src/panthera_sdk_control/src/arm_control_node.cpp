@@ -178,8 +178,8 @@ private:
     {
         std::string urdf_file = this->get_parameter("urdf_file").as_string();
         if (urdf_file.empty()) {
-            urdf_file = ament_index_cpp::get_package_share_directory("panthera_ht_description_with_finger")
-                        + "/urdf/Panthera-HT_description_with_finger.urdf";
+            urdf_file = ament_index_cpp::get_package_share_directory("panthera_ht_description")
+                        + "/urdf/panthera_ht_ros_description_gripper.urdf";
         }
 
         std::string base_link = this->get_parameter("base_link").as_string();

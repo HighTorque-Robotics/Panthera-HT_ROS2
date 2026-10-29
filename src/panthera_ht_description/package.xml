@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>panthera_ht_description_with_finger</name>
+  <name>panthera_ht_description</name>
   <version>1.0.0</version>
-  <description>URDF Description package for panthera_ht_description_with_finger robot. This package contains configuration data, 3D models and launch files.</description>
+  <description>URDF Description package for panthera_ht_description robot. This package contains configuration data, 3D models and launch files.</description>
   <author>TODO</author>
   <maintainer email="TODO@email.com">TODO</maintainer>
   <license>BSD</license>

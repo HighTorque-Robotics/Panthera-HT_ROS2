@@ -52,7 +52,7 @@
 #define GET_MINOR_VERSION(version) (((version) >> 4) & 0xFF)  // 提取 minor 版本
 #define GET_PATCH_VERSION(version) ((version) & 0xF)          // 提取 patch 版本
 
-typedef enum 
+typedef enum
 {
     fun_v1 = 1,  // v3
     fun_v2,      // v4 电机模式和错误码
@@ -77,14 +77,14 @@ typedef enum __attribute__((packed))
 } __attribute__((packed)) fdcan_fault_t;
 
 #pragma pack(1)
-typedef struct 
+typedef struct
 {
     int16_t pos;
     int16_t vel;
     int16_t tqe;
 } motor_pos_vel_tqe_s;
 
-typedef struct 
+typedef struct
 {
     int16_t pos;
     int16_t vel;
@@ -93,7 +93,7 @@ typedef struct
     int16_t kd;
 } motor_pos_vel_tqe_kp_kd_s;
 
-typedef struct 
+typedef struct
 {
     int16_t pos;
     int16_t vel;
@@ -101,14 +101,14 @@ typedef struct
     int16_t kd;
 } motor_pos_vel_kp_kd_s;
 
-typedef struct 
+typedef struct
 {
     int16_t pos;
     int16_t vel;
     int16_t acc;
 } motor_pos_vel_acc_s;
 
-typedef struct 
+typedef struct
 {
     uint8_t id;
     int16_t pos;
@@ -126,15 +126,15 @@ typedef struct
     int16_t tqe;
 } cdc_rx_motor_state2_s;
 
-typedef struct 
+typedef struct
 {
     uint8_t id;
     uint8_t major;
-    uint8_t minor; 
+    uint8_t minor;
     uint8_t patch;
 } cdc_rx_motor_version_s;
 
-typedef struct 
+typedef struct
 {
     fdcan_fault_t fault;  // 错误码
     uint8_t tx_err_num;    // 发送错误计数
@@ -147,17 +147,17 @@ typedef struct
     uint8_t flag;
 } cdc_rx_motor_flag_s;
 
-typedef struct 
+typedef struct
 {
     cdc_rx_fdcan_state_s fdcan_state;
-    union 
+    union
     {
         cdc_rx_motor_state_s motor_state[(CDC_TR_MESSAGE_DATA_LEN - sizeof(cdc_rx_fdcan_state_s)) / sizeof(cdc_rx_motor_state_s)];
         cdc_rx_motor_state2_s motor_state2[(CDC_TR_MESSAGE_DATA_LEN - sizeof(cdc_rx_fdcan_state_s)) / sizeof(cdc_rx_motor_state2_s)];
     };
 } cdc_rx_fdcan_motor_state_s;
 
-typedef struct 
+typedef struct
 {
     uint8_t head;
     uint8_t cmd;
@@ -169,7 +169,7 @@ typedef struct
 
 typedef struct
 {
-    union 
+    union
     {
         cdc_tr_message_head_data_s s;
         uint8_t data[sizeof(cdc_tr_message_head_data_s)];
@@ -202,7 +202,7 @@ typedef struct
 } cdc_tr_message_data_s;
 
 
-typedef struct 
+typedef struct
 {
     cdc_tr_message_head_s head;
     cdc_tr_message_data_s data;

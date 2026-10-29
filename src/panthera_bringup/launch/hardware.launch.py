@@ -14,8 +14,8 @@ def generate_launch_description():
     control_mode = LaunchConfiguration('control_mode')
 
     # Get package paths
-    with_gripper_config_path = FindPackageShare('with_gripper_config')
-    panthera_description_path = FindPackageShare('panthera_ht_description_with_finger')
+    panthera_moveit_config_path = FindPackageShare('panthera_moveit_config')
+    panthera_description_path = FindPackageShare('panthera_ht_description')
 
     # Default robot config file (Leader configuration)
     default_config_file = PathJoinSubstitution([
@@ -26,16 +26,16 @@ def generate_launch_description():
 
     # Controller parameters file for real hardware
     controllers_file = PathJoinSubstitution([
-        with_gripper_config_path,
+        panthera_moveit_config_path,
         'config',
         'ros2_controllers_hardware.yaml'
     ])
 
     # URDF file path - need to create a hardware version
     urdf_file = PathJoinSubstitution([
-        with_gripper_config_path,
+        panthera_moveit_config_path,
         'config',
-        'Panthera-HT_description_hardware.urdf.xacro'
+        'panthera_ht_hardware.urdf.xacro'
     ])
 
     # Generate robot_description with hardware interface
@@ -52,11 +52,15 @@ def generate_launch_description():
     robot_state_publisher = Node(
         package='robot_state_publisher',
         executable='robot_state_publisher',
+        name='panthera_hardware_state_publisher',
         output='screen',
         parameters=[{
             'robot_description': robot_description_content,
             'use_sim_time': False
-        }]
+        }],
+        # Keep the real-hardware description isolated from stale/demo
+        # publishers that may still be present on the global topic.
+        remappings=[('robot_description', '/panthera_hardware/robot_description')],
     )
 
     # Controller Manager
@@ -67,6 +71,7 @@ def generate_launch_description():
             {'robot_description': robot_description_content},
             controllers_file
         ],
+        remappings=[('/robot_description', '/panthera_hardware/robot_description')],
         output='screen'
     )
 

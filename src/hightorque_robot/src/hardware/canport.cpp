@@ -14,7 +14,7 @@ canport::canport(int _CANport_num, int _CANboard_num, serial_driver *_ser, CANPo
     {
         std::cerr << "\033[1;31m" << "Too many motors, Supports up to " << PORT_MOTOR_NUM_MAX << " motors, but there are actually " << motor_num << " motors" << "\033[0m" << std::endl;
         exit(-1);
-    }        
+    }
 
     for(auto motor_params : canport_params.motors)
     {
@@ -52,7 +52,7 @@ uint16_t canport::set_motor_num()
     }
 
     cdc_tr_message.data.data[0] = motor_num;
-    
+
     int t = 0;
     #define MAX_DALAY 1000  // 单位ms
     while (t++ < MAX_DALAY)
@@ -68,7 +68,7 @@ uint16_t canport::set_motor_num()
 
     if (t < MAX_DALAY)
     {
-        std::cout << "\033[1;32mCANboard(" << canboard_id << ") version is: v" << GET_MAJOR_VERSION(port_version) 
+        std::cout << "\033[1;32mCANboard(" << canboard_id << ") version is: v" << GET_MAJOR_VERSION(port_version)
         << '.' << GET_MINOR_VERSION(port_version) << "." << GET_PATCH_VERSION(port_version) << "\033[0m" << std::endl;
     }
     else
@@ -125,7 +125,7 @@ int canport::set_reset_zero()
         std::cout << "\033[1;32mMotor zero position reset successfully, waiting for the motor to save the settings.\033[0m" << std::endl;
         return 0;
     }
-    else 
+    else
     {
         std::cerr << "\033[1;31m" << "Motor reset to zero position failed." << "\033[0m" << std::endl;
         return 1;
@@ -135,7 +135,7 @@ int canport::set_reset_zero()
 
 int canport::set_reset_zero(int id)
 {
-    
+
     if (cdc_tr_message.head.s.cmd != MODE_RESET_ZERO)
     {
         cdc_tr_message.head.s.head = 0XF7;
@@ -230,7 +230,7 @@ void canport::send_get_tqe_adjust_flag_cmd()
 
 void canport::set_conf_write()
 {
-    
+
     if (cdc_tr_message.head.s.cmd != MODE_CONF_WRITE)
     {
         cdc_tr_message.head.s.head = 0XF7;
@@ -272,7 +272,7 @@ void canport::set_conf_write()
     {
         std::cout << "\033[1;32mSettings saved successfully.\033[0m" << std::endl;
     }
-    else 
+    else
     {
         std::cerr << "\033[1;31m" << "Failed to save settings." << "\033[0m" << std::endl;
         exit(0);
@@ -282,7 +282,7 @@ void canport::set_conf_write()
 
 int canport::set_conf_write(int id)
 {
-    
+
     if (cdc_tr_message.head.s.cmd != MODE_CONF_WRITE)
     {
         cdc_tr_message.head.s.head = 0XF7;
@@ -405,7 +405,7 @@ void canport::set_time_out(int16_t t_ms)
     {
         cdc_tr_message.data.timeout[i] = t_ms;
     }
-    
+
     motor_send_cmd();
 }
 
@@ -458,7 +458,7 @@ void canport::canboard_bootloader()
         cdc_tr_message.head.s.len = 1;
         memset(&cdc_tr_message.data, 0, cdc_tr_message.head.s.len);
     }
-    
+
     motor_send_cmd();
     motor_send_cmd();
     motor_send_cmd();
@@ -474,7 +474,7 @@ void canport::canboard_fdcan_reset()
         cdc_tr_message.head.s.len = 1;
         memset(&cdc_tr_message.data, 0, cdc_tr_message.head.s.len);
     }
-    
+
     motor_send_cmd();
     motor_send_cmd();
     motor_send_cmd();

@@ -8,7 +8,7 @@ from launch_ros.substitutions import FindPackageShare
 def generate_launch_description():
     # Get package paths
     panthera_gazebo_path = FindPackageShare('panthera_gazebo')
-    with_gripper_config_path = FindPackageShare('with_gripper_config')
+    panthera_moveit_config_path = FindPackageShare('panthera_moveit_config')
 
     # Include Gazebo launch
     gazebo_launch = IncludeLaunchDescription(
@@ -21,22 +21,14 @@ def generate_launch_description():
         ])
     )
 
-    # Include static virtual joint TFs (publishes world->base_link transform)
-    static_tfs_launch = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([
-            PathJoinSubstitution([
-                with_gripper_config_path,
-                'launch',
-                'static_virtual_joint_tfs.launch.py'
-            ])
-        ])
-    )
+    # The Gazebo URDF already contains world_joint (world -> base_link), and
+    # robot_state_publisher publishes it. Do not add a second static TF here.
 
     # Include MoveIt move_group
     move_group_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([
             PathJoinSubstitution([
-                with_gripper_config_path,
+                panthera_moveit_config_path,
                 'launch',
                 'move_group.launch.py'
             ])
@@ -48,7 +40,7 @@ def generate_launch_description():
     moveit_rviz_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([
             PathJoinSubstitution([
-                with_gripper_config_path,
+                panthera_moveit_config_path,
                 'launch',
                 'moveit_rviz.launch.py'
             ])
@@ -58,7 +50,6 @@ def generate_launch_description():
 
     return LaunchDescription([
         gazebo_launch,
-        static_tfs_launch,
         move_group_launch,
         moveit_rviz_launch,
     ])

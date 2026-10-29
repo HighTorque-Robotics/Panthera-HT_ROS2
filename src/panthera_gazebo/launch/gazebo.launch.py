@@ -13,7 +13,7 @@ def generate_launch_description():
 
     # Get package paths
     panthera_gazebo_path = FindPackageShare('panthera_gazebo')
-    panthera_description_path = FindPackageShare('panthera_ht_description_with_finger')
+    panthera_description_path = FindPackageShare('panthera_ht_description')
 
     # Controller parameters file
     controllers_file = PathJoinSubstitution([

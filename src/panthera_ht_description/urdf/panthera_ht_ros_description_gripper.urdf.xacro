@@ -2,10 +2,10 @@
 <!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com)
      Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
-<robot name="Panthera-HT_description" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="panthera_ht_ros_description" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <!-- Xacro properties for commonly used values -->
-  <xacro:property name="package_name" value="panthera_ht_description_with_finger" />
+  <xacro:property name="package_name" value="panthera_ht_description" />
   <xacro:property name="default_color" value="0.752941176470588 0.752941176470588 0.752941176470588 1" />
 
   <!-- Material definitions -->
@@ -191,7 +191,7 @@
   <link name="link6">
     <inertial>
       <origin xyz="0.06704625 0.00051731 1.674e-05" rpy="0 0 0" />
-      <mass value="0.45" />
+      <mass value="0.43" />
       <inertia ixx="0.00107368" ixy="-1.25e-05" ixz="3e-07" iyy="0.00068998" iyz="2.517e-05" izz="0.00167551" />
     </inertial>
     <visual>
@@ -254,7 +254,7 @@
     <parent link="gripper_center" />
     <child link="L_finger" />
     <axis xyz="0 1 0" />
-    <limit lower="-5.0" upper="5.0" effort="100" velocity="0.5" />
+    <limit lower="0.0" upper="0.04" effort="100" velocity="0.1" />
     <dynamics damping="0.5" friction="0.0"/>
   </joint>
 
@@ -284,10 +284,10 @@
     <origin xyz="-0.00455 0 0" rpy="0 0 0" />
     <parent link="gripper_center" />
     <child link="R_finger" />
-    <axis xyz="0 -1 0" />
-    <limit lower="-5.0" upper="5.0" effort="100" velocity="0.5" />
+    <axis xyz="0 1 0" />
+    <limit lower="-0.04" upper="0.0" effort="100" velocity="0.1" />
     <dynamics damping="0.5" friction="0.0"/>
-    <mimic joint="L_finger_joint" multiplier="1" offset="0"/>
+    <mimic joint="L_finger_joint" multiplier="-1" offset="0"/>
   </joint>
 
 </robot>

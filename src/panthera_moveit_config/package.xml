@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>with_gripper_config</name>
+  <name>panthera_moveit_config</name>
   <version>0.3.0</version>
   <description>
-     An automatically generated package with all the configuration and launch files for using the Panthera-HT_description with the MoveIt Motion Planning Framework
+     An automatically generated package with all the configuration and launch files for using the panthera_ht_ros_description with the MoveIt Motion Planning Framework
   </description>
   <maintainer email="153282466@qq.com">tk</maintainer>
 
@@ -36,7 +36,7 @@
   <exec_depend>moveit_ros_visualization</exec_depend>
   <exec_depend>moveit_ros_warehouse</exec_depend>
   <exec_depend>moveit_setup_assistant</exec_depend>
-  <exec_depend>panthera_ht_description_with_finger</exec_depend>
+  <exec_depend>panthera_ht_description</exec_depend>
   <exec_depend>robot_state_publisher</exec_depend>
   <exec_depend>rviz2</exec_depend>
   <exec_depend>rviz_common</exec_depend>

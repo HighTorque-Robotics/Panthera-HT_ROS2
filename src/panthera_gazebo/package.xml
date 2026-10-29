@@ -15,8 +15,8 @@
   <exec_depend>controller_manager</exec_depend>
   <exec_depend>joint_trajectory_controller</exec_depend>
   <exec_depend>joint_state_broadcaster</exec_depend>
-  <exec_depend>panthera_ht_description_with_finger</exec_depend>
-  <exec_depend>with_gripper_config</exec_depend>
+  <exec_depend>panthera_ht_description</exec_depend>
+  <exec_depend>panthera_moveit_config</exec_depend>
   <exec_depend>xacro</exec_depend>
 
   <export>

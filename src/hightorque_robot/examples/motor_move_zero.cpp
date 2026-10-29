@@ -9,7 +9,7 @@
 
 
 std::atomic<bool> exitFlag(false);
-void signalHandler(int signum) 
+void signalHandler(int signum)
 {
     exitFlag.store(true);
 }

@@ -10,16 +10,16 @@ default_acceleration_scaling_factor: 0.1
 joint_limits:
   L_finger_joint:
     has_position_limits: true
-    min_position: -5.0
-    max_position: 5.0
+    min_position: 0.0
+    max_position: 0.04
     has_velocity_limits: true
     max_velocity: 0.5
     has_acceleration_limits: true
     max_acceleration: 1.0
   R_finger_joint:
     has_position_limits: true
-    min_position: -5.0
-    max_position: 5.0
+    min_position: -0.04
+    max_position: 0.0
     has_velocity_limits: true
     max_velocity: 0.5
     has_acceleration_limits: true

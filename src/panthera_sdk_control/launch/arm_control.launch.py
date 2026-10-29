@@ -14,7 +14,7 @@ def generate_launch_description():
                               description='Max joint velocity in rad/s'),
 
         Node(
-            package='panthera_arm_control',
+            package='panthera_sdk_control',
             executable='arm_control_node',
             name='arm_control_node',
             output='screen',

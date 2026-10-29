@@ -12,6 +12,7 @@ find_package(hardware_interface REQUIRED)
 find_package(pluginlib REQUIRED)
 find_package(rclcpp_lifecycle REQUIRED)
 find_package(hightorque_robot REQUIRED)
+find_package(pinocchio REQUIRED)
 
 # Add hardware interface library
 add_library(
@@ -37,6 +38,7 @@ ament_target_dependencies(
 target_link_libraries(
   panthera_hardware
   hightorque_robot::hightorque_robot
+  pinocchio::pinocchio
 )
 
 # Export hardware plugin
@@ -71,6 +73,7 @@ ament_export_dependencies(
   pluginlib
   rclcpp_lifecycle
   hightorque_robot
+  pinocchio
 )
 
 if(BUILD_TESTING)

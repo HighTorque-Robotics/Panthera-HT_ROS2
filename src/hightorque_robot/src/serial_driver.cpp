@@ -52,7 +52,7 @@ void serial_driver::recv_1for6_42()
         cdc_tr_message_head_data_s SOF = {0};
         try
         {
-            _ser.read(&(SOF.head), 1); 
+            _ser.read(&(SOF.head), 1);
             if (SOF.head == 0xF7)      //  head
             {
                 _ser.read(&(SOF.cmd), 4);
@@ -112,7 +112,7 @@ void serial_driver::recv_1for6_42()
                                 auto it = Map_Motors_p.find(cdc_rx_message_data.motor_state[i].id);
                                 if (it != Map_Motors_p.end())
                                 {
-                                    it->second->fresh_data(0, 0, 
+                                    it->second->fresh_data(0, 0,
                                                     cdc_rx_message_data.motor_state[i].pos,
                                                     cdc_rx_message_data.motor_state[i].vel,
                                                     cdc_rx_message_data.motor_state[i].tqe);
@@ -137,7 +137,7 @@ void serial_driver::recv_1for6_42()
                         case(MODE_FDCAN_MOTOR_STATE2):
                             {
                                 cdc_rx_fdcan_state_s &_p_fdcan_state = cdc_rx_message_data.fdcan_motor_state.fdcan_state;
-                                
+
                                 if (canport_error_output_flag)
                                 {
                                     if (_p_fdcan_state.fault > FDCAN_STATUS_ERROR_WARNING || _p_fdcan_state.fault == FDCAN_STATUS_UNKNOWN)
@@ -149,11 +149,11 @@ void serial_driver::recv_1for6_42()
                                         ROS_INFO("\033[1;32mcanport[%d] flaut = %d, rx = %d, tx = %d\033[0m", Map_Motors_p.begin()->second->get_motor_belong_canport(), _p_fdcan_state.fault, _p_fdcan_state.rx_err_num, _p_fdcan_state.tx_err_num);
                                     }
                                 }
-                                
+
                                 p_fdcan_state->fault = _p_fdcan_state.fault;
                                 p_fdcan_state->rx_err_num = _p_fdcan_state.rx_err_num;
                                 p_fdcan_state->tx_err_num = _p_fdcan_state.tx_err_num;
-                                
+
 
                                 for (size_t i = 0; i < (SOF.len - sizeof(cdc_rx_fdcan_state_s)) / sizeof(cdc_rx_motor_state2_s); i++)
                                 {
@@ -173,7 +173,7 @@ void serial_driver::recv_1for6_42()
                         case(MODE_FDCAN_MOTOR_STATE):
                             {
                                 cdc_rx_fdcan_state_s &_p_fdcan_state = cdc_rx_message_data.fdcan_motor_state.fdcan_state;
-                                
+
                                 if (canport_error_output_flag)
                                 {
                                     if (_p_fdcan_state.fault > FDCAN_STATUS_ERROR_WARNING || _p_fdcan_state.fault == FDCAN_STATUS_UNKNOWN)
@@ -185,11 +185,11 @@ void serial_driver::recv_1for6_42()
                                         ROS_INFO("\033[1;32mcanport[%d] flaut = %d, rx = %d, tx = %d\033[0m", Map_Motors_p.begin()->second->get_motor_belong_canport(), _p_fdcan_state.fault, _p_fdcan_state.rx_err_num, _p_fdcan_state.tx_err_num);
                                     }
                                 }
-                                
+
                                 p_fdcan_state->fault = _p_fdcan_state.fault;
                                 p_fdcan_state->rx_err_num = _p_fdcan_state.rx_err_num;
                                 p_fdcan_state->tx_err_num = _p_fdcan_state.tx_err_num;
-                                
+
 
                                 for (size_t i = 0; i < (SOF.len - sizeof(cdc_rx_fdcan_state_s)) / sizeof(cdc_rx_motor_state_s); i++)
                                 {
@@ -265,7 +265,7 @@ void serial_driver::close(void)
     {
         std::cerr << e.what() << '\n';
     }
-    
+
 }
 
 void serial_driver::send_2(cdc_tr_message_s *cdc_tr_message)

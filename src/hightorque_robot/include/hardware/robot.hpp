@@ -52,15 +52,15 @@ namespace hightorque_robot
         int serial_pid_vid(const char *name, int *pid, int *vid);
         int serial_pid_vid(const char *name);
         std::vector<std::string> list_serial_ports(const std::string& full_prefix);
-        void init_ser();        
+        void init_ser();
         void check_error();
-        int check_serial_dev_exist(int);        
+        int check_serial_dev_exist(int);
         void set_port_motor_num();
     public:
 
         void publishJointStates();
         void detect_motor_limit();
-        void motor_send_cmd();       
+        void motor_send_cmd();
         void send_get_motor_state_cmd();
         void send_get_motor_version_cmd();
         void check_motor_connection_position();

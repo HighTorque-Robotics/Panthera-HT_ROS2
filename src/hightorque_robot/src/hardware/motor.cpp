@@ -122,7 +122,7 @@ inline float motor::pid_scale(float in_data, motor_type motor_type)
 inline int16_t motor::kp_float2int(float in_data, uint8_t type, motor_type motor_type)
 {
     in_data = pid_scale(in_data, motor_type);
-    
+
     int32_t tqe = 0;
     switch (type)
     {
@@ -146,7 +146,7 @@ inline int16_t motor::kp_float2int(float in_data, uint8_t type, motor_type motor
 inline int16_t motor::ki_float2int(float in_data, uint8_t type, motor_type motor_type)
 {
     in_data = pid_scale(in_data, motor_type);
-    
+
     int32_t tqe = 0;
     switch (type)
     {
@@ -170,7 +170,7 @@ inline int16_t motor::ki_float2int(float in_data, uint8_t type, motor_type motor
 inline int16_t motor::kd_float2int(float in_data, uint8_t type, motor_type motor_type)
 {
     in_data = pid_scale(in_data, motor_type);
-    
+
     int32_t tqe = 0;
     switch (type)
     {
@@ -289,7 +289,7 @@ uint16_t motor::get_data_len(uint8_t mode, uint16_t num)
     {
         rem_len = 46;
     }
-    else 
+    else
     {
         rem_len = fdcan_one_len;
     }
@@ -444,7 +444,7 @@ void motor::pos_vel_tqe_kp_kd(float position, float velocity, float torque, floa
     p_cdc_tx_message->data.pos_vel_tqe_kp_kd[MEM_INDEX_ID(id)].pos = pos_float2int(position, pos_vel_type);
     p_cdc_tx_message->data.pos_vel_tqe_kp_kd[MEM_INDEX_ID(id)].vel = vel_float2int(velocity, pos_vel_type);
     p_cdc_tx_message->data.pos_vel_tqe_kp_kd[MEM_INDEX_ID(id)].tqe = tqe_float2int(torque, type_);
-    p_cdc_tx_message->data.pos_vel_tqe_kp_kd[MEM_INDEX_ID(id)].kp = kp_float2int(kp, pos_vel_type, type_); 
+    p_cdc_tx_message->data.pos_vel_tqe_kp_kd[MEM_INDEX_ID(id)].kp = kp_float2int(kp, pos_vel_type, type_);
     p_cdc_tx_message->data.pos_vel_tqe_kp_kd[MEM_INDEX_ID(id)].kd = kd_float2int(kd, pos_vel_type, type_);
 }
 
@@ -463,8 +463,8 @@ void motor::pos_vel_kp_kd(float position, float velocity, float kp, float kd)
     }
     p_cdc_tx_message->data.pos_vel_kp_kd[MEM_INDEX_ID(id)].pos = pos_float2int(position, pos_vel_type);
     p_cdc_tx_message->data.pos_vel_kp_kd[MEM_INDEX_ID(id)].vel = vel_float2int(velocity, pos_vel_type);
-    p_cdc_tx_message->data.pos_vel_kp_kd[MEM_INDEX_ID(id)].kp = kp_float2int(kp, pos_vel_type, type_);  
-    p_cdc_tx_message->data.pos_vel_kp_kd[MEM_INDEX_ID(id)].kd = kd_float2int(kd, pos_vel_type, type_); 
+    p_cdc_tx_message->data.pos_vel_kp_kd[MEM_INDEX_ID(id)].kp = kp_float2int(kp, pos_vel_type, type_);
+    p_cdc_tx_message->data.pos_vel_kp_kd[MEM_INDEX_ID(id)].kd = kd_float2int(kd, pos_vel_type, type_);
 }
 
 
@@ -566,7 +566,7 @@ void motor::fresh_data(uint8_t mode, uint8_t fault, int16_t position, int16_t ve
             pos_limit_flag = -1;
         }
     }
-    
+
     if(tor_limit_enable)
     {
         // 判断是否超过电机扭矩限制
@@ -586,11 +586,11 @@ void motor::fresh_data(uint8_t mode, uint8_t fault, int16_t position, int16_t ve
 
 void motor::set_motor_type(std::string type_str)
 {
-    try 
+    try
     {
         type_ = motor_type2.at(type_str);
-    } 
-    catch (const std::out_of_range& e) 
+    }
+    catch (const std::out_of_range& e)
     {
         ROS_ERROR("Motor model error: %s", type_str.c_str());
 
@@ -600,44 +600,44 @@ void motor::set_motor_type(std::string type_str)
             std::cout << it->first << std::endl;
         }
         std::cout << "--------------------------------------------------------------" << std::endl;
-        exit(-1); 
+        exit(-1);
     }
 }
 
 
-int motor::get_motor_id() 
-{ 
-    return id; 
+int motor::get_motor_id()
+{
+    return id;
 }
 
 
-int motor::get_motor_type() 
-{ 
-    return type_; 
+int motor::get_motor_type()
+{
+    return type_;
 }
 
 
 motor_type motor::get_motor_enum_type()
-{ 
-    return type_; 
+{
+    return type_;
 }
 
 
-int motor::get_motor_num() 
-{ 
-    return num; 
+int motor::get_motor_num()
+{
+    return num;
 }
 
 
-int motor::get_motor_belong_canport() 
-{ 
-    return CANport_num; 
+int motor::get_motor_belong_canport()
+{
+    return CANport_num;
 }
 
 
-int motor::get_motor_belong_canboard() 
-{ 
-    return CANboard_num; 
+int motor::get_motor_belong_canboard()
+{
+    return CANboard_num;
 }
 
 motor_pos_vel_tqe_kp_kd_s* motor::return_pos_vel_tqe_kp_kd_p()

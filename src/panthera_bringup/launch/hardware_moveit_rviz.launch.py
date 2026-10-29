@@ -1,4 +1,5 @@
 import os
+from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
 from launch.conditions import IfCondition
@@ -12,11 +13,13 @@ from moveit_configs_utils import MoveItConfigsBuilder
 
 def generate_launch_description():
     # Get package paths
-    with_gripper_config_path = FindPackageShare('with_gripper_config')
+    panthera_moveit_config_path = FindPackageShare('panthera_moveit_config')
+    panthera_bringup_path = FindPackageShare('panthera_bringup')
+    panthera_moveit_config_share = get_package_share_directory('panthera_moveit_config')
 
     # Construct relative path to config file
     default_config_file = PathJoinSubstitution([
-        with_gripper_config_path,
+        panthera_moveit_config_path,
         'robot_param',
         'Follower_absolute.yaml'
     ])
@@ -40,10 +43,21 @@ def generate_launch_description():
         description='Start RViz'
     )
 
-    hardware_urdf_file = PathJoinSubstitution([
-        with_gripper_config_path,
+    semantic_file = os.path.join(
+        panthera_moveit_config_share,
         'config',
-        'Panthera-HT_description_hardware.urdf.xacro'
+        'panthera_ht_ros_description.srdf',
+    )
+    moveit_controllers_file = os.path.join(
+        panthera_moveit_config_share,
+        'config',
+        'moveit_controllers_hardware.yaml',
+    )
+
+    hardware_urdf_file = PathJoinSubstitution([
+        panthera_moveit_config_path,
+        'config',
+        'panthera_ht_hardware.urdf.xacro'
     ])
     robot_description_content = ParameterValue(
         Command([
@@ -60,7 +74,7 @@ def generate_launch_description():
     hardware_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([
             PathJoinSubstitution([
-                with_gripper_config_path,
+                panthera_bringup_path,
                 'launch',
                 'hardware.launch.py'
             ])
@@ -75,7 +89,7 @@ def generate_launch_description():
     static_virtual_joint_tfs_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([
             PathJoinSubstitution([
-                with_gripper_config_path,
+                panthera_moveit_config_path,
                 'launch',
                 'static_virtual_joint_tfs.launch.py'
             ])
@@ -85,13 +99,30 @@ def generate_launch_description():
     # ============================================
     # 2. MoveIt Config
     # ============================================
-    moveit_config = MoveItConfigsBuilder("Panthera-HT_description", package_name="with_gripper_config").to_moveit_configs()
+    # Build only the semantic and trajectory parts here. The robot description
+    # must come exclusively from the hardware xacro above; otherwise the
+    # builder loads the fake-system URDF from the config package first.
+    moveit_config = (
+        MoveItConfigsBuilder(
+            "panthera_ht_ros_description",
+            package_name="panthera_moveit_config",
+        )
+        .robot_description_semantic(file_path=semantic_file)
+        .trajectory_execution(file_path=moveit_controllers_file)
+        .to_moveit_configs()
+    )
+    # MoveItConfigsBuilder adds the default FakeSystem robot_description when
+    # no robot_description override is supplied.  The hardware launch already
+    # publishes the real hardware URDF, so never pass or republish that fake
+    # description from move_group/RViz.
+    moveit_params = moveit_config.to_dict()
+    moveit_params.pop("robot_description", None)
 
     # For real hardware, use system time, not simulation time
     move_group_configuration = {
         "publish_robot_description_semantic": True,
         "allow_trajectory_execution": True,
-        "publish_robot_description": True,
+        "publish_robot_description": False,
         "publish_planning_scene": True,
         "publish_geometry_updates": True,
         "publish_state_updates": True,
@@ -106,13 +137,13 @@ def generate_launch_description():
 
     # RViz also needs the full moveit_config (kinematics.yaml, joint_limits.yaml, etc.)
     rviz_params = [
-        moveit_config.to_dict(),
+        moveit_params,
         hardware_robot_description,
         {"use_sim_time": False},
     ]
 
     move_group_params = [
-        moveit_config.to_dict(),
+        moveit_params,
         hardware_robot_description,
         move_group_configuration,
     ]
@@ -131,7 +162,7 @@ def generate_launch_description():
     # 4. RViz Node - simplified
     # ============================================
     rviz_config_file = PathJoinSubstitution([
-        with_gripper_config_path,
+        panthera_moveit_config_path,
         'config',
         'moveit.rviz'
     ])

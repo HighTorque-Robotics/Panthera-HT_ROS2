@@ -1,4 +1,4 @@
-# Default initial positions for Panthera-HT_description's ros2_control fake system
+# Default initial positions for panthera_ht_ros_description's ros2_control fake system
 
 initial_positions:
   L_finger_joint: 0

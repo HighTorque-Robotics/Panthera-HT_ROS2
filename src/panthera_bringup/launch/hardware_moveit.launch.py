@@ -12,7 +12,7 @@ def generate_launch_description():
     control_mode = LaunchConfiguration('control_mode')
 
     # Get package paths
-    with_gripper_config_path = FindPackageShare('with_gripper_config')
+    panthera_moveit_config_path = FindPackageShare('panthera_moveit_config')
 
     # Default robot config file (Leader configuration)
     default_config_file = PathJoinSubstitution([
@@ -25,7 +25,7 @@ def generate_launch_description():
     hardware_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([
             PathJoinSubstitution([
-                with_gripper_config_path,
+                panthera_moveit_config_path,
                 'launch',
                 'hardware.launch.py'
             ])
@@ -40,7 +40,7 @@ def generate_launch_description():
     move_group_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([
             PathJoinSubstitution([
-                with_gripper_config_path,
+                panthera_moveit_config_path,
                 'launch',
                 'move_group.launch.py'
             ])

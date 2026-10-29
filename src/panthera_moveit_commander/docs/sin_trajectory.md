@@ -12,7 +12,7 @@
 
 ```bash
 cd ~/panthera_ws
-colcon build --packages-select panthera_commander
+colcon build --packages-select panthera_moveit_commander
 source install/setup.bash
 ```
 
@@ -20,10 +20,10 @@ source install/setup.bash
 
 ```bash
 # 使用默认配置文件（hightorque_robot 包的 Follower.yaml）
-ros2 run panthera_commander sin_trajectory_control
+ros2 run panthera_moveit_commander sin_trajectory_control
 
 # 或指定自定义配置文件
-ros2 run panthera_commander sin_trajectory_control /path/to/config.yaml
+ros2 run panthera_moveit_commander sin_trajectory_control /path/to/config.yaml
 ```
 
 ## 控制参数
@@ -122,8 +122,8 @@ const int control_rate = 500;        // 控制频率 (Hz)
 # 重新编译 hightorque_robot 包
 colcon build --packages-select hightorque_robot
 
-# 然后重新编译 panthera_commander
-colcon build --packages-select panthera_commander
+# 然后重新编译 panthera_moveit_commander
+colcon build --packages-select panthera_moveit_commander
 ```
 
 ### 运行时错误
@@ -132,7 +132,7 @@ colcon build --packages-select panthera_commander
 
 ```bash
 source ~/panthera_ws/install/setup.bash
-ros2 run panthera_commander sin_trajectory_control
+ros2 run panthera_moveit_commander sin_trajectory_control
 ```
 
 ## 依赖
@@ -145,4 +145,4 @@ ros2 run panthera_commander sin_trajectory_control
 
 程序默认使用 `hightorque_robot/robot_param/Follower.yaml`，其中：
 - `param_file`: 相对路径指向 `motor_param/6dof_Panthera_params_follower.yaml`
-- `urdf.file_path`: 相对路径指向 `panthera_ht_description_with_finger` 包的 URDF 文件
+- `urdf.file_path`: 相对路径指向 `panthera_ht_description` 包的 URDF 文件
