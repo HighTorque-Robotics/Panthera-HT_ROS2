@@ -46,8 +46,8 @@ source /opt/ros/jazzy/setup.bash
 
 ```bash
 cd ~
-git clone https://github.com/HighTorque-Robotics/Panthera_HT_ROS2.git Panthera_HT_ROS2_Jazzy
-cd Panthera_HT_ROS2_Jazzy
+git clone https://github.com/HighTorque-Robotics/Panthera-HT_ROS2.git
+cd Panthera-HT_ROS2
 ```
 
 ### 3. 安装系统依赖
@@ -91,14 +91,14 @@ sudo ldconfig
 ### 5. 安装 ROS2 依赖
 
 ```bash
-cd ~/ROS2_ws/Panthera_ROS2_Jazzy
+cd ~/Panthera-HT_ROS2/
 rosdep install --from-paths src --ignore-src -r -y
 ```
 
 ### 6. 编译工作空间
 
 ```bash
-cd ~/ROS2_ws/Panthera_ROS2_Jazzy
+cd ~/Panthera-HT_ROS2/
 colcon build --symlink-install
 source install/setup.bash
 ```
@@ -107,12 +107,12 @@ source install/setup.bash
 
 ```bash
 source /opt/ros/jazzy/setup.bash
-source ~/ROS2_ws/Panthera_ROS2_Jazzy/install/setup.bash
+source ~/Panthera-HT_ROS2/install/setup.bash
 ```
 
 建议将 source 命令加入 `~/.bashrc`：
 ```bash
-echo "source ~/ROS2_ws/Panthera_ROS2_Jazzy/install/setup.bash" >> ~/.bashrc
+echo "source ~/Panthera-HT_ROS2/install/setup.bash" >> ~/.bashrc
 ```
 
 ### 7. 串口权限设置
@@ -136,7 +136,7 @@ sudo usermod -aG dialout $USER
 
 ```bash
 source /opt/ros/jazzy/setup.bash
-source ~/ROS2_ws/Panthera_ROS2_Jazzy/install/setup.bash
+source ~/Panthera-HT_ROS2/install/setup.bash
 ```
 
 ### ros2_control 控制器配置
